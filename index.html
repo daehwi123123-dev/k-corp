@@ -281,6 +281,10 @@ body{display:flex;flex-direction:column;overflow:hidden}
 .sumbar .stat{background:none;padding:0}
 .sumbar .stat .v{font-size:15px}
 .sumbar .sb-more{font-size:12px;padding:6px 8px;margin:0;white-space:nowrap}
+.sb-bars{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 12px;margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+.sb-bars .bar{grid-template-columns:1fr auto;grid-template-areas:"l n" "t t";gap:3px 6px;font-size:11px}
+.sb-bars .bar>.muted{grid-area:l;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sb-bars .bar .num{grid-area:n}.sb-bars .bar .track{grid-area:t;height:6px}
+.sb-bars .bar:nth-child(3) .fill{background:var(--good)}
 @media (max-width:420px){.sumbar .sb-row{grid-template-columns:1.25fr 1fr 1fr 34px}.sumbar .sb-more span{display:none}.sumbar .stat .v{font-size:14px}}
 .modal.wide{max-width:560px}
 .modal .stats{grid-template-columns:repeat(2,1fr)}
@@ -1464,7 +1468,8 @@ function render(){
           ${stat('valuation','기업가치',s.valuation,'won')}
           ${stat('cash','현금',s.cash,'won',s.cash<0?'neg':'')}
           ${stat('profit','월 순이익',s.profit,'won',s.profit>=0?'pos':'neg')}
-          <button class="btn sb-more" tabindex="-1">📊<span> 현황</span></button></div></div>`;
+          <button class="btn sb-more" tabindex="-1">📊<span> 현황</span></button></div>
+        <div class="sb-bars">${bar('tech','기술력',s.tech,Math.max(100,s.tech))}${bar('brand','브랜드',s.brand,100)}${bar('morale','직원 사기',s.morale,100)}</div></div>`;
   document.getElementById('scene').style.display=tab==='co'?'':'none';
   const TABS={
     co:()=>`
@@ -1483,7 +1488,7 @@ function render(){
           ${stat('valuation','기업가치',s.valuation,'won')}${stat('cash','현금',s.cash,'won',s.cash<0?'neg':'')}${stat('debt','부채',s.debt,'won','',true)}
           ${stat('revenue','월 매출',s.revenue,'won')}${stat('profit','월 순이익',s.profit,'won',s.profit>=0?'pos':'neg')}${stat('employees','직원',s.employees,'ppl')}
           ${stat('ownership','내 지분',s.ownership,'pct')}${stat('wealth','내 지분 가치',s.valuation*s.ownership/100,'won')}${stat('load','생산능력 / 수요',s.capacity?Math.round(Math.min(999,s.demand/s.capacity*100)):0,'pct0',s.demand>s.capacity*1.02?'warn':'')}
-        </div><div class="bars">${bar('tech','기술력',s.tech,Math.max(100,s.tech))}${bar('brand','브랜드',s.brand,100)}${bar('morale','직원 사기',s.morale,100)}</div></div>
+        </div></div>
       <div class="card"><h3><span>기업가치 추이</span><span class="muted" style="font-weight:400">최고 ${won(s.maxVal)}</span></h3><canvas id="chart"></canvas></div>`,
     rv:()=>`
       <div class="card"><h3><span>⚔️ 경쟁사 분석</span><span class="muted" style="font-weight:400">업계 ${myRank}위 · 경쟁 효과 <b class="${comp>=1?'pos':'neg'}">수요 ×${comp.toFixed(2)}</b></span></h3>${rivalHtml}<p class="muted" style="margin:8px 0 0;font-size:12px">점유율은 대표 제품 품질과 브랜드로 정해지고, 경쟁사보다 강할수록 수요가 늘어납니다. 인수는 행동 1회를 씁니다.</p></div>`,
