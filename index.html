@@ -408,6 +408,7 @@ const sal=()=>Math.round(ind().salary*s.salaryMult);
 const stageIdx=()=>{let i=0;STAGES.forEach((st,j)=>{if(s.valuation>=st.min)i=j});return i};
 const maxProd=()=>5+stageIdx()+(s.extraSlots||0);
 const maxAP=()=>{const i=stageIdx();return i>=4?4:i>=2?3:2};
+const curQ=p=>Math.max(1,Math.round(Math.sqrt(p.power/ind().k)));
 const best=()=>s.products.reduce((b,p)=>!b||p.power>b.power?p:b,null);
 const dateStr=()=>`${s.year}.${String(s.month).padStart(2,'0')}·${s.week||1}주`;
 function log(t,k=''){s.log.unshift({d:dateStr(),t,k});s.log.length=Math.min(s.log.length,120);s.report.push({t,k})}
@@ -613,10 +614,12 @@ async function launchSequence(chosen){
   if(busy||s.over||s.ap<=0||s.cash<c)return;
   // 슬롯이 가득 차면 단종할 제품을 직접 고른다
   if(!chosen&&s.products.length>=maxProd()){
-    const list=[...s.products].sort((x,y)=>(x.rev??x.power)-(y.rev??y.power));
-    modal('📦 제품 슬롯이 가득 찼어요',`<p>새 제품을 내려면 기존 제품 하나를 단종해야 해요. 어떤 제품을 정리할까요?</p><p class="muted" style="font-size:12px">매출이 낮은 순서로 보여요. 슬롯은 회사가 성장하거나 경쟁사를 인수하면 늘어나요.</p>`,
-      [...list.map(p=>({l:`🗑 ‘${p.name}’ 단종 · 월 ${p.rev!==undefined?won(p.rev):'집계 전'} · 품질 ${p.q} · ${p.age}개월`,f:()=>{discontinue(p);launchSequence(true)}})),{l:'출시 취소',f:()=>{}}]);
-    const bs=document.querySelectorAll('#modal-root .btn');bs.forEach(b=>b.classList.remove('primary'));
+    // 지금 경쟁력(늙어서 떨어진 품질)이 낮은 제품부터 — 맨 위가 먼저 정리할 제품
+    const list=[...s.products].sort((x,y)=>x.power-y.power);
+    const newQ=Math.round(s.tech*.95+10);
+    modal('📦 제품 슬롯이 가득 찼어요',`<p>새 제품을 내려면 기존 제품 하나를 단종해야 해요.</p><p class="muted" style="font-size:12px;margin-bottom:0">제품은 시간이 지날수록 품질(경쟁력)이 떨어져요. <b>지금 품질이 낮은 순서</b>로 보여 주고, 맨 위가 먼저 정리할 제품이에요. 지금 내는 신제품은 품질 <b>약 ${newQ}</b> 정도 나올 거예요.</p>`,
+      [...list.map((p,i)=>{const cq=curQ(p);return {l:`${i===0?'⭐ 추천 ':''}🗑 ‘${p.name}’ · 지금 품질 ${cq}${cq<p.q?` (출시 ${p.q})`:''} · 월 ${p.rev!==undefined?won(p.rev):'집계 전'} · ${p.age}개월${cq>=newQ?' · ⚠️ 신제품보다 좋음':''}`,f:()=>{discontinue(p);launchSequence(true)}}}),{l:'출시 취소',f:()=>{}}]);
+    const bs=document.querySelectorAll('#modal-root .btn');bs.forEach((b,i)=>b.classList.toggle('primary',i===0));
     return;
   }
   busy=true;
@@ -1519,7 +1522,7 @@ function render(){
     const share=prodTot?(p.rev||0)/prodTot*100:0;
     return `<div class="prod2">
       <div class="p-top"><span class="p-name">${p.hit?'🌟 ':p.flop?'💤 ':''}<b>${esc(p.name)}</b></span><span class="p-rev">${p.rev!==undefined?won(p.rev):'—'}<small> /월</small></span></div>
-      <div class="p-sub"><span class="muted">${prodStage(p)} · ${p.age}개월 · 품질 ${p.q}</span><span class="p-right">${prodTrend(p)}<button class="btn p-del" data-pi="${s.products.indexOf(p)}" ${s.over?'disabled':''}>단종</button></span></div>
+      <div class="p-sub"><span class="muted">${prodStage(p)} · ${p.age}개월 · 품질 ${curQ(p)}${curQ(p)<p.q?`<small>/${p.q}</small>`:''}</span><span class="p-right">${prodTrend(p)}<button class="btn p-del" data-pi="${s.products.indexOf(p)}" ${s.over?'disabled':''}>단종</button></span></div>
       <div class="bar" style="grid-template-columns:1fr 40px"><div class="track"><div class="fill" style="width:${share}%"></div></div><span class="num">${Math.round(share)}%</span></div>
     </div>`}).join('')+(prodTot?`<div class="p-total"><span class="muted">제품 매출 합계</span><b>${won(prodTot)} /월</b></div>`:''):'<p class="muted" style="margin:0">출시한 제품이 없습니다.</p>';
   const cls=k=>k==='warn'?'warn':k==='good'?'pos':k==='rival'?'rv-log':'';
