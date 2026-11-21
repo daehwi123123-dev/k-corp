@@ -1408,7 +1408,7 @@ function render(){
   if(!s){document.getElementById('nextbar').hidden=true;app.innerHTML='';document.getElementById('hdr').innerHTML='';document.getElementById('scene').style.display='none';return}
   document.getElementById('scene').style.display='';
   const I=ind(),st=STAGES[stageIdx()];
-  const bar=barHTML=(key,k,v,max)=>{const w=clamp(v/max*100,0,100);const pw=prevVals['bar_'+key];
+  const bar=barHTML=(key,k,v,max,min=0)=>{const w=clamp((v-min)/(max-min)*100,0,100);const pw=prevVals['bar_'+key];
     return `<div class="bar"><span class="muted">${k}</span><div class="track"><div class="fill" data-k="bar_${key}" data-v="${w}" style="width:${pw===undefined?w:pw}%"></div></div><span class="num" data-k="${key}" data-f="int" data-v="${v}">${Math.round(prevVals[key]??v)}</span></div>`};
   const delta=(key,v,inv)=>{
     if(!s.pm||s.pm[key]===undefined)return '';
@@ -1469,7 +1469,9 @@ function render(){
           ${stat('cash','현금',s.cash,'won',s.cash<0?'neg':'')}
           ${stat('profit','월 순이익',s.profit,'won',s.profit>=0?'pos':'neg')}
           <button class="btn sb-more" tabindex="-1">📊<span> 현황</span></button></div>
-        <div class="sb-bars">${bar('tech','기술력',s.tech,Math.max(100,s.tech))}${bar('brand','브랜드',s.brand,100)}${bar('morale','직원 사기',s.morale,100)}</div></div>`;
+        <div class="sb-bars">${(()=>{const g=techTier(s.tech),pt=prevVals.tier_tech;
+          if(pt!==undefined&&pt!==g.lo){prevVals.bar_tech=g.lo>pt?0:100;if(g.lo>pt)pendingFx.push(()=>toast(`<b>🔬 기술 등급 상승!</b><br>‘${g.n}’ 단계에 올랐어요`,'good'))}
+          prevVals.tier_tech=g.lo;return bar('tech',`기술력 · ${g.n}`,s.tech,g.hi,g.lo)})()}${bar('brand','브랜드',s.brand,100)}${bar('morale','직원 사기',s.morale,100)}</div></div>`;
   document.getElementById('scene').style.display=tab==='co'?'':'none';
   const TABS={
     co:()=>`
@@ -1553,6 +1555,9 @@ function drawChart(anim){
   const t0=performance.now();const step=t=>{const p=Math.min(1,(t-t0)/700);frame(1-Math.pow(1-p,3));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step);
 }
 window.addEventListener('resize',()=>document.getElementById('chart')&&drawChart());
+// 기술력은 끝이 없으니 등급별로 바를 다시 채운다
+const TECH_TIERS=[{n:'기초',lo:0,hi:40},{n:'숙련',lo:40,hi:80},{n:'선도',lo:80,hi:150},{n:'첨단',lo:150,hi:250},{n:'세계 최고',lo:250,hi:400}];
+function techTier(v){const t=TECH_TIERS.find(x=>v<x.hi);if(t)return t;const k=Math.floor((v-400)/200);return {n:'초격차'+(k?' '+(k+1):''),lo:400+k*200,hi:600+k*200}}
 let tab='co',tabAnim=false;
 function setTab(x){if(tab===x)return;tab=x;tabAnim=true;document.getElementById('scroller').scrollTop=0;if(x==='st')chartAnim=true;render()}
 
@@ -1718,7 +1723,7 @@ function statPopup(){
     ${statHTML('valuation','기업가치',v,'won')}${statHTML('cash','현금',s.cash,'won',s.cash<0?'neg':'')}${statHTML('debt','부채',s.debt,'won','',true)}
     ${statHTML('revenue','월 매출',s.revenue,'won')}${statHTML('profit','월 순이익',s.profit,'won',s.profit>=0?'pos':'neg')}${statHTML('employees','직원',s.employees,'ppl')}
     ${statHTML('ownership','내 지분',s.ownership,'pct')}${statHTML('wealth','내 지분 가치',v*s.ownership/100,'won')}${statHTML('load','생산능력 / 수요',s.capacity?Math.round(Math.min(999,s.demand/s.capacity*100)):0,'pct0',s.demand>s.capacity*1.02?'warn':'')}
-  </div><div class="bars">${barHTML('tech','기술력',s.tech,Math.max(100,s.tech))}${barHTML('brand','브랜드',s.brand,100)}${barHTML('morale','직원 사기',s.morale,100)}</div>
+  </div><div class="bars">${(()=>{const g=techTier(s.tech);return barHTML('tech',`기술력 · ${g.n}`,s.tech,g.hi,g.lo)})()}${barHTML('brand','브랜드',s.brand,100)}${barHTML('morale','직원 사기',s.morale,100)}</div>
   <h3 style="margin:14px 0 6px;font-size:14px;display:flex;justify-content:space-between"><span>기업가치 추이</span><span class="muted" style="font-weight:400">최고 ${won(s.maxVal)}</span></h3><canvas id="chart"></canvas>
   <p class="muted" style="font-size:11px;margin:8px 0 0">팝업이 열려 있는 동안 시간이 멈춰요.</p>`,[{l:'닫기',f:()=>{}}],'wide');
   m.querySelectorAll('.bar .fill').forEach(el=>el.style.width=el.dataset.v+'%');
