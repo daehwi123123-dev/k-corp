@@ -1916,7 +1916,9 @@ function howTo(done){
 // ===== 피드백 =====
 // 구글 폼이 연결되면(로그인 없이 바로 접수) 그쪽으로, 아니면 GitHub 의견 게시판으로 보낸다.
 // gform: 폼의 formResponse 주소, entries: 질문별 entry 번호 (종류·별점·내용·게임정보)
-const FEEDBACK={repo:'daehwi123123-dev/k-corp',gform:'',entries:{type:'',stars:'',text:'',info:''}};
+const FEEDBACK={repo:'daehwi123123-dev/k-corp',form:'https://docs.google.com/forms/d/e/1FAIpQLSeV6mVLmCJomUBTeMUNzZqa4UxB6gOKOmNZK31-b8LiMFrryQ/viewform',
+  entries:{type:'entry.1908160126',text:'entry.372921626',stars:'entry.1630962841',info:'entry.1482971959',nick:'entry.955027620'},
+  typeLabel:{bug:'버그·오류',idea:'건의',balance:'밸런스',etc:'기타'}};
 const FB_TYPES=[['bug','🐞','버그'],['idea','💡','건의'],['balance','⚖️','밸런스'],['etc','💬','기타']];
 function feedback(){
   const f={type:'idea',stars:0,text:'',info:true};
@@ -1926,11 +1928,13 @@ function feedback(){
     <div class="fb-lbl">종류</div><div class="fb-types">${FB_TYPES.map(([k,i,n])=>`<button type="button" data-o="${k}" class="${f.type===k?'on':''}"><b>${i}</b>${n}</button>`).join('')}</div>
     <div class="fb-lbl">게임은 어땠나요?</div><div class="fb-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-n="${n}" class="${n<=f.stars?'on':''}" aria-label="${n}점">⭐</button>`).join('')}</div>
     <div class="fb-lbl">내용</div><textarea class="fb-ta" maxlength="2000" placeholder="예) 중견기업으로 시작하면 3년 만에 부도나요. / 제품 이름을 직접 짓고 싶어요.">${esc(f.text)}</textarea>
+    <div class="fb-lbl" style="margin-top:10px">닉네임 <span style="font-weight:400">(선택)</span></div><input class="fb-ta fb-nick" style="min-height:0;height:40px" maxlength="30" placeholder="답장을 원하면 닉네임을 남겨 주세요" value="${esc(f.nick||'')}">
     <label class="fb-chk"><input type="checkbox" ${f.info?'checked':''}> 지금 게임 상황(업종·단계·날짜)과 기기 정보를 함께 보내기 — 버그를 고칠 때 도움이 돼요</label>
-    ${FEEDBACK.gform?'<p class="muted" style="font-size:11px;margin:10px 0 0">로그인 없이 바로 접수돼요. 이름이나 연락처는 받지 않아요.</p>':''}<p class="muted" style="font-size:11px;margin:10px 0 0;${FEEDBACK.gform?'display:none':''}">‘보내기’를 누르면 GitHub 의견 게시판이 열려요. GitHub에 로그인한 뒤 초록색 <b>Create</b> 버튼을 눌러야 접수됩니다. 쓴 내용은 미리 채워져 있어요.</p>`,[]);
+    <p class="muted" style="font-size:11px;margin:10px 0 0">‘보내기’를 누르면 내용이 채워진 구글 폼이 열려요. 거기서 <b>제출</b>만 누르면 접수돼요. 로그인은 필요 없어요.</p>`,[]);
   m.querySelectorAll('.fb-types button').forEach(b=>b.onclick=()=>{f.type=b.dataset.o;m.querySelectorAll('.fb-types button').forEach(x=>x.classList.toggle('on',x===b));keep()});
   m.querySelectorAll('.fb-stars button').forEach(b=>b.onclick=()=>{f.stars=+b.dataset.n;m.querySelectorAll('.fb-stars button').forEach(x=>x.classList.toggle('on',+x.dataset.n<=f.stars));keep()});
   const ta=m.querySelector('.fb-ta');ta.oninput=()=>{f.text=ta.value;keep()};
+  const nk=m.querySelector('.fb-nick');nk.oninput=()=>{f.nick=nk.value;keep()};
   m.querySelector('.fb-chk input').onchange=e=>{f.info=e.target.checked;keep()};
   setModalBtns([{l:'📮 보내기',f:()=>{
       if(!f.text.trim()){toast('<b>내용을 적어 주세요</b>','bad');return feedback()}
@@ -1941,18 +1945,16 @@ function feedback(){
         const g=s?`${IND[s.industry].name} · ${(STARTS.find(x=>x.id===s.startId)||{}).n||s.startId} · ${s.year}년 ${s.month}월 (${s.t||0}개월째) · ${STAGES[stageIdx()].n} · 기업가치 ${won(s.valuation)} · 직원 ${s.employees}명`:'게임 시작 전';
         body+=`\n---\n<sub>게임: ${g}<br>기기: ${innerWidth}×${innerHeight} · ${navigator.userAgent.replace(/[<>]/g,'').slice(0,160)}</sub>\n`;
       }
-      if(FEEDBACK.gform){
-        const E=FEEDBACK.entries,fd=new URLSearchParams();
-        fd.append(E.type,ty[2]);if(E.stars)fd.append(E.stars,String(f.stars||''));fd.append(E.text,f.text.trim());
-        if(E.info&&f.info)fd.append(E.info,body.split('---')[1]?body.split('---')[1].replace(/<[^>]+>/g,' ').trim():'');
-        fetch(FEEDBACK.gform,{method:'POST',mode:'no-cors',body:fd}).then(()=>toast('<b>📮 의견이 접수됐어요</b><br>고마워요!','good')).catch(()=>toast('<b>전송 실패</b><br>인터넷 연결을 확인해 주세요','bad'));
-        f.text='';f.stars=0;keep();return;
-      }
-      const url=`https://github.com/${FEEDBACK.repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+      const E=FEEDBACK.entries,q=new URLSearchParams({usp:'pp_url'});
+      q.append(E.type,FEEDBACK.typeLabel[f.type]||'기타');q.append(E.text,f.text.trim());
+      if(f.stars)q.append(E.stars,`${f.stars}/5`);
+      if(f.info)q.append(E.info,body.split('---')[1]?body.split('---')[1].replace(/<br>/g,' / ').replace(/<[^>]+>/g,'').trim():'');
+      if((f.nick||'').trim())q.append(E.nick,f.nick.trim());
+      const url=`${FEEDBACK.form}?${q.toString()}`;
       const w=window.open(url,'_blank','noopener');
       if(!w)location.href=url;
       f.text='';f.stars=0;keep();
-      toast('<b>📮 의견 게시판을 열었어요</b><br>로그인 후 Create를 눌러 주세요','good');
+      toast('<b>📮 구글 폼을 열었어요</b><br>내용이 채워져 있어요. <b>제출</b>만 눌러 주세요','good');
     }},{l:'닫기',f:()=>{}}]);
 }
 
