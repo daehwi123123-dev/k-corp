@@ -1,0 +1,677 @@
+5|Südkorea
+6|Bank of Korea
+7|KOSDAQ
+8|KOSDAQ-Börsengang
+9|USA
+10|USD
+11|die Fed
+12|NASDAQ
+13|NASDAQ-Börsengang
+14|Silicon Valley
+15|New York
+16|Austin
+17|Seattle
+18|Boston
+19|Chicago
+20|Miami
+21|Viertel
+22|Bundesstaat
+23|ganze USA
+24|Nordamerika
+25|Weltweit
+26|Japan
+27|JPY
+28|Bank of Japan
+29|Tokioter Börse (Growth)
+30|Tokioter Börsengang
+31|Tokio-Shibuya
+32|Osaka
+33|Kyoto
+34|Fukuoka
+35|Nagoya
+36|Sapporo
+37|Yokohama
+38|Sendai
+39|Region Kanto
+40|ganz Japan
+41|Asien
+42|China
+43|CNY
+44|Chinesische Volksbank
+45|Shanghai STAR Market
+46|STAR-Börsengang
+47|Peking-Zhongguancun
+48|Shanghai
+49|Shenzhen
+50|Hangzhou
+51|Guangzhou
+52|Chengdu
+53|Suzhou
+54|Wuhan
+55|ganze Provinz
+56|ganz China
+57|Deutschland
+58|EUR
+59|Europäische Zentralbank
+60|Frankfurter Wertpapierbörse
+61|Börsengang in Frankfurt
+62|Berlin
+63|München
+64|Hamburg
+65|Frankfurt
+66|Stuttgart
+67|Köln
+68|Leipzig
+69|Dresden
+70|ganz Deutschland
+71|Europa
+72|Indien
+73|INR
+74|Reserve Bank of India
+75|National Stock Exchange of India
+76|NSE-Börsengang
+77|Bengaluru
+78|Mumbai
+79|Delhi NCR
+80|Hyderabad
+81|Pune
+82|Chennai
+83|Kolkata
+84|Ahmedabad
+85|ganz Indien
+86|Südasien
+87|IT / Plattform
+88|App
+89|Messenger
+90|Cloud
+91|Mobile Payment
+92|Kartendienst
+93|Onlineshop
+94|KI-Assistent
+95|Liefer-App
+96|Games
+97|Mobile-RPG
+98|Idle-Game
+99|Battle Royale
+100|Rhythmusspiel
+101|Puzzlespiel
+102|Gacha-RPG
+103|Lebensmittel & Gastro
+104|Ramen
+105|Tteokbokki-Kochbox
+106|Kimchi
+107|Hähnchen-Kette
+108|Supermarkt-Bento
+109|Premium-Seetang
+110|Bubble Tea
+111|Beauty & Kosmetik
+112|Cushion-Make-up
+113|Sonnencreme
+114|Tuchmaske
+115|Ampulle
+116|Lip Tint
+117|Veganes Tonikum
+118|Biotech
+119|Testkit
+120|Neues Medikament
+121|Biosimilar
+122|Impfstoff
+123|Nahrungsergänzung
+124|Gentherapie
+125|Entertainment
+126|Boygroup
+127|Girlgroup
+128|Webserie
+129|Unterhaltungsshow
+130|Solo-Sänger
+131|Webtoon-IP
+132|Industrie / Chips
+133|Speicherchip
+134|Akku
+135|E-Auto-Teile
+136|Display
+137|Industrieroboter
+138|Sensormodul
+139|Coworking
+140|Kleines Büro
+141|Büroetage
+142|Mittleres Gebäude
+143|Eigene Zentrale
+144|Wahrzeichen-Tower
+145|Globaler Campus
+146|Grundpatent
+147|Techniklizenz
+148|Offene SDK/API
+149|Plattform-Ökosystem
+150|Weltstandard-Technik
+151|Figuren-IP
+152|Merch
+153|Webtoon
+154|Animation
+155|Kinofilm
+156|Freizeitpark
+157|Geheimrezept-Patent
+158|Figuren-Kollab
+159|Auslandslizenz
+160|Fertiggericht-Marke
+161|Globale Kette
+162|Patent auf Eigenwirkstoff
+163|Kollab-Edition
+164|ODM-Lizenz
+165|Partnerschaft mit Auslandsmarke
+166|Globale Beauty-Marke
+167|Wirkstoffpatent
+168|Technologietransfer
+169|Gemeinsame Entwicklung
+170|Weltweite Rechte
+171|Plattformtechnik
+172|Künstler-IP
+173|Welttournee
+174|Kernpatent
+175|Standardpatent
+176|Kreuzlizenz
+177|Weltstandard
+178|Lokal
+179|Großraum Seoul
+180|landesweit
+181|Startup
+182|Venture
+183|Kleinunternehmen
+184|Mittelständler
+185|Einhorn
+186|Großkonzern
+187|Chaebol
+188|Seed
+189|Serie A
+190|Serie B
+191|Serie C
+192|Serie D
+193|Pre-IPO
+194|Seoul-Gangnam
+195|Pangyo
+196|Seongsu-dong
+197|Busan-Haeundae
+198|Daejeon-Yuseong
+199|Gwangju
+200|Daegu
+201|Incheon-Songdo
+202|Jeju
+203|Seoul-Euljiro
+204|Bundang
+205|Changwon
+206|Absolvent einer Elite-TU
+207|Technik +15
+208|Ex-Marketing im Großkonzern
+209|Marke +12
+210|Mit dem goldenen Löffel
+211|Startkapital ×2
+212|Selfmade-Gründer
+213|Moral +20, Startkapital -30%
+214|Serien-Gründer
+215|Technik & Marke +6, Finanzierung +25%
+216|Ex-YouTuber
+217|Marke +20, Technik -5
+218|Im Ausland studiert
+219|Expansionskosten -30%
+220|Ex-Beamter
+221|Häufiger Fördergeld-Events
+222|{0}.{1} · KW{2}
+223|🌱 Gründung aus dem Nichts
+224|Normal
+225|Ein kleiner Coworking-Platz, keine Produkte. Du baust alles von Grund auf.
+226|📈 Erfolgreiches Startup
+227|Leicht
+228|Wächst rasant dank eines Hits. Investoren halten Anteile und das Büro wird eng.
+229|🏢 Etablierter Mittelständler
+230|Tückisch
+231|Stabiler Umsatz und Hunderte Mitarbeitende. Aber die Produkte altern und die Konkurrenz holt auf. Wer nichts tut, geht langsam unter.
+232|👔 Geerbter Konzern
+233|Schwer
+234|Du hast den Konzern deines Vaters geerbt. Riesig, aber mit alten Produkten, hohen Lohnkosten, vielen Schulden und einem dünnen Anteil. Er macht schon jetzt jeden Monat Verlust.
+235| (2. Generation)
+236|📈 „{0}“ {1} → {2} erweitert ({3})
+237|💡 IP „{0}“ auf {1} erweitert! Etwa {2}/Monat Lizenzgebühren, Marke +3 <span class="muted">(-{3})</span>
+238|<b>💡 IP erweitert!</b><br>„{0}“ {1}
+239|✨ Neue IP geschaffen: {0} ({1})
+240|💡 Neue IP „{0}“ {1} gesichert! Etwa {2}/Monat Lizenzgebühren <span class="muted">(-{3})</span>
+241|<b>✨ Neue IP gesichert!</b><br>„{0}“
+242|<li><b>{0}</b> · {1} · {2}/Monat</li>
+243|<li class="muted">Du besitzt noch keine IP.</li>
+244|💡 IP-Geschäft
+245|<p class="muted" style="margin-top:0">IP bringt jeden Monat Lizenzgebühren – mehr bei größerem Markt und stärkerer Marke. Je weiter du sie ausbaust, desto stärker wächst der Ertrag, und du stehst bei Ideenklau-Klagen besser da.</p><ul style="padding-left:18px">{0}</ul>{1}
+246|<p class="neg" style="font-size:12px">Für manche Optionen fehlt das Geld.</p>
+247|Abbrechen
+248|Produkt launchen
+249|Hit-Chance {0}% · Plätze {1}/{2}{3}
+250| (Produkt zum Einstellen wählen)
+251|F&E
+252|Erfolg {0}% · Fehlschlag {1}% (Technik sinkt) · Durchbruch 4%
+253|Marketing
+254|Marke rauf → mehr Nachfrage
+255|Marke maximal
+256|Werbekampagne gestartet. Marke +{0}
+257|Einstellen
+258|{0} Leute einstellen → mehr Kapazität
+259|{0} neue Mitarbeitende! (insgesamt {1})
+260|Benefits ausbauen
+261|Moral steigern
+262|Moral maximal
+263|Benefits verbessert. Moral +{0}
+264|Markt erweitern
+265|Expansion: {0} (Nachfrage ×{1})
+266|Schon global
+267|Größter Markt
+268|Marke {0} nötig
+269|Markteintritt: {0}! 🌏
+270|Kapitalerhöhung
+271|Kapital aufnehmen
+272|20 % des Firmenwerts aufnehmen · Anteil -20 %
+273|In {0} Mon. möglich
+274|Erst nach einem Produktlaunch
+275|Zusatz
+276|-Runde
+277|{0} abgeschlossen! {1} aufgenommen (dein Anteil {2}%)
+278|Börsengang
+279|{0} · 25 % des Firmenwerts aufnehmen
+280|Bereits börsennotiert
+281|Firmenwert von 100 Mrd. ₩ nötig
+282|🔔 Börsengang an der {0}! {1} eingenommen. Marke +8
+283|Umziehen
+284|{0} (Platz für {1} · Miete {2}/Monat)
+285|unbegrenzt
+286| Pers.
+287|Die beste Zentrale
+288|Beste Zentrale
+289|Umzug in: {0}! Moral +10, Marke +3
+290|IP-Geschäft
+291|{0} IPs · Lizenzen {1}/Monat
+292|IP wie Patente und Figuren schaffen und ausbauen
+293|Alle IPs maximal
+294|Konkurrenzanalyse
+295|Daten aktiv (noch {0} Mon.)
+296|6 Monate Konkurrenzdetails · Technik +2
+297|Keine Konkurrenz
+298|In {0} Mon. wieder möglich
+299|Berater haben die Konkurrenz analysiert. Benchmarking: Technik +2
+300|Umstrukturierung
+301|{0} Stellen streichen · Moral & Marke sinken
+302|Zu wenig Personal
+303|Umstrukturierung: {0} Stellen gestrichen. Moral -18, Marke -4
+304|🧪 Forschung gescheitert… {0}. Technik {1}
+305|Der Prototyp ist explodiert
+306|Ein leitender Forscher ist mit dem Projekt abgesprungen
+307|Monatelange Testdaten waren fehlerhaft
+308|Falsche Richtung – die Forschung wurde komplett verworfen
+309|🔬 Geforscht, aber ohne nennenswertes Ergebnis. Technik +0
+310|🔬 F&E-Fortschritt! Technik +{0}
+311|✨ Forschungserfolg! Kerntechnologie gesichert. Technik +{0}
+312|<b>✨ Forschungserfolg!</b><br>Technik +{0}
+313|💥 Durchbruch! Eine Erfindung, die die Branche erschüttert. Technik +{0}{1}
+314|, „{0}“ Wettbewerbsfähigkeit +10 %
+315|<b>💥 Durchbruch!</b><br>Technik +{0}
+316|🎯 Massenmarkt
+317|Solide Qualität · 20 % günstiger
+318|💎 Premium
+319|Qualität +20 % · 60 % teurer
+320|🔥 Trend
+321|Direkt nach dem Launch +40 % · verblasst aber doppelt so schnell
+322|🛡️ Dauerbrenner
+323|Etwas weniger Qualität, verkauft sich aber lange (altert halb so schnell)
+324|🧪 Experiment
+325|Doppelte Hit-Chance · doppelte Flop-Chance
+326|🔁 Fortsetzung
+327|Fans des Originals: Hit-Chance ×1,5
+328|🤝 Kollab
+329|Mit bekannter Marke · Marke +3
+330|{0} × {1} Edition
+331|Späti
+332|Modemarke
+333|Hit-Webtoon
+334|Figur
+335|Idol
+336|Sportverein
+337| (🗑 „{0}“ eingestellt)
+338|🎉 Volltreffer! „{0}“ gelauncht, Qualität {1}{2}
+339|😓 „{0}“ gelauncht, aber die Resonanz ist kühl… Qualität {1}{2}
+340|„{0}“ gelauncht! Qualität {1}{2}
+341|<b>🔔 Börsengang an der {0}!</b><br>Die Glocke hat geläutet
+342|🔔 Die Börsenhürde genommen
+343|<b>💰 Finanzierung gesichert!</b><br>{0}
+344|<b>🌏 Markteintritt: {0}!</b>
+345|<b>🏢 Umzug in: {0}!</b>
+346|🗑 „{0}“ eingestellt. (Qualität {1}, {2} Mon. verkauft)
+347|📦 Alle Produktplätze belegt
+348|<p>Für ein neues Produkt musst du ein bestehendes einstellen.</p><p class="muted" style="font-size:12px;margin-bottom:0">Produkte verlieren mit der Zeit Qualität (Wettbewerbsfähigkeit). Sie sind <b>nach aktueller Qualität aufsteigend</b> sortiert – das oberste solltest du zuerst einstellen. Ein neues Produkt käme jetzt auf etwa <b>Qualität {0}</b>.</p>
+349|{0}🗑 „{1}“ · Qualität jetzt {2}{3} · {4}/Monat · {5} Mon.{6}
+350|⭐ Empfohlen
+351| (beim Launch {0})
+352|noch nicht erfasst
+353| · ⚠️ besser als ein neues
+354|Launch abbrechen
+355|🚀 Was sollen wir launchen?
+356|<p class="muted" style="font-size:13px;margin:0 0 4px">Das Planungsteam schlägt 3 Ideen vor. Erwartete Qualität etwa {0} (je nach Konzept).</p>
+357| (zu wenig Geld)
+358|<b>Zu wenig Geld</b>
+359|💡 Brainstorming…
+360|✏️ Konzept wird geschrieben…
+361|👩‍💻 Entwickler im Crunch…
+362|🧪 Qualitätstests…
+363|📦 Bereit zum Launch!
+364|🚀 Produktentwicklung
+365|<div class="dev"><div class="dev-icon">🛠️</div><div class="dev-step">{0}</div><div class="prog"><div class="prog-fill"></div></div><div class="muted" style="font-size:12px">Entwicklungskosten {1}</div></div>
+366|<div class="reveal {0}"><div class="rv-label">{1}</div><div class="muted" style="font-size:12px">{2}</div><div class="rv-pname">„{3}“</div><div class="rv-q">Qualität <span id="qnum">0</span></div><div class="stars">{4}</div>{5}</div>
+367|🎉 Sieht nach einem Hit aus!
+368|😓 Kühle Resonanz…
+369|✅ Gelauncht
+370|🌟 Neues Produkt gelauncht!
+371|🚀 Produkt gelauncht
+372|Nächstes Mal klappt’s…
+373|Super!
+374|🏦 Bankkredit {0} (0,6 % Zinsen im Monat)
+375|🏦 {0} Kredit zurückgezahlt
+376|📊 Abschluss Monat {0} — Umsatz {1}{2} · Gewinn <b class="{3}">{4}</b>
+377| (IP-Lizenzen {0})
+378|😵 {0} ist völlig überfüllt! ({1}/{2} Pers.) Produktivität sinkt, Moral -{3}. Ein Umzug ist fällig.
+379|💡 Noch keine Produkte. Launche eins, um Umsatz zu machen.
+380|🔥 Die Aufträge übersteigen die Kapazität ({0}) deutlich – alle machen Überstunden. Stell Leute ein. Moral -3
+381|⚠️ Die Kapazität kommt der Nachfrage nicht hinterher.
+382|😞 Schlechte Moral: {0} Leute haben gekündigt.
+383|🚨 Das Geld ist alle! Ohne Gewinn, Kredit oder Finanzierung innerhalb von {0} Monaten folgt die Pleite.
+384|🥱 Stillstand: seit {0} Monaten kein neues Produkt. Marke und Moral sinken jeden Monat ein wenig.
+385|🐌 Konzernkrankheit: {0} Mitarbeitende, {1} % Effizienz. Je größer die Firma, desto weniger schafft jeder Einzelne.
+386|📉 Niedergang! Der Firmenwert liegt {1} % unter dem Höchststand ({0}).
+387|<b>📉 Niedergang</b><br>Firmenwert -{0} % vom Höchststand
+388|🎉 Aufgestiegen zum {0}! {1} Aktionen pro Monat
+389|<b>🎉 Aufstieg: {0}!</b><br>Jetzt {1} Aktionen pro Monat
+390|🦄 Firmenwert über 1 Billion ₩! Ihr seid ein Einhorn.
+391|🦄 Einhorn!
+392|🎂 Ein Jahr im Geschäft – noch am Leben!
+393|🏅 5 Jahre überlebt!
+394|🏛️ Ein 10-jähriges Unternehmen
+395|<b>📈 Erster Gewinn!</b>
+396|<div class="cal"><div class="cal-head">{0}</div><div class="cal-body"><div class="cal-page new">{1}<small>M</small></div><div class="cal-page old">{2}<small>M</small></div></div><div class="cal-foot">Monatsabschluss…</div></div>
+397|🎉 Gute Nachrichten
+398|🩹 Diesmal gescheitert, aber du kannst es erneut versuchen
+399|🎉 Klinische Studie bestanden!
+400|🩹 Enttäuschendes Ergebnis
+401|✅ Gute Entscheidung
+402|🩹 Angeschlagen, aber noch da
+403|🛡️ Krise gemeistert
+404|<div class="news-tag">Eilmeldung</div><p>{0}</p>
+405|OK
+406|Aggressive Expansion, wirbt Talente ab
+407|F&E-Fokus, Qualitätsprodukte
+408|Langsames, aber stetiges Wachstum
+409|Werbe- und markengetrieben
+410|⚔️ Konkurrent {0} hat das neue Produkt „{1}“ gelauncht.
+411|⚔️ {0} hat eine große Finanzierungsrunde abgeschlossen! Wert {1}
+412|⚔️ Skandal um den Eigentümer von {0}… Marke und Wert sinken
+413|⚔️ {0} hat unsere Entwickler abgeworben. Technik -3, Moral -3
+414|⚔️ {0} startet eine riesige Werbekampagne
+415|💀 Konkurrent {0} ist pleite.
+416|🆕 Neuer Konkurrent {0} ({1}) drängt auf den Markt.
+417|, Patent-IP gesichert
+418|Aktientausch (Anteil {0}%)
+419|🤝 {0} für {1} übernommen! {2} Produkte und {3} Mitarbeitende übernommen, Technik {4}{5}{6}
+420|, Produktplatz +1
+421|<b>🤝 {0} übernommen!</b><br>{1} Produkte · erw. Umsatz +{2}/Monat
+422|🤝 Erste Übernahme
+423|💵 Mit Bargeld kaufen ({0})
+424|📈 Per Aktientausch kaufen (dein Anteil {0}% → {1}%)
+425|🤝 Übernahme prüfen
+426|<p><b>{0}</b> · Wert etwa {1}</p><div class="kv"><span class="muted">Produkte</span><b>{2}</b><span class="muted">Erw. Monatsumsatz</span><b class="pos">+{3}</b><span class="muted">Technik</span><b>{4} → {5}</b><span class="muted">Marke</span><b>+5</b><span class="muted">Übernommenes Personal</span><b>+{6} <span class="muted" style="font-weight:400">(höhere Lohnkosten)</span></b>{7}{8}<span class="muted">Wettbewerb</span><b>Ein Konkurrent weniger, dein Anteil steigt</b></div>{9}{10}<p class="muted" style="font-size:12px">Eine Übernahme kostet 1 Aktion.</p>
+427|„{0}“ (Qualität {1})
+428|<span class="muted">Produktplätze</span><b class="pos">+1 (dauerhaft)</b>
+429|<span class="muted">Patent</span><b class="pos">+1 IP</b>
+430|<p class="muted" style="font-size:12px">Für einen Barkauf brauchst du {0}.</p>
+431|<p class="muted" style="font-size:12px">Ein Aktientausch würde deinen Anteil unter 10 % drücken – nicht möglich.</p>
+432|Hanbit Activist Fund
+433|Polaris Partners
+434|Sky Holdings
+435|Wirbelwind Asset Management
+436|Cheongsol Private Equity
+437|Omega Invest
+438|🛡️ Aktien zurückgekauft: dein Anteil +{0} Pp → {1}% <span class="muted">(-{2})</span>
+439|<b>🛡️ Aktien gekauft</b><br>Dein Anteil {0}% · Stimmen {1}%
+440|⚠️ {0} meldet, {1}% unserer Aktien gekauft zu haben! Das könnte eine feindliche Übernahme sein.
+441|<b>⚠️ Übernahmealarm</b><br>{0} hält {1}%
+442|🏳️ {0} gibt den Übernahmeversuch auf und verkauft die Aktien. Kontrolle verteidigt!
+443|<b>🛡️ Kontrolle verteidigt!</b><br>{0} zieht sich zurück
+444|🚨 {0} hält {1}% – fast so viel wie unsere Stimmen ({2}%)! Kauf Aktien zur Verteidigung.
+445|🗳️ Abstimmung auf der Hauptversammlung gewonnen! {0}
+446|<b>🗳️ Abstimmung gewonnen!</b><br>Du behältst die Kontrolle
+447|🗳️ Abstimmung auf der Hauptversammlung verloren… {0}
+448|🗳️ Kleinaktionäre überzeugen und abstimmen (Siegchance ca. {0} %)
+449|Die Kleinaktionäre stellten sich hinter das Management.
+450|🛡️ Weißen Ritter holen, dann abstimmen ({0} · befreundeter Anteil +6 Pp · Siegchance ca. {1} %)
+451|Ein befreundetes Unternehmen sprang als weißer Ritter ein und brachte die Stimmen.
+452|⚔️ Machtkampf um die Kontrolle
+453|<div class="news-tag">Außerordentliche HV</div><p>Der Anteil von <b>{0}</b> ({1}%) übersteigt jetzt unsere Stimmen ({2}%). Auf der Tagesordnung steht die Abberufung des Vorstands.</p><p class="muted" style="font-size:12px">Verlierst du, bist du als CEO raus – Spielende. Moral, Marke und Gewinn beeinflussen die Kleinaktionäre.</p>
+454|🚨 Gefahr
+455|⚠️ Unter Beschuss
+456|🛡️ Sicher
+457|🙂 Gut
+458|😟 Verwundbar
+459|Diesen Monat schon gekauft
+460|Keine Aktien mehr verfügbar
+461|Nicht börsennotiert: Investorenanteile mit 20 % Aufschlag zurückkaufen
+462|Bieterkampf: 35 % Kursaufschlag
+463|Am Markt mit 10 % Aufschlag kaufen
+464|<div class="card {0}"><h3><span>🛡️ Kontrolle</span><span class="ctl-st {1}">{2}</span></h3><div class="ctl-bar"><span class="ctl-me" style="width:{3}%"></span><span class="ctl-al" style="width:{4}%"></span><span style="flex:1"></span>{5}</div><div class="ctl-leg"><span><i class="ctl-me"></i>Dein Anteil <b>{6}%</b></span>{7}{8}<span>Unsere Stimmen <b>{9}%</b></span></div><p class="muted" style="font-size:12px;margin:6px 0 0">{10}</p><div class="ctl-btns">{11}</div><div class="muted" style="font-size:11px;margin-top:4px">Aktien kaufen · einmal pro Monat · kostet keine Aktion · {12}</div></div>
+465|<span><i class="ctl-al"></i>Befreundet <b>{0}%</b></span>
+466|Übersteigt ihr Anteil unsere Stimmen, gibt es eine außerordentliche Hauptversammlung. Liegen wir weit vorn, geben sie auf.
+467|Börsennotierte Firmen mit weniger als 50 % der Stimmen können zum Übernahmeziel werden. Unter 10 % Anteil wirst du gefeuert.
+468|Nach dem Börsengang sind Aktien frei handelbar – andere können die Kontrolle angreifen. Unter 10 % Anteil wirst du gefeuert.
+469|{0} J. {1} M.
+470|💸 Pleite
+471|Drei Monate in Folge ohne Geld. Das Unternehmen ist insolvent.
+472|⚔️ Kontrolle verloren
+473|Du hast die Abstimmung verloren. Ein neues Management übernimmt, und du trittst als CEO zurück.
+474|🪑 Als CEO gefeuert
+475|Dein Anteil fiel unter 10 % und der Vorstand hat dich entlassen. Die Firma bleibt, du gehst.
+476|🤝 Erfolgreicher Exit
+477|Du hast die Firma verkauft und {0} kassiert. Bereit für die nächste Gründung?
+478|👑 Chaebol erreicht!
+479|Firmenwert über {0}! {1} ist über {2} hinausgewachsen und zu einem weltbekannten Konzern geworden.
+480|Du hast über 5 Jahre durchgehalten. Nur 36,5 % der neuen Firmen in Korea schaffen das.
+481|Du hast {0} durchgehalten. Etwa {1} % der neuen Firmen in Korea halten so lange.
+482|<p>{0}</p>{1}<div class="kv"><span class="muted">Amtszeit</span><b>{2}</b><span class="muted">Höchster Wert</span><b>{3}</b><span class="muted">Mitarbeitende am Ende</span><b>{4}</b><span class="muted">Wert deines Anteils</span><b>{5}</b></div>
+483|📣 Ergebnis teilen
+484|Weiter führen
+485|Neue Firma gründen
+486|Autosave
+487|Platz 1
+488|Platz 2
+489|Platz 3
+490|{1}/{0}
+491|<b>📂 Geladen</b><br>{0} · {1}
+492|☁️ Fortsetzen
+493|<p>In deinem Konto ist ein Spielstand gespeichert.</p><div class="kv"><span class="muted">Firma</span><b>{0}</b><span class="muted">Fortschritt</span><b>{1} · {2}</b><span class="muted">Wert</span><b>{3}</b><span class="muted">Gespeichert</span><b>{4}</b></div>{5}
+494|<p class="muted" style="font-size:12px">Neuer als das Spiel auf diesem Gerät.</p>
+495|Aktuelles Spiel fortsetzen
+496|Neu starten
+497|gerade eben
+498|vor {0} Min.
+499|vor {0} Std.
+500|💾 Speichern / Laden
+501|<p class="muted" style="margin-top:0;font-size:13px">{0}</p><div class="slots"><p class="muted">Wird geladen…</p></div>
+502|☁️ <b>Cloud-Speicher</b> ist aktiv. Weiterspielen auf jedem Handy oder PC.
+503|💻 Nur in diesem Browser gespeichert. Andere Geräte sehen es nicht.
+504|Schließen
+505|<p class="neg">Spielstände konnten nicht geladen werden. Bitte gleich nochmal versuchen.</p>
+506|<span>{0} · {1} · {2}</span><span class="muted">gespeichert {3}{4}</span>
+507| · beendetes Spiel
+508|<span class="muted">Leer</span>
+509|<button class="btn" data-act="save">Speichern</button>
+510|<button class="btn" data-act="load">Laden</button><button class="btn" data-act="del" aria-label="Löschen">🗑</button>
+511|Überschreiben?
+512|Löschen?
+513|Aktuelles Spiel ersetzen?
+514|<b>💾 In {0} gespeichert</b>
+515|Fehlgeschlagen
+516|Speicher voll. Lösche einen anderen Platz.
+517|Speichern fehlgeschlagen. Bitte gleich nochmal versuchen.
+518|🎲 Zufallsstart
+519|<div class="start-sc sc-{0}"><b>{1}</b><span class="badge">Schwierigkeit: {2}</span><p>{3}</p></div><p class="muted" style="margin:8px 0 0">Nimm die Firma, die dir das Schicksal gibt, und werde zum Chaebol. Ziel: <b>Firmenwert {4}</b>{5}</p><div class="kv"><span class="muted">Land</span><b>{6} {7}</b><span class="muted">Firma</span><b>{8}</b><span class="muted">Branche</span><b>{9} {10}</b><span class="muted">CEO</span><b>{11}</b><span class="muted">Sitz</span><b>{12} · {13}</b><span class="muted">Werdegang</span><b>{14}<br><span class="muted" style="font-weight:400">{15}</span></b>{16}<span class="muted">Bargeld{17}</span><b>{18}{19}</b><span class="muted">Personal</span><b>{20}</b>{21}</div>
+520| <span class="muted">(etwa 100 Billionen ₩)</span>
+521|<span class="muted">Firmenwert</span><b>{0}</b><span class="muted">Monatsumsatz / Gewinn</span><b>{1} / <span class="{2}">{3}</span></b>
+522| / Schulden
+523|<span class="muted">Dein Anteil</span><b class="{0}">{1}%{2}</b><span class="muted">Produkte</span><b>{3} · im Schnitt {4} Mon. alt</b>
+524| (unter 10 % wirst du gefeuert)
+525|🚀 Mit dieser Firma starten
+526|🏢 {1} hat in einem kleinen Büro in {0} eröffnet.
+527|💡 Launche ein Produkt für den ersten Umsatz. Die Zeit läuft wochenweise, abgerechnet wird monatlich. ⏸ pausiert.
+528|📈 Du bist jetzt CEO von {0}. Ein Hit hält die Firma auf Kurs, aber das Büro ist bald voll.
+529|💡 Für weiteres Wachstum: Personal, Umzug und Folgeprodukte im Blick behalten.
+530|🏢 Du übernimmst den Mittelständler {0}. Noch profitabel, aber die Hauptprodukte altern.
+531|⚠️ 18 Monate ohne neues Produkt und Stillstand frisst deine Marke. Produkte verlieren jeden Monat an Wettbewerbsfähigkeit.
+532|👔 Du hast {0} von deinem Vater geerbt. Die Firma macht schon jeden Monat Verlust.
+533|⚠️ Riesige Lohnkosten, alte Produkte, viele Schulden. Entscheide, was zuerst kommt: Umstrukturierung, neue Produkte oder Schuldenabbau. Unter 10 % Anteil wirst du gefeuert.
+534|🎲 Neu ziehen
+535|<text x="320" y="{0}" text-anchor="middle" font-size="9" fill="var(--muted)">Coworking {1}</text>
+536|<text x="246" y="{0}" text-anchor="end" font-size="9" font-weight="800" fill="var(--accent)">← Unsere Firma</text>
+537|<g class="crowdwarn"><rect x="270" y="{0}" width="100" height="18" rx="9" fill="var(--bad)"/><text x="320" y="{1}" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">😵 Überfüllt!</text></g>
+538|🏢 <b>{0}</b> · <span class="{1}">Personal {2}{3}</span>{4}{5}{6}
+539| · <span class="neg">Umzug nötig!</span>
+540| · <span class="warn">Effizienz {0} %</span>
+541| · <span class="neg">📉 -{0} % vom Höchststand</span>
+542|<div class="dl">– wie im Vormonat</div>
+543|<div class="dl">– 0 % zum Vormonat</div>
+544|<div class="dl">neu diesen Monat</div>
+545|<div class="dl {0}">{1} {2} <span class="muted">zum Vormonat</span></div>
+546|Zu wenig Geld
+547|Gratis
+548|<span class="muted">ab nächstem Abschluss erfasst</span>
+549|<span class="pos">Neu</span>
+550|🌱 Frisch gelauncht
+551|🍂 Rückläufig
+552|🔥 Verkauft sich
+553|<div class="prod2"><div class="p-top"><span class="p-name">{0}{1}<b>{2}</b></span><span class="p-rev">{3}<small> /Monat</small></span></div><div class="p-sub"><span class="muted">{4} · {5} Mon. · Qualität {6}{7}</span><span class="p-right">{8}<button class="btn p-del" data-pi="{9}" {10}>Einstellen</button></span></div><div class="bar" style="grid-template-columns:1fr 40px"><div class="track"><div class="fill" style="width:{11}%"></div></div><span class="num">{12}%</span></div></div>
+554|<div class="p-total"><span class="muted">Produktumsatz gesamt</span><b>{0} /Monat</b></div>
+555|<p class="muted" style="margin:0">Noch keine Produkte gelauncht.</p>
+556|<div class="rv-top"><span class="rv-rank">{0}</span><b class="rv-name">{1}{2}</b>{3}{4}<span class="rv-val">{5}{6}</span></div><div class="bar" style="grid-template-columns:56px 1fr 44px"><span class="muted">Anteil</span><div class="track"><div class="fill" style="width:{7}%;{8}"></div></div><span class="num">{9}%</span></div>
+557|<span class="badge">Branchenurgestein</span>
+558|ca.
+559|<div class="rv-info">CEO {0} · Technik <b>{1}</b> (wir {2}) · Marke <b>{3}</b> (wir {4})<br>Strategie: {5} · Flaggschiff „{6}“</div>
+560|<div class="rv-info muted">🔒 Details nach einer „Konkurrenzanalyse“</div>
+561|<div class="rv">{0}{1}<button class="btn rv-buy" data-i="{2}" {3}>🤝 Übernahme prüfen · ca. {4}</button></div>
+562|<header class="top"><div><div class="co-name">{0} {1} {2}<span class="badge">{3}</span>{4}</div><div class="co-sub">{5} · CEO {6} ({7}) · {8} · Markt: {9}</div></div><div style="text-align:right"><div class="date">{11}/{10} · KW{12}</div><div style="display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap;margin-top:4px"><button class="btn hb" id="helpbtn" aria-label="Anleitung">❓</button><button class="btn hb" id="fbbtn" aria-label="Feedback">💬</button><button class="btn hb bgm-ic" id="bgmbtn" aria-label="Musik an/aus">{13}</button><button class="btn hb" id="setbtn" aria-label="Einstellungen">⚙️</button>{14}<button class="btn hb" id="savebtn">{15} Speichern</button><button class="btn hb" id="newbtn">🎲 Neues Spiel</button></div></div></header>
+563|<span class="badge">Börsennotiert</span>
+564|<button class="btn hb" id="curbtn" aria-label="Währung wechseln" title="Währung wechseln">{0}</button>
+565|<div class="card statcard sumbar" id="sumbar" role="button" tabindex="0" aria-label="Firmendetails"><div class="sb-row">{0}{1}{2}<button class="btn sb-more" tabindex="-1">📊<span> Zahlen</span></button></div><div class="sb-bars">{3}{4}{5}</div></div>
+566|Firmenwert
+567|Bargeld
+568|Monatsgewinn
+569|<b>🔬 Technikstufe aufgestiegen!</b><br>„{0}“ erreicht
+570|Technik · {0}
+571|Marke
+572|Moral
+573|<div class="card"><h3><span>Aktionen diesen Monat</span><span class="ap">{0}</span></h3><div class="actions">{1}</div><div class="fin"><button class="btn" id="borrow" {2}>🏦 Kredit {3}</button><button class="btn" id="repay" {4}>Tilgen {5}</button><span class="muted" style="align-self:center;font-size:12px">Kredite und Tilgung kosten keine Aktion</span></div></div><div class="card report {6}"><h3>Monatsbericht</h3><ul>{7}</ul></div>{8}
+574|kein Kreditrahmen
+575|<li class="muted">Wähle Aktionen, während die Zeit läuft; abgerechnet wird monatlich. Popups pausieren das Spiel.</li>
+576|<div class="card"><h3><span>📊 Firmenzahlen</span><span class="muted" style="font-weight:400">zum Vormonat</span></h3><div class="stats">{0}{1}{2}{3}{4}{5}{6}{7}{8}</div></div><div class="card"><h3><span>Firmenwert</span><span class="muted" style="font-weight:400">Höchststand {9}</span></h3><canvas id="chart"></canvas></div>
+577|Schulden
+578|Monatsumsatz
+579|Personal
+580|Dein Anteil
+581|Wert deines Anteils
+582|Kapazität / Nachfrage
+583|<div class="card"><h3><span>⚔️ Konkurrenzanalyse</span><span class="muted" style="font-weight:400">Platz {0} · Wettbewerb <b class="{1}">Nachfrage ×{2}</b></span></h3>{3}<p class="muted" style="margin:8px 0 0;font-size:12px">Der Marktanteil hängt von der Qualität deines Flaggschiffs und deiner Marke ab. Je stärker du als die Konkurrenz bist, desto mehr Nachfrage. Eine Übernahme kostet 1 Aktion.</p></div>
+584|<div class="card"><h3><span>Produkte ({0}/{1})</span><span class="muted" style="font-weight:400">{2}</span></h3>{3}</div><div class="card"><h3><span>💡 IP-Portfolio ({4}/4)</span><span class="muted" style="font-weight:400">Lizenzen {5}/Monat</span></h3>{6}</div>
+585|Als {0}: {1} Plätze
+586|Maximale Plätze
+587|<div class="prod"><span><b>{0}</b> <span class="muted">{1}</span><br><span class="ipdots">{2}</span></span><span style="text-align:right">{3}/Monat{4}</span></div>
+588|<br><span class="muted" style="font-size:12px">Als Nächstes: {0}</span>
+589|<br><span class="pos" style="font-size:12px">Endstufe</span>
+590|<p class="muted" style="margin:0">Schaffe mit „IP-Geschäft“ eigene IP wie Patente oder Figuren. Je weiter du sie ausbaust – Merch, Webtoons, Filme –, desto höher die Lizenzgebühren.</p>
+591|<div class="card log"><h3>Firmenchronik</h3><ul>{0}</ul></div>
+592|Wirklich einstellen?
+593|<b>₩ Anzeige in KRW</b>
+594|<b>{0} Anzeige in {1}</b>
+595|🎲 Neues Spiel
+596|<p>Die aktuelle Firma (<b>{0}</b>) aufgeben und neu gründen? Der Fortschritt geht verloren.</p><p class="muted" style="font-size:12px">Um dieses Spiel zu behalten, speichere es vorher unter 💾 Speichern auf einem anderen Platz.</p>
+597|Neu gründen
+598|Das Diagramm erscheint nach ein paar Monaten
+599|Basis
+600|Fortgeschritten
+601|Führend
+602|Spitze
+603|Weltklasse
+604|Unerreicht
+605|<button class="btn primary t-cont" id="t-cont"><span>▶ Fortsetzen<small>{0} · {2}/{1} · {3}</small></span><span style="font-size:14px">{4}</span></button>
+606|<div class="t-in">{0}<div class="t-kicker">GLOBALE WIRTSCHAFTSSIMULATION</div><h1 class="t-name">Bis zum <span>Chaebol</span></h1><p class="t-sub">Eine Firma, vom Schicksal gewählt.<br>Vom Start-up um die Ecke in Korea, den USA, Japan, China, Deutschland oder Indien<br>zum Konzern im Wert von 100 Billionen ₩.</p><div class="t-goal">🏆 Ziel <b>100 Billionen ₩ Firmenwert</b></div><div class="t-btns">{1}<button class="btn {2}" id="t-new">🎲 Firma ziehen</button><button class="btn" id="t-how">📖 Anleitung</button><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn" id="t-fb">💬 Feedback</button><button class="btn" id="t-set">⚙️ Einstellungen</button></div></div><div class="t-feat"><div><b>🌍</b>6 Länder × 7 Branchen<br>× 4 Starts</div><div><b>⚔️</b>Konkurrenz · M&amp;A<br>Machtkämpfe</div><div><b>🚨</b>{3}<br>Zufallsereignisse</div></div><div class="t-foot">Der Fortschritt wird automatisch gespeichert · 🎵 Tippe auf den Bildschirm für Musik</div></div>
+607|Firma ziehen
+608|<p><b>{0}</b> geht verloren. Neu starten?</p>
+609|Neu starten
+610|🎯 Worum geht’s?
+611|<p class="lead">Du wirst CEO einer Firma in einem zufälligen Land – Korea, USA, Japan, China, Deutschland oder Indien – und willst <b>100 Billionen ₩ Firmenwert</b> erreichen. Geld wird in der Landeswährung angezeigt; mit der <b>₩</b>-Taste oben rechts wechselst du zu KRW.</p><ul><li><b>🎲</b><span><b>Jeder Start ist anders.</b> {0} Branchen und 4 Startsituationen.</span></li><li><b>🌱</b><span><b>Gründung aus dem Nichts</b> · <b>Erfolgreiches Startup</b> · <b>Mittelständler</b> · <b>Geerbter Konzern</b> – auch große Firmen gehen unter, wenn du nichts tust.</span></li><li><b>👔</b><span>Der Werdegang deines CEOs bringt einen Bonus.</span></li></ul>
+612|📅 So läuft ein Monat
+613|<ul><li><b>1</b><span><b>Aktionen wählen</b> – 2–4 pro Monat, mehr, je größer du wirst. (die ●-Punkte)</span></li><li><b>2</b><span><b>Die Zeit läuft von selbst</b> – Woche für Woche; nach 4 Wochen endet der Monat. Unten: ⏸ Pause · Tempo (1x/2x/4x) · ⏭ nächste Woche.</span></li><li><b>3</b><span><b>Cashflow</b> – Gewinn (oder Verlust) kommt wöchentlich und wird am Monatsende genau abgerechnet. Mit den Tabs unten (Firma · Zahlen · Konkurrenz · Produkte · Chronik) wechselst du die Ansicht.</span></li><li><b>4</b><span><b>Zufallsereignisse</b> – können jede Woche passieren und pausieren das Spiel. Deine Wahl ändert das Ergebnis.</span></li></ul><p class="muted" style="font-size:12px;margin:8px 0 0">Kredite, Produkte einstellen und Aktien kaufen kosten keine Aktion.</p>
+614|🛠️ Was du tun kannst
+615|<ul><li><b>🚀</b><span><b>Produkt launchen</b> – deine Umsatzquelle. Produkte altern jeden Monat; sind alle Plätze voll, stellst du eins ein.</span></li><li><b>🔬</b><span><b>F&amp;E</b> – mehr Technik → bessere Produkte. Manchmal scheitert es, manchmal gibt es einen Durchbruch.</span></li><li><b>📣</b><span><b>Marketing · 🌏 Expansion</b> – Marke und Nachfrage stärken, dann ins Ausland.</span></li><li><b>👥</b><span><b>Einstellen · ☕ Benefits · 🏢 Umzug</b> – Kapazität und Moral. Ein enges Büro senkt die Effizienz.</span></li><li><b>💡</b><span><b>IP-Geschäft</b> – monatliche Lizenzgebühren aus Patenten und Figuren.</span></li><li><b>💰</b><span><b>Finanzierung · 🔔 Börsengang</b> – viel Geld, aber <b>dein Anteil schrumpft.</b></span></li><li><b>⚔️</b><span><b>Konkurrenz</b> – analysieren (alle 6 Monate) oder mit Geld bzw. Aktien kaufen und Produkte und Technik übernehmen.</span></li></ul>
+616|📈 Wachstumsstufen
+617|<p class="lead">Steigt der Firmenwert, steigst du eine Stufe auf und bekommst mehr Aktionen pro Monat und mehr Produktplätze.</p><div class="ladder">{0}</div>
+618|+
+619|Start
+620|⚠️ Game Over, wenn…
+621|<ul><li><b>💸</b><span><b>Pleite</b> – 3 Monate mit negativem Kontostand und es ist vorbei. Überbrücke mit Krediten oder Finanzierung.</span></li><li><b>🪑</b><span><b>Gefeuert</b> – drücken Finanzierungsrunden deinen Anteil unter 10 %, fliegst du raus.</span></li><li><b>🗳️</b><span><b>Kontrolle verloren</b> – nach dem Börsengang können Angreifer Aktien sammeln und eine Abstimmung gewinnen. Kauf Aktien zur Abwehr.</span></li><li><b>📉</b><span><b>Niedergang</b> – alternde Produkte, über 18 Monate ohne Launch oder zu viel Personal (Konzernkrankheit) ziehen dich langsam runter.</span></li></ul>
+622|💡 Tipps für den Start
+623|<ul><li><b>①</b><span>Starte mit <b>Produkt launchen → F&amp;E</b>, um Umsatz zu machen.</span></li><li><b>②</b><span>Liegt <b>Kapazität / Nachfrage</b> über 100 %, stell ein; ist das Büro voll, zieh um.</span></li><li><b>③</b><span>Nimm Kredite oder Kapital auf, bevor das Geld ausgeht – aber schütze deinen Anteil.</span></li><li><b>④</b><span>Prüf am <b>▲▼ zum Vormonat</b> unter jeder Zahl, ob es aufwärts geht.</span></li><li><b>⑤</b><span>Oben rechts: <b>❓</b> Hilfe · <b>💬</b> Feedback · <b>🔊</b> Musik · <b>⚙️</b> Design, Sprache, neues Spiel.</span></li></ul>
+624|🎲 Firma ziehen
+625|Verstanden!
+626|Weiter ▶
+627|◀ Zurück
+628|Überspringen
+629|Bug
+630|Idee
+631|Balance
+632|Sonstiges
+633|💬 Feedback senden
+634|<p class="muted" style="margin:0 0 10px;font-size:13px">Bugs, Ideen, zu leicht oder zu schwer… alles hilft. Dein Feedback fließt ins nächste Update.</p><div class="fb-lbl">Art</div><div class="fb-types">{0}</div><div class="fb-lbl">Wie war das Spiel?</div><div class="fb-stars">{1}</div><div class="fb-lbl">Kommentar</div><textarea class="fb-ta" maxlength="2000" placeholder="z. B. Als Mittelständler bin ich nach 3 Jahren pleite. / Ich möchte Produkte selbst benennen.">{2}</textarea><div class="fb-lbl" style="margin-top:10px">Spitzname <span style="font-weight:400">(optional)</span></div><input class="fb-ta fb-nick" style="min-height:0;height:40px" maxlength="30" placeholder="Hinterlasse einen Spitznamen, wenn du eine Antwort willst" value="{3}"><label class="fb-chk"><input type="checkbox" {4}> Spielstand (Branche, Stufe, Datum) und Geräteinfo mitsenden – hilft beim Bugfixen</label><p class="muted" style="font-size:11px;margin:10px 0 0">„Senden“ öffnet ein bereits ausgefülltes Google-Formular. Dort nur noch <b>Absenden</b> drücken. Kein Login nötig.</p>
+635|<button type="button" data-n="{0}" class="{1}" aria-label="{2} Sterne">⭐</button>
+636|📮 Senden
+637|<b>Bitte schreib einen Kommentar</b>
+638|**Art:** {0} {1}⏎**Bewertung:** {2}⏎⏎{3}⏎
+639|{0} · {1} · {3}/{2} (Monat {4}) · {5} · Wert {6} · {7} Personal
+640|vor Spielbeginn
+641|⏎---⏎<sub>Spiel: {0}<br>Gerät: {1}×{2} · {3}</sub>⏎
+642|<b>📮 Google-Formular geöffnet</b><br>Schon ausgefüllt. Nur noch <b>Absenden</b> drücken
+643|<b>📊 Abschluss Monat {0}</b><br>Gewinn {1}
+644|<div class="nb-in"><div class="nb-info"><b>{1}/{0} · KW{2}</b><div class="nb-weeks">{3}</div><span>Bargeld <b class="{4}">{5}</b></span></div><button class="btn primary nb-play {6}" id="next" {7}><span class="wk-fill"></span><span>{8}</span><span class="ap">{9}</span></button><button class="btn nb-sm" id="spd" title="Tempo">{10}</button><button class="btn nb-sm" id="skip" title="Nächste Woche">⏭</button></div><nav class="tabs">{11}</nav>
+645|⏸ Pause
+646|▶ Weiter
+647|Firma
+648|Zahlen
+649|Konkurrenz
+650|Produkte
+651|Chronik
+652|📊 Firmenzahlen
+653|<div class="stats">{0}{1}{2}{3}{4}{5}{6}{7}{8}</div><div class="bars">{9}{10}{11}</div><h3 style="margin:14px 0 6px;font-size:14px;display:flex;justify-content:space-between"><span>Firmenwert</span><span class="muted" style="font-weight:400">Höchststand {12}</span></h3><canvas id="chart"></canvas><p class="muted" style="font-size:11px;margin:8px 0 0">Solange dieses Fenster offen ist, steht die Zeit still.</p>
+654|⚙️ Einstellungen
+655|<div class="set-row"><div class="lbl">🌐 Sprache</div><div class="seg" id="set-lang" style="grid-template-columns:repeat(4,1fr)">{0}</div></div><div class="set-row"><div class="lbl">🎨 Design</div><div class="seg" id="set-theme">{1}</div></div><div class="set-row"><div class="lbl">🎵 Musik</div><div class="seg" id="set-bgm" style="grid-template-columns:repeat(2,1fr)"><button data-o="1" class="{2}">🔊 An</button><button data-o="0" class="{3}">🔇 Aus</button></div><div class="vol"><span>🔈</span><input type="range" min="0" max="100" value="{4}" aria-label="Lautstärke"><span>🔊</span></div></div><div class="set-row"><div class="lbl">💱 Währung</div><div class="seg" id="set-cur" style="grid-template-columns:repeat(2,1fr)"><button data-o="0" class="{5}">🌍 Landeswährung</button><button data-o="1" class="{6}">₩ KRW</button></div></div><div class="set-row"><div class="lbl">📣 Teilen</div><button class="btn" id="set-share" style="width:100%">{7}</button></div><div class="set-row"><div class="lbl">📚 Sammlung</div><button class="btn" id="set-facts" style="width:100%">📊 Echte Statistiken ({8}/{9})</button></div>{10}<p class="muted" style="font-size:11px;margin:0">Die Musik wird düsterer, wenn deine Firma Verluste macht.</p>
+656|🌓 Auto
+657|☀️ Hell
+658|🌙 Dunkel
+659|📣 Mit meiner Firma angeben
+660|📣 Freunden vom Spiel erzählen
+661|<div class="set-row"><div class="lbl">🏢 Spiel</div><button class="btn" id="set-new" style="width:100%">🎲 Mit neuer Firma neu starten</button></div>
+662|Eine Wirtschaftssimulation, in der du ein Start-up um die Ecke zum Konzern im Wert von 100 Billionen ₩ machst – „Bis zum Chaebol“ 🏢⏎6 Länder · 7 Branchen · über 100 Zufallsereignisse, von Ransomware bis Machtkampf. Ohne Installation, sofort spielen!
+663|Neues Spiel
+664|<p>Die aktuelle Firma aufgeben und neu gründen? Der Fortschritt geht verloren.</p>
+665|<div class="fact"><div class="fh">📊 In der echten Welt</div><span class="big">{0}</span>{1}<span class="src">Quelle: {2}</span></div>
+666|Weiter
+667|📚 Echte Statistiken
+668|<p class="muted" style="margin:0 0 6px;font-size:13px">Jede überstandene Krise und jeder Meilenstein schaltet eine frei. ({0}/{1})</p><ul class="fact-list">{2}</ul>
+669|<li><b>{0}</b> · <b style="color:var(--accent)">{1}</b><br>{2}<br><span class="muted" style="font-size:11px">Quelle: {3}</span></li>
+670|Bis zum Chaebol
+671|<b>📋 Kopiert</b><br>In einen Chat oder Post einfügen
+672|📣 Teilen
+673|<p class="muted" style="font-size:13px;margin:0 0 8px">Halte den Text unten gedrückt, um ihn zu kopieren.</p><textarea class="fb-ta" readonly style="min-height:120px">{0}</textarea>
+674|{0} {1} · „{2}“
+675|Ich habe {0} in {1} zu einem Konzern im Wert von 100 Billionen ₩ gemacht! 👑
+676|{0} hat {1} durchgehalten und ist dann pleitegegangen… 💸 (Höchstwert {2})
+677|Ich war CEO von {0}, habe aber zu viele Aktien verkauft und wurde nach {1} gefeuert… 🪑
+678|{0} hat nach {1} die Kontrolle durch eine feindliche Übernahme verloren… ⚔️
+679|Ich habe {0} nach {1} verkauft und Kasse gemacht! 🤝
+680|Ich führe {0} seit {1}. Aktueller Wert: {2}!
+681|{0}⏎„Bis zum Chaebol“ – eine Wirtschaftssimulation, in der du eine Zufallsfirma bis zum Chaebol bringst. Wie schnell schaffst du es? 🏢

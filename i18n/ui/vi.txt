@@ -1,0 +1,677 @@
+5|Hàn Quốc
+6|Ngân hàng Trung ương Hàn Quốc
+7|KOSDAQ
+8|niêm yết KOSDAQ
+9|Mỹ
+10|USD
+11|Fed
+12|NASDAQ
+13|niêm yết NASDAQ
+14|Thung lũng Silicon
+15|New York
+16|Austin
+17|Seattle
+18|Boston
+19|Chicago
+20|Miami
+21|Khu phố
+22|Toàn bang
+23|Toàn nước Mỹ
+24|Bắc Mỹ
+25|Toàn cầu
+26|Nhật Bản
+27|JPY
+28|Ngân hàng Nhật Bản
+29|Sàn Tokyo (Growth)
+30|niêm yết sàn Tokyo
+31|Shibuya, Tokyo
+32|Osaka
+33|Kyoto
+34|Fukuoka
+35|Nagoya
+36|Sapporo
+37|Yokohama
+38|Sendai
+39|Vùng Kanto
+40|Toàn Nhật Bản
+41|Châu Á
+42|Trung Quốc
+43|CNY
+44|Ngân hàng Nhân dân Trung Quốc
+45|Sàn STAR Thượng Hải
+46|niêm yết sàn STAR
+47|Trung Quan Thôn, Bắc Kinh
+48|Thượng Hải
+49|Thâm Quyến
+50|Hàng Châu
+51|Quảng Châu
+52|Thành Đô
+53|Tô Châu
+54|Vũ Hán
+55|Toàn tỉnh
+56|Toàn Trung Quốc
+57|Đức
+58|EUR
+59|Ngân hàng Trung ương châu Âu
+60|Sàn Frankfurt
+61|niêm yết sàn Frankfurt
+62|Berlin
+63|München
+64|Hamburg
+65|Frankfurt
+66|Stuttgart
+67|Köln
+68|Leipzig
+69|Dresden
+70|Toàn nước Đức
+71|Châu Âu
+72|Ấn Độ
+73|INR
+74|Ngân hàng Dự trữ Ấn Độ
+75|Sàn NSE Ấn Độ
+76|niêm yết NSE
+77|Bengaluru
+78|Mumbai
+79|Delhi NCR
+80|Hyderabad
+81|Pune
+82|Chennai
+83|Kolkata
+84|Ahmedabad
+85|Toàn Ấn Độ
+86|Nam Á
+87|CNTT / Nền tảng
+88|Ứng dụng
+89|Nhắn tin
+90|Đám mây
+91|Ví điện tử
+92|Bản đồ
+93|Mua sắm online
+94|Trợ lý AI
+95|App giao đồ ăn
+96|Game
+97|RPG di động
+98|Game idle
+99|Battle royale
+100|Game nhịp điệu
+101|Game giải đố
+102|RPG gacha
+103|Ẩm thực
+104|Mì ramen
+105|Bộ tteokbokki
+106|Kim chi
+107|Chuỗi gà rán
+108|Cơm hộp cửa hàng
+109|Rong biển cao cấp
+110|Trà sữa trân châu
+111|Làm đẹp & mỹ phẩm
+112|Phấn nước cushion
+113|Kem chống nắng
+114|Mặt nạ giấy
+115|Tinh chất ampoule
+116|Son tint
+117|Toner thuần chay
+118|Công nghệ sinh học
+119|Bộ xét nghiệm
+120|Thuốc mới
+121|Thuốc biosimilar
+122|Vắc-xin
+123|Thực phẩm chức năng
+124|Liệu pháp gen
+125|Giải trí
+126|Nhóm nhạc nam
+127|Nhóm nhạc nữ
+128|Web drama
+129|Chương trình tạp kỹ
+130|Ca sĩ solo
+131|IP webtoon
+132|Sản xuất / Chip
+133|Chip nhớ
+134|Pin
+135|Linh kiện xe điện
+136|Màn hình
+137|Robot công nghiệp
+138|Mô-đun cảm biến
+139|Co-working
+140|Văn phòng nhỏ
+141|Một tầng văn phòng
+142|Tòa nhà vừa
+143|Trụ sở riêng
+144|Tòa tháp biểu tượng
+145|Khuôn viên toàn cầu
+146|Bằng sáng chế gốc
+147|Cấp phép công nghệ
+148|SDK & API mở
+149|Hệ sinh thái nền tảng
+150|Công nghệ chuẩn toàn cầu
+151|IP nhân vật
+152|Hàng lưu niệm
+153|Webtoon
+154|Hoạt hình
+155|Phim điện ảnh
+156|Công viên giải trí
+157|Bằng sáng chế công thức bí mật
+158|Hợp tác nhân vật
+159|Cấp phép nước ngoài
+160|Thương hiệu món ăn sẵn
+161|Nhượng quyền toàn cầu
+162|Bằng sáng chế nguyên liệu riêng
+163|Phiên bản hợp tác
+164|Cấp phép ODM
+165|Liên kết thương hiệu ngoại
+166|Thương hiệu làm đẹp toàn cầu
+167|Bằng sáng chế hợp chất
+168|Chuyển giao công nghệ
+169|Đồng phát triển
+170|Bản quyền toàn cầu
+171|Công nghệ nền tảng
+172|IP nghệ sĩ
+173|World tour
+174|Bằng sáng chế cốt lõi
+175|Bằng sáng chế thiết yếu
+176|Cấp phép chéo
+177|Chuẩn toàn cầu
+178|Địa phương
+179|Vùng thủ đô Seoul
+180|Toàn quốc
+181|Startup
+182|Công ty mới nổi
+183|Doanh nghiệp nhỏ
+184|Doanh nghiệp vừa
+185|Kỳ lân
+186|Tập đoàn lớn
+187|Chaebol
+188|Hạt giống
+189|Series A
+190|Series B
+191|Series C
+192|Series D
+193|Pre-IPO
+194|Gangnam, Seoul
+195|Pangyo
+196|Seongsu-dong
+197|Haeundae, Busan
+198|Yuseong, Daejeon
+199|Gwangju
+200|Daegu
+201|Songdo, Incheon
+202|Jeju
+203|Euljiro, Seoul
+204|Bundang
+205|Changwon
+206|Kỹ sư xuất sắc
+207|Công nghệ +15
+208|Cựu marketer tập đoàn lớn
+209|Thương hiệu +12
+210|Con nhà giàu
+211|Vốn ban đầu ×2
+212|Tự lập từ hai bàn tay trắng
+213|Tinh thần +20, vốn ban đầu -30%
+214|Nhà sáng lập nhiều lần
+215|Công nghệ & thương hiệu +6, gọi vốn +25%
+216|Cựu YouTuber
+217|Thương hiệu +20, công nghệ -5
+218|Du học về
+219|Chi phí mở rộng -30%
+220|Cựu công chức
+221|Nhiều sự kiện hỗ trợ của chính phủ hơn
+222|{1}/{0} · Tuần {2}
+223|🌱 Từ số 0
+224|Bình thường
+225|Một chỗ nhỏ trong co-working, chưa có sản phẩm nào. Mọi thứ bắt đầu từ con số 0.
+226|📈 Startup đang lên
+227|Dễ
+228|Tăng trưởng nhanh nhờ một sản phẩm hit. Nhà đầu tư đã nắm cổ phần và văn phòng đang chật dần.
+229|🏢 Doanh nghiệp vừa lâu năm
+230|Đánh lừa
+231|Doanh thu ổn định và hàng trăm nhân viên. Nhưng sản phẩm cũ dần và cạnh tranh gắt gao. Không làm gì thì sẽ sụp từ từ.
+232|👔 Tập đoàn thừa kế
+233|Khó
+234|Bạn thừa kế tập đoàn cha gây dựng. Rất lớn, nhưng sản phẩm cũ, chi phí nhân sự cao, nợ nhiều và cổ phần của bạn ít. Đã lỗ mỗi tháng.
+235| (đời thứ 2)
+236|📈 «{0}» {1} → {2} đã mở rộng ({3})
+237|💡 Đã mở rộng IP «{0}» thành {1}! Tiền bản quyền khoảng {2}/tháng, thương hiệu +3 <span class="muted">(-{3})</span>
+238|<b>💡 Mở rộng IP!</b><br>«{0}» {1}
+239|✨ Tạo IP mới: {0} ({1})
+240|💡 IP mới «{0}» {1}! Tiền bản quyền khoảng {2}/tháng <span class="muted">(-{3})</span>
+241|<b>✨ IP mới!</b><br>«{0}»
+242|<li><b>{0}</b> · {1} · {2}/tháng</li>
+243|<li class="muted">Chưa có IP nào.</li>
+244|💡 Kinh doanh IP
+245|<p class="muted" style="margin-top:0">IP mang lại tiền bản quyền mỗi tháng, càng nhiều khi thị trường càng lớn và thương hiệu càng mạnh. Mở rộng càng nhiều thì thu nhập càng tăng và càng có lợi trong các vụ kiện ăn cắp ý tưởng.</p><ul style="padding-left:18px">{0}</ul>{1}
+246|<p class="neg" style="font-size:12px">Không đủ tiền cho một số lựa chọn.</p>
+247|Hủy
+248|Ra mắt sản phẩm
+249|Tỉ lệ hit {0}% · Ô {1}/{2}{3}
+250| (chọn một để ngừng bán)
+251|R&D
+252|Thành công {0}% · Thất bại {1}% (giảm công nghệ) · Đột phá 4%
+253|Marketing
+254|Thương hiệu tăng → nhu cầu tăng
+255|Thương hiệu tối đa
+256|Đã chạy chiến dịch quảng cáo. Thương hiệu +{0}
+257|Tuyển dụng
+258|Tuyển {0} người → tăng năng lực
+259|{0} người mới gia nhập! (tổng {1})
+260|Tăng phúc lợi
+261|Nâng tinh thần
+262|Tinh thần tối đa
+263|Đã tăng phúc lợi. Tinh thần +{0}
+264|Mở rộng thị trường
+265|Vào {0} (nhu cầu ×{1})
+266|Đã toàn cầu
+267|Thị trường tối đa
+268|Cần thương hiệu {0}
+269|Đã vào thị trường {0}! 🌏
+270|Vòng gọi vốn
+271|Gọi vốn đầu tư
+272|Huy động 20% giá trị · cổ phần -20%
+273|Sau {0} tháng
+274|Sau khi ra mắt sản phẩm
+275|Bổ sung
+276| (gọi vốn)
+277|Hoàn tất {0}! Huy động {1} (cổ phần của bạn {2}%)
+278|IPO
+279|{0} · huy động 25% giá trị
+280|Đã niêm yết
+281|Cần giá trị ₩100 tỷ
+282|🔔 {0} thành công! Huy động {1} qua IPO. Thương hiệu +8
+283|Chuyển văn phòng
+284|{0} (sức chứa {1} · thuê {2}/tháng)
+285|không giới hạn
+286| người
+287|Trụ sở tốt nhất
+288|Trụ sở tối đa
+289|Đã chuyển đến {0}! Tinh thần +10, thương hiệu +3
+290|Kinh doanh IP
+291|{0} IP · bản quyền {1}/tháng
+292|Tạo và mở rộng IP như bằng sáng chế, nhân vật
+293|Mọi IP đã tối đa
+294|Phân tích đối thủ
+295|Báo cáo đang hiệu lực (còn {0} tháng)
+296|Xem chi tiết đối thủ 6 tháng · công nghệ +2
+297|Không có đối thủ
+298|Lại sau {0} tháng
+299|Công ty tư vấn đã phân tích đối thủ. Benchmark giúp công nghệ +2
+300|Tái cơ cấu
+301|Cắt giảm {0} người · giảm tinh thần và thương hiệu
+302|Thiếu nhân sự
+303|Tái cơ cấu cắt {0} vị trí. Tinh thần -18, thương hiệu -4
+304|🧪 Nghiên cứu thất bại… {0}. Công nghệ {1}
+305|Nguyên mẫu phát nổ
+306|Một nhà nghiên cứu chủ chốt mang dự án ra đi
+307|Dữ liệu thử nghiệm mấy tháng hóa ra sai
+308|Đi sai hướng nên phải bỏ toàn bộ nghiên cứu
+309|🔬 Đã nghiên cứu nhưng chưa có kết quả đáng kể. Công nghệ +0
+310|🔬 R&D có tiến triển! Công nghệ +{0}
+311|✨ Nghiên cứu thành công! Có được công nghệ cốt lõi. Công nghệ +{0}
+312|<b>✨ Nghiên cứu thành công!</b><br>Công nghệ +{0}
+313|💥 Đột phá! Một phát minh làm rung chuyển ngành. Công nghệ +{0}{1}
+314|, sức cạnh tranh «{0}» +10%
+315|<b>💥 Đột phá!</b><br>Công nghệ +{0}
+316|🎯 Đại chúng
+317|Chất lượng ổn · rẻ hơn 20%
+318|💎 Cao cấp
+319|Chất lượng +20% · đắt hơn 60%
+320|🔥 Theo trend
+321|+40% khi ra mắt · nhưng hạ nhiệt nhanh gấp đôi
+322|🛡️ Bán bền
+323|Chất lượng hơi thấp nhưng bán được lâu (cũ đi chậm một nửa)
+324|🧪 Thử nghiệm
+325|Tỉ lệ hit gấp đôi · tỉ lệ thất bại cũng gấp đôi
+326|🔁 Phần tiếp theo
+327|Fan của phần trước: hit ×1,5
+328|🤝 Hợp tác
+329|Cùng một thương hiệu nổi tiếng · thương hiệu +3
+330|{0} × {1} Edition
+331|Cửa hàng tiện lợi
+332|Thương hiệu thời trang
+333|Webtoon hit
+334|Nhân vật
+335|Idol
+336|Đội thể thao
+337| (🗑 đã ngừng «{0}»)
+338|🎉 Siêu hit! Ra mắt «{0}», chất lượng {1}{2}
+339|😓 Ra mắt «{0}» nhưng phản ứng lạnh nhạt… chất lượng {1}{2}
+340|Ra mắt «{0}»! Chất lượng {1}{2}
+341|<b>🔔 {0} thành công!</b><br>Chuông đã vang
+342|🔔 Đạt điều kiện niêm yết
+343|<b>💰 Gọi vốn thành công!</b><br>{0}
+344|<b>🌏 Đã vào {0}!</b>
+345|<b>🏢 Chuyển đến {0}!</b>
+346|🗑 Đã ngừng bán «{0}». (chất lượng {1}, bán {2} tháng)
+347|📦 Ô sản phẩm đã đầy
+348|<p>Để ra mắt sản phẩm mới, bạn phải ngừng bán một sản phẩm hiện có.</p><p class="muted" style="font-size:12px;margin-bottom:0">Chất lượng (sức cạnh tranh) giảm theo thời gian. Danh sách xếp <b>theo chất lượng hiện tại từ thấp đến cao</b>: cái trên cùng nên ngừng trước. Sản phẩm mới sẽ có <b>chất lượng khoảng {0}</b>.</p>
+349|{0}🗑 «{1}» · chất lượng hiện tại {2}{3} · {4}/tháng · {5} tháng{6}
+350|⭐ Gợi ý
+351| (lúc ra mắt {0})
+352|chưa có dữ liệu
+353| · ⚠️ tốt hơn sản phẩm mới
+354|Hủy ra mắt
+355|🚀 Ra mắt gì đây?
+356|<p class="muted" style="font-size:13px;margin:0 0 4px">Đội kế hoạch đề xuất 3 ý tưởng. Chất lượng dự kiến khoảng {0} (tùy concept).</p>
+357| (thiếu tiền)
+358|<b>Không đủ tiền</b>
+359|💡 Đang nghĩ ý tưởng…
+360|✏️ Đang viết kế hoạch…
+361|👩‍💻 Dev đang dốc sức…
+362|🧪 Kiểm tra chất lượng…
+363|📦 Sẵn sàng ra mắt!
+364|🚀 Đang phát triển sản phẩm
+365|<div class="dev"><div class="dev-icon">🛠️</div><div class="dev-step">{0}</div><div class="prog"><div class="prog-fill"></div></div><div class="muted" style="font-size:12px">Chi phí phát triển {1}</div></div>
+366|<div class="reveal {0}"><div class="rv-label">{1}</div><div class="muted" style="font-size:12px">{2}</div><div class="rv-pname">«{3}»</div><div class="rv-q">Chất lượng <span id="qnum">0</span></div><div class="stars">{4}</div>{5}</div>
+367|🎉 Có mùi hit!
+368|😓 Phản ứng lạnh nhạt…
+369|✅ Đã ra mắt
+370|🌟 Ra mắt sản phẩm mới!
+371|🚀 Đã ra mắt sản phẩm
+372|Lần sau sẽ tốt hơn…
+373|Tuyệt!
+374|🏦 Vay ngân hàng {0} (0,6%/tháng)
+375|🏦 Đã trả {0} nợ
+376|📊 Kết thúc tháng {0} — doanh thu {1}{2} · lãi ròng <b class="{3}">{4}</b>
+377| (bản quyền IP {0})
+378|😵 {0} quá chật! ({1}/{2} người) Năng suất giảm, tinh thần -{3}. Cần chuyển văn phòng.
+379|💡 Chưa có sản phẩm. Ra mắt một sản phẩm để bắt đầu có doanh thu.
+380|🔥 Đơn hàng vượt xa năng lực ({0}), ai cũng tăng ca. Hãy tuyển thêm. Tinh thần -3
+381|⚠️ Năng lực không theo kịp nhu cầu.
+382|😞 Tinh thần thấp: {0} người đã nghỉ việc.
+383|🚨 Hết tiền! Trong {0} tháng hãy có lãi trở lại, vay hoặc gọi vốn, nếu không sẽ phá sản.
+384|🥱 Trì trệ: {0} tháng không có sản phẩm mới. Thương hiệu và tinh thần giảm dần mỗi tháng.
+385|🐌 Bệnh doanh nghiệp lớn: {0} nhân viên, hiệu suất {1}%. Càng lớn thì mỗi người làm ra càng ít.
+386|📉 Đang suy thoái! Giá trị thấp hơn đỉnh ({0}) {1}%.
+387|<b>📉 Suy thoái</b><br>Giá trị -{0}% so với đỉnh
+388|🎉 Đã lên {0}! {1} lượt hành động mỗi tháng
+389|<b>🎉 Giờ bạn là {0}!</b><br>{1} lượt hành động mỗi tháng
+390|🦄 Giá trị vượt ₩1 nghìn tỷ! Bạn là kỳ lân.
+391|🦄 Kỳ lân!
+392|🎂 Một năm kinh doanh, và chúng ta vẫn còn sống!
+393|🏅 Trụ được 5 năm!
+394|🏛️ Doanh nghiệp 10 năm
+395|<b>📈 Lần đầu có lãi!</b>
+396|<div class="cal"><div class="cal-head">{0}</div><div class="cal-body"><div class="cal-page new">{1}<small>tháng</small></div><div class="cal-page old">{2}<small>tháng</small></div></div><div class="cal-foot">Đang quyết toán…</div></div>
+397|🎉 Tin vui
+398|🩹 Lần này chưa được, nhưng có thể thử lại
+399|🎉 Vượt qua thử nghiệm lâm sàng!
+400|🩹 Kết quả đáng thất vọng
+401|✅ Quyết định đúng
+402|🩹 Bị thương nhưng vẫn đứng vững
+403|🛡️ Đã vượt khủng hoảng
+404|<div class="news-tag">Tin nóng</div><p>{0}</p>
+405|OK
+406|Mở rộng mạnh, săn người tài
+407|Tập trung R&D, sản phẩm chất lượng
+408|Tăng chậm nhưng chắc
+409|Tập trung quảng cáo & thương hiệu
+410|⚔️ Đối thủ {0} ra mắt sản phẩm «{1}».
+411|⚔️ {0} gọi vốn lớn! Định giá {1}
+412|⚔️ Bê bối chủ sở hữu {0}… thương hiệu và giá trị lao dốc
+413|⚔️ {0} câu mất dev của ta. Công nghệ -3, tinh thần -3
+414|⚔️ {0} tung chiến dịch quảng cáo khổng lồ
+415|💀 Đối thủ {0} đã phá sản.
+416|🆕 Đối thủ mới {0} ({1}) gia nhập thị trường.
+417|, có được IP bằng sáng chế
+418|hoán đổi cổ phần (cổ phần {0}%)
+419|🤝 Mua lại {0} với giá {1}! Tiếp nhận {2} sản phẩm và {3} nhân viên, công nghệ {4}{5}{6}
+420|, ô sản phẩm +1
+421|<b>🤝 Đã mua {0}!</b><br>{1} sản phẩm · doanh thu ước tính +{2}/tháng
+422|🤝 Thương vụ M&A đầu tiên
+423|💵 Mua bằng tiền mặt ({0})
+424|📈 Mua bằng hoán đổi cổ phần (cổ phần của bạn {0}% → {1}%)
+425|🤝 Xem xét mua lại
+426|<p><b>{0}</b> · giá trị khoảng {1}</p><div class="kv"><span class="muted">Sản phẩm</span><b>{2}</b><span class="muted">Doanh thu tháng ước tính</span><b class="pos">+{3}</b><span class="muted">Công nghệ</span><b>{4} → {5}</b><span class="muted">Thương hiệu</span><b>+5</b><span class="muted">Nhân sự tiếp nhận</span><b>+{6} <span class="muted" style="font-weight:400">(tăng lương)</span></b>{7}{8}<span class="muted">Cạnh tranh</span><b>Bớt một đối thủ, thị phần tăng</b></div>{9}{10}<p class="muted" style="font-size:12px">Mua lại tốn 1 lượt hành động.</p>
+427|«{0}» (chất lượng {1})
+428|<span class="muted">Ô sản phẩm</span><b class="pos">+1 (vĩnh viễn)</b>
+429|<span class="muted">Bằng sáng chế</span><b class="pos">+1 IP</b>
+430|<p class="muted" style="font-size:12px">Mua bằng tiền mặt cần {0}.</p>
+431|<p class="muted" style="font-size:12px">Hoán đổi cổ phần sẽ khiến cổ phần dưới 10%, nên không thể.</p>
+432|Quỹ chủ động Hanbit
+433|Polaris Partners
+434|Sky Holdings
+435|Quản lý tài sản Lốc Xoáy
+436|Quỹ PE Cheongsol
+437|Omega Invest
+438|🛡️ Mua thêm cổ phần: cổ phần của bạn +{0} điểm → {1}% <span class="muted">(-{2})</span>
+439|<b>🛡️ Đã mua cổ phần</b><br>Cổ phần {0}% · phiếu bầu {1}%
+440|⚠️ {0} công bố đã mua {1}% cổ phần của ta! Có thể là thâu tóm thù địch.
+441|<b>⚠️ Cảnh báo thâu tóm thù địch</b><br>{0} nắm {1}%
+442|🏳️ {0} bỏ cuộc thâu tóm và bán cổ phần. Đã giữ được quyền kiểm soát!
+443|<b>🛡️ Giữ được quyền kiểm soát!</b><br>{0} rút lui
+444|🚨 {0} nắm {1}% — sắp bằng phiếu bầu của ta ({2}%)! Hãy mua cổ phần để phòng thủ.
+445|🗳️ Thắng cuộc bỏ phiếu cổ đông! {0}
+446|<b>🗳️ Thắng bỏ phiếu!</b><br>Giữ quyền kiểm soát
+447|🗳️ Thua cuộc bỏ phiếu cổ đông… {0}
+448|🗳️ Thuyết phục cổ đông nhỏ rồi bỏ phiếu (tỉ lệ thắng ~{0}%)
+449|Cổ đông nhỏ đã ủng hộ ban điều hành hiện tại.
+450|🛡️ Mời hiệp sĩ trắng rồi bỏ phiếu ({0} · cổ phần thân thiện +6 điểm · tỉ lệ ~{1}%)
+451|Một công ty thân thiện đã vào làm hiệp sĩ trắng và góp phiếu.
+452|⚔️ Cuộc chiến quyền kiểm soát
+453|<div class="news-tag">Đại hội bất thường</div><p>Cổ phần của <b>{0}</b> ({1}%) đã vượt phiếu bầu của ta ({2}%). Có đề xuất thay hội đồng quản trị.</p><p class="muted" style="font-size:12px">Nếu thua, bạn mất ghế CEO và trò chơi kết thúc. Tinh thần, thương hiệu và lợi nhuận ảnh hưởng đến cổ đông nhỏ.</p>
+454|🚨 Nguy hiểm
+455|⚠️ Đang bị tấn công
+456|🛡️ An toàn
+457|🙂 Ổn
+458|😟 Mong manh
+459|Tháng này đã mua rồi
+460|Không còn cổ phần để mua
+461|Chưa niêm yết: mua lại từ nhà đầu tư với phụ phí 20%
+462|Cuộc đua mua: phụ phí 35%
+463|Mua trên thị trường với phụ phí 10%
+464|<div class="card {0}"><h3><span>🛡️ Quyền kiểm soát</span><span class="ctl-st {1}">{2}</span></h3><div class="ctl-bar"><span class="ctl-me" style="width:{3}%"></span><span class="ctl-al" style="width:{4}%"></span><span style="flex:1"></span>{5}</div><div class="ctl-leg"><span><i class="ctl-me"></i>Cổ phần của bạn <b>{6}%</b></span>{7}{8}<span>Phiếu bầu của ta <b>{9}%</b></span></div><p class="muted" style="font-size:12px;margin:6px 0 0">{10}</p><div class="ctl-btns">{11}</div><div class="muted" style="font-size:11px;margin-top:4px">Mua cổ phần · mỗi tháng một lần · không tốn lượt · {12}</div></div>
+465|<span><i class="ctl-al"></i>Thân thiện <b>{0}%</b></span>
+466|Nếu cổ phần của họ vượt phiếu bầu của ta sẽ có đại hội bất thường. Nếu ta bỏ xa, họ sẽ bỏ cuộc.
+467|Công ty niêm yết có dưới 50% phiếu bầu có thể bị thâu tóm thù địch. Dưới 10% bạn sẽ bị bãi nhiệm.
+468|Sau khi niêm yết, cổ phần lên sàn và người khác có thể nhắm đến quyền kiểm soát. Dưới 10% bạn sẽ bị bãi nhiệm.
+469|{0} năm {1} tháng
+470|💸 Phá sản
+471|Ba tháng liền hết tiền. Công ty đã phá sản.
+472|⚔️ Mất quyền kiểm soát
+473|Bạn thua cuộc bỏ phiếu cổ đông. Ban điều hành mới tiếp quản và bạn không còn là CEO.
+474|🪑 Bị bãi nhiệm CEO
+475|Cổ phần của bạn xuống dưới 10% và hội đồng quản trị đã bãi nhiệm bạn. Công ty vẫn tiếp tục, nhưng không có bạn.
+476|🤝 Exit thành công
+477|Bạn đã bán công ty và mang về {0}. Sẵn sàng cho lần tiếp theo?
+478|👑 Bạn đã thành chaebol!
+479|Giá trị vượt {0}! {1} đã vươn ra khỏi {2} và trở thành tập đoàn nổi tiếng toàn cầu.
+480|Bạn trụ hơn 5 năm. Chỉ 36,5% doanh nghiệp mới ở Hàn Quốc làm được điều đó.
+481|Bạn trụ được {0}. Khoảng {1}% doanh nghiệp mới ở Hàn Quốc tồn tại được lâu như vậy.
+482|<p>{0}</p>{1}<div class="kv"><span class="muted">Thời gian điều hành</span><b>{2}</b><span class="muted">Giá trị cao nhất</span><b>{3}</b><span class="muted">Nhân sự cuối</span><b>{4}</b><span class="muted">Giá trị cổ phần của bạn</span><b>{5}</b></div>
+483|📣 Chia sẻ kết quả
+484|Tiếp tục điều hành
+485|Lập công ty mới
+486|Tự động lưu
+487|Ô 1
+488|Ô 2
+489|Ô 3
+490|{1}/{0}
+491|<b>📂 Đã tải</b><br>{0} · {1}
+492|☁️ Chơi tiếp
+493|<p>Có một bản lưu trong tài khoản của bạn.</p><div class="kv"><span class="muted">Công ty</span><b>{0}</b><span class="muted">Tiến độ</span><b>{1} · {2}</b><span class="muted">Giá trị</span><b>{3}</b><span class="muted">Đã lưu</span><b>{4}</b></div>{5}
+494|<p class="muted" style="font-size:12px">Bản này mới hơn bản trên thiết bị này.</p>
+495|Chơi tiếp bản này
+496|Bắt đầu lại
+497|vừa xong
+498|{0} phút trước
+499|{0} giờ trước
+500|💾 Lưu / Tải
+501|<p class="muted" style="margin-top:0;font-size:13px">{0}</p><div class="slots"><p class="muted">Đang tải…</p></div>
+502|☁️ <b>Lưu đám mây</b> đang bật. Chơi tiếp trên mọi điện thoại hay PC.
+503|💻 Chỉ lưu trong trình duyệt này. Thiết bị khác không thấy.
+504|Đóng
+505|<p class="neg">Không tải được bản lưu. Hãy thử lại sau.</p>
+506|<span>{0} · {1} · {2}</span><span class="muted">lưu {3}{4}</span>
+507| · đã kết thúc
+508|<span class="muted">Trống</span>
+509|<button class="btn" data-act="save">Lưu</button>
+510|<button class="btn" data-act="load">Tải</button><button class="btn" data-act="del" aria-label="Xóa">🗑</button>
+511|Ghi đè?
+512|Xóa?
+513|Thay ván hiện tại?
+514|<b>💾 Đã lưu vào {0}</b>
+515|Lỗi
+516|Bộ nhớ đầy. Hãy xóa một ô khác.
+517|Không lưu được. Hãy thử lại sau.
+518|🎲 Khởi đầu ngẫu nhiên
+519|<div class="start-sc sc-{0}"><b>{1}</b><span class="badge">Độ khó: {2}</span><p>{3}</p></div><p class="muted" style="margin:8px 0 0">Biến công ty số phận trao cho thành chaebol. Mục tiêu: <b>giá trị {4}</b>{5}</p><div class="kv"><span class="muted">Quốc gia</span><b>{6} {7}</b><span class="muted">Công ty</span><b>{8}</b><span class="muted">Ngành</span><b>{9} {10}</b><span class="muted">CEO</span><b>{11}</b><span class="muted">Trụ sở</span><b>{12} · {13}</b><span class="muted">Xuất thân</span><b>{14}<br><span class="muted" style="font-weight:400">{15}</span></b>{16}<span class="muted">Tiền mặt{17}</span><b>{18}{19}</b><span class="muted">Nhân sự</span><b>{20}</b>{21}</div>
+520| <span class="muted">(khoảng ₩100 nghìn tỷ)</span>
+521|<span class="muted">Giá trị</span><b>{0}</b><span class="muted">Doanh thu / lãi tháng</span><b>{1} / <span class="{2}">{3}</span></b>
+522| / Nợ
+523|<span class="muted">Cổ phần của bạn</span><b class="{0}">{1}%{2}</b><span class="muted">Sản phẩm</span><b>{3} · trung bình {4} tháng</b>
+524| (dưới 10% sẽ bị bãi nhiệm)
+525|🚀 Bắt đầu với công ty này
+526|🏢 {1} khai trương tại một văn phòng nhỏ ở {0}.
+527|💡 Ra mắt sản phẩm để có doanh thu đầu tiên. Thời gian trôi theo tuần và quyết toán mỗi tháng. ⏸ để tạm dừng.
+528|📈 Bạn là CEO của {0}. Một sản phẩm hit đang gánh công ty, nhưng văn phòng sắp đầy.
+529|💡 Để tiếp tục tăng trưởng, hãy lo tuyển dụng, chuyển văn phòng và sản phẩm tiếp theo.
+530|🏢 Bạn tiếp quản {0}, một doanh nghiệp vừa lâu năm. Có lãi, nhưng sản phẩm chủ lực đang cũ đi.
+531|⚠️ 18 tháng không có sản phẩm mới, sự trì trệ đang ăn mòn thương hiệu. Sản phẩm mất sức cạnh tranh mỗi tháng.
+532|👔 Bạn thừa kế {0} từ cha. Đã lỗ mỗi tháng.
+533|⚠️ Lương khổng lồ, sản phẩm cũ, nợ nhiều. Quyết định ưu tiên: tái cơ cấu, sản phẩm mới hay trả nợ. Cổ phần dưới 10% sẽ bị bãi nhiệm.
+534|🎲 Bốc lại
+535|<text x="320" y="{0}" text-anchor="middle" font-size="9" fill="var(--muted)">Co-working {1}</text>
+536|<text x="246" y="{0}" text-anchor="end" font-size="9" font-weight="800" fill="var(--accent)">← Công ty ta</text>
+537|<g class="crowdwarn"><rect x="270" y="{0}" width="100" height="18" rx="9" fill="var(--bad)"/><text x="320" y="{1}" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">😵 Quá chật!</text></g>
+538|🏢 <b>{0}</b> · <span class="{1}">Nhân sự {2}{3}</span>{4}{5}{6}
+539| · <span class="neg">Cần chuyển văn phòng!</span>
+540| · <span class="warn">Hiệu suất {0}%</span>
+541| · <span class="neg">📉 -{0}% so với đỉnh</span>
+542|<div class="dl">– như tháng trước</div>
+543|<div class="dl">– 0% so với tháng trước</div>
+544|<div class="dl">mới tháng này</div>
+545|<div class="dl {0}">{1} {2} <span class="muted">so với tháng trước</span></div>
+546|Thiếu tiền
+547|Miễn phí
+548|<span class="muted">tính từ lần quyết toán tới</span>
+549|<span class="pos">Mới</span>
+550|🌱 Vừa ra mắt
+551|🍂 Đang giảm
+552|🔥 Đang bán chạy
+553|<div class="prod2"><div class="p-top"><span class="p-name">{0}{1}<b>{2}</b></span><span class="p-rev">{3}<small> /tháng</small></span></div><div class="p-sub"><span class="muted">{4} · {5} tháng · chất lượng {6}{7}</span><span class="p-right">{8}<button class="btn p-del" data-pi="{9}" {10}>Ngừng bán</button></span></div><div class="bar" style="grid-template-columns:1fr 40px"><div class="track"><div class="fill" style="width:{11}%"></div></div><span class="num">{12}%</span></div></div>
+554|<div class="p-total"><span class="muted">Tổng doanh thu sản phẩm</span><b>{0} /tháng</b></div>
+555|<p class="muted" style="margin:0">Chưa ra mắt sản phẩm nào.</p>
+556|<div class="rv-top"><span class="rv-rank">{0}</span><b class="rv-name">{1}{2}</b>{3}{4}<span class="rv-val">{5}{6}</span></div><div class="bar" style="grid-template-columns:56px 1fr 44px"><span class="muted">Thị phần</span><div class="track"><div class="fill" style="width:{7}%;{8}"></div></div><span class="num">{9}%</span></div>
+557|<span class="badge">Lão làng</span>
+558|~
+559|<div class="rv-info">CEO {0} · công nghệ <b>{1}</b> (ta {2}) · thương hiệu <b>{3}</b> (ta {4})<br>Chiến lược: {5} · sản phẩm chủ lực «{6}»</div>
+560|<div class="rv-info muted">🔒 Xem chi tiết sau khi «Phân tích đối thủ»</div>
+561|<div class="rv">{0}{1}<button class="btn rv-buy" data-i="{2}" {3}>🤝 Xem xét mua · ~{4}</button></div>
+562|<header class="top"><div><div class="co-name">{0} {1} {2}<span class="badge">{3}</span>{4}</div><div class="co-sub">{5} · CEO {6} ({7}) · {8} · thị trường: {9}</div></div><div style="text-align:right"><div class="date">{11}/{10} · Tuần {12}</div><div style="display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap;margin-top:4px"><button class="btn hb" id="helpbtn" aria-label="Cách chơi">❓</button><button class="btn hb" id="fbbtn" aria-label="Góp ý">💬</button><button class="btn hb bgm-ic" id="bgmbtn" aria-label="Bật/tắt nhạc">{13}</button><button class="btn hb" id="setbtn" aria-label="Cài đặt">⚙️</button>{14}<button class="btn hb" id="savebtn">{15} Lưu</button><button class="btn hb" id="newbtn">🎲 Ván mới</button></div></div></header>
+563|<span class="badge">Đã niêm yết</span>
+564|<button class="btn hb" id="curbtn" aria-label="Đổi tiền tệ" title="Đổi tiền tệ">{0}</button>
+565|<div class="card statcard sumbar" id="sumbar" role="button" tabindex="0" aria-label="Chi tiết công ty"><div class="sb-row">{0}{1}{2}<button class="btn sb-more" tabindex="-1">📊<span> Chỉ số</span></button></div><div class="sb-bars">{3}{4}{5}</div></div>
+566|Giá trị
+567|Tiền mặt
+568|Lãi tháng
+569|<b>🔬 Trình độ công nghệ tăng!</b><br>Đạt «{0}»
+570|Công nghệ · {0}
+571|Thương hiệu
+572|Tinh thần
+573|<div class="card"><h3><span>Hành động tháng này</span><span class="ap">{0}</span></h3><div class="actions">{1}</div><div class="fin"><button class="btn" id="borrow" {2}>🏦 Vay {3}</button><button class="btn" id="repay" {4}>Trả {5}</button><span class="muted" style="align-self:center;font-size:12px">Vay và trả nợ không tốn lượt</span></div></div><div class="card report {6}"><h3>Báo cáo tháng</h3><ul>{7}</ul></div>{8}
+574|hết hạn mức
+575|<li class="muted">Chọn hành động khi thời gian trôi; quyết toán mỗi tháng. Cửa sổ bật lên sẽ tạm dừng trò chơi.</li>
+576|<div class="card"><h3><span>📊 Chỉ số công ty</span><span class="muted" style="font-weight:400">so với tháng trước</span></h3><div class="stats">{0}{1}{2}{3}{4}{5}{6}{7}{8}</div></div><div class="card"><h3><span>Giá trị công ty</span><span class="muted" style="font-weight:400">đỉnh {9}</span></h3><canvas id="chart"></canvas></div>
+577|Nợ
+578|Doanh thu tháng
+579|Nhân sự
+580|Cổ phần của bạn
+581|Giá trị cổ phần của bạn
+582|Năng lực / Nhu cầu
+583|<div class="card"><h3><span>⚔️ Phân tích đối thủ</span><span class="muted" style="font-weight:400">hạng {0} · cạnh tranh <b class="{1}">nhu cầu ×{2}</b></span></h3>{3}<p class="muted" style="margin:8px 0 0;font-size:12px">Thị phần phụ thuộc chất lượng sản phẩm chủ lực và thương hiệu. Càng mạnh hơn đối thủ, nhu cầu càng cao. Mua lại tốn 1 lượt hành động.</p></div>
+584|<div class="card"><h3><span>Sản phẩm ({0}/{1})</span><span class="muted" style="font-weight:400">{2}</span></h3>{3}</div><div class="card"><h3><span>💡 Danh mục IP ({4}/4)</span><span class="muted" style="font-weight:400">bản quyền {5}/tháng</span></h3>{6}</div>
+585|{1} ô khi là {0}
+586|Ô tối đa
+587|<div class="prod"><span><b>{0}</b> <span class="muted">{1}</span><br><span class="ipdots">{2}</span></span><span style="text-align:right">{3}/tháng{4}</span></div>
+588|<br><span class="muted" style="font-size:12px">Tiếp theo: {0}</span>
+589|<br><span class="pos" style="font-size:12px">Giai đoạn cuối</span>
+590|<p class="muted" style="margin:0">Dùng «Kinh doanh IP» để tạo IP như bằng sáng chế hay nhân vật. Mở rộng càng nhiều (hàng lưu niệm, webtoon, phim), tiền bản quyền càng cao.</p>
+591|<div class="card log"><h3>Nhật ký công ty</h3><ul>{0}</ul></div>
+592|Thật sự ngừng bán?
+593|<b>₩ Đang hiển thị KRW</b>
+594|<b>{0} Đang hiển thị {1}</b>
+595|🎲 Ván mới
+596|<p>Bỏ công ty hiện tại (<b>{0}</b>) và lập công ty mới? Tiến độ sẽ mất.</p><p class="muted" style="font-size:12px">Muốn giữ ván này, hãy lưu vào ô khác ở 💾 Lưu trước.</p>
+597|Lập công ty mới
+598|Biểu đồ sẽ hiện sau vài tháng
+599|Cơ bản
+600|Nâng cao
+601|Dẫn đầu
+602|Tiên phong
+603|Đẳng cấp thế giới
+604|Vô đối
+605|<button class="btn primary t-cont" id="t-cont"><span>▶ Chơi tiếp<small>{0} · {2}/{1} · {3}</small></span><span style="font-size:14px">{4}</span></button>
+606|<div class="t-in">{0}<div class="t-kicker">GAME MÔ PHỎNG KINH DOANH TOÀN CẦU</div><h1 class="t-name">Đường đến <span>Chaebol</span></h1><p class="t-sub">Một công ty do số phận chọn.<br>Từ startup nhỏ ở Hàn, Mỹ, Nhật, Trung, Đức hay Ấn<br>đến đế chế ₩100 nghìn tỷ.</p><div class="t-goal">🏆 Mục tiêu <b>giá trị ₩100 nghìn tỷ</b></div><div class="t-btns">{1}<button class="btn {2}" id="t-new">🎲 Bốc công ty</button><button class="btn" id="t-how">📖 Cách chơi</button><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn" id="t-fb">💬 Góp ý</button><button class="btn" id="t-set">⚙️ Cài đặt</button></div></div><div class="t-feat"><div><b>🌍</b>6 nước × 7 ngành<br>× 4 khởi đầu</div><div><b>⚔️</b>Đối thủ · M&A<br>tranh quyền</div><div><b>🚨</b>{3}<br>sự kiện ngẫu nhiên</div></div><div class="t-foot">Tiến độ tự động lưu · 🎵 Chạm màn hình để bật nhạc</div></div>
+607|Bốc công ty
+608|<p><b>{0}</b> sẽ mất. Bắt đầu lại?</p>
+609|Bắt đầu lại
+610|🎯 Trò chơi này là gì?
+611|<p class="lead">Bạn làm CEO của một công ty ở một nước ngẫu nhiên — Hàn, Mỹ, Nhật, Trung, Đức hoặc Ấn — và nhắm tới <b>giá trị ₩100 nghìn tỷ</b>. Tiền hiển thị theo tiền tệ địa phương; nút <b>₩</b> góc trên phải để đổi sang KRW.</p><ul><li><b>🎲</b><span><b>Mỗi lần mỗi khác.</b> {0} ngành và 4 tình huống khởi đầu.</span></li><li><b>🌱</b><span><b>Từ số 0</b> · <b>Startup đang lên</b> · <b>Doanh nghiệp vừa</b> · <b>Tập đoàn thừa kế</b>: công ty lớn cũng sụp nếu không làm gì.</span></li><li><b>👔</b><span>Xuất thân của CEO mang lại thưởng.</span></li></ul>
+612|📅 Một tháng diễn ra thế nào
+613|<ul><li><b>1</b><span><b>Chọn hành động</b>: 2–4 lượt mỗi tháng, tăng dần khi lớn. (các chấm ●)</span></li><li><b>2</b><span><b>Thời gian tự trôi</b>: từng tuần; 4 tuần là hết tháng. Bên dưới: ⏸ tạm dừng · tốc độ (1x/2x/4x) · ⏭ tuần tiếp.</span></li><li><b>3</b><span><b>Dòng tiền</b>: lãi (hoặc lỗ) vào mỗi tuần và quyết toán chính xác cuối tháng. Đổi màn hình bằng các tab bên dưới (Công ty · Chỉ số · Đối thủ · Sản phẩm · Nhật ký).</span></li><li><b>4</b><span><b>Sự kiện ngẫu nhiên</b>: có thể bật ra bất kỳ tuần nào và tạm dừng trò chơi. Lựa chọn của bạn quyết định kết quả.</span></li></ul><p class="muted" style="font-size:12px;margin:8px 0 0">Vay, ngừng bán sản phẩm và mua cổ phần không tốn lượt.</p>
+614|🛠️ Bạn có thể làm gì
+615|<ul><li><b>🚀</b><span><b>Ra mắt sản phẩm</b>: nguồn thu chính. Sản phẩm cũ đi mỗi tháng; hết ô thì ngừng bán một cái.</span></li><li><b>🔬</b><span><b>R&D</b>: công nghệ cao → sản phẩm tốt hơn. Đôi khi thất bại, đôi khi đột phá.</span></li><li><b>📣</b><span><b>Marketing · 🌏 Mở rộng</b>: tăng thương hiệu và nhu cầu, vươn ra nước ngoài.</span></li><li><b>👥</b><span><b>Tuyển dụng · ☕ Phúc lợi · 🏢 Chuyển văn phòng</b>: năng lực và tinh thần. Văn phòng chật làm giảm hiệu suất.</span></li><li><b>💡</b><span><b>Kinh doanh IP</b>: tiền bản quyền hàng tháng từ bằng sáng chế, nhân vật.</span></li><li><b>💰</b><span><b>Gọi vốn · 🔔 IPO</b>: nhiều tiền, nhưng <b>cổ phần của bạn giảm.</b></span></li><li><b>⚔️</b><span><b>Đối thủ</b>: phân tích (mỗi 6 tháng) hoặc mua bằng tiền mặt/cổ phần để lấy sản phẩm và công nghệ.</span></li></ul>
+616|📈 Các giai đoạn phát triển
+617|<p class="lead">Giá trị tăng thì lên giai đoạn mới, có thêm lượt hành động mỗi tháng và ô sản phẩm.</p><div class="ladder">{0}</div>
+618|+
+619|Khởi đầu
+620|⚠️ Trò chơi kết thúc khi…
+621|<ul><li><b>💸</b><span><b>Phá sản</b>: 3 tháng tiền mặt âm là hết. Trụ lại bằng vay hoặc gọi vốn.</span></li><li><b>🪑</b><span><b>Bị bãi nhiệm</b>: gọi vốn làm cổ phần xuống dưới 10% thì bạn bị đuổi.</span></li><li><b>🗳️</b><span><b>Mất quyền kiểm soát</b>: sau niêm yết, người khác có thể gom cổ phần và thắng bỏ phiếu. Mua cổ phần để phòng thủ.</span></li><li><b>📉</b><span><b>Suy thoái</b>: sản phẩm cũ, hơn 18 tháng không ra mắt, hoặc quá nhiều nhân viên (bệnh doanh nghiệp lớn) sẽ khiến bạn chìm dần.</span></li></ul>
+622|💡 Mẹo khởi đầu
+623|<ul><li><b>①</b><span>Bắt đầu bằng <b>Ra mắt sản phẩm → R&D</b> để có doanh thu.</span></li><li><b>②</b><span>Nếu <b>Năng lực / Nhu cầu</b> vượt 100% thì tuyển thêm; văn phòng đầy thì chuyển.</span></li><li><b>③</b><span>Vay hoặc gọi vốn trước khi cạn tiền, nhưng hãy giữ cổ phần.</span></li><li><b>④</b><span>Xem <b>▲▼ so với tháng trước</b> dưới mỗi chỉ số để biết mình có tiến bộ không.</span></li><li><b>⑤</b><span>Góc trên phải: <b>❓</b> trợ giúp · <b>💬</b> góp ý · <b>🔊</b> nhạc · <b>⚙️</b> giao diện, ngôn ngữ, ván mới.</span></li></ul>
+624|🎲 Bốc một công ty
+625|Đã hiểu!
+626|Tiếp ▶
+627|◀ Trước
+628|Bỏ qua
+629|Lỗi
+630|Đề xuất
+631|Cân bằng
+632|Khác
+633|💬 Gửi góp ý
+634|<p class="muted" style="margin:0 0 10px;font-size:13px">Lỗi, ý tưởng, quá dễ hay quá khó… gì cũng có ích. Góp ý của bạn sẽ vào bản cập nhật tới.</p><div class="fb-lbl">Loại</div><div class="fb-types">{0}</div><div class="fb-lbl">Bạn thấy game thế nào?</div><div class="fb-stars">{1}</div><div class="fb-lbl">Nội dung</div><textarea class="fb-ta" maxlength="2000" placeholder="VD: Bắt đầu với doanh nghiệp vừa thì 3 năm là phá sản. / Muốn tự đặt tên sản phẩm.">{2}</textarea><div class="fb-lbl" style="margin-top:10px">Biệt danh <span style="font-weight:400">(không bắt buộc)</span></div><input class="fb-ta fb-nick" style="min-height:0;height:40px" maxlength="30" placeholder="Để lại biệt danh nếu muốn được trả lời" value="{3}"><label class="fb-chk"><input type="checkbox" {4}> Kèm tình trạng ván chơi (ngành, giai đoạn, ngày) và thông tin thiết bị — giúp sửa lỗi</label><p class="muted" style="font-size:11px;margin:10px 0 0">«Gửi» sẽ mở Google Form đã điền sẵn. Chỉ cần bấm <b>Submit</b> ở đó. Không cần đăng nhập.</p>
+635|<button type="button" data-n="{0}" class="{1}" aria-label="{2} sao">⭐</button>
+636|📮 Gửi
+637|<b>Hãy viết nội dung</b>
+638|**Loại:** {0} {1}⏎**Đánh giá:** {2}⏎⏎{3}⏎
+639|{0} · {1} · {3}/{2} (tháng {4}) · {5} · giá trị {6} · {7} nhân viên
+640|trước khi bắt đầu
+641|⏎---⏎<sub>Ván chơi: {0}<br>Thiết bị: {1}×{2} · {3}</sub>⏎
+642|<b>📮 Đã mở Google Form</b><br>Đã điền sẵn. Chỉ cần bấm <b>Submit</b>
+643|<b>📊 Kết thúc tháng {0}</b><br>Lãi ròng {1}
+644|<div class="nb-in"><div class="nb-info"><b>{1}/{0} · Tuần {2}</b><div class="nb-weeks">{3}</div><span>Tiền mặt <b class="{4}">{5}</b></span></div><button class="btn primary nb-play {6}" id="next" {7}><span class="wk-fill"></span><span>{8}</span><span class="ap">{9}</span></button><button class="btn nb-sm" id="spd" title="Tốc độ">{10}</button><button class="btn nb-sm" id="skip" title="Tuần tiếp">⏭</button></div><nav class="tabs">{11}</nav>
+645|⏸ Tạm dừng
+646|▶ Tiếp tục
+647|Công ty
+648|Chỉ số
+649|Đối thủ
+650|Sản phẩm
+651|Nhật ký
+652|📊 Chỉ số công ty
+653|<div class="stats">{0}{1}{2}{3}{4}{5}{6}{7}{8}</div><div class="bars">{9}{10}{11}</div><h3 style="margin:14px 0 6px;font-size:14px;display:flex;justify-content:space-between"><span>Giá trị công ty</span><span class="muted" style="font-weight:400">đỉnh {12}</span></h3><canvas id="chart"></canvas><p class="muted" style="font-size:11px;margin:8px 0 0">Thời gian dừng khi cửa sổ này đang mở.</p>
+654|⚙️ Cài đặt
+655|<div class="set-row"><div class="lbl">🌐 Ngôn ngữ</div><div class="seg" id="set-lang" style="grid-template-columns:repeat(4,1fr)">{0}</div></div><div class="set-row"><div class="lbl">🎨 Giao diện</div><div class="seg" id="set-theme">{1}</div></div><div class="set-row"><div class="lbl">🎵 Nhạc nền</div><div class="seg" id="set-bgm" style="grid-template-columns:repeat(2,1fr)"><button data-o="1" class="{2}">🔊 Bật</button><button data-o="0" class="{3}">🔇 Tắt</button></div><div class="vol"><span>🔈</span><input type="range" min="0" max="100" value="{4}" aria-label="Âm lượng"><span>🔊</span></div></div><div class="set-row"><div class="lbl">💱 Tiền tệ</div><div class="seg" id="set-cur" style="grid-template-columns:repeat(2,1fr)"><button data-o="0" class="{5}">🌍 Tiền địa phương</button><button data-o="1" class="{6}">₩ KRW</button></div></div><div class="set-row"><div class="lbl">📣 Chia sẻ</div><button class="btn" id="set-share" style="width:100%">{7}</button></div><div class="set-row"><div class="lbl">📚 Bộ sưu tập</div><button class="btn" id="set-facts" style="width:100%">📊 Thống kê thực tế ({8}/{9})</button></div>{10}<p class="muted" style="font-size:11px;margin:0">Nhạc nền sẽ trầm xuống khi công ty thua lỗ.</p>
+656|🌓 Tự động
+657|☀️ Sáng
+658|🌙 Tối
+659|📣 Khoe công ty của tôi
+660|📣 Giới thiệu game
+661|<div class="set-row"><div class="lbl">🏢 Ván chơi</div><button class="btn" id="set-new" style="width:100%">🎲 Chơi lại với công ty khác</button></div>
+662|Game mô phỏng kinh doanh biến startup nhỏ thành đế chế ₩100 nghìn tỷ: «Đường đến Chaebol» 🏢⏎6 nước · 7 ngành · hơn 100 sự kiện ngẫu nhiên, từ ransomware đến tranh quyền. Không cần cài, chơi ngay!
+663|Ván mới
+664|<p>Bỏ công ty hiện tại và lập công ty mới? Tiến độ sẽ mất.</p>
+665|<div class="fact"><div class="fh">📊 Ngoài đời thực</div><span class="big">{0}</span>{1}<span class="src">Nguồn: {2}</span></div>
+666|Tiếp tục
+667|📚 Thống kê thực tế
+668|<p class="muted" style="margin:0 0 6px;font-size:13px">Mở khóa mỗi khi vượt qua khủng hoảng hoặc đạt cột mốc. ({0}/{1})</p><ul class="fact-list">{2}</ul>
+669|<li><b>{0}</b> · <b style="color:var(--accent)">{1}</b><br>{2}<br><span class="muted" style="font-size:11px">Nguồn: {3}</span></li>
+670|Đường đến Chaebol
+671|<b>📋 Đã sao chép</b><br>Dán vào chat hoặc mạng xã hội
+672|📣 Chia sẻ
+673|<p class="muted" style="font-size:13px;margin:0 0 8px">Nhấn giữ đoạn chữ để sao chép.</p><textarea class="fb-ta" readonly style="min-height:120px">{0}</textarea>
+674|{0} {1} · «{2}»
+675|Tôi đã biến {0} thành tập đoàn ₩100 nghìn tỷ trong {1}! 👑
+676|{0} trụ được {1} rồi phá sản… 💸 (giá trị cao nhất {2})
+677|Tôi là CEO của {0} nhưng bán quá nhiều cổ phần và bị đuổi sau {1}… 🪑
+678|{0} mất quyền kiểm soát vì bị thâu tóm thù địch sau {1}… ⚔️
+679|Bán {0} sau {1} và exit có lãi! 🤝
+680|Tôi đã điều hành {0} được {1}. Giờ giá trị {2}!
+681|{0}⏎«Đường đến Chaebol»: game mô phỏng đưa một công ty ngẫu nhiên lên chaebol. Bạn mất bao lâu? 🏢
