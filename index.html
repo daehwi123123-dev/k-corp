@@ -215,6 +215,7 @@ body{display:flex;flex-direction:column;overflow:hidden}
 /* ===== 타이틀 화면 ===== */
 #title{position:fixed;inset:0;z-index:35;overflow-y:auto;background:radial-gradient(120% 70% at 50% 0%,color-mix(in srgb,var(--accent) 22%,var(--bg)) 0%,var(--bg) 70%);display:flex;flex-direction:column;align-items:center;padding:max(20px,env(safe-area-inset-top,0px)) 16px max(20px,env(safe-area-inset-bottom,0px))}
 #title.out,.t-out{animation:tOut .35s ease forwards}
+.t-out{position:fixed;inset:0;z-index:35;overflow:hidden;pointer-events:none;background:var(--bg);display:flex;flex-direction:column;align-items:center;padding:20px 16px}
 @keyframes tOut{to{opacity:0;transform:scale(1.03)}}
 .t-in{width:100%;max-width:440px;margin:auto 0;display:flex;flex-direction:column;align-items:center;text-align:center}
 .t-hero{width:100%;max-width:360px;aspect-ratio:36/20;margin-bottom:4px}
@@ -1628,7 +1629,7 @@ function render(){
   <header class="top">
     <div><div class="co-name">${I.icon} ${esc(s.name)}<span class="badge">${st.n}</span>${s.ipo?'<span class="badge">상장사</span>':''}</div>
       <div class="co-sub">${I.name} · 대표 ${esc(s.ceo)} (${TRAITS[s.traitIdx].n}) · ${s.city} · ${REACH[s.reach].n} 시장</div></div>
-    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월 ${s.week||1}주</div><div style="display:flex;gap:5px;justify-content:flex-end;margin-top:4px"><button class="btn hb" id="helpbtn" aria-label="게임 방법">❓</button><button class="btn hb" id="fbbtn" aria-label="의견 보내기">💬</button><button class="btn hb bgm-ic" id="bgmbtn" aria-label="배경음악 켜기/끄기">${SET.bgm?'🔊':'🔇'}</button><button class="btn hb" id="setbtn" aria-label="설정">⚙️</button><button class="btn hb" id="savebtn">${CLOUD.ready?'☁️':'💾'} 저장</button></div></div>
+    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월 ${s.week||1}주</div><div style="display:flex;gap:5px;justify-content:flex-end;margin-top:4px"><button class="btn hb" id="helpbtn" aria-label="게임 방법">❓</button><button class="btn hb" id="fbbtn" aria-label="의견 보내기">💬</button><button class="btn hb bgm-ic" id="bgmbtn" aria-label="배경음악 켜기/끄기">${SET.bgm?'🔊':'🔇'}</button><button class="btn hb" id="setbtn" aria-label="설정">⚙️</button><button class="btn hb" id="savebtn">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn hb" id="newbtn">🎲 새 게임</button></div></div>
   </header>`;
   document.getElementById('sum').innerHTML=`<div class="card statcard sumbar" id="sumbar" role="button" tabindex="0" aria-label="회사 현황 자세히 보기"><div class="sb-row">
           ${stat('valuation','기업가치',s.valuation,'won')}
@@ -1691,6 +1692,7 @@ function render(){
   document.getElementById('fbbtn').onclick=feedback;
   document.getElementById('bgmbtn').onclick=()=>setBgm(!SET.bgm);
   document.getElementById('setbtn').onclick=settings;
+  document.getElementById('newbtn').onclick=()=>modal('🎲 새 게임',`<p>지금 회사(<b>${esc(s.name)}</b>)를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p><p class="muted" style="font-size:12px">지금 게임을 남겨 두려면 먼저 💾 저장에서 다른 칸에 저장하세요.</p>`,[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]);
   updateScene();
   animateAfterRender();
   if(tab==='lg'||lastLogSeen<0)lastLogSeen=logSeq;freshReport=false;
