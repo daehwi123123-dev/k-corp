@@ -1,0 +1,677 @@
+5|South Korea
+6|Bank of Korea
+7|KOSDAQ
+8|KOSDAQ listing
+9|USA
+10|USD
+11|the Fed
+12|NASDAQ
+13|NASDAQ listing
+14|Silicon Valley
+15|New York
+16|Austin
+17|Seattle
+18|Boston
+19|Chicago
+20|Miami
+21|Neighborhood
+22|Statewide
+23|Nationwide (US)
+24|North America
+25|Global
+26|Japan
+27|JPY
+28|Bank of Japan
+29|Tokyo Stock Exchange Growth
+30|Tokyo Stock Exchange listing
+31|Shibuya, Tokyo
+32|Osaka
+33|Kyoto
+34|Fukuoka
+35|Nagoya
+36|Sapporo
+37|Yokohama
+38|Sendai
+39|Kanto region
+40|All of Japan
+41|Asia
+42|China
+43|CNY
+44|People's Bank of China
+45|Shanghai STAR Market
+46|STAR Market listing
+47|Zhongguancun, Beijing
+48|Shanghai
+49|Shenzhen
+50|Hangzhou
+51|Guangzhou
+52|Chengdu
+53|Suzhou
+54|Wuhan
+55|Province-wide
+56|All of China
+57|Germany
+58|EUR
+59|European Central Bank
+60|Frankfurt Stock Exchange
+61|Frankfurt listing
+62|Berlin
+63|Munich
+64|Hamburg
+65|Frankfurt
+66|Stuttgart
+67|Cologne
+68|Leipzig
+69|Dresden
+70|All of Germany
+71|Europe
+72|India
+73|INR
+74|Reserve Bank of India
+75|National Stock Exchange of India
+76|NSE listing
+77|Bengaluru
+78|Mumbai
+79|Delhi NCR
+80|Hyderabad
+81|Pune
+82|Chennai
+83|Kolkata
+84|Ahmedabad
+85|All of India
+86|South Asia
+87|IT / Platform
+88|App
+89|Messenger
+90|Cloud
+91|Mobile Pay
+92|Map Service
+93|Online Mall
+94|AI Assistant
+95|Delivery App
+96|Games
+97|Mobile RPG
+98|Idle Game
+99|Battle Royale
+100|Rhythm Game
+101|Puzzle Game
+102|Gacha RPG
+103|Food & Dining
+104|Ramen
+105|Tteokbokki Meal Kit
+106|Kimchi
+107|Chicken Franchise
+108|Convenience Store Bento
+109|Premium Seaweed
+110|Bubble Tea
+111|Beauty & Cosmetics
+112|Cushion Compact
+113|Sunscreen
+114|Sheet Mask
+115|Ampoule
+116|Lip Tint
+117|Vegan Toner
+118|Bio
+119|Diagnostic Kit
+120|New Drug
+121|Biosimilar
+122|Vaccine
+123|Health Supplement
+124|Gene Therapy
+125|Entertainment
+126|Boy Group
+127|Girl Group
+128|Web Drama
+129|Variety Show
+130|Solo Singer
+131|Webtoon IP
+132|Manufacturing / Chips
+133|Memory Chip
+134|EV Battery
+135|EV Parts
+136|Display
+137|Industrial Robot
+138|Sensor Module
+139|Coworking Space
+140|Small Office
+141|Office Floor
+142|Mid-size Building
+143|Own HQ Building
+144|Landmark Tower
+145|Global Campus
+146|Core Patent
+147|Tech License
+148|Open SDK & API
+149|Platform Ecosystem
+150|Global Standard Tech
+151|Character IP
+152|Merch
+153|Webtoon
+154|Animation
+155|Movie
+156|Theme Park
+157|Secret Recipe Patent
+158|Character Collab
+159|Overseas License
+160|Ready-Meal Brand
+161|Global Franchise
+162|Proprietary Ingredient Patent
+163|Collab Edition
+164|ODM License
+165|Foreign Brand Partnership
+166|Global Beauty Brand
+167|Compound Patent
+168|Tech Transfer
+169|Co-development
+170|Global Rights
+171|Platform Technology
+172|Artist IP
+173|World Tour
+174|Key Patent
+175|Standard-Essential Patent
+176|Cross License
+177|Global Standard
+178|Local
+179|Capital Region
+180|Nationwide
+181|Startup
+182|Venture
+183|Small Business
+184|Mid-size Company
+185|Unicorn
+186|Conglomerate
+187|Chaebol
+188|Seed
+189|Series A
+190|Series B
+191|Series C
+192|Series D
+193|Pre-IPO
+194|Gangnam, Seoul
+195|Pangyo
+196|Seongsu-dong
+197|Haeundae, Busan
+198|Yuseong, Daejeon
+199|Gwangju
+200|Daegu
+201|Songdo, Incheon
+202|Jeju
+203|Euljiro, Seoul
+204|Bundang
+205|Changwon
+206|Top engineering school grad
+207|Tech +15
+208|Ex-big-company marketer
+209|Brand +12
+210|Born rich
+211|Starting capital ×2
+212|Self-made underdog
+213|Morale +20, starting capital -30%
+214|Serial entrepreneur
+215|Tech & brand +6, fundraising +25%
+216|Ex-YouTuber
+217|Brand +20, tech -5
+218|Studied abroad
+219|Expansion cost -30%
+220|Ex-civil servant
+221|Government grant events more often
+222|{0}.{1} · W{2}
+223|🌱 Bootstrapped startup
+224|Normal
+225|A tiny coworking desk and no products. You build everything from scratch.
+226|📈 Hot venture
+227|Easy
+228|Growing fast on one hit product. Investors own a stake and the office is getting cramped.
+229|🏢 Established mid-size firm
+230|Tricky
+231|Steady revenue and hundreds of staff. But the products are aging and rivals are closing in. Sit still and it slowly crumbles.
+232|👔 Inherited conglomerate
+233|Hard
+234|You inherited the conglomerate your father built. It's huge, but the products are old, labor costs are high, debt is heavy and your stake is thin. It's losing money every month.
+235| (2nd gen)
+236|📈 ‘{0}’ {1} → {2} expanded ({3})
+237|💡 Expanded ‘{0}’ IP into {1}! About {2}/mo in royalties, brand +3 <span class="muted">(-{3})</span>
+238|<b>💡 IP expanded!</b><br>‘{0}’ {1}
+239|✨ New IP created: {0} ({1})
+240|💡 Secured new IP ‘{0}’ {1}! About {2}/mo in royalties <span class="muted">(-{3})</span>
+241|<b>✨ New IP secured!</b><br>‘{0}’
+242|<li><b>{0}</b> · {1} · {2}/mo</li>
+243|<li class="muted">You don't own any IP yet.</li>
+244|💡 IP Business
+245|<p class="muted" style="margin-top:0">IP earns royalties every month — more with a bigger market and a stronger brand. Expanding it grows income a lot and helps you win idea-theft lawsuits.</p><ul style="padding-left:18px">{0}</ul>{1}
+246|<p class="neg" style="font-size:12px">You can't afford some of the options.</p>
+247|Cancel
+248|Launch Product
+249|Hit chance {0}% · Slots {1}/{2}{3}
+250| (pick one to retire)
+251|R&D
+252|Success {0}% · Fail {1}% (tech drops) · Breakthrough 4%
+253|Marketing
+254|Brand up → more demand
+255|Brand maxed
+256|Ad campaign launched. Brand +{0}
+257|Hire
+258|Hire {0} people → more capacity
+259|{0} new hires joined! ({1} total)
+260|Better Perks
+261|Boost morale
+262|Morale maxed
+263|Perks improved. Morale +{0}
+264|Expand Market
+265|Enter {0} (demand ×{1})
+266|Already global
+267|Max market
+268|Needs brand {0}
+269|Entered the {0} market! 🌏
+270|Rights Offering
+271|Raise Funds
+272|Raise 20% of company value · stake -20%
+273|Available in {0} mo
+274|Available after a product launch
+275|Extra
+276| round
+277|{0} closed! Raised {1} (your stake {2}%)
+278|IPO
+279|{0} · raise 25% of company value
+280|Already listed
+281|Needs ₩100B company value
+282|🔔 Listed on {0}! Raised {1} in the IPO. Brand +8
+283|Move Office
+284|{0} (fits {1} · rent {2}/mo)
+285|unlimited
+286| people
+287|The finest HQ
+288|Best HQ
+289|Moved into {0}! Morale +10, brand +3
+290|IP Business
+291|{0} IPs · royalties {1}/mo
+292|Create and grow IP like patents and characters
+293|All IP maxed
+294|Rival Analysis
+295|Intel active ({0} mo left)
+296|Reveal rival details for 6 months · tech +2
+297|No rivals
+298|Available again in {0} mo
+299|Hired consultants to analyze rivals. Benchmarking gave tech +2
+300|Restructure
+301|Lay off {0} · morale & brand drop
+302|Not enough staff
+303|Restructuring cut {0} jobs. Morale -18, brand -4
+304|🧪 Research failed… {0}. Tech {1}
+305|The prototype exploded
+306|A lead researcher left with the project
+307|Months of test data turned out to be wrong
+308|We went the wrong way and scrapped the research
+309|🔬 Research produced nothing notable. Tech +0
+310|🔬 R&D progress! Tech +{0}
+311|✨ Research success! Secured a core technology. Tech +{0}
+312|<b>✨ Research success!</b><br>Tech +{0}
+313|💥 Breakthrough! An invention that will shake the industry. Tech +{0}{1}
+314|, ‘{0}’ competitiveness +10%
+315|<b>💥 Breakthrough!</b><br>Tech +{0}
+316|🎯 Mass-market
+317|Solid quality · 20% cheaper to develop
+318|💎 Premium
+319|Quality +20% · 60% pricier to develop
+320|🔥 Trend
+321|+40% right after launch · but fades twice as fast
+322|🛡️ Steady seller
+323|Slightly lower quality, but sells for a long time (ages half as fast)
+324|🧪 Experimental
+325|Double hit chance · double flop chance too
+326|🔁 Sequel
+327|Fans of the original: hit chance ×1.5
+328|🤝 Collab
+329|Team up with a famous brand · brand +3
+330|{0} × {1} Edition
+331|Convenience Store
+332|Fashion Brand
+333|Hit Webtoon
+334|Character
+335|Idol
+336|Sports Team
+337| (🗑 ‘{0}’ retired)
+338|🎉 Smash hit! Launched ‘{0}’, quality {1}{2}
+339|😓 Launched ‘{0}’ but the reaction is cold… quality {1}{2}
+340|Launched ‘{0}’! Quality {1}{2}
+341|<b>🔔 Listed on {0}!</b><br>The bell has rung
+342|🔔 Crossed the IPO threshold
+343|<b>💰 Funding secured!</b><br>{0}
+344|<b>🌏 Entered {0}!</b>
+345|<b>🏢 Moved into {0}!</b>
+346|🗑 Retired ‘{0}’. (quality {1}, sold for {2} mo)
+347|📦 Product slots are full
+348|<p>To launch a new product you need to retire an existing one.</p><p class="muted" style="font-size:12px;margin-bottom:0">Products lose quality (competitiveness) over time. They're listed <b>from lowest current quality</b>, so the top one is the best to retire. A new product would come out at about <b>quality {0}</b>.</p>
+349|{0}🗑 ‘{1}’ · quality now {2}{3} · {4}/mo · {5} mo{6}
+350|⭐ Recommended
+351| (launch {0})
+352|not yet counted
+353| · ⚠️ better than a new one
+354|Cancel launch
+355|🚀 What should we launch?
+356|<p class="muted" style="font-size:13px;margin:0 0 4px">The planning team pitched 3 ideas. Expected quality is about {0} (varies by concept).</p>
+357| (not enough cash)
+358|<b>Not enough cash</b>
+359|💡 Brainstorming…
+360|✏️ Writing the plan…
+361|👩‍💻 Developers crunching…
+362|🧪 Quality testing…
+363|📦 Ready to ship!
+364|🚀 Developing a product
+365|<div class="dev"><div class="dev-icon">🛠️</div><div class="dev-step">{0}</div><div class="prog"><div class="prog-fill"></div></div><div class="muted" style="font-size:12px">Dev cost {1}</div></div>
+366|<div class="reveal {0}"><div class="rv-label">{1}</div><div class="muted" style="font-size:12px">{2}</div><div class="rv-pname">‘{3}’</div><div class="rv-q">Quality <span id="qnum">0</span></div><div class="stars">{4}</div>{5}</div>
+367|🎉 Looks like a hit!
+368|😓 Cold reception…
+369|✅ Launched
+370|🌟 New product launched!
+371|🚀 Product launched
+372|Better luck next time…
+373|Nice!
+374|🏦 Bank loan {0} (0.6% monthly interest)
+375|🏦 Repaid {0} of debt
+376|📊 Month {0} results — revenue {1}{2} · net income <b class="{3}">{4}</b>
+377| (IP royalties {0})
+378|😵 {0} is too crowded! ({1}/{2} people) Productivity down, morale -{3}. Time to move.
+379|💡 No products yet. Launch one to start earning.
+380|🔥 Orders far exceed capacity ({0}) — everyone's working overtime. Hire more. Morale -3
+381|⚠️ Capacity can't keep up with demand.
+382|😞 Low morale: {0} people quit.
+383|🚨 Out of cash! Get back to profit, borrow or raise money within {0} months or you go bankrupt.
+384|🥱 Stagnation: {0} months without a new product. Brand and morale slip a little each month.
+385|🐌 Big-company syndrome: {0} staff, {1}% efficiency. The bigger you get, the less each person produces.
+386|📉 In decline! Company value is {1}% below its peak ({0}).
+387|<b>📉 In decline</b><br>Value -{0}% from peak
+388|🎉 Grew into a {0}! {1} actions per month
+389|<b>🎉 Promoted to {0}!</b><br>Now {1} actions per month
+390|🦄 Company value passed ₩1 trillion! You're a unicorn.
+391|🦄 Unicorn!
+392|🎂 One year in business — still alive!
+393|🏅 Survived 5 years!
+394|🏛️ A 10-year company
+395|<b>📈 First profit!</b>
+396|<div class="cal"><div class="cal-head">{0}</div><div class="cal-body"><div class="cal-page new">{1}<small>mo</small></div><div class="cal-page old">{2}<small>mo</small></div></div><div class="cal-foot">Closing the books…</div></div>
+397|🎉 Good news
+398|🩹 It failed this time, but you can try again
+399|🎉 Clinical trial passed!
+400|🩹 Disappointing result
+401|✅ Good call
+402|🩹 Bruised, but still standing
+403|🛡️ Crisis overcome
+404|<div class="news-tag">Breaking</div><p>{0}</p>
+405|OK
+406|Aggressive expansion, poaches talent
+407|R&D focus, high-quality products
+408|Slow but steady growth
+409|Ads- and brand-driven
+410|⚔️ Rival {0} launched a new product, ‘{1}’.
+411|⚔️ {0} raised a big round! Valued at {1}
+412|⚔️ Scandal at {0}… brand and value drop
+413|⚔️ {0} poached our developers. Tech -3, morale -3
+414|⚔️ {0} launched a massive ad campaign
+415|💀 Rival {0} went bankrupt.
+416|🆕 New rival {0} ({1}) entered the market.
+417|, patent IP secured
+418|stock swap (stake {0}%)
+419|🤝 Acquired {0} for {1}! Absorbed {2} products and {3} staff, tech {4}{5}{6}
+420|, product slot +1
+421|<b>🤝 Acquired {0}!</b><br>{1} products · est. revenue +{2}/mo
+422|🤝 First acquisition
+423|💵 Buy with cash ({0})
+424|📈 Buy with a stock swap (your stake {0}% → {1}%)
+425|🤝 Acquisition review
+426|<p><b>{0}</b> · valued at about {1}</p><div class="kv"><span class="muted">Products</span><b>{2}</b><span class="muted">Est. monthly revenue</span><b class="pos">+{3}</b><span class="muted">Tech</span><b>{4} → {5}</b><span class="muted">Brand</span><b>+5</b><span class="muted">Staff absorbed</span><b>+{6} <span class="muted" style="font-weight:400">(higher payroll)</span></b>{7}{8}<span class="muted">Competition</span><b>One rival gone, your share rises</b></div>{9}{10}<p class="muted" style="font-size:12px">An acquisition uses 1 action.</p>
+427|‘{0}’ (quality {1})
+428|<span class="muted">Product slots</span><b class="pos">+1 (permanent)</b>
+429|<span class="muted">Patent</span><b class="pos">+1 IP</b>
+430|<p class="muted" style="font-size:12px">A cash deal needs {0}.</p>
+431|<p class="muted" style="font-size:12px">A stock swap would drop your stake below 10%, so it isn't allowed.</p>
+432|Hanbit Activist Fund
+433|Polaris Partners
+434|Sky Holdings
+435|Whirlwind Asset Management
+436|Cheongsol Private Equity
+437|Omega Invest
+438|🛡️ Bought back shares: your stake +{0}%p → {1}% <span class="muted">(-{2})</span>
+439|<b>🛡️ Shares bought</b><br>Your stake {0}% · votes {1}%
+440|⚠️ {0} disclosed it has bought {1}% of our shares! This may be a hostile takeover attempt.
+441|<b>⚠️ Hostile takeover alert</b><br>{0} holds {1}%
+442|🏳️ {0} gave up the takeover and sold its shares. Control defended!
+443|<b>🛡️ Control defended!</b><br>{0} withdrew
+444|🚨 {0} holds {1}% — almost caught up with our votes ({2}%)! Buy shares to defend.
+445|🗳️ Won the shareholder vote! {0}
+446|<b>🗳️ Vote won!</b><br>You kept control
+447|🗳️ Lost the shareholder vote… {0}
+448|🗳️ Proxy fight by persuading minority shareholders (about {0}% to win)
+449|Minority shareholders backed current management.
+450|🛡️ Bring in a white knight, then vote ({0} · friendly stake +6%p · about {1}% to win)
+451|A friendly company stepped in as a white knight and swung the vote.
+452|⚔️ Proxy fight
+453|<div class="news-tag">Emergency meeting</div><p><b>{0}</b>'s stake ({1}%) now exceeds our voting power ({2}%). A motion to replace the board is on the agenda.</p><p class="muted" style="font-size:12px">Lose and you're out as CEO — game over. Morale, brand and profitability sway minority shareholders.</p>
+454|🚨 Danger
+455|⚠️ Under attack
+456|🛡️ Secure
+457|🙂 Fine
+458|😟 Vulnerable
+459|Already bought this month
+460|No more shares available to buy
+461|Private: buy back investor shares at a 20% premium
+462|Bidding war: 35% price premium
+463|Buy on the market at a 10% premium
+464|<div class="card {0}"><h3><span>🛡️ Control</span><span class="ctl-st {1}">{2}</span></h3><div class="ctl-bar"><span class="ctl-me" style="width:{3}%"></span><span class="ctl-al" style="width:{4}%"></span><span style="flex:1"></span>{5}</div><div class="ctl-leg"><span><i class="ctl-me"></i>Your stake <b>{6}%</b></span>{7}{8}<span>Our votes <b>{9}%</b></span></div><p class="muted" style="font-size:12px;margin:6px 0 0">{10}</p><div class="ctl-btns">{11}</div><div class="muted" style="font-size:11px;margin-top:4px">Buy shares · once a month · uses no action · {12}</div></div>
+465|<span><i class="ctl-al"></i>Friendly <b>{0}%</b></span>
+466|If their stake passes our votes, an emergency shareholder vote is held. Get far enough ahead and they give up.
+467|A listed company with under 50% of the votes can be a takeover target. Under 10% stake and you're fired.
+468|Listing puts shares on the market, so others can try to take control. Under 10% stake and you're fired.
+469|{0}y {1}m
+470|💸 Bankrupt
+471|Three straight months without cash. The company has gone bankrupt.
+472|⚔️ Lost control
+473|You lost the shareholder vote. New management took over and you step down as CEO.
+474|🪑 Fired as CEO
+475|Your stake fell below 10% and the board fired you. The company lives on, but without you.
+476|🤝 Successful exit
+477|You sold the company and walked away with {0}. Ready for your next startup?
+478|👑 Chaebol achieved!
+479|Company value passed {0}! {1} has grown beyond {2} into a group the whole world knows.
+480|You lasted over 5 years. Only 36.5% of new Korean companies make it that far.
+481|You lasted {0}. About {1}% of new Korean companies last this long.
+482|<p>{0}</p>{1}<div class="kv"><span class="muted">Time in charge</span><b>{2}</b><span class="muted">Peak value</span><b>{3}</b><span class="muted">Final staff</span><b>{4}</b><span class="muted">Your stake's value</span><b>{5}</b></div>
+483|📣 Share result
+484|Keep running it
+485|Start a new company
+486|Autosave
+487|Slot 1
+488|Slot 2
+489|Slot 3
+490|{1}/{0}
+491|<b>📂 Loaded</b><br>{0} · {1}
+492|☁️ Continue
+493|<p>There's a game saved to your account.</p><div class="kv"><span class="muted">Company</span><b>{0}</b><span class="muted">Progress</span><b>{1} · {2}</b><span class="muted">Value</span><b>{3}</b><span class="muted">Saved</span><b>{4}</b></div>{5}
+494|<p class="muted" style="font-size:12px">It's newer than the game on this device.</p>
+495|Keep current game
+496|Start fresh
+497|just now
+498|{0} min ago
+499|{0} h ago
+500|💾 Save / Load
+501|<p class="muted" style="margin-top:0;font-size:13px">{0}</p><div class="slots"><p class="muted">Loading…</p></div>
+502|☁️ <b>Cloud saves</b> are on. Continue on any phone or PC.
+503|💻 Saved only in this browser. Other devices won't see it.
+504|Close
+505|<p class="neg">Couldn't load your saves. Please try again in a moment.</p>
+506|<span>{0} · {1} · {2}</span><span class="muted">saved {3}{4}</span>
+507| · finished game
+508|<span class="muted">Empty</span>
+509|<button class="btn" data-act="save">Save</button>
+510|<button class="btn" data-act="load">Load</button><button class="btn" data-act="del" aria-label="Delete">🗑</button>
+511|Overwrite?
+512|Delete?
+513|Replace current game?
+514|<b>💾 Saved to {0}</b>
+515|Failed
+516|Storage is full. Delete another slot.
+517|Couldn't save. Please try again in a moment.
+518|🎲 Random start
+519|<div class="start-sc sc-{0}"><b>{1}</b><span class="badge">Difficulty: {2}</span><p>{3}</p></div><p class="muted" style="margin:8px 0 0">Take the company fate handed you and go for chaebol. Goal: <b>company value {4}</b>{5}</p><div class="kv"><span class="muted">Country</span><b>{6} {7}</b><span class="muted">Company</span><b>{8}</b><span class="muted">Industry</span><b>{9} {10}</b><span class="muted">CEO</span><b>{11}</b><span class="muted">HQ</span><b>{12} · {13}</b><span class="muted">Background</span><b>{14}<br><span class="muted" style="font-weight:400">{15}</span></b>{16}<span class="muted">Cash{17}</span><b>{18}{19}</b><span class="muted">Staff</span><b>{20}</b>{21}</div>
+520| <span class="muted">(about ₩100 trillion)</span>
+521|<span class="muted">Company value</span><b>{0}</b><span class="muted">Monthly revenue / profit</span><b>{1} / <span class="{2}">{3}</span></b>
+522| / Debt
+523|<span class="muted">Your stake</span><b class="{0}">{1}%{2}</b><span class="muted">Products</span><b>{3} · avg. {4} mo old</b>
+524| (fired if under 10%)
+525|🚀 Start this company
+526|🏢 {1} opened its doors in a small office in {0}.
+527|💡 Launch a product to make your first sales. Time moves week by week and the books close monthly. ⏸ pauses.
+528|📈 You're now CEO of {0}. A hit product keeps it cruising, but the office is about to fill up.
+529|💡 To keep growing, stay on top of hiring, moving offices and follow-up products.
+530|🏢 You've taken over {0}, an established mid-size firm. It's profitable for now, but its main products are aging.
+531|⚠️ Go 18 months without a new product and stagnation eats your brand. Products lose competitiveness every month.
+532|👔 You inherited {0} from your father. It's already losing money every month.
+533|⚠️ Huge payroll, old products, lots of debt. Decide what comes first: restructuring, new products or paying down debt. Fall below a 10% stake and you're fired.
+534|🎲 Reroll
+535|<text x="320" y="{0}" text-anchor="middle" font-size="9" fill="var(--muted)">Coworking {1}</text>
+536|<text x="246" y="{0}" text-anchor="end" font-size="9" font-weight="800" fill="var(--accent)">← Our company</text>
+537|<g class="crowdwarn"><rect x="270" y="{0}" width="100" height="18" rx="9" fill="var(--bad)"/><text x="320" y="{1}" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">😵 Overcrowded!</text></g>
+538|🏢 <b>{0}</b> · <span class="{1}">Staff {2}{3}</span>{4}{5}{6}
+539| · <span class="neg">Need to move!</span>
+540| · <span class="warn">Efficiency {0}%</span>
+541| · <span class="neg">📉 -{0}% from peak</span>
+542|<div class="dl">– same as last month</div>
+543|<div class="dl">– 0% vs last month</div>
+544|<div class="dl">new this month</div>
+545|<div class="dl {0}">{1} {2} <span class="muted">vs last month</span></div>
+546|Not enough cash
+547|Free
+548|<span class="muted">counted from next month</span>
+549|<span class="pos">New</span>
+550|🌱 Just launched
+551|🍂 Declining
+552|🔥 Selling
+553|<div class="prod2"><div class="p-top"><span class="p-name">{0}{1}<b>{2}</b></span><span class="p-rev">{3}<small> /mo</small></span></div><div class="p-sub"><span class="muted">{4} · {5} mo · quality {6}{7}</span><span class="p-right">{8}<button class="btn p-del" data-pi="{9}" {10}>Retire</button></span></div><div class="bar" style="grid-template-columns:1fr 40px"><div class="track"><div class="fill" style="width:{11}%"></div></div><span class="num">{12}%</span></div></div>
+554|<div class="p-total"><span class="muted">Total product revenue</span><b>{0} /mo</b></div>
+555|<p class="muted" style="margin:0">No products launched yet.</p>
+556|<div class="rv-top"><span class="rv-rank">{0}</span><b class="rv-name">{1}{2}</b>{3}{4}<span class="rv-val">{5}{6}</span></div><div class="bar" style="grid-template-columns:56px 1fr 44px"><span class="muted">Share</span><div class="track"><div class="fill" style="width:{7}%;{8}"></div></div><span class="num">{9}%</span></div>
+557|<span class="badge">Industry veteran</span>
+558|~
+559|<div class="rv-info">CEO {0} · tech <b>{1}</b> (us {2}) · brand <b>{3}</b> (us {4})<br>Strategy: {5} · flagship ‘{6}’</div>
+560|<div class="rv-info muted">🔒 Details unlock after a ‘Rival Analysis’</div>
+561|<div class="rv">{0}{1}<button class="btn rv-buy" data-i="{2}" {3}>🤝 Consider buying · ~{4}</button></div>
+562|<header class="top"><div><div class="co-name">{0} {1} {2}<span class="badge">{3}</span>{4}</div><div class="co-sub">{5} · CEO {6} ({7}) · {8} · {9} market</div></div><div style="text-align:right"><div class="date">{11}/{10} · W{12}</div><div style="display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap;margin-top:4px"><button class="btn hb" id="helpbtn" aria-label="How to play">❓</button><button class="btn hb" id="fbbtn" aria-label="Send feedback">💬</button><button class="btn hb bgm-ic" id="bgmbtn" aria-label="Music on/off">{13}</button><button class="btn hb" id="setbtn" aria-label="Settings">⚙️</button>{14}<button class="btn hb" id="savebtn">{15} Save</button><button class="btn hb" id="newbtn">🎲 New game</button></div></div></header>
+563|<span class="badge">Listed</span>
+564|<button class="btn hb" id="curbtn" aria-label="Switch currency" title="Switch currency">{0}</button>
+565|<div class="card statcard sumbar" id="sumbar" role="button" tabindex="0" aria-label="Company details"><div class="sb-row">{0}{1}{2}<button class="btn sb-more" tabindex="-1">📊<span> Stats</span></button></div><div class="sb-bars">{3}{4}{5}</div></div>
+566|Company value
+567|Cash
+568|Monthly profit
+569|<b>🔬 Tech tier up!</b><br>Reached ‘{0}’
+570|Tech · {0}
+571|Brand
+572|Morale
+573|<div class="card"><h3><span>This month's actions</span><span class="ap">{0}</span></h3><div class="actions">{1}</div><div class="fin"><button class="btn" id="borrow" {2}>🏦 Borrow {3}</button><button class="btn" id="repay" {4}>Repay {5}</button><span class="muted" style="align-self:center;font-size:12px">Borrowing and repaying use no actions</span></div></div><div class="card report {6}"><h3>This month's report</h3><ul>{7}</ul></div>{8}
+574|no credit
+575|<li class="muted">Pick actions while time flows; the books close every month. Popups pause the game.</li>
+576|<div class="card"><h3><span>📊 Company stats</span><span class="muted" style="font-weight:400">vs last month</span></h3><div class="stats">{0}{1}{2}{3}{4}{5}{6}{7}{8}</div></div><div class="card"><h3><span>Company value</span><span class="muted" style="font-weight:400">peak {9}</span></h3><canvas id="chart"></canvas></div>
+577|Debt
+578|Monthly revenue
+579|Staff
+580|Your stake
+581|Stake value
+582|Capacity / Demand
+583|<div class="card"><h3><span>⚔️ Rival analysis</span><span class="muted" style="font-weight:400">rank #{0} · competition <b class="{1}">demand ×{2}</b></span></h3>{3}<p class="muted" style="margin:8px 0 0;font-size:12px">Market share depends on your flagship product's quality and your brand. The stronger you are than rivals, the more demand you get. An acquisition uses 1 action.</p></div>
+584|<div class="card"><h3><span>Products ({0}/{1})</span><span class="muted" style="font-weight:400">{2}</span></h3>{3}</div><div class="card"><h3><span>💡 IP portfolio ({4}/4)</span><span class="muted" style="font-weight:400">royalties {5}/mo</span></h3>{6}</div>
+585|{1} slots as a {0}
+586|Max slots
+587|<div class="prod"><span><b>{0}</b> <span class="muted">{1}</span><br><span class="ipdots">{2}</span></span><span style="text-align:right">{3}/mo{4}</span></div>
+588|<br><span class="muted" style="font-size:12px">Next: {0}</span>
+589|<br><span class="pos" style="font-size:12px">Final stage</span>
+590|<p class="muted" style="margin:0">Use ‘IP Business’ to create IP like patents or characters. The further you expand it — merch, webtoons, movies — the bigger the royalties.</p>
+591|<div class="card log"><h3>Company log</h3><ul>{0}</ul></div>
+592|Really retire?
+593|<b>₩ Showing KRW</b>
+594|<b>{0} Showing {1}</b>
+595|🎲 New game
+596|<p>Abandon your current company (<b>{0}</b>) and start over? Your progress will be lost.</p><p class="muted" style="font-size:12px">To keep this game, save it to another slot under 💾 Save first.</p>
+597|Start a new company
+598|The chart appears after a few months
+599|Basic
+600|Skilled
+601|Leading
+602|Cutting-edge
+603|World-class
+604|Unrivaled
+605|<button class="btn primary t-cont" id="t-cont"><span>▶ Continue<small>{0} · {2}/{1} · {3}</small></span><span style="font-size:14px">{4}</span></button>
+606|<div class="t-in">{0}<div class="t-kicker">GLOBAL BUSINESS TYCOON SIM</div><h1 class="t-name">Road to <span>Chaebol</span></h1><p class="t-sub">One company, picked by fate.<br>From a neighborhood startup in Korea, the US, Japan, China, Germany or India<br>to a ₩100 trillion empire.</p><div class="t-goal">🏆 Goal <b>₩100T company value</b></div><div class="t-btns">{1}<button class="btn {2}" id="t-new">🎲 Draw a company</button><button class="btn" id="t-how">📖 How to play</button><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn" id="t-fb">💬 Feedback</button><button class="btn" id="t-set">⚙️ Settings</button></div></div><div class="t-feat"><div><b>🌍</b>6 countries × 7 industries<br>× 4 starts</div><div><b>⚔️</b>Rivals · M&amp;A<br>control battles</div><div><b>🚨</b>{3}<br>random events</div></div><div class="t-foot">Progress saves automatically · 🎵 Tap the screen to start the music</div></div>
+607|Draw a company
+608|<p><b>{0}</b> will be lost. Start over?</p>
+609|Start over
+610|🎯 What is this game?
+611|<p class="lead">You become CEO of a company in a random country — Korea, the US, Japan, China, Germany or India — and try to reach <b>₩100 trillion in company value</b>. Money shows in local currency; switch to KRW with the <b>₩</b> button at the top right.</p><ul><li><b>🎲</b><span><b>Every start is different.</b> {0} industries and 4 starting situations.</span></li><li><b>🌱</b><span><b>Bootstrapped</b> · <b>Hot venture</b> · <b>Mid-size firm</b> · <b>Inherited conglomerate</b> — even big companies crumble if you sit still.</span></li><li><b>👔</b><span>Your CEO's background gives a bonus.</span></li></ul>
+612|📅 How a month works
+613|<ul><li><b>1</b><span><b>Pick actions</b> — 2–4 per month, more as you grow. (the ● dots)</span></li><li><b>2</b><span><b>Time moves on its own</b> — one week at a time; after 4 weeks the month ends. Use the bar at the bottom: ⏸ pause · speed (1x/2x/4x) · ⏭ next week.</span></li><li><b>3</b><span><b>Cash flow</b> — profit (or loss) trickles in weekly and is settled at month end. Switch screens with the bottom tabs (Company · Stats · Rivals · Products · Log).</span></li><li><b>4</b><span><b>Random events</b> — can hit any week and pause the game. Your choice changes the outcome.</span></li></ul><p class="muted" style="font-size:12px;margin:8px 0 0">Loans, retiring products and buying shares don't use actions.</p>
+614|🛠️ What you can do
+615|<ul><li><b>🚀</b><span><b>Launch Product</b> — your source of revenue. Products age every month; when slots are full you pick one to retire.</span></li><li><b>🔬</b><span><b>R&amp;D</b> — more tech → better products. Sometimes it fails, sometimes it's a breakthrough.</span></li><li><b>📣</b><span><b>Marketing · 🌏 Expand</b> — grow your brand and demand, then go abroad.</span></li><li><b>👥</b><span><b>Hire · ☕ Perks · 🏢 Move office</b> — capacity and morale. A cramped office hurts efficiency.</span></li><li><b>💡</b><span><b>IP Business</b> — monthly royalties from patents and characters.</span></li><li><b>💰</b><span><b>Funding · 🔔 IPO</b> — lots of cash, but <b>your stake shrinks.</b></span></li><li><b>⚔️</b><span><b>Rivals</b> — analyze them (every 6 months) or buy them with cash or stock to absorb their products and tech.</span></li></ul>
+616|📈 Growth stages
+617|<p class="lead">As company value rises you move up a stage and get more actions per month and more product slots.</p><div class="ladder">{0}</div>
+618|+
+619|Start
+620|⚠️ Game over if…
+621|<ul><li><b>💸</b><span><b>Bankruptcy</b> — 3 months with negative cash and it's over. Survive with loans or funding.</span></li><li><b>🪑</b><span><b>Fired</b> — if funding rounds push your stake below 10%, you're out.</span></li><li><b>🗳️</b><span><b>Lost control</b> — after listing, raiders can buy up shares and win a vote. Buy shares to defend.</span></li><li><b>📉</b><span><b>Decline</b> — aging products, 18+ months without a launch, or too many staff (big-company syndrome) slowly drag you down.</span></li></ul>
+622|💡 Starter tips
+623|<ul><li><b>①</b><span>Start with <b>Launch Product → R&amp;D</b> to get revenue going.</span></li><li><b>②</b><span>If <b>Capacity / Demand</b> goes over 100%, hire; if the office is full, move.</span></li><li><b>③</b><span>Borrow or raise money before cash runs out — but guard your stake.</span></li><li><b>④</b><span>Check the <b>▲▼ vs last month</b> under each number to see if you're improving.</span></li><li><b>⑤</b><span>Top right: <b>❓</b> help · <b>💬</b> feedback · <b>🔊</b> music · <b>⚙️</b> theme, language, new game.</span></li></ul>
+624|🎲 Draw a company
+625|Got it!
+626|Next ▶
+627|◀ Back
+628|Skip
+629|Bug
+630|Idea
+631|Balance
+632|Other
+633|💬 Send feedback
+634|<p class="muted" style="margin:0 0 10px;font-size:13px">Bugs, ideas, too easy or too hard… anything helps. Your feedback goes into the next update.</p><div class="fb-lbl">Type</div><div class="fb-types">{0}</div><div class="fb-lbl">How was the game?</div><div class="fb-stars">{1}</div><div class="fb-lbl">Comment</div><textarea class="fb-ta" maxlength="2000" placeholder="e.g. Starting as a mid-size firm I go bankrupt in 3 years. / I'd like to name my own products.">{2}</textarea><div class="fb-lbl" style="margin-top:10px">Nickname <span style="font-weight:400">(optional)</span></div><input class="fb-ta fb-nick" style="min-height:0;height:40px" maxlength="30" placeholder="Leave a nickname if you'd like a reply" value="{3}"><label class="fb-chk"><input type="checkbox" {4}> Include my game state (industry, stage, date) and device info — it helps fix bugs</label><p class="muted" style="font-size:11px;margin:10px 0 0">‘Send’ opens a Google Form already filled in. Just press <b>Submit</b> there. No login needed.</p>
+635|<button type="button" data-n="{0}" class="{1}" aria-label="{2} stars">⭐</button>
+636|📮 Send
+637|<b>Please write a comment</b>
+638|**Type:** {0} {1}⏎**Rating:** {2}⏎⏎{3}⏎
+639|{0} · {1} · {3}/{2} (month {4}) · {5} · value {6} · {7} staff
+640|before starting a game
+641|⏎---⏎<sub>Game: {0}<br>Device: {1}×{2} · {3}</sub>⏎
+642|<b>📮 Google Form opened</b><br>It's already filled in. Just press <b>Submit</b>
+643|<b>📊 Month {0} results</b><br>Net income {1}
+644|<div class="nb-in"><div class="nb-info"><b>{1}/{0} · W{2}</b><div class="nb-weeks">{3}</div><span>Cash <b class="{4}">{5}</b></span></div><button class="btn primary nb-play {6}" id="next" {7}><span class="wk-fill"></span><span>{8}</span><span class="ap">{9}</span></button><button class="btn nb-sm" id="spd" title="Speed">{10}</button><button class="btn nb-sm" id="skip" title="Next week">⏭</button></div><nav class="tabs">{11}</nav>
+645|⏸ Pause
+646|▶ Play
+647|Company
+648|Stats
+649|Rivals
+650|Products
+651|Log
+652|📊 Company stats
+653|<div class="stats">{0}{1}{2}{3}{4}{5}{6}{7}{8}</div><div class="bars">{9}{10}{11}</div><h3 style="margin:14px 0 6px;font-size:14px;display:flex;justify-content:space-between"><span>Company value</span><span class="muted" style="font-weight:400">peak {12}</span></h3><canvas id="chart"></canvas><p class="muted" style="font-size:11px;margin:8px 0 0">Time is paused while this popup is open.</p>
+654|⚙️ Settings
+655|<div class="set-row"><div class="lbl">🌐 Language</div><div class="seg" id="set-lang" style="grid-template-columns:repeat(4,1fr)">{0}</div></div><div class="set-row"><div class="lbl">🎨 Theme</div><div class="seg" id="set-theme">{1}</div></div><div class="set-row"><div class="lbl">🎵 Music</div><div class="seg" id="set-bgm" style="grid-template-columns:repeat(2,1fr)"><button data-o="1" class="{2}">🔊 On</button><button data-o="0" class="{3}">🔇 Off</button></div><div class="vol"><span>🔈</span><input type="range" min="0" max="100" value="{4}" aria-label="Volume"><span>🔊</span></div></div><div class="set-row"><div class="lbl">💱 Currency</div><div class="seg" id="set-cur" style="grid-template-columns:repeat(2,1fr)"><button data-o="0" class="{5}">🌍 Local currency</button><button data-o="1" class="{6}">₩ KRW</button></div></div><div class="set-row"><div class="lbl">📣 Share</div><button class="btn" id="set-share" style="width:100%">{7}</button></div><div class="set-row"><div class="lbl">📚 Records</div><button class="btn" id="set-facts" style="width:100%">📊 Real-world stats ({8}/{9})</button></div>{10}<p class="muted" style="font-size:11px;margin:0">The music turns somber when your company is losing money.</p>
+656|🌓 Auto
+657|☀️ Light
+658|🌙 Dark
+659|📣 Show off my company
+660|📣 Tell a friend about the game
+661|<div class="set-row"><div class="lbl">🏢 Game</div><button class="btn" id="set-new" style="width:100%">🎲 Restart with a new company</button></div>
+662|A tycoon sim where you grow a neighborhood startup into a ₩100 trillion empire — “Road to Chaebol” 🏢⏎6 countries · 7 industries · 100+ random events, from ransomware to boardroom battles. No install, play right now!
+663|New game
+664|<p>Abandon your current company and start over? Your progress will be lost.</p>
+665|<div class="fact"><div class="fh">📊 In the real world</div><span class="big">{0}</span>{1}<span class="src">Source: {2}</span></div>
+666|Continue
+667|📚 Real-world stats
+668|<p class="muted" style="margin:0 0 6px;font-size:13px">Unlock one each time you survive a crisis or hit a milestone. ({0}/{1})</p><ul class="fact-list">{2}</ul>
+669|<li><b>{0}</b> · <b style="color:var(--accent)">{1}</b><br>{2}<br><span class="muted" style="font-size:11px">Source: {3}</span></li>
+670|Road to Chaebol
+671|<b>📋 Copied</b><br>Paste it into a chat or social post
+672|📣 Share
+673|<p class="muted" style="font-size:13px;margin:0 0 8px">Press and hold the text below to copy it.</p><textarea class="fb-ta" readonly style="min-height:120px">{0}</textarea>
+674|{0} {1} · ‘{2}’
+675|I grew {0} into a ₩100 trillion empire in {1}! 👑
+676|{0} held on for {1}, then went bankrupt… 💸 (peak value {2})
+677|I was CEO of {0} but sold too much stock and got fired after {1}… 🪑
+678|{0} lost control to a hostile takeover after {1}… ⚔️
+679|I sold {0} after {1} and cashed out! 🤝
+680|I've been running {0} for {1}. It's worth {2} right now!
+681|{0}⏎“Road to Chaebol” — a tycoon sim where you take a random company all the way to chaebol. How fast can you do it? 🏢
