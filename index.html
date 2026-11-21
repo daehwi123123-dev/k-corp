@@ -180,16 +180,6 @@ body{display:flex;flex-direction:column;overflow:hidden}
 #nextbar .next{margin:0;flex:1;padding:13px;display:flex;align-items:center;justify-content:center;gap:10px}
 #nextbar .next .ap i{background:#fff}#nextbar .next .ap i.used{background:rgba(255,255,255,.35)}
 .modal-bg{z-index:40}
-/* 모바일: 회사 장면을 기업가치 박스 아래로 */
-@media (max-width:820px){
-  .sumbar{top:0}
-  #root{display:flex;flex-direction:column}
-  #app,#app>.grid,#app>.grid>div{display:contents}
-  #hdr{order:0}
-  #app .grid>div>*{order:3}
-  #app .grid>div>.statcard{order:1}
-  #scene{order:2}
-}
 /* ===== 회사 장면 ===== */
 :root{--sky1:#cfe8ff;--sky2:#f2f8ff;--ground:#cfe3b8;--ground2:#a9c98a;--bld:#e9e3d8;--bld2:#9aa3ae;--bld3:#d5d9df;--glass:#bcd4ea;--win:#a3b6ca;--win2:#c9d1da;--winlit:#ffd66b;--cloud:#ffffff;--tree:#6cbf6c}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--sky1:#0d1a2e;--sky2:#1b2a44;--ground:#1f2d22;--ground2:#2e4433;--bld:#2c313b;--bld2:#4b5563;--bld3:#232832;--glass:#2b3d55;--win:#1a2230;--win2:#20262f;--winlit:#ffcf4d;--cloud:#34425b;--tree:#2f6b3a;color-scheme:dark}}
@@ -276,6 +266,8 @@ body{display:flex;flex-direction:column;overflow:hidden}
 
 /* ===== 주 단위 진행 바 ===== */
 #nextbar .nb-in{gap:8px}
+.nb-play{white-space:nowrap}
+@media (max-width:400px){.nb-info{font-size:11px}.nb-info>b{font-size:13px}#nextbar .nb-play{gap:6px;padding:12px 6px}.nb-sm{min-width:40px;padding:12px 6px}}
 .nb-play{flex:1;position:relative;overflow:hidden;margin:0;padding:12px 10px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800}
 .nb-play .wk-fill{position:absolute;left:0;top:0;bottom:0;background:rgba(255,255,255,.22);width:0;pointer-events:none}
 .nb-play.paused{animation:pulse 1.4s infinite}
@@ -294,10 +286,27 @@ body{display:flex;flex-direction:column;overflow:hidden}
 .modal .stats{grid-template-columns:repeat(2,1fr)}
 @media (min-width:480px){.modal .stats{grid-template-columns:repeat(3,1fr)}}
 .modal #chart{width:100%;height:150px;display:block}
+
+/* ===== 하단 탭 ===== */
+#root{max-width:760px}
+#sum{position:sticky;top:0;z-index:20}
+#sum .sumbar{position:static;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tabs{max-width:760px;margin:8px auto 0;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-top:1px solid var(--line);padding-top:6px}
+.tabs button{background:none;border:0;padding:4px 0 2px;color:var(--muted);font:inherit;font-size:11px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;position:relative;border-radius:8px}
+.tabs button b{font-size:19px;line-height:1.15;filter:grayscale(.6);opacity:.75}
+.tabs button.on{color:var(--accent);font-weight:800;background:var(--accent-soft)}
+.tabs button.on b{filter:none;opacity:1}
+.tabs button .dot{position:absolute;top:2px;right:calc(50% - 16px);width:8px;height:8px;border-radius:50%;background:var(--bad)}
+#app .stats{grid-template-columns:repeat(2,1fr)}
+@media (min-width:520px){#app .stats{grid-template-columns:repeat(3,1fr)}}
+#app #chart{width:100%;height:170px;display:block}
+.tab-in{animation:tabIn .25s ease}
+@keyframes tabIn{from{opacity:0;transform:translateY(6px)}}
+@media (prefers-reduced-motion: reduce){.tab-in{animation:none}}
 </style>
 </head>
 <body>
-<div id="scroller"><div class="wrap" id="root"><div id="hdr"></div><div id="scene" class="card scene"></div><div id="app"></div></div></div>
+<div id="scroller"><div class="wrap" id="root"><div id="hdr"></div><div id="sum"></div><div id="scene" class="card scene"></div><div id="app"></div></div></div>
 <div id="nextbar" hidden></div>
 <div id="modal-root"></div>
 <script>
@@ -1258,7 +1267,7 @@ function startScreen(){
       ${big?`<span class="muted">내 지분</span><b class="${draft.ownership<25?'neg':''}">${draft.ownership.toFixed(0)}%${draft.ownership<25?' (10% 아래로 떨어지면 해임)':''}</b>
       <span class="muted">제품</span><b>${draft.products.length}개 · 평균 ${Math.round(draft.products.reduce((a,p)=>a+p.age,0)/draft.products.length)}개월 된 제품</b>`:''}
     </div>`,
-    [{l:'🚀 이 회사로 창업하기',f:()=>{hideTitle();clock.run=true;clock.acc=0;for(const k in prevVals)delete prevVals[k];lastLogSeen=-1;const cr=document.getElementById('crowd');if(cr)cr.innerHTML='';sceneBldKey='';s=draft;s.report=[];pendingFx.push(()=>confetti(50));calcValuation();s.history=[s.valuation];
+    [{l:'🚀 이 회사로 창업하기',f:()=>{hideTitle();clock.run=true;clock.acc=0;tab='co';for(const k in prevVals)delete prevVals[k];lastLogSeen=-1;const cr=document.getElementById('crowd');if(cr)cr.innerHTML='';sceneBldKey='';s=draft;s.report=[];pendingFx.push(()=>confetti(50));calcValuation();s.history=[s.valuation];
         s.maxVal=s.valuation;s.close=closeSnap();s.pm=null;
         if(s.startId==='startup'){
           log(`🏢 ${s.city}의 작은 사무실에서 ${s.name}이(가) 문을 열었습니다.`);
@@ -1451,14 +1460,14 @@ function render(){
       <div class="co-sub">${I.name} · 대표 ${esc(s.ceo)} (${TRAITS[s.traitIdx].n}) · ${s.city} · ${REACH[s.reach].n} 시장</div></div>
     <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월 ${s.week||1}주</div><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:4px"><button class="btn" id="helpbtn" style="font-size:12px;padding:4px 10px" aria-label="게임 방법">❓</button><button class="btn" id="fbbtn" style="font-size:12px;padding:4px 10px" aria-label="의견 보내기">💬</button><button class="btn" id="savebtn" style="font-size:12px;padding:4px 10px">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn" id="reset" style="font-size:12px;padding:4px 10px">새 게임</button></div></div>
   </header>`;
-  app.innerHTML=`
-  <div class="grid">
-    <div>
-      <div class="card statcard sumbar" id="sumbar" role="button" tabindex="0" aria-label="회사 현황 자세히 보기"><div class="sb-row">
+  document.getElementById('sum').innerHTML=`<div class="card statcard sumbar" id="sumbar" role="button" tabindex="0" aria-label="회사 현황 자세히 보기"><div class="sb-row">
           ${stat('valuation','기업가치',s.valuation,'won')}
           ${stat('cash','현금',s.cash,'won',s.cash<0?'neg':'')}
           ${stat('profit','월 순이익',s.profit,'won',s.profit>=0?'pos':'neg')}
-          <button class="btn sb-more" tabindex="-1">📊<span> 상세</span></button></div></div>
+          <button class="btn sb-more" tabindex="-1">📊<span> 현황</span></button></div></div>`;
+  document.getElementById('scene').style.display=tab==='co'?'':'none';
+  const TABS={
+    co:()=>`
       <div class="card">
         <h3><span>이번 달 행동</span><span class="ap">${Array.from({length:maxAP()},(_,i)=>`<i class="${i<maxAP()-s.ap?'used':''}"></i>`).join('')}</span></h3>
         <div class="actions">${acts}</div>
@@ -1468,16 +1477,24 @@ function render(){
           <span class="muted" style="align-self:center;font-size:12px">대출·상환은 행동을 쓰지 않아요</span>
         </div>
       </div>
-      ${ctrlCard()}
-    </div>
-    <div>
       <div class="card report ${freshReport?'fresh':''}"><h3>이번 달 리포트</h3><ul>${s.report.length?s.report.map((r,i)=>`<li class="${cls(r.k)}" style="animation-delay:${i*.14}s">${r.t}</li>`).join(''):'<li class="muted">행동을 고르면 시간이 흐르며 한 달마다 결산돼요. 팝업이 뜨면 잠시 멈춰요.</li>'}</ul></div>
-      <div class="card"><h3><span>⚔️ 경쟁사 분석</span><span class="muted" style="font-weight:400">업계 ${myRank}위 · 경쟁 효과 <b class="${comp>=1?'pos':'neg'}">수요 ×${comp.toFixed(2)}</b></span></h3>${rivalHtml}<p class="muted" style="margin:8px 0 0;font-size:12px">점유율은 대표 제품 품질과 브랜드로 정해지고, 경쟁사보다 강할수록 수요가 늘어납니다. 인수는 행동 1회를 씁니다.</p></div>
+      ${ctrlCard()}`,
+    st:()=>`<div class="card"><h3><span>📊 회사 현황</span><span class="muted" style="font-weight:400">전월 대비</span></h3><div class="stats">
+          ${stat('valuation','기업가치',s.valuation,'won')}${stat('cash','현금',s.cash,'won',s.cash<0?'neg':'')}${stat('debt','부채',s.debt,'won','',true)}
+          ${stat('revenue','월 매출',s.revenue,'won')}${stat('profit','월 순이익',s.profit,'won',s.profit>=0?'pos':'neg')}${stat('employees','직원',s.employees,'ppl')}
+          ${stat('ownership','내 지분',s.ownership,'pct')}${stat('wealth','내 지분 가치',s.valuation*s.ownership/100,'won')}${stat('load','생산능력 / 수요',s.capacity?Math.round(Math.min(999,s.demand/s.capacity*100)):0,'pct0',s.demand>s.capacity*1.02?'warn':'')}
+        </div><div class="bars">${bar('tech','기술력',s.tech,Math.max(100,s.tech))}${bar('brand','브랜드',s.brand,100)}${bar('morale','직원 사기',s.morale,100)}</div></div>
+      <div class="card"><h3><span>기업가치 추이</span><span class="muted" style="font-weight:400">최고 ${won(s.maxVal)}</span></h3><canvas id="chart"></canvas></div>`,
+    rv:()=>`
+      <div class="card"><h3><span>⚔️ 경쟁사 분석</span><span class="muted" style="font-weight:400">업계 ${myRank}위 · 경쟁 효과 <b class="${comp>=1?'pos':'neg'}">수요 ×${comp.toFixed(2)}</b></span></h3>${rivalHtml}<p class="muted" style="margin:8px 0 0;font-size:12px">점유율은 대표 제품 품질과 브랜드로 정해지고, 경쟁사보다 강할수록 수요가 늘어납니다. 인수는 행동 1회를 씁니다.</p></div>`,
+    pd:()=>`
       <div class="card"><h3><span>제품 (${s.products.length}/${maxProd()})</span><span class="muted" style="font-weight:400">${stageIdx()<STAGES.length-1?`${STAGES[stageIdx()+1].n}이 되면 ${maxProd()+1}개`:"최대 슬롯"}</span></h3>${prods}</div>
-      <div class="card"><h3><span>💡 IP 포트폴리오 (${s.ips.length}/4)</span><span class="muted" style="font-weight:400">월 로열티 ${won(s.ips.reduce((a,ip)=>a+royalty(ip),0))}</span></h3>${s.ips.length?s.ips.map(ip=>`<div class="prod"><span><b>${esc(ip.name)}</b> <span class="muted">${esc(ipStage(ip))}</span><br><span class="ipdots">${ladder().map((_,i)=>`<i class="${i<=ip.lv?'on':''}" title="${esc(ladder()[i])}"></i>`).join('')}</span></span><span style="text-align:right">월 ${won(royalty(ip))}${ip.lv<ladder().length-1?`<br><span class="muted" style="font-size:12px">다음: ${esc(ladder()[ip.lv+1])}</span>`:'<br><span class="pos" style="font-size:12px">최종 단계</span>'}</span></div>`).join(''):'<p class="muted" style="margin:0">‘IP 사업’으로 특허나 캐릭터 같은 IP를 만들어 보세요. 굿즈·웹툰·영화처럼 넓혀 갈수록 로열티가 커집니다.</p>'}</div>
-      <div class="card log"><h3>경영 일지</h3><ul>${s.log.map(l=>{if(l.id===undefined)l.id=++logSeq;else logSeq=Math.max(logSeq,l.id);return `<li class="${cls(l.k)} ${lastLogSeen>=0&&l.id>lastLogSeen?'new':''}"><span class="d">${l.d}</span>${l.t}</li>`}).join('')}</ul></div>
-    </div>
-  </div>`;
+      <div class="card"><h3><span>💡 IP 포트폴리오 (${s.ips.length}/4)</span><span class="muted" style="font-weight:400">월 로열티 ${won(s.ips.reduce((a,ip)=>a+royalty(ip),0))}</span></h3>${s.ips.length?s.ips.map(ip=>`<div class="prod"><span><b>${esc(ip.name)}</b> <span class="muted">${esc(ipStage(ip))}</span><br><span class="ipdots">${ladder().map((_,i)=>`<i class="${i<=ip.lv?'on':''}" title="${esc(ladder()[i])}"></i>`).join('')}</span></span><span style="text-align:right">월 ${won(royalty(ip))}${ip.lv<ladder().length-1?`<br><span class="muted" style="font-size:12px">다음: ${esc(ladder()[ip.lv+1])}</span>`:'<br><span class="pos" style="font-size:12px">최종 단계</span>'}</span></div>`).join(''):'<p class="muted" style="margin:0">‘IP 사업’으로 특허나 캐릭터 같은 IP를 만들어 보세요. 굿즈·웹툰·영화처럼 넓혀 갈수록 로열티가 커집니다.</p>'}</div>`,
+    lg:()=>`
+      <div class="card log"><h3>경영 일지</h3><ul>${s.log.map(l=>{if(l.id===undefined)l.id=++logSeq;else logSeq=Math.max(logSeq,l.id);return `<li class="${cls(l.k)} ${lastLogSeen>=0&&l.id>lastLogSeen?'new':''}"><span class="d">${l.d}</span>${l.t}</li>`}).join('')}</ul></div>`,
+  };
+  if(tab!=='lg')s.log.forEach(l=>{if(l.id===undefined)l.id=++logSeq;else logSeq=Math.max(logSeq,l.id)});
+  app.innerHTML=`<div class="${tabAnim?'tab-in':''}">${TABS[tab]()}</div>`;tabAnim=false;
   app.querySelectorAll('.act').forEach(b=>b.onclick=()=>{
     const a=ACTIONS.find(x=>x.id===b.dataset.a),c=a.cost(),r=b.getBoundingClientRect();
     if(busy)return;
@@ -1493,16 +1510,17 @@ function render(){
     if(!b.dataset.armed){b.dataset.armed=1;b.textContent='정말 단종?';b.classList.add('warnbtn');return}
     discontinue(p);render();
   });
-  const sb=document.getElementById('sumbar');sb.onclick=statPopup;sb.onkeydown=e=>{if(e.key==='Enter')statPopup()};
-  document.getElementById('borrow').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();const c0=s.cash;borrow();if(s.cash>c0)floatAt(r.left+r.width/2,r.top,'+'+won(s.cash-c0),'pos')};
-  document.getElementById('repay').onclick=repay;
+  const sb=document.getElementById('sumbar');sb.onclick=()=>setTab(tab==='st'?'co':'st');sb.onkeydown=e=>{if(e.key==='Enter')sb.onclick()};
+  if(tab==='co')document.getElementById('borrow').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();const c0=s.cash;borrow();if(s.cash>c0)floatAt(r.left+r.width/2,r.top,'+'+won(s.cash-c0),'pos')};
+  if(tab==='co')document.getElementById('repay').onclick=repay;
   document.getElementById('savebtn').onclick=saveMenu;
   document.getElementById('helpbtn').onclick=()=>howTo();
   document.getElementById('fbbtn').onclick=feedback;
   document.getElementById('reset').onclick=()=>modal('새 게임','<p>지금 회사를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p>',[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]);
   updateScene();
   animateAfterRender();
-  lastLogSeen=logSeq;freshReport=false;
+  if(tab==='lg'||lastLogSeen<0)lastLogSeen=logSeq;freshReport=false;
+  if(tab==='st')drawChart(chartAnim);
   chartAnim=false;
 }
 function drawChart(anim){
@@ -1530,6 +1548,8 @@ function drawChart(anim){
   const t0=performance.now();const step=t=>{const p=Math.min(1,(t-t0)/700);frame(1-Math.pow(1-p,3));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step);
 }
 window.addEventListener('resize',()=>document.getElementById('chart')&&drawChart());
+let tab='co',tabAnim=false;
+function setTab(x){if(tab===x)return;tab=x;tabAnim=true;document.getElementById('scroller').scrollTop=0;if(x==='st')chartAnim=true;render()}
 
 // ===== 타이틀 화면 · 게임 방법 =====
 const seenHelp=()=>{try{return localStorage.getItem('kcorp-help')==='1'}catch(e){return true}};
@@ -1578,7 +1598,7 @@ const HOW=[
   {t:'📅 한 달은 이렇게 흘러가요',h:()=>`<ul>
     <li><b>1</b><span><b>행동 고르기</b> — 매달 2~4번 행동할 수 있어요. 회사가 클수록 늘어나요. (화면의 ● 점)</span></li>
     <li><b>2</b><span><b>시간은 저절로 흘러요</b> — 1주씩 진행되고 4주가 지나면 한 달이 끝나요. 아래 버튼으로 ⏸ 멈춤 · 속도(1x/2x/4x) · ⏭ 다음 주.</span></li>
-    <li><b>3</b><span><b>현금 흐름</b> — 매주 이익(손실)이 조금씩 들어오고, 월말에 정확히 결산돼요. 맨 위 요약을 누르면 회사 현황이 열려요.</span></li>
+    <li><b>3</b><span><b>현금 흐름</b> — 매주 이익(손실)이 조금씩 들어오고, 월말에 정확히 결산돼요. 맨 아래 탭(회사·현황·경쟁·제품·일지)으로 화면을 바꿔요.</span></li>
     <li><b>4</b><span><b>돌발 이벤트</b> — 아무 주에나 터지고, 뜨면 시간이 멈춰요. 선택에 따라 결과가 달라져요.</span></li></ul>
     <p class="muted" style="font-size:12px;margin:8px 0 0">대출·상환, 제품 단종, 지분 매입은 행동을 쓰지 않아요.</p>`},
   {t:'🛠️ 할 수 있는 일',h:()=>`<ul>
@@ -1678,7 +1698,9 @@ function renderBar(){
   nb.innerHTML=`<div class="nb-in"><div class="nb-info"><b>${s.year}년 ${s.month}월 ${s.week||1}주</b><div class="nb-weeks">${[1,2,3,4].map(w=>`<i class="${w<=(s.week||1)?'on':''}"></i>`).join('')}</div><span>현금 <b class="${s.cash<0?'neg':''}">${won(s.cash)}</b></span></div>
     <button class="btn primary nb-play ${clock.run?'':'paused'}" id="next" ${s.over&&!s.won?'disabled':''}><span class="wk-fill"></span><span>${clock.run?'⏸ 일시정지':'▶ 진행'}</span><span class="ap">${dots}</span></button>
     <button class="btn nb-sm" id="spd" title="속도">${SPEEDS[clock.spd].n}</button>
-    <button class="btn nb-sm" id="skip" title="다음 주로">⏭</button></div>`;
+    <button class="btn nb-sm" id="skip" title="다음 주로">⏭</button></div>
+    <nav class="tabs">${[['co','🏢','회사'],['st','📊','현황'],['rv','⚔️','경쟁'],['pd','📦','제품'],['lg','📜','일지']].map(([k,i,n])=>`<button data-t="${k}" class="${tab===k?'on':''}">${k==='co'&&tab!=='co'&&s.raid&&s.raid.pct>myVotes()*.8||k==='lg'&&tab!=='lg'&&logSeq>lastLogSeen&&lastLogSeen>=0?'<span class="dot"></span>':''}<b>${i}</b>${n}</button>`).join('')}</nav>`;
+  nb.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>setTab(b.dataset.t));
   nb.querySelector('#next').onclick=()=>setRun(!clock.run);
   nb.querySelector('#spd').onclick=()=>{clock.spd=(clock.spd+1)%SPEEDS.length;clock.acc=0;try{localStorage.setItem('kcorp-spd',clock.spd)}catch(e){};renderBar()};
   nb.querySelector('#skip').onclick=()=>{if(!blocked()){clock.acc=0;weekTick()}};
