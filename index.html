@@ -220,6 +220,45 @@ body{display:flex;flex-direction:column;overflow:hidden}
 @keyframes rise{from{transform:translateY(30px) scaleY(.2);opacity:0}}
 .ipdots i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--line);margin:4px 3px 0 0}.ipdots i.on{background:var(--accent)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.report.fresh li,.stars span{opacity:1}.ch{transform:translateX(var(--x0))!important}}
+
+/* ===== 타이틀 화면 ===== */
+#title{position:fixed;inset:0;z-index:35;overflow-y:auto;background:radial-gradient(120% 70% at 50% 0%,color-mix(in srgb,var(--accent) 22%,var(--bg)) 0%,var(--bg) 70%);display:flex;flex-direction:column;align-items:center;padding:max(20px,env(safe-area-inset-top,0px)) 16px max(20px,env(safe-area-inset-bottom,0px))}
+#title.out,.t-out{animation:tOut .35s ease forwards}
+@keyframes tOut{to{opacity:0;transform:scale(1.03)}}
+.t-in{width:100%;max-width:440px;margin:auto 0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.t-hero{width:100%;max-width:360px;aspect-ratio:36/20;margin-bottom:4px}
+.t-hero .tb{transform-box:fill-box;transform-origin:50% 100%;animation:tGrow 1s cubic-bezier(.2,1.2,.4,1) both}
+@keyframes tGrow{from{transform:scaleY(0)}}
+.t-hero .tw{animation:tWin 3s infinite}
+@keyframes tWin{0%,100%{opacity:.35}50%{opacity:1}}
+.t-hero .tp{animation:tWalk 7s linear infinite}
+@keyframes tWalk{from{transform:translateX(-30px)}to{transform:translateX(390px)}}
+.t-hero .tl{stroke-dasharray:400;stroke-dashoffset:400;animation:tLine 1.6s .8s ease-out forwards}
+@keyframes tLine{to{stroke-dashoffset:0}}
+.t-kicker{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--accent)}
+.t-name{font-size:40px;font-weight:900;line-height:1.1;margin:6px 0 8px;letter-spacing:-.02em}
+.t-name span{color:var(--accent)}
+.t-sub{color:var(--muted);margin:0 0 18px;font-size:14px}
+.t-goal{display:inline-flex;gap:6px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;margin-bottom:22px}
+.t-btns{display:flex;flex-direction:column;gap:10px;width:100%}
+.t-btns .btn{width:100%;padding:14px;font-size:16px;font-weight:700;border-radius:12px;margin:0}
+.t-cont{text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.t-cont small{display:block;font-weight:500;font-size:12px;opacity:.85;margin-top:2px}
+.t-feat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;margin-top:22px}
+.t-feat div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 6px;font-size:12px;color:var(--muted)}
+.t-feat b{display:block;font-size:20px;margin-bottom:2px}
+.t-foot{font-size:11px;color:var(--muted);margin-top:18px}
+@media (prefers-reduced-motion: reduce){.t-hero *{animation:none!important;stroke-dashoffset:0!important}}
+.how-pg{margin:-6px 0 10px;display:flex;gap:4px}
+.how-pg i{flex:1;height:4px;border-radius:2px;background:var(--line)}.how-pg i.on{background:var(--accent)}
+.how ul{padding-left:0;margin:8px 0 0;list-style:none}
+.how li{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.how li:last-child{border:0}
+.how li>b:first-child{font-size:18px;line-height:1.2;flex:0 0 24px;text-align:center}
+.how li span{flex:1}
+.how .lead{margin:0 0 4px}
+.how .ladder{display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.how .ladder div{display:flex;justify-content:space-between;background:var(--chip);border-radius:8px;padding:6px 10px}
 </style>
 </head>
 <body>
@@ -1086,7 +1125,7 @@ async function initCloud(){
     if(!db||!user)return;
     const uid=await user.id();if(!uid)return;
     CLOUD.db=db;CLOUD.uid=uid;CLOUD.ready=true;
-    if(s)render();
+    if(s&&!document.getElementById('title'))render();
     offerCloudContinue();
   }catch(e){}
 }
@@ -1123,7 +1162,7 @@ function applyLoaded(body){
   for(const k in prevVals)delete prevVals[k];
   lastLogSeen=-1;sceneBldKey='';const cr=document.getElementById('crowd');if(cr)cr.innerHTML='';
   document.getElementById('modal-root').innerHTML='';
-  s=st;save();render();
+  s=st;save();hideTitle();render();
   toast(`<b>📂 불러왔어요</b><br>${esc(body.name)} · ${esc(body.date)}`,'good');
 }
 // 다른 기기에서 더 진행한 게임이 있으면 이어하기를 제안
@@ -1182,7 +1221,7 @@ function startScreen(){
       ${big?`<span class="muted">내 지분</span><b class="${draft.ownership<25?'neg':''}">${draft.ownership.toFixed(0)}%${draft.ownership<25?' (10% 아래로 떨어지면 해임)':''}</b>
       <span class="muted">제품</span><b>${draft.products.length}개 · 평균 ${Math.round(draft.products.reduce((a,p)=>a+p.age,0)/draft.products.length)}개월 된 제품</b>`:''}
     </div>`,
-    [{l:'🚀 이 회사로 창업하기',f:()=>{for(const k in prevVals)delete prevVals[k];lastLogSeen=-1;const cr=document.getElementById('crowd');if(cr)cr.innerHTML='';sceneBldKey='';s=draft;s.report=[];pendingFx.push(()=>confetti(50));calcValuation();s.history=[s.valuation];
+    [{l:'🚀 이 회사로 창업하기',f:()=>{hideTitle();for(const k in prevVals)delete prevVals[k];lastLogSeen=-1;const cr=document.getElementById('crowd');if(cr)cr.innerHTML='';sceneBldKey='';s=draft;s.report=[];pendingFx.push(()=>confetti(50));calcValuation();s.history=[s.valuation];
         s.maxVal=s.valuation;s.close=closeSnap();s.pm=null;
         if(s.startId==='startup'){
           log(`🏢 ${s.city}의 작은 사무실에서 ${s.name}이(가) 문을 열었습니다.`);
@@ -1375,7 +1414,7 @@ function render(){
   <header class="top">
     <div><div class="co-name">${I.icon} ${esc(s.name)}<span class="badge">${st.n}</span>${s.ipo?'<span class="badge">상장사</span>':''}</div>
       <div class="co-sub">${I.name} · 대표 ${esc(s.ceo)} (${TRAITS[s.traitIdx].n}) · ${s.city} · ${REACH[s.reach].n} 시장</div></div>
-    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월</div><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:4px"><button class="btn" id="savebtn" style="font-size:12px;padding:4px 10px">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn" id="reset" style="font-size:12px;padding:4px 10px">새 게임</button></div></div>
+    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월</div><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:4px"><button class="btn" id="helpbtn" style="font-size:12px;padding:4px 10px" aria-label="게임 방법">❓</button><button class="btn" id="savebtn" style="font-size:12px;padding:4px 10px">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn" id="reset" style="font-size:12px;padding:4px 10px">새 게임</button></div></div>
   </header>`;
   app.innerHTML=`
   <div class="grid">
@@ -1433,6 +1472,7 @@ function render(){
   document.getElementById('borrow').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();const c0=s.cash;borrow();if(s.cash>c0)floatAt(r.left+r.width/2,r.top,'+'+won(s.cash-c0),'pos')};
   document.getElementById('repay').onclick=repay;
   document.getElementById('savebtn').onclick=saveMenu;
+  document.getElementById('helpbtn').onclick=()=>howTo();
   document.getElementById('reset').onclick=()=>modal('새 게임','<p>지금 회사를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p>',[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]);
   updateScene();
   animateAfterRender();
@@ -1465,6 +1505,89 @@ function drawChart(anim){
 }
 window.addEventListener('resize',()=>s&&drawChart());
 
+// ===== 타이틀 화면 · 게임 방법 =====
+const seenHelp=()=>{try{return localStorage.getItem('kcorp-help')==='1'}catch(e){return true}};
+function markHelp(){try{localStorage.setItem('kcorp-help','1')}catch(e){}}
+function titleHero(){
+  const B=[[22,70,40],[70,50,62],[126,64,78],[196,46,104],[252,58,134]];
+  const bl=B.map(([x,w,h],i)=>{const y=168-h;let win='';
+    for(let wy=y+10;wy<160;wy+=14)for(let wx=x+8;wx<x+w-8;wx+=13)win+=`<rect class="tw" x="${wx}" y="${wy}" width="6" height="7" rx="1" fill="#fde68a" style="animation-delay:${((wx*7+wy*3)%30)/10}s"/>`;
+    return `<g class="tb" style="animation-delay:${i*.12}s"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="var(--accent)" opacity="${.55+i*.1}"/>${win}</g>`}).join('');
+  const ppl=[0,1.6,3.1,4.8].map((d,i)=>`<g class="tp" style="animation-delay:-${d}s"><circle cx="0" cy="${170+i%2}" r="3.2" fill="var(--text)"/><rect x="-2.6" y="${173+i%2}" width="5.2" height="8" rx="2" fill="${['#f87171','#34d399','#fbbf24','#60a5fa'][i]}"/></g>`).join('');
+  return `<svg class="t-hero" viewBox="0 0 360 200" aria-hidden="true">
+    <circle cx="318" cy="38" r="16" fill="#fbbf24" opacity=".85"/>
+    ${bl}<polyline class="tl" points="20,120 80,104 130,110 190,78 250,70 316,34" fill="none" stroke="var(--good)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="0" y="168" width="360" height="3" rx="1.5" fill="var(--line)"/>${ppl}</svg>`;
+}
+function showTitle(){
+  document.getElementById('title')?.remove();
+  document.getElementById('nextbar').hidden=true;
+  const el=document.createElement('div');el.id='title';
+  const cont=s&&!s.over?`<button class="btn primary t-cont" id="t-cont"><span>▶ 이어하기<small>${esc(s.name)} · ${s.year}년 ${s.month}월 · ${STAGES[stageIdx()].n}</small></span><span style="font-size:14px">${won(s.valuation)}</span></button>`:'';
+  el.innerHTML=`<div class="t-in">${titleHero()}
+    <div class="t-kicker">한국 기업 성장 시뮬레이션</div>
+    <h1 class="t-name">K-기업 <span>키우기</span></h1>
+    <p class="t-sub">운명이 정해 준 회사 하나.<br>동네 스타트업에서 대한민국 재벌까지.</p>
+    <div class="t-goal">🏆 목표 <b>기업가치 100조 원</b></div>
+    <div class="t-btns">${cont}
+      <button class="btn ${cont?'':'primary'}" id="t-new">🎲 새 회사 뽑기</button>
+      <button class="btn" id="t-how">📖 게임 방법</button></div>
+    <div class="t-feat"><div><b>🎲</b>업종 7개 ×<br>시작 4가지</div><div><b>⚔️</b>경쟁사·M&amp;A<br>경영권 분쟁</div><div><b>🚨</b>64가지<br>돌발 이벤트</div></div>
+    <div class="t-foot">진행 상황은 자동 저장돼요</div></div>`;
+  document.body.appendChild(el);
+  el.querySelector('#t-cont')?.addEventListener('click',()=>{hideTitle();render()});
+  el.querySelector('#t-new').onclick=()=>{
+    const go=()=>s&&!s.over?modal('새 회사 뽑기',`<p>지금 하던 <b>${esc(s.name)}</b>은(는) 사라져요. 새로 시작할까요?</p>`,[{l:'새로 시작',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]):startScreen();
+    seenHelp()?go():howTo(go)};
+  el.querySelector('#t-how').onclick=()=>howTo();
+}
+function hideTitle(){const el=document.getElementById('title');if(!el)return;
+  el.removeAttribute('id');if(RM)return el.remove();el.classList.add('t-out');setTimeout(()=>el.remove(),350)}
+const HOW=[
+  {t:'🎯 어떤 게임인가요?',h:()=>`<p class="lead">랜덤으로 정해지는 한국 회사의 대표가 되어 <b>기업가치 100조 원</b>을 만드는 게임이에요.</p><ul>
+    <li><b>🎲</b><span><b>시작이 매번 달라요.</b> 업종 ${Object.keys(IND).length}개와 시작 상황 4가지가 섞여요.</span></li>
+    <li><b>🌱</b><span><b>맨땅 창업</b> · <b>잘나가는 벤처</b> · <b>중견기업</b> · <b>물려받은 대기업</b> — 큰 회사로 시작해도 손 놓으면 무너져요.</span></li>
+    <li><b>👔</b><span>대표의 이력에 따라 보너스가 달라요.</span></li></ul>`},
+  {t:'📅 한 달은 이렇게 흘러가요',h:()=>`<ul>
+    <li><b>1</b><span><b>행동 고르기</b> — 매달 2~4번 행동할 수 있어요. 회사가 클수록 늘어나요. (화면의 ● 점)</span></li>
+    <li><b>2</b><span><b>다음 달 ▶</b> — 아래 고정 버튼을 누르면 한 달이 지나요.</span></li>
+    <li><b>3</b><span><b>결산</b> — 제품 매출에서 인건비·임대료·이자·세금을 빼고 현금이 바뀌어요.</span></li>
+    <li><b>4</b><span><b>돌발 이벤트</b> — 산업 스파이, 세무조사, K-열풍… 선택에 따라 결과가 달라져요.</span></li></ul>
+    <p class="muted" style="font-size:12px;margin:8px 0 0">대출·상환, 제품 단종, 지분 매입은 행동을 쓰지 않아요.</p>`},
+  {t:'🛠️ 할 수 있는 일',h:()=>`<ul>
+    <li><b>🚀</b><span><b>신제품 출시</b> — 매출의 원천. 제품은 매달 조금씩 늙어요. 슬롯이 차면 단종할 제품을 골라요.</span></li>
+    <li><b>🔬</b><span><b>연구개발</b> — 기술력 ↑ → 더 좋은 제품. 가끔 실패하거나 대박 혁신이 터져요.</span></li>
+    <li><b>📣</b><span><b>마케팅 · 🌏 시장 확장</b> — 브랜드를 키워 수요를 늘리고 해외로 나가요.</span></li>
+    <li><b>👥</b><span><b>채용 · ☕ 복지 · 🏢 사옥 이전</b> — 생산능력과 사기. 사무실이 비좁으면 효율이 떨어져요.</span></li>
+    <li><b>💡</b><span><b>IP 사업</b> — 특허·캐릭터로 매달 로열티.</span></li>
+    <li><b>💰</b><span><b>투자 · 🔔 IPO</b> — 큰돈을 얻지만 <b>내 지분이 줄어요.</b></span></li>
+    <li><b>⚔️</b><span><b>경쟁사</b> — 분석(6개월마다)하거나 현금·주식으로 인수해 제품과 기술을 흡수해요.</span></li></ul>`},
+  {t:'📈 성장 단계',h:()=>`<p class="lead">기업가치가 오르면 단계가 올라가고, 매달 행동 횟수와 제품 슬롯이 늘어요.</p>
+    <div class="ladder">${STAGES.map(x=>`<div><b>${x.n}</b><span class="muted">${x.min?won(x.min)+' 이상':'시작'}</span></div>`).join('')}</div>`},
+  {t:'⚠️ 이러면 게임 오버',h:()=>`<ul>
+    <li><b>💸</b><span><b>부도</b> — 현금이 마이너스인 채로 3개월이 지나면 끝. 대출이나 투자로 버티세요.</span></li>
+    <li><b>🪑</b><span><b>해임</b> — 투자·증자로 내 지분이 10% 아래가 되면 쫓겨나요.</span></li>
+    <li><b>🗳️</b><span><b>경영권 상실</b> — 상장 후 적대 세력이 지분을 모아 표 대결에서 지면 끝. 지분을 사서 막으세요.</span></li>
+    <li><b>📉</b><span><b>몰락</b> — 제품이 늙고, 18개월 넘게 신제품이 없거나, 직원이 너무 많으면(대기업병) 서서히 무너져요.</span></li></ul>`},
+  {t:'💡 시작 팁',h:()=>`<ul>
+    <li><b>①</b><span>처음엔 <b>신제품 → 연구개발</b>로 매출부터 만드세요.</span></li>
+    <li><b>②</b><span><b>생산능력 / 수요</b>가 100%를 넘으면 채용, 사무실이 꽉 차면 사옥 이전.</span></li>
+    <li><b>③</b><span>현금이 바닥나기 전에 대출·투자. 하지만 지분은 아껴 쓰세요.</span></li>
+    <li><b>④</b><span>숫자 아래 <b>▲▼ 전월 대비</b>로 회사가 좋아지는지 확인하세요.</span></li>
+    <li><b>⑤</b><span>오른쪽 위 <b>❓</b>를 누르면 언제든 이 설명을 다시 볼 수 있어요.</span></li></ul>`},
+];
+function howTo(done){
+  let i=0;
+  const show=()=>{
+    modal(HOW[i].t,`<div class="how-pg">${HOW.map((_,k)=>`<i class="${k<=i?'on':''}"></i>`).join('')}</div><div class="how">${HOW[i].h()}</div>`,[]);
+    const last=i===HOW.length-1;
+    const btns=[{l:last?(done?'🎲 회사 뽑으러 가기':'알겠어요!'):'다음 ▶',f:()=>{if(last){markHelp();done&&done()}else{i++;show()}}}];
+    if(i>0)btns.push({l:'◀ 이전',f:()=>{i--;show()}});
+    if(!last)btns.push({l:done?'건너뛰기':'닫기',f:()=>{markHelp();done&&done()}});
+    setModalBtns(btns);
+  };
+  show();
+}
+
 // ===== 시작 =====
 function migrate(st){
   if(!st)return st;
@@ -1476,7 +1599,8 @@ function migrate(st){
   s=prev;return st;
 }
 s=migrate(loadSave());
-if(s&&!s.over){render()}else{s=null;startScreen()}
+if(!(s&&!s.over))s=null;
+showTitle();
 initCloud();
 </script>
 </body>
