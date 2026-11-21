@@ -259,6 +259,19 @@ body{display:flex;flex-direction:column;overflow:hidden}
 .how .lead{margin:0 0 4px}
 .how .ladder{display:flex;flex-direction:column;gap:4px;margin-top:8px}
 .how .ladder div{display:flex;justify-content:space-between;background:var(--chip);border-radius:8px;padding:6px 10px}
+
+/* 피드백 */
+.fb-types{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:4px 0 12px}
+.fb-types button{padding:8px 2px;font-size:12px;border-radius:10px;border:1px solid var(--line);background:var(--chip);color:var(--text);cursor:pointer;font:inherit;font-size:12px}
+.fb-types button b{display:block;font-size:18px}
+.fb-types button.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:700}
+.fb-stars{display:flex;gap:4px;margin:2px 0 12px}
+.fb-stars button{font-size:26px;line-height:1;background:none;border:0;padding:2px;cursor:pointer;filter:grayscale(1);opacity:.35}
+.fb-stars button.on{filter:none;opacity:1}
+.fb-ta{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit;background:var(--card);color:var(--text)}
+.fb-ta:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.fb-lbl{font-size:12px;font-weight:700;color:var(--muted);margin:0 0 4px}
+.fb-chk{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--muted);margin-top:10px}
 </style>
 </head>
 <body>
@@ -1414,7 +1427,7 @@ function render(){
   <header class="top">
     <div><div class="co-name">${I.icon} ${esc(s.name)}<span class="badge">${st.n}</span>${s.ipo?'<span class="badge">상장사</span>':''}</div>
       <div class="co-sub">${I.name} · 대표 ${esc(s.ceo)} (${TRAITS[s.traitIdx].n}) · ${s.city} · ${REACH[s.reach].n} 시장</div></div>
-    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월</div><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:4px"><button class="btn" id="helpbtn" style="font-size:12px;padding:4px 10px" aria-label="게임 방법">❓</button><button class="btn" id="savebtn" style="font-size:12px;padding:4px 10px">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn" id="reset" style="font-size:12px;padding:4px 10px">새 게임</button></div></div>
+    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월</div><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:4px"><button class="btn" id="helpbtn" style="font-size:12px;padding:4px 10px" aria-label="게임 방법">❓</button><button class="btn" id="fbbtn" style="font-size:12px;padding:4px 10px" aria-label="의견 보내기">💬</button><button class="btn" id="savebtn" style="font-size:12px;padding:4px 10px">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn" id="reset" style="font-size:12px;padding:4px 10px">새 게임</button></div></div>
   </header>`;
   app.innerHTML=`
   <div class="grid">
@@ -1473,6 +1486,7 @@ function render(){
   document.getElementById('repay').onclick=repay;
   document.getElementById('savebtn').onclick=saveMenu;
   document.getElementById('helpbtn').onclick=()=>howTo();
+  document.getElementById('fbbtn').onclick=feedback;
   document.getElementById('reset').onclick=()=>modal('새 게임','<p>지금 회사를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p>',[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]);
   updateScene();
   animateAfterRender();
@@ -1530,7 +1544,8 @@ function showTitle(){
     <div class="t-goal">🏆 목표 <b>기업가치 100조 원</b></div>
     <div class="t-btns">${cont}
       <button class="btn ${cont?'':'primary'}" id="t-new">🎲 새 회사 뽑기</button>
-      <button class="btn" id="t-how">📖 게임 방법</button></div>
+      <button class="btn" id="t-how">📖 게임 방법</button>
+      <button class="btn" id="t-fb">💬 의견 보내기</button></div>
     <div class="t-feat"><div><b>🎲</b>업종 7개 ×<br>시작 4가지</div><div><b>⚔️</b>경쟁사·M&amp;A<br>경영권 분쟁</div><div><b>🚨</b>64가지<br>돌발 이벤트</div></div>
     <div class="t-foot">진행 상황은 자동 저장돼요</div></div>`;
   document.body.appendChild(el);
@@ -1539,6 +1554,7 @@ function showTitle(){
     const go=()=>s&&!s.over?modal('새 회사 뽑기',`<p>지금 하던 <b>${esc(s.name)}</b>은(는) 사라져요. 새로 시작할까요?</p>`,[{l:'새로 시작',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]):startScreen();
     seenHelp()?go():howTo(go)};
   el.querySelector('#t-how').onclick=()=>howTo();
+  el.querySelector('#t-fb').onclick=feedback;
 }
 function hideTitle(){const el=document.getElementById('title');if(!el)return;
   el.removeAttribute('id');if(RM)return el.remove();el.classList.add('t-out');setTimeout(()=>el.remove(),350)}
@@ -1573,7 +1589,7 @@ const HOW=[
     <li><b>②</b><span><b>생산능력 / 수요</b>가 100%를 넘으면 채용, 사무실이 꽉 차면 사옥 이전.</span></li>
     <li><b>③</b><span>현금이 바닥나기 전에 대출·투자. 하지만 지분은 아껴 쓰세요.</span></li>
     <li><b>④</b><span>숫자 아래 <b>▲▼ 전월 대비</b>로 회사가 좋아지는지 확인하세요.</span></li>
-    <li><b>⑤</b><span>오른쪽 위 <b>❓</b>를 누르면 언제든 이 설명을 다시 볼 수 있어요.</span></li></ul>`},
+    <li><b>⑤</b><span>오른쪽 위 <b>❓</b>로 이 설명을 다시 보고, <b>💬</b>로 의견을 보낼 수 있어요.</span></li></ul>`},
 ];
 function howTo(done){
   let i=0;
@@ -1586,6 +1602,40 @@ function howTo(done){
     setModalBtns(btns);
   };
   show();
+}
+
+// ===== 피드백 =====
+const FEEDBACK={repo:'daehwi123123-dev/k-corp'};
+const FB_TYPES=[['bug','🐞','버그'],['idea','💡','건의'],['balance','⚖️','밸런스'],['etc','💬','기타']];
+function feedback(){
+  const f={type:'idea',stars:0,text:'',info:true};
+  try{Object.assign(f,JSON.parse(localStorage.getItem('kcorp-fb')||'{}'))}catch(e){}
+  const keep=()=>{try{localStorage.setItem('kcorp-fb',JSON.stringify(f))}catch(e){}};
+  const m=modal('💬 의견 보내기',`<p class="muted" style="margin:0 0 10px;font-size:13px">버그, 아이디어, 너무 쉽거나 어려운 점… 무엇이든 좋아요. 보내 주신 의견은 다음 업데이트에 반영돼요.</p>
+    <div class="fb-lbl">종류</div><div class="fb-types">${FB_TYPES.map(([k,i,n])=>`<button type="button" data-k="${k}" class="${f.type===k?'on':''}"><b>${i}</b>${n}</button>`).join('')}</div>
+    <div class="fb-lbl">게임은 어땠나요?</div><div class="fb-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-n="${n}" class="${n<=f.stars?'on':''}" aria-label="${n}점">⭐</button>`).join('')}</div>
+    <div class="fb-lbl">내용</div><textarea class="fb-ta" maxlength="2000" placeholder="예) 중견기업으로 시작하면 3년 만에 부도나요. / 제품 이름을 직접 짓고 싶어요.">${esc(f.text)}</textarea>
+    <label class="fb-chk"><input type="checkbox" ${f.info?'checked':''}> 지금 게임 상황(업종·단계·날짜)과 기기 정보를 함께 보내기 — 버그를 고칠 때 도움이 돼요</label>
+    <p class="muted" style="font-size:11px;margin:10px 0 0">‘보내기’를 누르면 GitHub 의견 게시판이 열려요. GitHub에 로그인한 뒤 초록색 <b>Create</b> 버튼을 눌러야 접수됩니다. 쓴 내용은 미리 채워져 있어요.</p>`,[]);
+  m.querySelectorAll('.fb-types button').forEach(b=>b.onclick=()=>{f.type=b.dataset.k;m.querySelectorAll('.fb-types button').forEach(x=>x.classList.toggle('on',x===b));keep()});
+  m.querySelectorAll('.fb-stars button').forEach(b=>b.onclick=()=>{f.stars=+b.dataset.n;m.querySelectorAll('.fb-stars button').forEach(x=>x.classList.toggle('on',+x.dataset.n<=f.stars));keep()});
+  const ta=m.querySelector('.fb-ta');ta.oninput=()=>{f.text=ta.value;keep()};
+  m.querySelector('.fb-chk input').onchange=e=>{f.info=e.target.checked;keep()};
+  setModalBtns([{l:'📮 보내기',f:()=>{
+      if(!f.text.trim()){toast('<b>내용을 적어 주세요</b>','bad');return feedback()}
+      const ty=FB_TYPES.find(x=>x[0]===f.type);
+      const title=`[${ty[2]}] ${f.text.trim().split('\n')[0].slice(0,50)}`;
+      let body=`**종류:** ${ty[1]} ${ty[2]}\n**평점:** ${f.stars?'⭐'.repeat(f.stars)+` (${f.stars}/5)`:'—'}\n\n${f.text.trim()}\n`;
+      if(f.info){
+        const g=s?`${IND[s.industry].name} · ${(STARTS.find(x=>x.id===s.startId)||{}).n||s.startId} · ${s.year}년 ${s.month}월 (${s.t||0}개월째) · ${STAGES[stageIdx()].n} · 기업가치 ${won(s.valuation)} · 직원 ${s.employees}명`:'게임 시작 전';
+        body+=`\n---\n<sub>게임: ${g}<br>기기: ${innerWidth}×${innerHeight} · ${navigator.userAgent.replace(/[<>]/g,'').slice(0,160)}</sub>\n`;
+      }
+      const url=`https://github.com/${FEEDBACK.repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+      const w=window.open(url,'_blank','noopener');
+      if(!w)location.href=url;
+      f.text='';f.stars=0;keep();
+      toast('<b>📮 의견 게시판을 열었어요</b><br>로그인 후 Create를 눌러 주세요','good');
+    }},{l:'닫기',f:()=>{}}]);
 }
 
 // ===== 시작 =====
