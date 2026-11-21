@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>K-기업 키우기</title>
+<title>재벌까지</title>
 <style>
 :root{--bg:#f4f5f7;--card:#fff;--text:#1b1f24;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--accent-soft:#e3ebff;--good:#15803d;--bad:#dc2626;--warn:#b45309;--chip:#f1f3f6;--shadow:0 1px 2px rgba(0,0,0,.05)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1115;--card:#181b21;--text:#e7e9ee;--muted:#9aa3b2;--line:#2a2f38;--accent:#6b97ff;--accent-soft:#1e2a4a;--good:#34d399;--bad:#f87171;--warn:#fbbf24;--chip:#222730;--shadow:none;color-scheme:dark}}
@@ -1750,14 +1750,14 @@ function showTitle(){
   const cont=s&&!s.over?`<button class="btn primary t-cont" id="t-cont"><span>▶ 이어하기<small>${esc(s.name)} · ${s.year}년 ${s.month}월 · ${STAGES[stageIdx()].n}</small></span><span style="font-size:14px">${won(s.valuation)}</span></button>`:'';
   el.innerHTML=`<div class="t-in">${titleHero()}
     <div class="t-kicker">한국 기업 성장 시뮬레이션</div>
-    <h1 class="t-name">K-기업 <span>키우기</span></h1>
-    <p class="t-sub">운명이 정해 준 회사 하나.<br>동네 스타트업에서 대한민국 재벌까지.</p>
+    <h1 class="t-name">재벌<span>까지</span></h1>
+    <p class="t-sub">운명이 정해 준 회사 하나.<br>동네 스타트업에서 100조 그룹까지.</p>
     <div class="t-goal">🏆 목표 <b>기업가치 100조 원</b></div>
     <div class="t-btns">${cont}
       <button class="btn ${cont?'':'primary'}" id="t-new">🎲 새 회사 뽑기</button>
       <button class="btn" id="t-how">📖 게임 방법</button>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn" id="t-fb">💬 의견 보내기</button><button class="btn" id="t-set">⚙️ 설정</button></div></div>
-    <div class="t-feat"><div><b>🎲</b>업종 7개 ×<br>시작 4가지</div><div><b>⚔️</b>경쟁사·M&amp;A<br>경영권 분쟁</div><div><b>🚨</b>64가지<br>돌발 이벤트</div></div>
+    <div class="t-feat"><div><b>🎲</b>업종 7개 ×<br>시작 4가지</div><div><b>⚔️</b>경쟁사·M&amp;A<br>경영권 분쟁</div><div><b>🚨</b>${EVENTS.length}가지<br>돌발 이벤트</div></div>
     <div class="t-foot">진행 상황은 자동 저장돼요 · 🎵 화면을 누르면 배경음악이 시작돼요</div></div>`;
   document.body.appendChild(el);
   el.querySelector('#t-cont')?.addEventListener('click',()=>{hideTitle();clock.run=true;clock.acc=0;render()});

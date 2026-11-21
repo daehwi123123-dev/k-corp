@@ -19,7 +19,7 @@ html = html.replace(
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="K-기업">`
+<meta name="apple-mobile-web-app-title" content="재벌까지">`
 );
 html = html.replace('</style>', `
 @media (display-mode: standalone){#scroller{padding-top:env(safe-area-inset-top,0px)}}
@@ -32,8 +32,8 @@ fs.writeFileSync(`${OUT}/index.html`, html);
 
 // ---- manifest ----
 fs.writeFileSync(`${OUT}/manifest.webmanifest`, JSON.stringify({
-  name: 'K-기업 키우기',
-  short_name: 'K-기업',
+  name: '재벌까지',
+  short_name: '재벌까지',
   description: '랜덤으로 주어진 한국 회사를 스타트업에서 재벌까지 키우는 경영 시뮬레이션',
   lang: 'ko',
   start_url: './',
