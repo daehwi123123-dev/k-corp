@@ -1,0 +1,1483 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>K-기업 키우기</title>
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--text:#1b1f24;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb;--accent-soft:#e3ebff;--good:#15803d;--bad:#dc2626;--warn:#b45309;--chip:#f1f3f6;--shadow:0 1px 2px rgba(0,0,0,.05)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1115;--card:#181b21;--text:#e7e9ee;--muted:#9aa3b2;--line:#2a2f38;--accent:#6b97ff;--accent-soft:#1e2a4a;--good:#34d399;--bad:#f87171;--warn:#fbbf24;--chip:#222730;--shadow:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1115;--card:#181b21;--text:#e7e9ee;--muted:#9aa3b2;--line:#2a2f38;--accent:#6b97ff;--accent-soft:#1e2a4a;--good:#34d399;--bad:#f87171;--warn:#fbbf24;--chip:#222730;--shadow:none;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:14px;line-height:1.45}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:1040px;margin:0 auto;padding:16px}
+header.top{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:12px}
+.co-name{font-size:22px;font-weight:800;letter-spacing:-.5px}
+.co-sub{color:var(--muted);font-size:13px}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:12px;vertical-align:middle;margin-left:6px}
+.date{font-weight:700;font-size:16px}
+.grid{display:grid;grid-template-columns:1.15fr 1fr;gap:12px}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:var(--shadow);margin-bottom:12px}
+.card h3{margin:0 0 10px;font-size:14px;color:var(--muted);font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media (max-width:480px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--chip);border-radius:8px;padding:8px 10px;min-width:0}
+.stat .k{font-size:12px;color:var(--muted)}
+.stat .v{font-size:16px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bars{margin-top:10px;display:grid;gap:6px}
+.bar{display:grid;grid-template-columns:56px 1fr 44px;align-items:center;gap:8px;font-size:12px}
+.bar .track{height:8px;background:var(--chip);border-radius:99px;overflow:hidden}
+.bar .fill{height:100%;background:var(--accent);border-radius:99px}
+.bar .num{text-align:right;font-weight:700}
+.pos{color:var(--good)}.neg{color:var(--bad)}.warn{color:var(--warn)}
+.ap{display:flex;gap:4px}
+.ap i{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block}
+.ap i.used{background:var(--line)}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media (max-width:480px){.actions{grid-template-columns:repeat(2,1fr)}}
+.act{background:var(--chip);border:1px solid transparent;border-radius:10px;padding:9px 10px;text-align:left;min-height:74px;display:flex;flex-direction:column;gap:2px}
+.act:hover:not(:disabled){border-color:var(--accent)}
+.act:disabled{opacity:.45;cursor:not-allowed}
+.act .n{font-weight:800}
+.act .d{font-size:12px;color:var(--muted)}
+.act .c{font-size:12px;font-weight:700;margin-top:auto}
+.fin{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:7px 12px;font-weight:700}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.next{width:100%;padding:14px;font-size:16px;border-radius:12px;margin-bottom:12px}
+.report li,.log li{margin:0 0 6px;padding-left:2px}
+.report ul,.log ul{list-style:none;margin:0;padding:0}
+.log{max-height:340px;overflow:auto}
+.log .d{color:var(--muted);font-size:12px;margin-right:6px}
+.prod{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.prod:last-child{border-bottom:none}
+.muted{color:var(--muted)}
+canvas{width:100%;height:90px;display:block}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px;z-index:10}
+.modal{background:var(--card);border-radius:14px;max-width:440px;width:100%;padding:20px;border:1px solid var(--line);max-height:90vh;overflow:auto}
+.modal h2{margin:0 0 8px;font-size:19px}
+.modal .body{margin-bottom:16px}
+.modal .btns{display:flex;flex-direction:column;gap:8px}
+.modal .btns .btn{padding:11px;text-align:left}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:10px 0}
+.kv b{font-weight:700}
+.hidden{display:none}
+.rv{padding:10px 0;border-bottom:1px dashed var(--line)}
+.rv:first-of-type{padding-top:0}
+.rv.me .rv-name{color:var(--accent)}
+.rv-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+.rv-rank{width:20px;height:20px;border-radius:50%;background:var(--chip);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.rv-val{margin-left:auto;font-weight:700}
+.rv-info{font-size:12px;margin:4px 0 6px;line-height:1.5}
+.rv-buy{font-size:12px;padding:4px 10px}
+.ctl-bar{display:flex;height:14px;border-radius:99px;overflow:hidden;background:var(--chip);margin:8px 0 6px}
+.ctl-bar span{height:100%;transition:width .6s}
+.ctl-me{background:var(--accent)}.ctl-al{background:color-mix(in srgb,var(--accent) 45%,var(--chip))}.ctl-rd{background:var(--bad)}
+.ctl-leg{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--muted)}
+.ctl-leg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.ctl-st{font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--chip)}
+.ctl-btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.ctl-btns .btn{font-size:12px;padding:5px 10px}
+.card.raid{border:1px solid var(--bad)}
+.rv-log{color:var(--accent)}
+/* ===== 연출 ===== */
+.bar .fill{transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.act,.btn{transition:transform .12s,border-color .15s,box-shadow .15s}
+.act:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.act:active:not(:disabled),.btn:active:not(:disabled){transform:scale(.95)}
+.stat.up{animation:flashUp 1s}
+.stat.down{animation:flashDown 1s}
+@keyframes flashUp{0%{background:color-mix(in srgb,var(--good) 28%,var(--chip))}100%{background:var(--chip)}}
+@keyframes flashDown{0%{background:color-mix(in srgb,var(--bad) 28%,var(--chip))}100%{background:var(--chip)}}
+.bar.up .num{animation:popNum .6s}.bar.down .num{animation:popNum .6s;color:var(--bad)}
+@keyframes popNum{40%{transform:scale(1.35)}}
+.floater{position:fixed;z-index:60;pointer-events:none;font-weight:800;font-size:14px;white-space:nowrap;transform:translate(-50%,0);animation:floatUp 1.25s ease-out forwards;text-shadow:0 1px 0 var(--card),0 0 6px var(--card)}
+@keyframes floatUp{0%{opacity:0;transform:translate(-50%,8px) scale(.7)}15%{opacity:1;transform:translate(-50%,0) scale(1.15)}100%{opacity:0;transform:translate(-50%,-46px) scale(1)}}
+#toasts{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:70;display:flex;flex-direction:column;gap:8px;align-items:center;width:min(92vw,380px);pointer-events:none}
+.toast{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:10px 14px;box-shadow:0 8px 24px rgba(0,0,0,.18);width:100%;font-size:13px;animation:toastIn .45s cubic-bezier(.2,1.4,.4,1)}
+.toast.good{border-left-color:var(--good)}.toast.bad{border-left-color:var(--bad)}
+.toast.out{animation:toastOut .4s forwards}
+@keyframes toastIn{from{opacity:0;transform:translateY(-24px) scale(.9)}}
+@keyframes toastOut{to{opacity:0;transform:translateY(-16px)}}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:80;overflow:hidden}
+.confetti i{position:absolute;top:-14px;width:8px;height:13px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--dx),108vh) rotate(var(--r))}}
+.shake{animation:shake .45s}
+@keyframes shake{20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}}
+.vignette{position:fixed;inset:0;pointer-events:none;z-index:55;box-shadow:inset 0 0 120px rgba(220,38,38,.55);animation:fadeOut .7s forwards}
+@keyframes fadeOut{to{opacity:0}}
+.modal-bg{animation:bgIn .2s}
+.modal{animation:popIn .35s cubic-bezier(.2,1.3,.4,1)}
+@keyframes bgIn{from{opacity:0}}
+@keyframes popIn{from{opacity:0;transform:translateY(20px) scale(.92)}}
+.modal.event{border-top:4px solid var(--bad)}
+.news-tag{display:inline-block;background:var(--bad);color:#fff;font-weight:800;font-size:11px;padding:2px 8px;border-radius:4px;letter-spacing:2px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.55}}
+.cal-ov{position:fixed;inset:0;z-index:65;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;animation:bgIn .2s}
+.cal-ov.out{animation:fadeOut .3s forwards}
+.cal{width:150px;background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35);text-align:center;animation:popIn .3s}
+.cal-head{background:var(--bad);color:#fff;font-weight:800;padding:6px;letter-spacing:1px}
+.cal-body{position:relative;height:110px;perspective:500px}
+.cal-page{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:54px;font-weight:900;background:var(--card);backface-visibility:hidden;transform-origin:top center}
+.cal-page small{font-size:18px;margin-left:2px;align-self:flex-end;margin-bottom:28px}
+.cal-page.old{animation:flip .55s .2s ease-in forwards}
+@keyframes flip{to{transform:rotateX(-100deg);opacity:0}}
+.cal-foot{font-size:12px;color:var(--muted);padding:6px}
+.dev{text-align:center;padding:6px 0}
+.dev-icon{font-size:46px;animation:wobble .5s infinite alternate}
+@keyframes wobble{from{transform:rotate(-12deg)}to{transform:rotate(12deg) translateY(-4px)}}
+.dev-step{font-weight:700;margin:8px 0 10px;min-height:20px}
+.prog{height:10px;background:var(--chip);border-radius:99px;overflow:hidden;margin-bottom:8px}
+.prog-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),#a855f7);transition:width 1.8s linear}
+.reveal{text-align:center;padding:4px 0}
+.rv-label{font-weight:800;font-size:15px;animation:popIn .4s}
+.rv-pname{font-size:22px;font-weight:900;margin:6px 0;animation:popIn .5s}
+.rv-q{font-size:15px}.rv-q span{font-size:30px;font-weight:900;color:var(--accent)}
+.reveal.hit .rv-pname{background:linear-gradient(90deg,#f59e0b,#f43f5e,#a855f7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.reveal.flop{opacity:.85}.reveal.flop .rv-q span{color:var(--muted)}
+.stars{font-size:26px;color:#f59e0b;letter-spacing:2px;margin:4px 0}
+.stars span{display:inline-block;opacity:0;animation:starIn .35s forwards}
+@keyframes starIn{from{opacity:0;transform:scale(2.2) rotate(-30deg)}to{opacity:1;transform:none}}
+.report.fresh li{opacity:0;animation:slideIn .4s forwards}
+@keyframes slideIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.log li.new{animation:newLog 1.6s}
+@keyframes newLog{0%{background:var(--accent-soft);transform:translateX(10px)}20%{transform:none}100%{background:transparent}}
+.next.pulse{animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 55%,transparent)}50%{box-shadow:0 0 0 10px transparent}}
+.stat .dl{font-size:11px;font-weight:700;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted)}
+.stat .dl.pos{color:var(--good)}.stat .dl.neg{color:var(--bad)}
+.stat .dl .muted{font-weight:400}
+.prod2{padding:9px 0;border-bottom:1px dashed var(--line);display:grid;gap:3px}
+.prod2:first-of-type{padding-top:0}
+.p-top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.p-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.p-rev{font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}.p-rev small{font-weight:400;color:var(--muted)}
+.p-sub{display:flex;justify-content:space-between;gap:8px;font-size:12px}
+.p-right{display:flex;gap:8px;align-items:center;white-space:nowrap}
+.p-del{font-size:11px;padding:2px 8px;color:var(--muted)}
+.p-total{display:flex;justify-content:space-between;padding-top:8px;font-size:13px}
+.slots{display:grid;gap:8px}
+.slot{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--chip);border-radius:10px;padding:10px 12px}
+.slot-info{display:flex;flex-direction:column;min-width:0;font-size:13px;line-height:1.4}
+.slot-info span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.slot-btns{display:flex;gap:6px;flex-shrink:0}
+.slot-btns .btn{padding:6px 10px;font-size:12px}
+.btn.warnbtn{border-color:var(--bad);color:var(--bad)}
+.start-sc{border-radius:10px;padding:10px 12px;background:var(--chip);border-left:4px solid var(--accent)}
+.start-sc p{margin:6px 0 0;font-size:13px}
+.start-sc .badge{margin-left:8px}
+.sc-midcap{border-left-color:var(--warn)}.sc-chaebol2{border-left-color:var(--bad)}.sc-venture{border-left-color:var(--good)}
+/* 하단 고정 '다음 달' 바 */
+html,body{height:100%}
+body{display:flex;flex-direction:column;overflow:hidden}
+#scroller{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+#nextbar{flex:0 0 auto;position:relative;z-index:30;background:color-mix(in srgb,var(--bg) 85%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.nb-in{max-width:1008px;margin:0 auto;display:flex;gap:12px;align-items:center}
+.nb-info{display:flex;flex-direction:column;font-size:12px;color:var(--muted);white-space:nowrap;line-height:1.35}
+.nb-info>b{font-size:14px;color:var(--text)}
+#nextbar .next{margin:0;flex:1;padding:13px;display:flex;align-items:center;justify-content:center;gap:10px}
+#nextbar .next .ap i{background:#fff}#nextbar .next .ap i.used{background:rgba(255,255,255,.35)}
+.modal-bg{z-index:40}
+/* 모바일: 회사 장면을 기업가치 박스 아래로 */
+@media (max-width:820px){
+  #root{display:flex;flex-direction:column}
+  #app,#app>.grid,#app>.grid>div{display:contents}
+  #hdr{order:0}
+  #app .grid>div>*{order:3}
+  #app .grid>div>.statcard{order:1}
+  #scene{order:2}
+}
+/* ===== 회사 장면 ===== */
+:root{--sky1:#cfe8ff;--sky2:#f2f8ff;--ground:#cfe3b8;--ground2:#a9c98a;--bld:#e9e3d8;--bld2:#9aa3ae;--bld3:#d5d9df;--glass:#bcd4ea;--win:#a3b6ca;--win2:#c9d1da;--winlit:#ffd66b;--cloud:#ffffff;--tree:#6cbf6c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--sky1:#0d1a2e;--sky2:#1b2a44;--ground:#1f2d22;--ground2:#2e4433;--bld:#2c313b;--bld2:#4b5563;--bld3:#232832;--glass:#2b3d55;--win:#1a2230;--win2:#20262f;--winlit:#ffcf4d;--cloud:#34425b;--tree:#2f6b3a;color-scheme:dark}}
+:root[data-theme="dark"]{--sky1:#0d1a2e;--sky2:#1b2a44;--ground:#1f2d22;--ground2:#2e4433;--bld:#2c313b;--bld2:#4b5563;--bld3:#232832;--glass:#2b3d55;--win:#1a2230;--win2:#20262f;--winlit:#ffcf4d;--cloud:#34425b;--tree:#2f6b3a;color-scheme:dark}
+.scene{padding:0;overflow:hidden;position:relative;background:linear-gradient(var(--sky1),var(--sky2))}
+.scene svg{display:block;width:100%;height:clamp(190px,28vw,270px)}
+.scene-cap{position:absolute;left:10px;bottom:8px;font-size:12px;background:color-mix(in srgb,var(--card) 88%,transparent);padding:3px 10px;border-radius:99px;border:1px solid var(--line)}
+#crowd>g{transition:opacity .8s}
+.ch.walk{animation:walkX linear infinite}
+.ch.idle{transform:translateX(var(--x0))}
+.ch.walk .face{animation-name:face;animation-timing-function:linear;animation-iteration-count:infinite;transform-box:fill-box;transform-origin:center}
+@keyframes walkX{0%{transform:translateX(var(--x0))}50%{transform:translateX(var(--x1))}100%{transform:translateX(var(--x0))}}
+@keyframes face{0%,49.9%{transform:scaleX(var(--f1))}50%,100%{transform:scaleX(var(--f2))}}
+.bob{animation:bob .32s ease-in-out infinite alternate}.idle .bob{animation-duration:1.3s}
+@keyframes bob{to{transform:translateY(-1.3px)}}
+.leg{transform-box:fill-box;transform-origin:50% 0;animation:swing .32s ease-in-out infinite alternate}.leg.r{animation-direction:alternate-reverse}.idle .leg{animation:none}
+@keyframes swing{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}
+.bubble{animation:bub 2.2s forwards}
+@keyframes bub{0%{opacity:0;transform:translateY(5px)}15%{opacity:1;transform:none}80%{opacity:1}100%{opacity:0;transform:translateY(-6px)}}
+.cloud.c1{animation:cloud 70s linear infinite}.cloud.c2{animation:cloud 95s linear -40s infinite}
+@keyframes cloud{from{transform:translateX(-90px)}to{transform:translateX(740px)}}
+.truck{animation:truck 13s linear infinite}
+@keyframes truck{0%{transform:translate(-90px,188px)}55%,100%{transform:translate(760px,188px)}}
+.twinkle{animation:tw 2.6s ease-in-out infinite alternate}@keyframes tw{to{opacity:.5}}
+.flag{transform-box:fill-box;transform-origin:left center;animation:flag 1.1s ease-in-out infinite alternate}@keyframes flag{to{transform:scaleX(.8) skewY(5deg)}}
+.crowdwarn{animation:blink 1s infinite}
+#bldg{transform-box:fill-box;transform-origin:50% 100%}
+#bldg.rise{animation:rise 1s cubic-bezier(.2,1.25,.4,1)}
+@keyframes rise{from{transform:translateY(30px) scaleY(.2);opacity:0}}
+.ipdots i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--line);margin:4px 3px 0 0}.ipdots i.on{background:var(--accent)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.report.fresh li,.stars span{opacity:1}.ch{transform:translateX(var(--x0))!important}}
+</style>
+</head>
+<body>
+<div id="scroller"><div class="wrap" id="root"><div id="hdr"></div><div id="scene" class="card scene"></div><div id="app"></div></div></div>
+<div id="nextbar" hidden></div>
+<div id="modal-root"></div>
+<script>
+// ===== 유틸 =====
+const rand=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const rf=(a,b)=>a+Math.random()*(b-a);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function won(v){ // 단위: 만원
+  if(Math.round(v)===0)return '0원';
+  const neg=v<0;v=Math.abs(v);let o;
+  if(v>=1e8)o=(v/1e8).toFixed(v>=1e9?1:2)+'조';
+  else if(v>=1e4)o=(v/1e4).toFixed(v>=1e5?0:1)+'억';
+  else o=Math.round(v).toLocaleString()+'만';
+  return (neg?'-':'')+o+'원';
+}
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// ===== 데이터 =====
+const IND={
+  it:{name:'IT/플랫폼',icon:'💻',k:3,decay:.03,mult:6,salary:450,prod:1600,cogs:.12,pcost:1,hit:.06,vr:.25,suffix:['소프트','랩스','테크','넷','플랫폼'],types:['앱','메신저','클라우드','간편결제','지도 서비스','쇼핑몰','AI 비서','배달앱']},
+  game:{name:'게임',icon:'🎮',k:3.4,decay:.07,mult:5,salary:420,prod:1700,cogs:.15,pcost:1.2,hit:.12,vr:.4,suffix:['게임즈','스튜디오','인터랙티브','엔진'],types:['MMORPG','모바일 RPG','방치형 게임','배틀로얄','리듬게임','퍼즐게임','수집형 RPG']},
+  food:{name:'식품/외식',icon:'🍜',k:3.2,decay:.012,mult:3.5,salary:300,prod:1100,cogs:.42,pcost:.8,hit:.05,vr:.15,suffix:['푸드','식품','F&B','키친'],types:['라면','떡볶이 밀키트','김치','치킨 프랜차이즈','편의점 도시락','프리미엄 김','버블티']},
+  beauty:{name:'뷰티/화장품',icon:'💄',k:3,decay:.025,mult:4.5,salary:350,prod:1300,cogs:.3,pcost:.9,hit:.08,vr:.25,suffix:['코스메틱','뷰티','랩','앤코'],types:['쿠션팩트','선크림','시트마스크','앰플','틴트','비건 토너']},
+  bio:{name:'바이오',icon:'🧬',k:3.2,decay:.008,mult:7,salary:500,prod:2200,cogs:.2,pcost:1.6,hit:.07,vr:.5,suffix:['바이오','제약','파마','헬스케어'],types:['진단키트','신약','바이오시밀러','백신','건강기능식품','유전자 치료제']},
+  ent:{name:'엔터테인먼트',icon:'🎤',k:3,decay:.05,mult:5.5,salary:380,prod:1500,cogs:.3,pcost:1.1,hit:.1,vr:.45,suffix:['엔터테인먼트','뮤직','미디어','컴퍼니'],types:['보이그룹','걸그룹','웹드라마','예능','솔로 가수','웹툰 IP']},
+  mfg:{name:'제조/반도체',icon:'🏭',k:3,decay:.01,mult:4.5,salary:420,prod:1400,cogs:.38,pcost:1.3,hit:.04,vr:.12,suffix:['전자','산업','정밀','반도체','모빌리티'],types:['메모리 칩','2차전지','전기차 부품','디스플레이','산업용 로봇','센서 모듈']},
+};
+const HQ=[
+  {n:'공유오피스',cap:10,rent:100,cost:0},
+  {n:'작은 사무실',cap:30,rent:300,cost:2000},
+  {n:'오피스 한 층',cap:120,rent:1000,cost:1e4},
+  {n:'중형 빌딩',cap:600,rent:4000,cost:5e4},
+  {n:'자사 사옥',cap:3000,rent:15000,cost:3e5},
+  {n:'랜드마크 타워',cap:20000,rent:60000,cost:2e6},
+  {n:'글로벌 캠퍼스',cap:1e9,rent:200000,cost:1.5e7}];
+const IPL={
+  it:['원천 특허','기술 라이선스','SDK·API 개방','플랫폼 생태계','글로벌 표준 기술'],
+  game:['캐릭터 IP','굿즈','웹툰','애니메이션','영화','테마파크'],
+  food:['비법 레시피 특허','캐릭터 콜라보','해외 라이선스','HMR 브랜드','글로벌 프랜차이즈'],
+  beauty:['독자 성분 특허','콜라보 에디션','ODM 라이선스','해외 브랜드 제휴','글로벌 뷰티 브랜드'],
+  bio:['물질 특허','기술 이전','공동 개발','글로벌 판권','플랫폼 기술'],
+  ent:['아티스트 IP','굿즈','웹툰','영화','월드투어','테마파크'],
+  mfg:['핵심 특허','기술 라이선스','표준 특허','크로스 라이선스','글로벌 표준'],
+};
+const REACH=[{n:'지역',m:1,cost:0,brand:0},{n:'수도권',m:2,cost:1e4,brand:10},{n:'전국',m:4,cost:1e5,brand:25},{n:'아시아',m:10,cost:1e6,brand:40},{n:'글로벌',m:25,cost:1e7,brand:55}];
+const STAGES=[{n:'스타트업',min:0},{n:'벤처기업',min:1e5},{n:'중소기업',min:1e6},{n:'중견기업',min:1e7},{n:'유니콘',min:1e8},{n:'대기업',min:1e9},{n:'재벌',min:1e10}];
+const ROUNDS=['시드','시리즈 A','시리즈 B','시리즈 C','시리즈 D','프리IPO'];
+const PRE=['한빛','새롬','푸른','대한','미래','누리','하나로','동방','청운','별빛','다온','라온','한결','가온','비채','온누리','해솔','새벽','큰별','도담','바른','우리','백두','한라','금강','아리','나래','슬기'];
+const SUR=['김','이','박','최','정','강','조','윤','장','임','한','오','서','신','권','황','안','송','류','홍'];
+const GIV=['민준','서연','도윤','지우','하준','서윤','지호','하은','준우','수아','현우','지민','건우','채원','우진','예린','선우','유나','태윤','다인'];
+const CITY=['서울 강남','판교','성수동','부산 해운대','대전 유성','광주','대구','인천 송도','제주','서울 을지로','분당','창원'];
+const PWORD=['하루','별','모아','바다','구름','반짝','토닥','한입','쑥쑥','포근','콕','쏙','온','결','새싹','파도','달빛','도토리','마루','봄날'];
+const TRAITS=[
+  {n:'서울대 공대 출신',d:'기술력 +15',a:s=>s.tech+=15},
+  {n:'대기업 마케팅 출신',d:'브랜드 +12',a:s=>s.brand+=12},
+  {n:'금수저',d:'초기 자본 2배',a:s=>s.cash*=2},
+  {n:'흙수저 창업가',d:'직원 사기 +20, 초기 자본 -30%',a:s=>{s.morale+=20;s.cash=Math.round(s.cash*.7)}},
+  {n:'연쇄 창업가',d:'기술력·브랜드 +6, 투자 유치 금액 +25%',a:s=>{s.tech+=6;s.brand+=6;s.flags.serial=1}},
+  {n:'유튜버 출신',d:'브랜드 +20, 기술력 -5',a:s=>{s.brand+=20;s.tech-=5}},
+  {n:'해외 유학파',d:'시장 확장 비용 -30%',a:s=>s.flags.abroad=1},
+  {n:'공무원 출신',d:'정부 지원금 이벤트 자주 발생',a:s=>s.flags.gov=1},
+];
+
+// ===== 상태 =====
+let s=null;
+const SAVE='kcorp-sim-v1';
+function save(){if(!s)return;s.savedAt=Date.now();try{localStorage.setItem(SAVE,JSON.stringify(s))}catch(e){}}
+function loadSave(){try{const t=localStorage.getItem(SAVE);return t?JSON.parse(t):null}catch(e){return null}}
+function clearSave(){try{localStorage.removeItem(SAVE)}catch(e){}}
+
+const ind=()=>IND[s.industry];
+const sal=()=>Math.round(ind().salary*s.salaryMult);
+const stageIdx=()=>{let i=0;STAGES.forEach((st,j)=>{if(s.valuation>=st.min)i=j});return i};
+const maxProd=()=>5+stageIdx()+(s.extraSlots||0);
+const maxAP=()=>{const i=stageIdx();return i>=4?4:i>=2?3:2};
+const best=()=>s.products.reduce((b,p)=>!b||p.power>b.power?p:b,null);
+const dateStr=()=>`${s.year}.${String(s.month).padStart(2,'0')}`;
+function log(t,k=''){s.log.unshift({d:dateStr(),t,k});s.log.length=Math.min(s.log.length,120);s.report.push({t,k})}
+
+function newCompany(){
+  const key=pick(Object.keys(IND));const I=IND[key];
+  const c={name:pick(PRE)+pick(I.suffix),ceo:pick(SUR)+pick(GIV),industry:key,city:pick(CITY),traitIdx:rand(0,TRAITS.length-1),
+    year:2026,month:1,cash:rand(15,40)*1000,debt:0,employees:rand(3,7),tech:rand(15,30),brand:rand(3,12),morale:65,
+    products:[],reach:0,ownership:100,revenue:0,profit:0,expense:0,demand:0,capacity:0,valuation:0,maxVal:0,
+    ap:2,investCd:0,rounds:0,ipo:false,negMonths:0,over:false,won:false,salaryMult:1,tempMult:1,tempMonths:0,
+    flags:{},history:[],log:[],report:[],lastEvent:null,pnum:0,hq:0,ips:[],ipRev:0,t:0,lastLaunch:0,startId:'startup',allies:0,raid:null,buyT:-1};
+  const st=weightedPick(STARTS);c.startId=st.id;
+  if(st.apply)st.apply(c,I);
+  TRAITS[c.traitIdx].a(c);
+  c.tech=Math.max(5,c.tech);
+  c.hq=Math.max(c.hq,HQ.findIndex(h=>h.cap>=c.employees));
+  // 기존 기업은 매출 규모를 맞춰 둔다 (흑자/적자 정도 = st.margin)
+  const prev=s;s=c;
+  genRivals(c);
+  if(st.margin){
+    c.rivals.forEach(r=>{r.tech=Math.round(c.tech*rf(r.inc?1:.6,r.inc?1.2:1.05));r.brand=r.inc?rand(50,70):rand(15,45)});
+    const m0=calcMonth(1),fixed=m0.salary+HQ[c.hq].rent+c.employees*60+m0.interest;
+    const target=st.margin*fixed/(1-I.cogs),sc=m0.demand>0?target/m0.demand:1;
+    c.products.forEach(p=>p.power*=sc);
+    const m=calcMonth(1);
+    {const tot=c.products.reduce((a,p)=>a+p.power,0);c.products.forEach(p=>p.rev=tot?Math.round(m.prodRev*p.power/tot):0)}
+    c.revenue=m.revenue;c.profit=m.pre-m.tax;c.expense=m.cost+m.tax;c.demand=m.demand;c.capacity=m.capacity;c.comp=m.comp;
+  }
+  calcValuation();s=prev;
+  if(st.margin)c.rivals.forEach(r=>r.val=Math.round(c.valuation*(r.inc?rf(1.1,1.8):rf(.15,1.1))));
+  c.lastLaunch=-rand(4,14);
+  return c;
+}
+function weightedPick(arr){let r=Math.random()*arr.reduce((a,x)=>a+x.w,0);for(const x of arr){r-=x.w;if(r<=0)return x}return arr[0]}
+function mkProducts(c,I,n,qMin,qMax,ageMin,ageMax,hitFirst){
+  for(let i=0;i<n;i++){
+    const age=rand(ageMin,ageMax),hit=!!hitFirst&&i===0;let q=Math.round(c.tech*rf(qMin,qMax)*(hit?1.5:1));
+    c.products.push({name:`${pick(PWORD)} ${pick(I.types)}`,q,power:q*q*I.k*Math.pow(1-I.decay,age),age,hit,flop:false});
+  }
+}
+const STARTS=[
+  {id:'startup',n:'🌱 맨땅에서 창업',diff:'보통',w:45,d:'작은 공유오피스, 제품 없음. 모든 걸 처음부터 쌓아 올립니다.'},
+  {id:'venture',n:'📈 잘나가는 벤처',diff:'쉬움',w:22,margin:1.15,d:'히트 제품 하나로 급성장 중. 투자자 지분이 있고 사무실이 슬슬 비좁아요.',
+    apply:(c,I)=>{c.hq=1;c.reach=rand(1,2);c.employees=rand(18,28);c.tech=rand(45,65);c.brand=rand(25,40);c.cash=rand(8,25)*1e4;
+      c.ownership=rand(60,75);c.rounds=2;c.investCd=4;c.morale=72;mkProducts(c,I,rand(1,2),.8,1,3,10,true);c.flags.firstProfit=1}},
+  {id:'midcap',n:'🏢 업계 중견기업',diff:'함정 주의',w:20,margin:1.1,d:'안정적인 매출과 수백 명의 직원. 하지만 제품이 늙어 가고, 경쟁사가 바짝 추격 중이에요. 손 놓고 있으면 서서히 무너집니다.',
+    apply:(c,I)=>{c.hq=3;c.reach=rand(2,3);c.employees=rand(300,520);c.tech=rand(80,110);c.brand=rand(45,60);c.cash=rand(50,200)*1e4;c.debt=rand(20,100)*1e4;
+      c.ownership=rand(35,50);c.allies=rand(0,6);c.ipo=Math.random()<.5;c.rounds=3;c.morale=55;c.salaryMult=1.08;mkProducts(c,I,3,.6,.9,10,36);c.flags.firstProfit=1}},
+  {id:'chaebol2',n:'👔 물려받은 대기업',diff:'어려움',w:13,margin:.95,d:'선대 회장이 키운 대기업을 물려받았습니다. 몸집은 크지만 제품은 낡았고, 인건비는 높고, 빚은 많고, 내 지분은 얇아요. 지금도 매달 적자입니다.',
+    apply:(c,I)=>{c.reach=rand(3,4);c.employees=rand(2500,4500);c.tech=rand(120,150);c.brand=rand(60,75);c.cash=rand(5,20)*1e6;c.debt=rand(10,40)*1e6;
+      c.ownership=rand(14,22);c.allies=rand(14,22);c.ipo=true;c.rounds=5;c.morale=45;c.salaryMult=1.25;c.flags.union=1;c.flags.heir=1;c.flags.firstProfit=1;c.flags.unicorn=1;
+      mkProducts(c,I,5,.5,.85,12,60);c.ceo=c.ceo+' (2세)'}},
+];
+
+// ===== 계산 =====
+function calcValuation(){
+  const I=ind();
+  const op=s.revenue*12*I.mult*(0.5+s.tech/600+s.brand/500);
+  const floor=3000+s.tech*300+s.brand*200+s.products.length*1000+(s.ips||[]).reduce((a,ip)=>a+ip.base*20*Math.pow(1.9,ip.lv),0);
+  let v=Math.max(op,floor)+(s.cash-s.debt);
+  if(s.ipo)v*=1.2;
+  s.valuation=Math.max(0,Math.round(v));
+  s.maxVal=Math.max(s.maxVal,s.valuation);
+}
+function loanLimit(){return Math.max(0,Math.round(Math.max(5000,s.revenue*6+s.valuation*.1)-s.debt))}
+function clampStats(){
+  s.brand=clamp(s.brand,0,100);s.morale=clamp(s.morale,0,100);s.tech=Math.max(1,s.tech);
+  s.employees=Math.max(1,Math.round(s.employees));s.ownership=clamp(s.ownership,0,100);
+}
+
+// ===== 행동 =====
+const hireN=()=>Math.max(2,Math.round(s.employees*.25));
+const layN=()=>Math.max(1,Math.round(s.employees*.2));
+// IP
+const ladder=()=>IPL[s.industry];
+const royalty=ip=>ip.base*Math.pow(1.9,ip.lv)*REACH[s.reach].m*(0.5+s.brand/100);
+const ipStage=ip=>ladder()[ip.lv];
+const bestIP=()=>s.ips.reduce((b,ip)=>!b||royalty(ip)>royalty(b)?ip:b,null);
+const ipNewCost=()=>Math.round(2000*Math.pow(2,s.ips.length)*(1+s.tech/100));
+const ipExpCost=ip=>Math.round(ip.base*12*Math.pow(2.3,ip.lv+1));
+function createIP(){
+  const ip={name:pick(PWORD),base:Math.round((s.tech+s.brand)*rf(6,10)),lv:0};
+  while(s.ips.some(x=>x.name===ip.name))ip.name=pick(PWORD);
+  s.ips.push(ip);return ip;
+}
+function ipMenu(){
+  if(busy||s.over||s.ap<=0)return;
+  const opts=[];
+  s.ips.forEach((ip,i)=>{
+    if(ip.lv>=ladder().length-1)return;
+    const c=ipExpCost(ip);
+    opts.push({l:`📈 ‘${ip.name}’ ${ipStage(ip)} → ${ladder()[ip.lv+1]} 확장 (${won(c)})`,c,f:()=>{
+      s.cash-=c;s.ap--;ip.lv++;s.brand+=3;clampStats();calcValuation();
+      s.log.unshift({d:dateStr(),t:`💡 ‘${ip.name}’ IP를 ${ipStage(ip)}(으)로 확장! 월 로열티 약 ${won(royalty(ip))}, 브랜드 +3 <span class="muted">(-${won(c)})</span>`,k:'good'});
+      pendingFx.push(()=>celebrate(`<b>💡 IP 확장!</b><br>‘${esc(ip.name)}’ ${esc(ipStage(ip))}`,ip.lv>=3));save();render()}});
+  });
+  if(s.ips.length<4){const c=ipNewCost();
+    opts.push({l:`✨ 새 IP 창출: ${ladder()[0]} (${won(c)})`,c,f:()=>{
+      s.cash-=c;s.ap--;const ip=createIP();calcValuation();
+      s.log.unshift({d:dateStr(),t:`💡 새 IP ‘${ip.name}’ ${ladder()[0]} 확보! 월 로열티 약 ${won(royalty(ip))} <span class="muted">(-${won(c)})</span>`,k:'good'});
+      pendingFx.push(()=>celebrate(`<b>✨ 새 IP 확보!</b><br>‘${esc(ip.name)}’`));save();render()}});
+  }
+  const avail=opts.filter(o=>o.c<=s.cash);
+  const list=s.ips.length?s.ips.map(ip=>`<li><b>${esc(ip.name)}</b> · ${esc(ipStage(ip))} · 월 ${won(royalty(ip))}</li>`).join(''):'<li class="muted">아직 보유한 IP가 없어요.</li>';
+  modal('💡 IP 사업',`<p class="muted" style="margin-top:0">IP는 매달 로열티를 벌어다 주고, 시장이 넓고 브랜드가 강할수록 더 많이 벌어요. 확장할수록 수익이 크게 늘고, 아이디어 탈취 소송에서도 유리해집니다.</p><ul style="padding-left:18px">${list}</ul>${avail.length<opts.length?'<p class="neg" style="font-size:12px">일부 선택지는 자금이 부족해요.</p>':''}`,
+    [...avail.map(o=>({l:o.l,f:o.f})),{l:'취소',f:()=>{}}]);
+}
+const ACTIONS=[
+  {id:'product',icon:'🚀',n:'신제품 출시',d:()=>`대박 확률 ${Math.round((ind().hit+s.brand/1000)*100)}% · 슬롯 ${s.products.length}/${maxProd()}${s.products.length>=maxProd()?" (단종할 제품 선택)":""}`,
+    cost:()=>Math.round(2500*Math.pow(1+s.tech/60,1.5)*ind().pcost),run:launchProduct},
+  {id:'rnd',icon:'🔬',n:'연구개발',d:()=>{const f=rndFail();return `성공 ${Math.round((1-f-.17)*100)}% · 실패 ${Math.round(f*100)}%(기술력 하락) · 혁신 4%`},
+    cost:()=>Math.round(1500*Math.pow(1+s.tech/40,1.6)),
+    run:()=>{const r=rndOutcome();s.tech=Math.max(1,s.tech+r.g);if(r.fx)pendingFx.push(r.fx);return r.msg}},
+  {id:'mkt',icon:'📣',n:'마케팅',d:()=>'브랜드 상승 → 수요 증가',
+    cost:()=>Math.round(1200*REACH[s.reach].m*Math.pow(1+s.brand/40,1.4)),
+    can:()=>s.brand>=100?'브랜드 최대치':null,
+    run:()=>{const g=Math.max(1,Math.round(rand(4,9)*(1-s.brand/130)));s.brand+=g;return `광고 캠페인 집행. 브랜드 +${g}`}},
+  {id:'hire',icon:'👥',n:'채용',d:()=>`직원 ${hireN()}명 채용 → 생산능력 증가`,
+    cost:()=>Math.round(hireN()*sal()*1.2),
+    run:()=>{const n=hireN();s.morale-=Math.min(6,n/s.employees*15);s.employees+=n;return `신규 직원 ${n}명 입사! (총 ${s.employees}명)`}},
+  {id:'welfare',icon:'☕',n:'복지 강화',d:()=>'직원 사기 상승',
+    cost:()=>Math.round(s.employees*sal()*.4),can:()=>s.morale>=100?'사기 최대치':null,
+    run:()=>{const g=rand(10,16);s.morale+=g;return `복지 제도 개선. 사기 +${g}`}},
+  {id:'expand',icon:'🌏',n:'시장 확장',d:()=>s.reach<4?`${REACH[s.reach+1].n} 진출 (수요 ×${REACH[s.reach+1].m})`:'이미 글로벌 기업',
+    cost:()=>s.reach<4?Math.round(REACH[s.reach+1].cost*(s.flags.abroad?.7:1)):0,
+    can:()=>s.reach>=4?'최대 시장':s.brand<REACH[s.reach+1].brand?`브랜드 ${REACH[s.reach+1].brand} 필요`:null,
+    run:()=>{s.reach++;return `${REACH[s.reach].n} 시장에 진출했습니다! 🌏`}},
+  {id:'invest',icon:'💰',n:()=>s.ipo?'유상증자':'투자 유치',d:()=>`기업가치의 20% 조달 · 지분 -20%`,
+    cost:()=>0,can:()=>s.investCd>0?`${s.investCd}개월 후 가능`:s.products.length===0?'제품 출시 후 가능':null,
+    run:()=>{const r=Math.round(s.valuation*.2*(s.flags.serial?1.25:1));s.cash+=r;s.ownership*=.8;s.investCd=9;
+      const nm=s.ipo?'유상증자':(ROUNDS[s.rounds]||'추가')+' 투자';s.rounds++;
+      return `${nm} 유치 성공! ${won(r)} 조달 (내 지분 ${s.ownership.toFixed(1)}%)`}},
+  {id:'ipo',icon:'🔔',n:'IPO 상장',d:()=>'코스닥 상장 · 기업가치 25% 조달',
+    cost:()=>0,can:()=>s.ipo?'이미 상장':s.valuation<1e7?'기업가치 1000억 필요':null,
+    run:()=>{const r=Math.round(s.valuation*.25);s.cash+=r;s.ownership*=.75;s.ipo=true;s.brand+=8;
+      return `🔔 코스닥 상장! 공모로 ${won(r)} 조달. 브랜드 +8`}},
+  {id:'move',icon:'🏢',n:'사옥 이전',d:()=>s.hq<HQ.length-1?`${HQ[s.hq+1].n} (수용 ${HQ[s.hq+1].cap>=1e9?'무제한':HQ[s.hq+1].cap.toLocaleString()+'명'} · 월세 ${won(HQ[s.hq+1].rent)})`:'최고의 사옥',
+    cost:()=>s.hq<HQ.length-1?HQ[s.hq+1].cost:0,can:()=>s.hq>=HQ.length-1?'최고 사옥':null,
+    run:()=>{s.hq++;s.brand+=3;s.morale+=10;return `${HQ[s.hq].n}(으)로 이사했습니다! 직원 사기 +10, 브랜드 +3`}},
+  {id:'ip',icon:'💡',n:'IP 사업',d:()=>s.ips.length?`IP ${s.ips.length}개 · 월 로열티 ${won(s.ips.reduce((a,ip)=>a+royalty(ip),0))}`:'특허·캐릭터 등 IP를 만들고 확장',
+    cost:()=>Math.min(...[s.ips.length<4?ipNewCost():Infinity,...s.ips.filter(ip=>ip.lv<ladder().length-1).map(ipExpCost)]),
+    can:()=>s.ips.length>=4&&s.ips.every(ip=>ip.lv>=ladder().length-1)?'모든 IP 최대':null},
+  {id:'intel',icon:'🕵️',n:'경쟁사 분석',d:()=>s.intel>0?`분석 정보 유효 (${s.intel}개월 남음)`:'6개월간 경쟁사 상세 정보 공개 · 기술력 +2',
+    cost:()=>Math.round(800+s.revenue*.2),can:()=>!s.rivals.length?'경쟁사 없음':s.intel>0?`${s.intel}개월 후 다시 가능`:null,
+    run:()=>{s.intel=6;s.tech+=2;return '컨설팅 업체를 통해 경쟁사를 분석했습니다. 벤치마킹으로 기술력 +2'}},
+  {id:'layoff',icon:'✂️',n:'구조조정',d:()=>`${layN()}명 감원 · 사기·브랜드 하락`,
+    cost:()=>Math.round(layN()*sal()*3),can:()=>s.employees<=3?'인원 부족':null,
+    run:()=>{const n=layN();s.employees-=n;s.morale-=18;s.brand-=4;return `구조조정으로 ${n}명 감원. 사기 -18, 브랜드 -4`}},
+];
+// 연구개발 결과: 실패(하락) · 성과 없음 · 보통 · 성공 · 기술 혁신. 회사가 클수록 실패 확률이 줄어든다.
+const rndFail=()=>Math.max(.06,.18-stageIdx()*.02);
+function rndOutcome(){
+  const b=rf(2,6)*60/(60+s.tech),f=rndFail(),x=Math.random();
+  if(x<f){const g=-rand(1,3);return {g,msg:`🧪 연구 실패… ${pick(['시제품이 폭발했습니다','핵심 연구원이 프로젝트를 들고 떠났습니다','몇 달치 실험 데이터가 오류로 판명됐습니다','방향을 잘못 잡아 연구를 전면 폐기했습니다'])}. 기술력 ${g}`,fx:shake}}
+  if(x<f+.17)return {g:0,msg:'🔬 연구했지만 뚜렷한 성과가 없었어요. 기술력 +0'};
+  if(x<f+.67){const g=Math.max(1,Math.round(b*rf(.7,1.4)));return {g,msg:`🔬 연구개발 성과! 기술력 +${g}`}}
+  if(x<.96){const g=Math.max(2,Math.round(b*2.2));return {g,msg:`✨ 연구 성공! 핵심 기술을 확보했습니다. 기술력 +${g}`,fx:()=>toast(`<b>✨ 연구 성공!</b><br>기술력 +${g}`,'good')}}
+  const g=Math.max(5,Math.round(b*4+3)),p=best();if(p)p.power*=1.1;
+  return {g,msg:`💥 기술 혁신! 업계를 뒤흔들 발명입니다. 기술력 +${g}${p?`, ‘${p.name}’ 경쟁력 +10%`:''}`,fx:()=>celebrate(`<b>💥 기술 혁신!</b><br>기술력 +${g}`,true)};
+}
+function actName(a){return typeof a.n==='function'?a.n():a.n}
+function launchProduct(){
+  const I=ind();
+  let q=s.tech*rf(.7,1.2)+rand(5,15);
+  q*=1+rf(-1,1)*I.vr*.5;
+  const hit=Math.random()<I.hit+s.brand/1000;
+  const flop=!hit&&Math.random()<.12;
+  if(hit)q*=1.8;if(flop)q*=.4;
+  q=Math.max(5,Math.round(q));
+  s.pnum++;
+  const p={name:`${pick(PWORD)} ${pick(I.types)}`,q,power:q*q*I.k,age:0,hit,flop};
+  lastLaunched=p;s.lastLaunch=s.t||0;
+  s.products.push(p);
+  let extra='';
+  if(s.products.length>maxProd()){const w=s.products.reduce((a,b)=>a.power<b.power?a:b);s.products.splice(s.products.indexOf(w),1);extra=` (‘${w.name}’ 단종)`}
+  if(hit)return `🎉 대박! ‘${p.name}’ 출시, 품질 ${q}${extra}`;
+  if(flop)return `😓 ‘${p.name}’ 출시했지만 반응이 싸늘합니다… 품질 ${q}${extra}`;
+  return `‘${p.name}’ 출시! 품질 ${q}${extra}`;
+}
+function doAction(id){
+  if(id==='ip')return ipMenu();
+  const a=ACTIONS.find(x=>x.id===id);const c=a.cost();
+  if(s.ap<=0||s.cash<c||(a.can&&a.can()))return;
+  s.cash-=c;s.ap--;
+  const msg=a.run();clampStats();calcValuation();
+  s.log.unshift({d:dateStr(),t:`${a.icon} ${msg}`+(c?` <span class="muted">(-${won(c)})</span>`:''),k:''});
+  if(id==='ipo')pendingFx.push(()=>celebrate('<b>🔔 코스닥 상장 성공!</b><br>종이 울렸습니다',true));
+  if(id==='invest')pendingFx.push(()=>celebrate(`<b>💰 투자 유치 성공!</b><br>${msg.split('! ')[1]||''}`));
+  if(id==='expand')pendingFx.push(()=>celebrate(`<b>🌏 ${REACH[s.reach].n} 시장 진출!</b>`,s.reach>=3));
+  if(id==='layoff')pendingFx.push(shake);
+  if(id==='move'){sceneMoved=true;pendingFx.push(()=>celebrate(`<b>🏢 ${HQ[s.hq].n}(으)로 이사!</b>`,s.hq>=4))}
+  checkEndings();save();render();
+}
+let lastLaunched=null;
+function discontinue(p){
+  const i=s.products.indexOf(p);if(i<0)return;
+  s.products.splice(i,1);
+  s.log.unshift({d:dateStr(),t:`🗑 ‘${p.name}’을(를) 단종했습니다. (품질 ${p.q}, ${p.age}개월 판매)`,k:''});
+  calcValuation();save();
+}
+async function launchSequence(chosen){
+  const a=ACTIONS.find(x=>x.id==='product'),c=a.cost();
+  if(busy||s.over||s.ap<=0||s.cash<c)return;
+  // 슬롯이 가득 차면 단종할 제품을 직접 고른다
+  if(!chosen&&s.products.length>=maxProd()){
+    const list=[...s.products].sort((x,y)=>(x.rev??x.power)-(y.rev??y.power));
+    modal('📦 제품 슬롯이 가득 찼어요',`<p>새 제품을 내려면 기존 제품 하나를 단종해야 해요. 어떤 제품을 정리할까요?</p><p class="muted" style="font-size:12px">매출이 낮은 순서로 보여요. 슬롯은 회사가 성장하거나 경쟁사를 인수하면 늘어나요.</p>`,
+      [...list.map(p=>({l:`🗑 ‘${p.name}’ 단종 · 월 ${p.rev!==undefined?won(p.rev):'집계 전'} · 품질 ${p.q} · ${p.age}개월`,f:()=>{discontinue(p);launchSequence(true)}})),{l:'출시 취소',f:()=>{}}]);
+    const bs=document.querySelectorAll('#modal-root .btn');bs.forEach(b=>b.classList.remove('primary'));
+    return;
+  }
+  busy=true;
+  s.cash-=c;s.ap--;
+  const msg=launchProduct(),p=lastLaunched;
+  clampStats();calcValuation();
+  s.log.unshift({d:dateStr(),t:`🚀 ${msg} <span class="muted">(-${won(c)})</span>`,k:p.hit?'good':''});
+  save();
+  const steps=['💡 아이디어 회의 중…','✏️ 기획서 쓰는 중…','👩‍💻 개발자 갈아넣는 중…','🧪 품질 테스트 중…','📦 출시 준비 완료!'];
+  const m=modal('🚀 신제품 개발',`<div class="dev"><div class="dev-icon">🛠️</div><div class="dev-step">${steps[0]}</div><div class="prog"><div class="prog-fill"></div></div><div class="muted" style="font-size:12px">개발비 ${won(c)}</div></div>`,[],'launch');
+  const fill=m.querySelector('.prog-fill'),stepEl=m.querySelector('.dev-step');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>fill.style.width='100%'));
+  for(let i=1;i<steps.length;i++){await sleep(380);stepEl.textContent=steps[i]}
+  await sleep(300);
+  const stars=p.hit?5:p.flop?1:clamp(Math.round(p.q/Math.max(20,s.tech)*3.2),1,5);
+  const extra=msg.includes('단종')?msg.slice(msg.indexOf('(')):'';
+  m.querySelector('.body').innerHTML=`<div class="reveal ${p.hit?'hit':p.flop?'flop':''}">
+    <div class="rv-label">${p.hit?'🎉 대박 조짐!':p.flop?'😓 반응이 싸늘하다…':'✅ 출시 완료'}</div>
+    <div class="rv-pname">‘${esc(p.name)}’</div>
+    <div class="rv-q">품질 <span id="qnum">0</span></div>
+    <div class="stars">${Array.from({length:5},(_,i)=>`<span style="animation-delay:${.5+i*.12}s">${i<stars?'★':'☆'}</span>`).join('')}</div>
+    ${extra?`<div class="muted" style="font-size:12px">${esc(extra)}</div>`:''}</div>`;
+  m.querySelector('h2').textContent=p.hit?'🌟 신제품 출시!':'🚀 신제품 출시';
+  tween(m.querySelector('#qnum'),0,p.q,FMT.int,900);
+  if(p.hit)setTimeout(()=>confetti(130),RM?0:700);
+  if(p.flop&&!RM)setTimeout(()=>{m.classList.add('shake')},700);
+  setModalBtns([{l:p.flop?'다음엔 잘하자…':'좋아!',f:()=>{busy=false;checkEndings();render()}}]);
+}
+function borrow(){const l=loanLimit();const amt=l<2000?l:Math.round(l/2);if(amt<500)return;s.debt+=amt;s.cash+=amt;
+  s.log.unshift({d:dateStr(),t:`🏦 은행 대출 ${won(amt)} (월 이자 0.6%)`,k:''});calcValuation();save();render()}
+function repay(){const amt=Math.min(Math.max(0,s.cash),s.debt);if(amt<=0)return;s.debt-=amt;s.cash-=amt;
+  s.log.unshift({d:dateStr(),t:`🏦 대출 ${won(amt)} 상환`,k:''});calcValuation();save();render()}
+
+// ===== 월말 처리 =====
+// 전월 대비 비교용 월말 스냅샷
+function closeSnap(){return {valuation:s.valuation,cash:s.cash,debt:s.debt,revenue:s.revenue,profit:s.profit,employees:s.employees,ownership:s.ownership,wealth:s.valuation*s.ownership/100}}
+// 대기업병: 직원이 많을수록 1인당 생산성이 떨어진다
+function orgEff(){return s.employees>500?1/(1+Math.log10(s.employees/500)*.25):1}
+function calcMonth(noise=1){
+  const I=ind();
+  const power=s.products.reduce((a,p)=>a+p.power,0);
+  const comp=compFactor();
+  const demand=power*REACH[s.reach].m*(0.4+s.brand/80)*noise*s.tempMult*comp;
+  const crowd=s.employees/HQ[s.hq].cap;
+  const capacity=s.employees*I.prod*(0.5+s.morale/200)*(1+s.tech/250)*(crowd>1?clamp(1/Math.sqrt(crowd),.5,1):1)*orgEff();
+  const prodRev=Math.round(Math.min(demand,capacity));
+  const ipRev=Math.round(s.ips.reduce((a,ip)=>a+royalty(ip),0));
+  const revenue=prodRev+ipRev;
+  const salary=s.employees*sal();
+  const ops=Math.round(HQ[s.hq].rent+s.employees*60+prodRev*I.cogs+ipRev*.1);
+  const interest=Math.round(s.debt*.006);
+  const pre=revenue-salary-ops-interest;
+  const tax=pre>0?Math.round(pre*.2):0;
+  return {comp,demand,crowd,capacity,prodRev,ipRev,revenue,salary,ops,interest,pre,tax,cost:salary+ops+interest};
+}
+function nextMonth(instant){
+  if(s.over&&!s.won)return;
+  const I=ind();s.report=[];
+  const prevStage=stageIdx();
+  const M=calcMonth(rf(.9,1.1));
+  { // 제품별 매출: 생산능력 안에서 경쟁력 비율대로 나눈다
+    const tot=s.products.reduce((a,p)=>a+p.power,0);
+    s.products.forEach(p=>{p.prevRev=p.rev;p.rev=tot?Math.round(M.prodRev*p.power/tot):0});
+  }
+  const {demand,crowd,capacity,revenue,salary,ops,interest,pre,tax}=M;
+  s.comp=M.comp;s.ipRev=M.ipRev;
+  s.revenue=revenue;s.profit=pre-tax;s.expense=salary+ops+interest+tax;s.demand=demand;s.capacity=capacity;
+  s.t=(s.t||0)+1;
+  s.cash+=s.profit;
+  log(`📊 ${s.month}월 결산 — 매출 ${won(revenue)}${s.ipRev?` (IP 로열티 ${won(s.ipRev)})`:''} · 순이익 <b class="${s.profit>=0?'pos':'neg'}">${won(s.profit)}</b>`);
+  if(crowd>1){const p=Math.min(10,Math.round(3+(crowd-1)*10));s.morale-=p;log(`😵 ${HQ[s.hq].n}이(가) 너무 비좁아요! (${s.employees}/${HQ[s.hq].cap}명) 생산성 하락, 사기 -${p}. 사옥 이전이 필요해요.`,'warn')}
+  if(s.products.length===0)log('💡 아직 제품이 없어요. 신제품을 출시해 매출을 만들어 보세요.','warn');
+  else if(demand>capacity*1.3){s.morale-=3;log(`🔥 주문이 생산능력(${won(capacity)})을 크게 넘어 야근 중입니다. 채용이 필요해요. 사기 -3`,'warn')}
+  else if(demand>capacity*1.02)log('⚠️ 생산능력이 수요를 따라가지 못하고 있어요.','warn');
+  s.products.forEach(p=>{p.power*=1-I.decay;p.age++});
+  s.morale+=(60-s.morale)*.08;
+  if(s.morale<25&&s.employees>3){const n=Math.max(1,Math.round(s.employees*.08));s.employees-=n;log(`😞 사기 저하로 ${n}명이 퇴사했습니다.`,'warn')}
+  if(s.tempMonths>0){s.tempMonths--;if(s.tempMonths===0)s.tempMult=1}
+  if(s.investCd>0)s.investCd--;
+  if(s.intel>0)s.intel--;
+  rivalsTick();
+  raidTick();
+  clampStats();
+  s.month++;if(s.month>12){s.month=1;s.year++}
+  calcValuation();
+  if(s.cash<0){s.negMonths++;log(`🚨 자금이 바닥났습니다! ${3-s.negMonths}개월 안에 흑자 전환·대출·투자로 메우지 못하면 부도입니다.`,'warn')}
+  else s.negMonths=0;
+  // 몰락 장치: 혁신 정체 · 대기업병 · 전성기 대비 추락
+  const idle=s.t-(s.lastLaunch||0);
+  if(s.products.length&&idle>=18){s.brand=Math.max(0,s.brand-1);s.morale-=1;
+    if(idle%6===0)log(`🥱 혁신 정체: ${idle}개월째 신제품이 없습니다. 브랜드·사기가 매달 조금씩 떨어지고 있어요.`,'warn')}
+  if(orgEff()<.9&&s.t%12===0)log(`🐌 대기업병: 직원 ${s.employees.toLocaleString()}명, 조직 효율 ${Math.round(orgEff()*100)}%. 덩치가 클수록 1인당 생산성이 떨어져요.`,'warn');
+  if(s.maxVal>=1e6&&s.valuation<s.maxVal*.6&&!s.flags.declineWarn){s.flags.declineWarn=1;
+    const dd=Math.round((1-s.valuation/s.maxVal)*100);
+    log(`📉 몰락 위기! 기업가치가 전성기(${won(s.maxVal)})보다 ${dd}% 떨어졌습니다.`,'warn');
+    pendingFx.push(()=>{toast(`<b>📉 몰락 위기</b><br>전성기 대비 기업가치 -${dd}%`,'bad');shake()})}
+  else if(s.valuation>s.maxVal*.85)s.flags.declineWarn=0;
+  const ns=stageIdx();
+  if(ns>prevStage){log(`🎉 ${STAGES[ns].n}(으)로 성장했습니다! 매달 행동 ${maxAP()}회`,'good');
+    pendingFx.push(()=>celebrate(`<b>🎉 ${STAGES[ns].n} 승격!</b><br>이제 매달 행동 ${maxAP()}회`,ns>=4))}
+  if(s.valuation>=1e8&&!s.flags.unicorn){s.flags.unicorn=1;log('🦄 기업가치 1조 돌파! 유니콘 기업이 되었습니다.','good')}
+  if(s.cash<0)pendingFx.push(shake);
+  else if(s.profit>0&&!s.flags.firstProfit){s.flags.firstProfit=1;pendingFx.push(()=>celebrate('<b>📈 첫 흑자 달성!</b>'))}
+  s.history.push(s.valuation);if(s.history.length>240)s.history.shift();
+  s.pm=s.close||null;s.close=closeSnap();
+  s.ap=maxAP();
+  const wasWon=s.won;
+  checkEndings();
+  freshReport=true;chartAnim=true;
+  save();render();cloudAuto();
+  if(!s.over&&s.won===wasWon){
+    const ev=()=>s.fight?proxyFight():rollEvent();
+    if(instant)ev();
+    else{busy=true;setTimeout(()=>{busy=false;if(s&&!s.over)ev()},RM?0:900)}
+  }
+}
+async function nextMonthAnimated(){
+  if(busy||!s||(s.over&&!s.won))return;
+  busy=true;
+  const ny=s.month===12?s.year+1:s.year,nm=s.month===12?1:s.month+1;
+  if(!RM){
+    const ov=document.createElement('div');ov.className='cal-ov';
+    ov.innerHTML=`<div class="cal"><div class="cal-head">${ny}</div><div class="cal-body"><div class="cal-page new">${nm}<small>월</small></div><div class="cal-page old">${s.month}<small>월</small></div></div><div class="cal-foot">결산 중…</div></div>`;
+    document.body.appendChild(ov);
+    await sleep(850);
+    ov.classList.add('out');setTimeout(()=>ov.remove(),300);
+  }
+  busy=false;
+  nextMonth();
+}
+function checkEndings(){
+  if(s.over)return;
+  if(s.sold)return ending('sold');
+  if(s.negMonths>=3)return ending('bankrupt');
+  if(s.ownership<10)return ending('fired');
+  if(s.lostFight)return ending('takeover');
+  if(s.valuation>=1e10&&!s.won)return ending('win');
+}
+
+// ===== 이벤트 =====
+const tm=(m,n)=>{s.tempMult=m;s.tempMonths=n};
+const EVENTS=[
+  {id:'review',t:'📺 유튜버 리뷰',c:()=>s.products.length>0,w:3,fx:()=>{s.brand+=8;return '구독자 300만 유튜버가 제품을 극찬했습니다! 브랜드 +8'}},
+  {id:'gov',t:'🏛️ 정부 지원금 선정',c:()=>stageIdx()<=2,w:()=>s.flags.gov?7:3,fx:()=>{const g=Math.max(3000,s.revenue*2);s.cash+=g;return `중소벤처기업부 지원사업에 선정! ${won(g)} 지원`}},
+  {id:'quit',t:'🏃 핵심 인재 이탈',c:()=>s.employees>=5,w:2,fx:()=>{const g=rand(3,8);s.tech-=g;s.morale-=5;return `CTO급 개발자가 경쟁사로 이직했습니다. 기술력 -${g}, 사기 -5`}},
+  {id:'gapjil',t:'🔥 갑질 논란',c:()=>s.employees>=20,w:2,text:()=>'블라인드에 임원의 갑질 폭로 글이 올라와 기사화됐습니다.',ch:[
+    {l:'공식 사과 + 재발 방지 대책',r:()=>{const c=Math.round(s.employees*sal()*.3);s.cash-=c;s.brand-=4;return `빠른 사과로 진화. ${won(c)} 지출, 브랜드 -4`}},
+    {l:'무대응한다',r:()=>{s.brand-=15;s.morale-=6;return '불매운동 확산… 브랜드 -15, 사기 -6'}}]},
+  {id:'union',t:'✊ 노동조합 결성',c:()=>s.employees>=50&&!s.flags.union,w:2,text:()=>'직원들이 노조를 결성하고 임금 인상을 요구합니다.',ch:[
+    {l:'임금 10% 인상에 합의',r:()=>{s.flags.union=1;s.salaryMult*=1.1;s.morale+=20;return '노사 합의 타결. 인건비 +10%, 사기 +20'}},
+    {l:'요구를 거절',r:()=>{s.flags.union=1;s.morale-=20;tm(.8,2);return '파업 돌입! 사기 -20, 2개월간 매출 -20%'}}]},
+  {id:'fx',t:'💱 환율 급등',c:()=>s.reach>=3,w:2,fx:()=>{tm(1.2,3);return '원/달러 환율 급등으로 수출 실적 호조! 3개월간 매출 +20%'}},
+  {id:'tax',t:'🔍 국세청 세무조사',c:()=>s.revenue>20000,w:2,fx:()=>{const c=Math.round(s.revenue*.5);s.cash-=c;return `정기 세무조사로 추징금 ${won(c)}`}},
+  {id:'chuseok',t:'🌕 추석 상여금',c:()=>s.month===9,w:6,text:()=>'추석 명절이 다가옵니다. 직원들은 상여금을 기대하고 있어요.',ch:[
+    {l:()=>`상여금 지급 (${won(Math.round(s.employees*sal()*.5))})`,r:()=>{const c=Math.round(s.employees*sal()*.5);s.cash-=c;s.morale+=15;return '두둑한 상여금! 사기 +15'}},
+    {l:'참치캔 선물세트로 대신한다',r:()=>{s.morale-=10;return '…참치캔? 사기 -10'}}]},
+  {id:'kwave',t:'🌏 K-열풍',c:()=>s.reach>=3,w:2,fx:()=>{tm(1.5,2);s.brand+=5;return '해외에서 K-브랜드 열풍! 2개월간 매출 +50%, 브랜드 +5'}},
+  {id:'outage',t:'💥 대형 사고',c:()=>s.products.length>0,w:2,fx:()=>{const c=Math.round(s.revenue*.3+1000);s.cash-=c;s.products.forEach(p=>p.power*=.85);s.brand-=3;return `서버 장애/공장 화재 발생. 복구비 ${won(c)}, 제품 경쟁력 -15%, 브랜드 -3`}},
+  {id:'audit',t:'🏛️ 국정감사 증인 채택',c:()=>stageIdx()>=5,w:2,text:()=>'국회 국정감사 증인으로 채택됐습니다.',ch:[
+    {l:'성실히 출석한다',r:()=>{s.brand-=3;return '진땀 빼는 질의응답… 브랜드 -3'}},
+    {l:'해외 출장을 핑계로 불출석',r:()=>{s.brand-=12;return '“회피 경영” 비판 쇄도. 브랜드 -12'}}]},
+  {id:'steal',t:'🦈 대기업의 아이디어 탈취',c:()=>stageIdx()<=3&&s.products.length>0,w:2,text:()=>`대기업이 우리 ‘${best().name}’과 똑같은 제품을 내놨습니다.`,ch:[
+    {l:()=>`소송한다 (${won(Math.max(2000,s.revenue))}${s.ips.length?` · 보유 IP로 승소 확률 ${Math.round(Math.min(.9,.5+.1*s.ips.length)*100)}%`:''})`,r:()=>{s.cash-=Math.max(2000,s.revenue);if(Math.random()<Math.min(.9,.5+.1*s.ips.length)){const g=Math.max(5000,s.revenue*3);s.cash+=g;s.brand+=8;return `승소! 배상금 ${won(g)}, 브랜드 +8`}best().power*=.6;return '패소… 제품 경쟁력 -40%'}},
+    {l:'참고 넘어간다',r:()=>{best().power*=.6;return '시장을 빼앗겼습니다. 대표 제품 경쟁력 -40%'}}]},
+  {id:'ipsteal',t:'🏴‍☠️ IP 무단 도용 적발',c:()=>s.ips.length>0,w:2,text:()=>`해외 업체가 우리 ‘${bestIP().name} ${ipStage(bestIP())}’을(를) 무단으로 쓰고 있습니다.`,ch:[
+    {l:()=>`국제 소송 (${won(Math.max(3000,s.ipRev*2))})`,r:()=>{s.cash-=Math.max(3000,s.ipRev*2);if(Math.random()<.6){const g=Math.max(8000,s.ipRev*8);s.cash+=g;return `승소! 배상금 ${won(g)}`}return '패소… 소송비만 날렸습니다.'}},
+    {l:'정식 라이선스 계약을 맺는다',r:()=>{const ip=bestIP();ip.base*=1.15;return `라이선스 계약 체결! ‘${ip.name}’ 로열티 +15%`}}]},
+  {id:'ipcollab',t:'🤩 대기업 IP 콜라보 제안',c:()=>s.ips.length>0,w:2,fx:()=>{const ip=bestIP();ip.base*=1.3;s.brand+=4;return `‘${ip.name}’ 콜라보 에디션 완판! 로열티 +30%, 브랜드 +4`}},
+  // 보안·범죄 리스크
+  {id:'spy',t:'🕵️ 산업 스파이 적발',c:()=>s.tech>=50&&s.employees>=10,w:2,text:()=>'핵심 연구원이 설계 자료를 USB에 담아 해외 경쟁사로 넘기려다 보안팀에 걸렸습니다.',ch:[
+    {l:()=>`형사 고발 + 소송 (${won(Math.max(2000,Math.round(s.revenue*.3)))})`,r:()=>{s.cash-=Math.max(2000,Math.round(s.revenue*.3));if(Math.random()<.7){s.brand+=2;return '유출 직전에 막았습니다! 국정원·검찰 공조로 기술을 지켜냈어요. 브랜드 +2'}s.tech-=8;return '이미 일부가 넘어간 뒤였습니다… 기술력 -8'}},
+    {l:'조용히 해고하고 덮는다',r:()=>{s.tech-=6;s.morale-=3;return '자료 일부가 이미 유출된 것으로 보입니다. 기술력 -6, 사기 -3'}}]},
+  {id:'buysecret',t:'📂 경쟁사 기밀 매수 제안',c:()=>s.rivals.length>0&&s.products.length>0,w:1.5,text:()=>`${pick(s.rivals).name} 직원이 신제품 설계도를 넘기겠다며 접근해 왔습니다.`,ch:[
+    {l:'거절하고 경쟁사에 알린다',r:()=>{s.brand+=5;return '“정도 경영” 미담 기사가 났습니다. 브랜드 +5'}},
+    {l:()=>`몰래 산다 (${won(Math.max(3000,Math.round(s.revenue*.4)))})`,r:()=>{s.cash-=Math.max(3000,Math.round(s.revenue*.4));if(Math.random()<.65){s.tech+=12;return '설계도를 손에 넣었습니다… 기술력 +12'}const f=Math.max(8000,s.revenue*2);s.cash-=f;s.brand-=25;return `수사 끝에 발각! 영업비밀 침해로 배상금 ${won(f)}, 브랜드 -25`}}]},
+  {id:'ransom',t:'💀 랜섬웨어 공격',c:()=>s.employees>=10,w:2,text:()=>'사내 서버가 모두 암호화됐습니다. 해커가 비트코인으로 몸값을 요구합니다.',ch:[
+    {l:()=>`몸값을 낸다 (${won(Math.max(2000,Math.round(s.revenue*.5)))})`,r:()=>{s.cash-=Math.max(2000,Math.round(s.revenue*.5));if(Math.random()<.7)return '복호화 키를 받아 업무가 정상화됐습니다.';tm(.8,2);return '돈만 받고 키를 주지 않았습니다… 2개월간 매출 -20%'}},
+    {l:'거부하고 백업으로 복구',r:()=>{tm(.75,2);s.brand+=2;return '“해커와 타협 없다” 원칙 대응. 2개월간 매출 -25%, 브랜드 +2'}}]},
+  {id:'deepfake',t:'🎭 딥페이크 송금 사기',c:()=>stageIdx()>=2,w:1.5,fx:()=>{const c=Math.round(Math.max(3000,Math.max(0,s.cash)*.03));s.cash-=c;return `재무팀이 대표 얼굴과 목소리를 흉내 낸 딥페이크 화상회의에 속아 ${won(c)}을 송금했습니다.`}},
+  {id:'embezzle',t:'💰 임원 횡령 적발',c:()=>stageIdx()>=2,w:1.5,fx:()=>{const c=Math.round(Math.max(3000,s.revenue*.4));s.cash-=c;s.brand-=5;return `자금 담당 임원이 수년간 회삿돈 ${won(c)}을 빼돌린 사실이 드러났습니다. 브랜드 -5`}},
+  {id:'whistle',t:'📢 내부고발자 등장',c:()=>stageIdx()>=3,w:1.5,text:()=>'한 직원이 회사의 불법 관행을 감독기관에 제보하겠다고 합니다.',ch:[
+    {l:()=>`제보를 받아들이고 개선 (${won(Math.round(s.revenue*.3))})`,r:()=>{s.cash-=Math.round(s.revenue*.3);s.brand+=4;s.morale+=4;return '선제적으로 바로잡았습니다. 브랜드 +4, 사기 +4'}},
+    {l:'입막음한다',r:()=>{if(Math.random()<.6){s.morale-=5;return '일단 조용해졌지만 분위기가 싸늘합니다. 사기 -5'}s.brand-=20;s.morale-=10;return '녹취록이 방송에 나왔습니다! 브랜드 -20, 사기 -10'}}]},
+  {id:'poach',t:'🧲 핵심 팀 통째 스카우트',c:()=>stageIdx()>=2&&s.rivals.length>0,w:1.5,text:()=>`${pick(s.rivals).name}이(가) 우리 핵심 개발팀 전원에게 연봉 2배를 제시했습니다.`,ch:[
+    {l:'스톡옵션으로 붙잡는다 (지분 -2%p)',r:()=>{s.ownership-=2;s.morale+=10;return '팀을 지켜냈습니다. 지분 -2%p, 사기 +10'}},
+    {l:'보내준다',r:()=>{s.tech-=10;const r=pick(s.rivals);r.tech+=10;return `팀이 ${r.name}(으)로 떠났습니다. 기술력 -10, 경쟁사 기술력 +10`}}]},
+  // 법·규제 리스크
+  {id:'accident',t:'🚑 중대재해 발생',c:()=>s.employees>=50&&['mfg','food','bio','beauty'].includes(s.industry),w:2,text:()=>'공장에서 작업자가 크게 다치는 사고가 났습니다. 중대재해처벌법 적용 대상이에요.',ch:[
+    {l:()=>`전면 작업중지 + 안전 투자 (${won(Math.round(s.revenue*.5))})`,r:()=>{s.cash-=Math.round(s.revenue*.5);tm(.85,2);s.morale+=5;return '안전 설비를 전면 교체했습니다. 2개월간 매출 -15%, 사기 +5'}},
+    {l:'최소한으로 조치한다',r:()=>{if(Math.random()<.6){s.morale-=6;return '일단 넘어갔지만 현장이 불안해합니다. 사기 -6'}const c=Math.round(s.revenue);s.cash-=c;s.brand-=18;s.morale-=10;return `대표이사 기소! 벌금 ${won(c)}, 브랜드 -18, 사기 -10`}}]},
+  {id:'subcon',t:'🧾 하청업체 갑질 논란',c:()=>stageIdx()>=3,w:1.5,fx:()=>{s.brand-=8;return '납품 단가 후려치기와 기술 탈취 의혹이 국감에서 터졌습니다. 브랜드 -8'}},
+  {id:'patenttroll',t:'🧌 특허괴물 소송',c:()=>s.reach>=3&&s.tech>=60,w:1.5,text:()=>'제품은 없고 특허만 가진 해외 업체가 미국 법원에 거액의 소송을 걸었습니다.',ch:[
+    {l:()=>`합의한다 (${won(Math.round(s.revenue*.8))})`,r:()=>{s.cash-=Math.round(s.revenue*.8);return '합의금을 주고 끝냈습니다.'}},
+    {l:()=>`끝까지 싸운다 (소송비 ${won(Math.round(s.revenue*.3))})`,r:()=>{s.cash-=Math.round(s.revenue*.3);if(Math.random()<.5){s.brand+=3;return '특허 무효 판결로 완승! 브랜드 +3'}const c=Math.round(s.revenue*2);s.cash-=c;return `패소… 배상금 ${won(c)}`}}]},
+  {id:'greenwash',t:'🌱 그린워싱 논란',c:()=>stageIdx()>=3,w:1,fx:()=>{s.brand-=7;return '“친환경” 광고가 과장으로 드러나 환경단체의 집중 포화를 맞았습니다. 브랜드 -7'}},
+  {id:'credit',t:'📉 신용등급 강등',c:()=>s.debt>Math.max(1e4,s.valuation*.25),w:2,fx:()=>{const c=Math.round(s.debt*.03);s.cash-=c;s.brand-=3;return `과도한 부채로 신용등급이 내려갔습니다. 추가 이자 ${won(c)}, 브랜드 -3`}},
+  {id:'minwage',t:'📈 최저임금 대폭 인상',c:()=>s.employees>=20,w:1,fx:()=>{s.salaryMult*=1.03;return '내년 최저임금이 크게 올랐습니다. 인건비 +3%'}},
+  // 외부 충격
+  {id:'trade',t:'🚫 해외 수출 규제',c:()=>s.reach>=3,w:1.5,fx:()=>{tm(.8,3);return '무역 분쟁으로 주요 국가가 수출 규제를 걸었습니다. 3개월간 매출 -20%'}},
+  {id:'diplo',t:'🏳️ 외교 갈등 보복',c:()=>s.reach>=3,w:1,fx:()=>{tm(.75,3);s.brand-=3;return '외교 갈등의 불똥이 튀어 현지에서 불매와 영업 정지가 이어집니다. 3개월간 매출 -25%'}},
+  {id:'disaster',t:'🌪️ 태풍 피해',c:()=>s.employees>=5,w:1,fx:()=>{const c=Math.round(Math.max(1500,s.revenue*.3));s.cash-=c;return `초강력 태풍으로 사업장이 침수됐습니다. 복구비 ${won(c)}`}},
+  {id:'logistics',t:'🚚 물류 대란',c:()=>['food','beauty','mfg'].includes(s.industry)&&s.products.length>0,w:1.5,fx:()=>{tm(.85,2);return '화물 운송 파업으로 출고가 멈췄습니다. 2개월간 매출 -15%'}},
+  // 업종별 위기
+  {id:'origin',t:'🏷️ 원산지 표시 위반',ind:'food',c:()=>s.products.length>0,w:2,fx:()=>{const c=Math.round(Math.max(2000,s.revenue*.3));s.cash-=c;s.brand-=12;return `수입산을 국내산으로 표시한 사실이 적발됐습니다. 과징금 ${won(c)}, 브랜드 -12`}},
+  {id:'toxic',t:'⚗️ 유해 성분 검출',ind:'beauty',c:()=>s.products.length>0,w:2,text:()=>`‘${best().name}’에서 기준치를 넘는 유해 성분이 검출됐다는 보도가 나왔습니다.`,ch:[
+    {l:'즉시 전량 회수',r:()=>{const p=best();p.power*=.5;s.brand+=2;return `빠른 회수로 신뢰는 지켰습니다. ‘${p.name}’ 경쟁력 -50%, 브랜드 +2`}},
+    {l:'“인체에 무해하다” 반박',r:()=>{if(Math.random()<.5)return '추가 검사에서 문제없음이 확인됐습니다.';s.brand-=18;best().power*=.4;return '식약처가 판매 중지 명령! 브랜드 -18, 제품 경쟁력 -60%'}}]},
+  {id:'rebate',t:'💊 불법 리베이트 적발',ind:'bio',c:()=>s.products.length>0,w:2,fx:()=>{const c=Math.round(Math.max(3000,s.revenue*.6));s.cash-=c;s.brand-=8;return `병원에 불법 리베이트를 준 사실이 드러났습니다. 과징금 ${won(c)}, 브랜드 -8`}},
+  {id:'bully',t:'📱 소속 아티스트 학폭 의혹',ind:'ent',c:()=>s.products.length>0,w:2,text:()=>'온라인 커뮤니티에 소속 아티스트의 학교폭력 폭로 글이 올라왔습니다.',ch:[
+    {l:'활동 중단 후 사실 확인',r:()=>{const p=best();p.power*=.7;s.brand+=2;return `신중한 대응이 호평받았습니다. ‘${p.name}’ 경쟁력 -30%, 브랜드 +2`}},
+    {l:'“사실무근, 법적 대응”',r:()=>{if(Math.random()<.5){s.brand+=3;return '허위 폭로로 밝혀졌습니다! 브랜드 +3'}s.brand-=15;best().power*=.5;return '추가 증거가 나왔습니다… 브랜드 -15, 제품 경쟁력 -50%'}}]},
+  {id:'gamelaw',t:'🎮 게임 규제 법안 통과',ind:'game',w:2,fx:()=>{tm(.85,3);return '확률형 아이템·결제 한도 규제 법안이 통과됐습니다. 3개월간 매출 -15%'}},
+  {id:'chipban',t:'🔌 첨단기술 수출 통제',ind:'mfg',c:()=>s.reach>=2,w:2,fx:()=>{tm(.8,3);s.tech+=3;return '강대국의 첨단기술 수출 통제로 판로가 막혔지만, 국산화 연구가 빨라졌습니다. 3개월간 매출 -20%, 기술력 +3'}},
+  {id:'platformlaw',t:'📜 플랫폼 규제법',ind:'it',c:()=>stageIdx()>=3,w:2,fx:()=>{tm(.85,3);s.cash-=Math.round(s.revenue*.3);return `거대 플랫폼 규제법 시행. 수수료 인하로 3개월간 매출 -15%, 대응 비용 ${won(Math.round(s.revenue*.3))}`}},
+  // 덩치 큰 회사의 위기
+  {id:'fraud',t:'🧾 분식회계 의혹',c:()=>stageIdx()>=3,w:1.5,text:()=>'회계법인이 일부 매출 인식에 문제가 있다고 지적했습니다. 언론이 냄새를 맡았어요.',ch:[
+    {l:()=>`자진 정정 공시 (${won(Math.round(s.revenue*.5))})`,r:()=>{s.cash-=Math.round(s.revenue*.5);s.brand-=6;return `정정 공시로 정면 돌파. 비용 ${won(Math.round(s.revenue*.5))}, 브랜드 -6`}},
+    {l:'덮고 넘어간다',r:()=>{if(Math.random()<.55)return '…이번엔 조용히 넘어갔습니다.';const c=Math.round(s.revenue*2);s.cash-=c;s.brand-=20;tm(.7,4);return `검찰 압수수색! 과징금 ${won(c)}, 브랜드 -20, 4개월간 매출 -30%`}}]},
+  {id:'ftc',t:'⚖️ 공정위 과징금',c:()=>stageIdx()>=4,w:2,fx:()=>{const c=Math.round(s.revenue*1.2);s.cash-=c;s.brand-=3;return `시장 지배력 남용으로 과징금 ${won(c)}, 브랜드 -3`}},
+  {id:'feud',t:'👊 경영권 분쟁',c:()=>!s.raid&&raidable(),w:3,text:()=>`행동주의 펀드가 우리 회사 주식을 조용히 사 모으고 있다는 공시가 떴습니다. 우리 측 의결권은 ${myVotes().toFixed(1)}%예요.`,ch:[
+    {l:()=>`즉시 지분 매입으로 대응 (${won(buyCost(3))}, 지분 +3%p)`,r:()=>{startRaid();const c=buyCost(3);if(s.cash<c){s.ownership-=1;return '자금이 모자라 매입 실패… 오히려 지분 -1%p'}s.cash-=c;s.ownership+=3;s.buyT=s.t;s.raid.pct=Math.max(3,s.raid.pct-2);return `선제 방어! ${won(c)} 지출, 지분 +3%p`}},
+    {l:'지켜본다',r:()=>{startRaid();s.raid.pct+=2;return `${s.raid.name}이(가) 지분 ${s.raid.pct.toFixed(1)}%를 확보했습니다. 경영권 카드를 확인하세요.`}}]},
+  {id:'disrupt',t:'🌊 파괴적 혁신 등장',c:()=>stageIdx()>=3&&s.products.length>0,w:1.5,fx:()=>{
+    s.products.forEach(p=>p.power*=.65);
+    const r=makeRival(s,false);r.style='기술형';r.tech=Math.round(s.tech*1.25);r.brand=40;r.val=Math.round(s.valuation*.3);s.rivals.push(r);
+    return `신기술로 무장한 ${r.name}이(가) 시장 판도를 뒤집었습니다. 기존 제품 경쟁력 -35%! 새 제품으로 대응하세요.`}},
+  {id:'recall',t:'🔧 대규모 리콜',c:()=>stageIdx()>=3&&s.products.length>0,w:1.5,fx:()=>{const c=Math.round(s.revenue*.8);s.cash-=c;s.brand-=8;return `결함이 발견돼 전량 리콜. 비용 ${won(c)}, 브랜드 -8`}},
+  {id:'overseas',t:'🌐 해외 대형 투자 기회',c:()=>stageIdx()>=3&&s.reach>=3,w:1.5,text:()=>'해외 현지 기업 인수 기회가 왔습니다. 성공하면 대박, 실패하면 큰 손실이에요.',ch:[
+    {l:()=>`과감히 투자 (${won(Math.round(s.revenue*2))})`,r:()=>{s.cash-=Math.round(s.revenue*2);if(Math.random()<.5){tm(1.4,5);return '현지 시장 장악! 5개월간 매출 +40%'}tm(.85,3);return '현지화 실패… 투자금을 날리고 3개월간 매출 -15%'}},
+    {l:'신중하게 패스',r:()=>'기회를 흘려보냈습니다.'}]},
+  {id:'bigco',t:'🐌 대기업병',c:()=>s.employees>=1500,w:2,fx:()=>{s.morale-=8;return '결재 도장 7개, 보고서를 위한 보고서… 직원들이 지쳐 갑니다. 사기 -8'}},
+  {id:'shortsell',t:'🩳 공매도 공격',c:()=>s.ipo&&stageIdx()>=3,w:1.5,fx:()=>{s.brand-=5;tm(.85,2);return '공매도 세력이 악성 보고서를 냈습니다. 브랜드 -5, 2개월간 매출 -15%'}},
+  {id:'buyout',t:'🤝 인수 제안',c:()=>stageIdx()>=2&&stageIdx()<=4,w:1,text:()=>`대기업 ○○그룹이 회사를 ${won(s.valuation*1.3)}에 인수하겠다고 제안했습니다. 내 몫은 ${won(s.valuation*1.3*s.ownership/100)}입니다.`,ch:[
+    {l:'매각하고 엑시트한다 (게임 종료)',r:()=>{s.exitValue=Math.round(s.valuation*1.3*s.ownership/100);s.sold=true;return '회사를 매각했습니다.'}},
+    {l:'거절한다. 우리는 더 클 수 있다',r:()=>{s.morale+=5;return '독자 생존을 선언! 사기 +5'}}]},
+  {id:'viral',t:'🎉 SNS 대박 바이럴',c:()=>s.products.length>0,w:2,fx:()=>{const p=best();p.power*=1.4;return `‘${p.name}’이 SNS에서 밈이 되었습니다! 경쟁력 +40%`}},
+  {id:'recession',t:'📉 경기 침체',w:2,fx:()=>{tm(.8,3);return '소비 심리 위축. 3개월간 매출 -20%'}},
+  {id:'award',t:'🏆 올해의 혁신기업',c:()=>s.tech>=60,w:2,fx:()=>{s.brand+=6;s.morale+=5;return '올해의 혁신기업으로 선정! 브랜드 +6, 사기 +5'}},
+  {id:'headhunt',t:'💼 헤드헌터의 습격',c:()=>stageIdx()>=2,w:2,text:()=>'경쟁사가 우리 핵심 인력에게 연봉 1.5배를 제시했습니다.',ch:[
+    {l:'전 직원 연봉 5% 인상',r:()=>{s.salaryMult*=1.05;s.morale+=6;return '인재 유출 방어. 인건비 +5%, 사기 +6'}},
+    {l:'보내준다',r:()=>{s.tech-=6;s.morale-=4;return '핵심 인력 이탈. 기술력 -6, 사기 -4'}}]},
+  {id:'hoesik',t:'🍻 회식 문화 논란',c:()=>s.employees>=15,w:1,fx:()=>{s.morale-=8;return '“강제 3차 회식” 폭로 글 확산. 사기 -8'}},
+  {id:'rival',t:'📈 경쟁사 파산',c:()=>s.products.length>0,w:2,fx:()=>{tm(1.25,3);return '주요 경쟁사가 파산했습니다! 3개월간 매출 +25%'}},
+  {id:'rate',t:'🏦 기준금리 인상',c:()=>s.debt>0,w:2,fx:()=>{const c=Math.round(s.debt*.02);s.cash-=c;return `한국은행 기준금리 인상. 추가 이자 ${won(c)}`}},
+  {id:'cafe',t:'☕ 사내 카페 요청',c:()=>s.employees>=30&&!s.flags.cafe,w:1,text:()=>'직원들이 사내 카페를 만들어 달라고 요청합니다.',ch:[
+    {l:()=>`오픈한다 (${won(s.employees*40)})`,r:()=>{s.flags.cafe=1;s.cash-=s.employees*40;s.morale+=10;return '사내 카페 오픈! 사기 +10'}},
+    {l:'거절한다',r:()=>{s.morale-=4;return '아쉬워하는 직원들. 사기 -4'}}]},
+  {id:'heir',t:'👔 회장님 자녀 입사',c:()=>stageIdx()>=5&&!s.flags.heir,w:1,text:()=>'회장님의 자녀가 회사에 입사합니다.',ch:[
+    {l:'바로 임원으로 앉힌다',r:()=>{s.flags.heir=1;s.morale-=15;s.brand-=5;return '“낙하산” 논란. 사기 -15, 브랜드 -5'}},
+    {l:'신입사원부터 시작시킨다',r:()=>{s.flags.heir=1;s.morale+=5;s.brand+=3;return '“바른 경영” 호평. 사기 +5, 브랜드 +3'}}]},
+  {id:'ppl',t:'📺 드라마 PPL 제안',c:()=>s.products.length>0&&s.brand<95,w:2,text:()=>'인기 드라마 제작사에서 PPL을 제안했습니다.',ch:[
+    {l:()=>`수락 (${won(Math.round(s.revenue*.5+2000))})`,r:()=>{s.cash-=Math.round(s.revenue*.5+2000);s.brand+=10;return '주인공이 우리 제품을! 브랜드 +10'}},
+    {l:'거절',r:()=>'제안을 정중히 거절했습니다.'}]},
+  // 업종별
+  {id:'gacha',t:'🎰 확률형 아이템 논란',ind:'game',c:()=>s.products.length>0,w:3,text:()=>'유저들이 아이템 확률 조작 의혹을 제기하며 트럭 시위를 벌입니다.',ch:[
+    {l:'확률 공개 + 보상 지급',r:()=>{const c=Math.round(s.revenue*.5+1000);s.cash-=c;s.brand+=3;return `신뢰 회복! ${won(c)} 지출, 브랜드 +3`}},
+    {l:'버틴다',r:()=>{s.brand-=12;tm(.85,3);return '유저 이탈… 브랜드 -12, 3개월간 매출 -15%'}}]},
+  {id:'food',t:'🤢 식중독 의심 신고',ind:'food',c:()=>s.products.length>0,w:3,fx:()=>{s.brand-=10;tm(.8,2);return '식중독 의심 신고로 언론 보도. 브랜드 -10, 2개월간 매출 -20%'}},
+  {id:'clinic',t:'🧪 임상시험 결과 발표',ind:'bio',c:()=>s.products.length>0,w:4,fx:()=>{const p=best();if(Math.random()<.5){p.power*=2;s.brand+=10;return `‘${p.name}’ 임상 성공! 경쟁력 2배, 브랜드 +10 🚀`}p.power*=.4;return `‘${p.name}’ 임상 실패… 경쟁력 -60%`}},
+  {id:'dating',t:'💕 소속 아티스트 열애설',ind:'ent',c:()=>s.products.length>0,w:3,text:()=>'디스패치가 소속 아티스트의 열애설을 보도했습니다.',ch:[
+    {l:'쿨하게 인정',r:()=>{s.brand-=3;return '팬들도 축하하는 분위기. 브랜드 -3'}},
+    {l:'“친한 동료 사이”라며 부인',r:()=>{if(Math.random()<.5)return '잘 넘어갔습니다.';s.brand-=15;return '추가 사진 공개로 거짓 해명 들통! 브랜드 -15'}}]},
+  {id:'supply',t:'🚢 글로벌 공급망 차질',ind:'mfg',w:3,fx:()=>{const c=Math.round(s.revenue*.4);s.cash-=c;tm(.85,2);return `원자재 수급 차질. 추가 비용 ${won(c)}, 2개월간 매출 -15%`}},
+  {id:'dutyfree',t:'🛍️ 면세점 대량 주문',ind:'beauty',c:()=>s.reach>=2,w:3,fx:()=>{tm(1.4,2);return '면세점에서 대량 주문이 들어왔습니다! 2개월간 매출 +40%'}},
+  {id:'leak',t:'🔓 개인정보 유출',ind:'it',c:()=>s.products.length>0,w:3,text:()=>'해킹으로 고객 개인정보가 유출된 정황이 발견됐습니다.',ch:[
+    {l:'즉시 공개하고 보상',r:()=>{const c=Math.round(s.revenue*.6+1500);s.cash-=c;s.brand-=5;return `정직한 대응. ${won(c)} 지출, 브랜드 -5`}},
+    {l:'조용히 덮는다',r:()=>{if(Math.random()<.6)return '…아무도 모르고 넘어갔습니다.';const c=Math.round(s.revenue*2+5000);s.cash-=c;s.brand-=25;return `은폐 사실 발각! 과징금 ${won(c)}, 브랜드 -25`}}]},
+];
+const wt=e=>typeof e.w==='function'?e.w():(e.w||1);
+function rollEvent(){
+  if(Math.random()>.5)return;
+  const pool=EVENTS.filter(e=>e.id!==s.lastEvent&&(!e.ind||e.ind===s.industry)&&(!e.c||e.c()));
+  if(!pool.length)return;
+  let r=Math.random()*pool.reduce((a,e)=>a+wt(e),0),ev=pool[0];
+  for(const e of pool){r-=wt(e);if(r<=0){ev=e;break}}
+  s.lastEvent=ev.id;
+  const snap={cash:s.cash,brand:s.brand,morale:s.morale,tech:s.tech,tm:s.tempMult,pw:s.products.reduce((a,p)=>a+p.power,0)};
+  const after=m=>{
+    clampStats();calcValuation();log(`${ev.t} — ${m}`,'event');
+    const pw=s.products.reduce((a,p)=>a+p.power,0);
+    const score=(s.brand-snap.brand)+(s.morale-snap.morale)+(s.tech-snap.tech)*2+(s.cash-snap.cash)/Math.max(1000,Math.abs(snap.cash)||1)*20+(s.tempMult-snap.tm)*30+(snap.pw?(pw-snap.pw)/snap.pw*30:0);
+    const kind=score>0.5?'good':score<-0.5?'bad':'';
+    pendingFx.push(()=>{toast(`<b>${esc(ev.t)}</b><br>${esc(m)}`,kind);if(kind==='bad')shake();if(kind==='good')confetti(30)});
+    checkEndings();save();render();
+  };
+  if(ev.ch){
+    modal(ev.t,`<div class="news-tag">속보</div><p>${esc(ev.text())}</p>`,ev.ch.map(c=>({l:typeof c.l==='function'?c.l():c.l,f:()=>after(c.r())})),'event');
+  }else after(ev.fx());
+}
+
+// ===== 경쟁사 =====
+const STYLES={'공격형':{t:1,b:1.2,g:1.3,d:'공격적 확장, 인재 빼가기'},'기술형':{t:1.5,b:.7,g:1,d:'R&D 집중, 고품질 제품'},'안정형':{t:.8,b:.9,g:.7,d:'느리지만 꾸준한 성장'},'마케팅형':{t:.7,b:1.6,g:1.1,d:'광고·브랜드 중심'}};
+function makeRival(c,incumbent){
+  const I=IND[c.industry];let name,n=0;
+  do{name=pick(PRE)+pick(I.suffix)}while(n++<50&&(name===c.name||(c.rivals||[]).some(r=>r.name===name)));
+  const base=Math.max(c.tech,20);
+  return {name,style:incumbent?'안정형':pick(Object.keys(STYLES)),inc:!!incumbent,ceo:pick(SUR)+pick(GIV),
+    tech:Math.round(incumbent?base*1.4+10:base*rf(.6,1.2)),
+    brand:incumbent?rand(45,60):rand(3,20),
+    val:Math.round(incumbent?rand(3,8)*1e6:Math.max(rand(2,30)*1e4,c.valuation*rf(.5,3))),
+    prod:`${pick(PWORD)} ${pick(I.types)}`};
+}
+function genRivals(c){c.rivals=[];c.rivals.push(makeRival(c,true));for(let i=0;i<3;i++)c.rivals.push(makeRival(c,false));c.intel=0}
+const rStr=r=>r.tech*1.15*(.5+r.brand/100);
+const myStr=()=>{const b=best();return b?b.q*(.5+s.brand/100):0};
+function shares(){const all=[myStr(),...s.rivals.map(rStr)];const sum=all.reduce((a,b)=>a+b,0)||1;return all.map(v=>v/sum)}
+function compFactor(){
+  if(!s.rivals.length)return 1.3;
+  const avg=s.rivals.reduce((a,r)=>a+rStr(r),0)/s.rivals.length,p=myStr();
+  return p+avg>0?clamp(2*p/(p+avg),.6,1.3):1;
+}
+function rivalsTick(){
+  const myShare=shares()[0];
+  s.rivals.forEach(r=>{
+    r.offer=null;
+    const st=STYLES[r.style];
+    r.tech+=rf(1.2,4.5)*st.t*60/(60+r.tech);
+    r.brand=clamp(r.brand+rf(-.3,1.8)*st.b,0,100);
+    let g=rf(-.015,.045)*st.g*(r.inc?.6:1);
+    if(myShare>.5)g-=.01;
+    if(r.val>1e9)g*=.5;
+    r.val=Math.round(r.val*(1+g));
+  });
+  if(s.rivals.length&&Math.random()<.3){
+    const r=pick(s.rivals),k=Math.random();
+    if(k<.35){r.tech+=5;r.prod=`${pick(PWORD)} ${pick(ind().types)}`;log(`⚔️ 경쟁사 ${r.name}이(가) 신제품 ‘${r.prod}’을(를) 출시했습니다.`,'rival')}
+    else if(k<.55){r.val=Math.round(r.val*1.25);log(`⚔️ ${r.name}, 대규모 투자 유치! 기업가치 ${won(r.val)}`,'rival')}
+    else if(k<.7){r.brand=clamp(r.brand-10,0,100);r.val=Math.round(r.val*.85);log(`⚔️ ${r.name} 오너 리스크 발생… 브랜드·기업가치 하락`,'rival')}
+    else if(k<.85&&r.style==='공격형'&&s.employees>=10){s.tech=Math.max(1,s.tech-3);s.morale-=3;log(`⚔️ ${r.name}이(가) 우리 개발자를 빼갔습니다. 기술력 -3, 사기 -3`,'warn')}
+    else{r.brand=clamp(r.brand+6,0,100);log(`⚔️ ${r.name}, 대대적인 광고 캠페인 시작`,'rival')}
+  }
+  for(const r of [...s.rivals]){
+    if(!r.inc&&r.val<s.valuation/50&&Math.random()<.04){s.rivals.splice(s.rivals.indexOf(r),1);log(`💀 경쟁사 ${r.name}이(가) 파산했습니다.`,'good')}
+  }
+  if(s.rivals.length<4&&Math.random()<.08){
+    const r=makeRival(s,false);r.tech=Math.round(s.tech*rf(.5,.9));r.val=Math.round(Math.max(1e4,s.valuation*rf(.01,.1)));
+    s.rivals.push(r);log(`🆕 신생 경쟁사 ${r.name}(${r.style})이(가) 시장에 뛰어들었습니다.`,'rival');
+  }
+}
+// M&A: 경쟁사의 제품 라인·기술·특허·인력을 통째로 가져오고, 제품 슬롯도 늘어난다
+function acqOffer(r){
+  if(!r.offer){
+    const I=ind(),n=clamp(1+Math.floor(Math.log10(Math.max(r.val,1e4)/1e5)),1,3);
+    const prods=[];for(let k=0;k<n;k++){const q=Math.max(5,Math.round(r.tech*rf(.85,1.1))),age=rand(2,14);
+      prods.push({name:k===0?r.prod:`${pick(PWORD)} ${pick(I.types)}`,q,power:q*q*I.k*Math.pow(1-I.decay,age),age,hit:false,flop:false})}
+    r.offer={prods,ipBase:Math.round((r.tech+r.brand)*rf(6,10))};
+  }
+  const o=r.offer;
+  const estRev=o.prods.reduce((a,p)=>a+p.power,0)*REACH[s.reach].m*(0.4+s.brand/80)*(s.comp||1);
+  // 가격: 장부상 기업가치와 실제 매출가치 중 큰 쪽 + 경영권 프리미엄 15%
+  const price=Math.round(Math.max(r.val,estRev*12*ind().mult*.7)*1.15);
+  // 흡수 인원: 인수한 매출을 만들어 낼 만큼
+  const perEmp=ind().prod*(0.5+s.morale/200)*(1+s.tech/250)*orgEff();
+  const emp=Math.max(5,Math.round(estRev/perEmp*1.1));
+  const own2=s.valuation>0?s.ownership*s.valuation/(s.valuation+price):0;
+  return {...o,price,estRev,emp,tech2:Math.max(s.tech,Math.round(r.tech))+3,
+    ip:s.ips.length<4,slot:(s.extraSlots||0)<3,own2};
+}
+function acquire(i,mode){
+  const r=s.rivals[i];if(!r||s.over||s.ap<=0)return;
+  const o=acqOffer(r);
+  if(mode==='cash'){if(s.cash<o.price)return;s.cash-=o.price}
+  else{if(o.own2<10)return;s.ownership=o.own2}
+  s.ap--;
+  s.tech=o.tech2;s.brand+=5;s.employees+=o.emp;
+  if(o.slot)s.extraSlots=(s.extraSlots||0)+1;
+  o.prods.forEach(p=>s.products.push({...p}));
+  while(s.products.length>maxProd()){const w=s.products.reduce((a,b)=>a.power<b.power?a:b);s.products.splice(s.products.indexOf(w),1)}
+  let ipTxt='';if(o.ip){s.ips.push({name:r.name.slice(0,2)+pick(PWORD),base:o.ipBase,lv:1});ipTxt=', 특허 IP 확보'}
+  s.rivals.splice(i,1);
+  s.revenue+=Math.round(o.estRev); // 인수한 회사의 매출을 바로 합산 (다음 결산에서 다시 계산됨)
+  clampStats();calcValuation();
+  const pay=mode==='cash'?won(o.price):`주식 교환(지분 ${s.ownership.toFixed(1)}%)`;
+  s.log.unshift({d:dateStr(),t:`🤝 ${r.name}을(를) ${pay}에 인수했습니다! 제품 ${o.prods.length}개·직원 ${o.emp.toLocaleString()}명 흡수, 기술력 ${Math.round(o.tech2)}${o.slot?', 제품 슬롯 +1':''}${ipTxt}`,k:'good'});
+  pendingFx.push(()=>celebrate(`<b>🤝 ${esc(r.name)} 인수 완료!</b><br>제품 ${o.prods.length}개 · 예상 월 매출 +${won(o.estRev)}`,true));
+  checkEndings();save();render();
+}
+function acqMenu(i){
+  const r=s.rivals[i];if(!r)return;const o=acqOffer(r);
+  const canCash=s.cash>=o.price,canStock=o.own2>=10;
+  const btns=[];
+  if(canCash)btns.push({l:`💵 현금으로 인수 (${won(o.price)})`,f:()=>acquire(i,'cash')});
+  if(canStock)btns.push({l:`📈 주식 교환으로 인수 (내 지분 ${s.ownership.toFixed(1)}% → ${o.own2.toFixed(1)}%)`,f:()=>acquire(i,'stock')});
+  btns.push({l:'취소',f:()=>{}});
+  modal('🤝 인수 합병 검토',`<p><b>${esc(r.name)}</b> · 기업가치 약 ${won(r.val)}</p>
+    <div class="kv">
+      <span class="muted">제품 라인</span><b>${o.prods.map(p=>`‘${esc(p.name)}’ (품질 ${p.q})`).join('<br>')}</b>
+      <span class="muted">예상 월 매출</span><b class="pos">+${won(o.estRev)}</b>
+      <span class="muted">기술력</span><b>${Math.round(s.tech)} → ${Math.round(o.tech2)}</b>
+      <span class="muted">브랜드</span><b>+5</b>
+      <span class="muted">직원 흡수</span><b>+${o.emp.toLocaleString()}명 <span class="muted" style="font-weight:400">(인건비 증가)</span></b>
+      ${o.slot?'<span class="muted">제품 슬롯</span><b class="pos">+1 (영구)</b>':''}
+      ${o.ip?'<span class="muted">특허</span><b class="pos">IP 1개 확보</b>':''}
+      <span class="muted">경쟁</span><b>경쟁사 하나가 사라져 점유율 상승</b>
+    </div>
+    ${!canCash?`<p class="muted" style="font-size:12px">현금 인수에는 ${won(o.price)}이 필요해요.</p>`:''}
+    ${!canStock?'<p class="muted" style="font-size:12px">주식 교환을 하면 지분이 10% 아래로 떨어져서 할 수 없어요.</p>':''}
+    <p class="muted" style="font-size:12px">인수는 행동 1회를 씁니다.</p>`,btns);
+}
+
+// ===== 경영권 =====
+const RAIDERS=['한빛 행동주의펀드','북극성 파트너스','스카이 홀딩스','돌개바람 자산운용','청솔 사모펀드','오메가 인베스트'];
+const myVotes=()=>s.ownership+(s.allies||0);
+const raidable=()=>s.ipo&&stageIdx()>=2&&myVotes()<50;
+const buyPrem=()=>!s.ipo?1.2:s.raid?1.35:1.1; // 비상장: 투자자 지분 되사기 · 매집 경쟁 중엔 주가가 뛴다
+const buyCost=p=>Math.round(Math.max(s.valuation,1e4)*p/100*buyPrem());
+const buyRoom=()=>Math.max(0,100-(s.allies||0)-(s.raid?s.raid.pct:0)-s.ownership-2);
+function startRaid(){
+  if(s.raid)return;
+  const rv=s.rivals.length&&Math.random()<.35?pick(s.rivals).name:pick(RAIDERS);
+  s.raid={name:rv,pct:rf(5,9),calm:0};
+}
+function buyShares(p){
+  if(s.over||s.buyT===s.t)return;
+  const c=buyCost(p);if(s.cash<c||p>buyRoom())return;
+  s.cash-=c;s.ownership+=p;s.buyT=s.t;
+  if(s.raid)s.raid.calm=0;
+  calcValuation();
+  s.log.unshift({d:dateStr(),t:`🛡️ 자사주·지분 매입으로 내 지분 +${p}%p → ${s.ownership.toFixed(1)}% <span class="muted">(-${won(c)})</span>`,k:'good'});
+  pendingFx.push(()=>toast(`<b>🛡️ 지분 매입</b><br>내 지분 ${s.ownership.toFixed(1)}% · 의결권 ${myVotes().toFixed(1)}%`,'good'));
+  save();render();
+}
+function raidTick(){
+  if(!s.raid){
+    if(raidable()&&Math.random()<.04+(50-myVotes())/400){startRaid();
+      log(`⚠️ ${s.raid.name}이(가) 우리 회사 지분 ${s.raid.pct.toFixed(1)}%를 매집했다고 공시했습니다! 적대적 M&A 시도일 수 있어요.`,'warn');
+      pendingFx.push(()=>{toast(`<b>⚠️ 적대적 M&A 경보</b><br>${esc(s.raid.name)} 지분 ${s.raid.pct.toFixed(1)}%`,'bad');shake()})}
+    return;
+  }
+  const r=s.raid,mv=myVotes();
+  // 우리가 크게 앞서면 포기하고 지분을 판다
+  r.age=(r.age||0)+1;
+  if(mv>=50||(r.age>=6&&mv>=r.pct+20)){r.calm++;if(r.calm>=2&&Math.random()<.5){
+    log(`🏳️ ${r.name}이(가) 경영권 공격을 포기하고 지분을 매각했습니다. 경영권 방어 성공!`,'good');
+    pendingFx.push(()=>celebrate(`<b>🛡️ 경영권 방어 성공!</b><br>${esc(r.name)} 철수`));s.raid=null;s.brand+=2;return}}
+  else r.calm=0;
+  const cheap=s.maxVal>0&&s.valuation<s.maxVal*.8?1.5:1; // 주가가 빠지면 더 싸게 사 모은다
+  r.pct=Math.min(r.pct+rf(.5,1.7)*cheap*(r.calm?.3:1),Math.max(r.pct,100-mv-2));
+  if(r.pct>mv)s.fight=true;
+  else if(r.pct>mv*.8)log(`🚨 ${r.name} 지분 ${r.pct.toFixed(1)}% — 우리 측 의결권(${mv.toFixed(1)}%)을 거의 따라잡았어요! 지분을 사서 방어하세요.`,'warn');
+}
+function proxyFight(){
+  s.fight=false;const r=s.raid;if(!r)return;
+  const base=clamp(.2+s.morale/400+s.brand/400+(s.profit>0?.1:-.05)+(s.valuation>=s.maxVal*.9?.08:0),.12,.75);
+  const knightCost=Math.max(2000,Math.round(s.valuation*.06));
+  const done=(win,msg)=>{
+    if(win){s.raid=null;s.brand+=3;log(`🗳️ 주주총회 표 대결 승리! ${msg}`,'good');pendingFx.push(()=>celebrate('<b>🗳️ 표 대결 승리!</b><br>경영권을 지켜냈습니다',true))}
+    else{s.lostFight=true;log(`🗳️ 주주총회 표 대결 패배… ${msg}`,'warn')}
+    clampStats();calcValuation();checkEndings();save();render();
+  };
+  const btns=[{l:`🗳️ 소액주주 설득으로 표 대결 (승률 약 ${Math.round(base*100)}%)`,f:()=>done(Math.random()<base,'소액주주들이 현 경영진의 손을 들어줬습니다.')}];
+  if(s.cash>=knightCost)btns.unshift({l:`🛡️ 백기사 유치 후 표 대결 (${won(knightCost)} · 우호지분 +6%p · 승률 약 ${Math.round(Math.min(.95,base+.35)*100)}%)`,f:()=>{s.cash-=knightCost;s.allies=(s.allies||0)+6;done(Math.random()<Math.min(.95,base+.35),'우호 기업이 백기사로 나서 표를 몰아줬습니다.')}});
+  modal('⚔️ 경영권 표 대결',`<div class="news-tag">임시 주총</div><p><b>${esc(r.name)}</b>의 지분(${r.pct.toFixed(1)}%)이 우리 측 의결권(${myVotes().toFixed(1)}%)을 넘어섰습니다. 임시 주주총회에서 이사회 교체 안건이 올라왔어요.</p><p class="muted" style="font-size:12px">지면 대표 자리에서 물러나고 게임이 끝납니다. 사기·브랜드·흑자 여부가 소액주주 표심에 영향을 줘요.</p>`,btns,'event');
+}
+
+function ctrlCard(){
+  const al=s.allies||0,r=s.raid,mv=myVotes();
+  const st=r?(r.pct>mv*.8?['🚨 위험','neg']:['⚠️ 공격받는 중','warn']):mv>=50?['🛡️ 안정','pos']:mv>=30?['🙂 양호','']:['😟 취약','warn'];
+  const used=s.buyT===s.t,room=buyRoom();
+  const btns=[1,3,5].map(p=>{const c=buyCost(p),dis=s.over||used||s.cash<c||p>room;
+    return `<button class="btn ctl-buy" data-p="${p}" ${dis?'disabled':''}>+${p}%p · ${won(c)}</button>`}).join('');
+  const note=used?'이번 달은 이미 매입했어요':room<1?'더 살 수 있는 유통 주식이 없어요':!s.ipo?'비상장: 투자자 지분을 20% 웃돈에 되사요':r?'매집 경쟁 중이라 주가 프리미엄 35%':'시장에서 10% 프리미엄으로 매입';
+  return `<div class="card ${r&&r.pct>mv*.8?'raid':''}"><h3><span>🛡️ 경영권</span><span class="ctl-st ${st[1]}">${st[0]}</span></h3>
+    <div class="ctl-bar"><span class="ctl-me" style="width:${s.ownership}%"></span><span class="ctl-al" style="width:${al}%"></span><span style="flex:1"></span>${r?`<span class="ctl-rd" style="width:${r.pct}%"></span>`:''}</div>
+    <div class="ctl-leg"><span><i class="ctl-me"></i>내 지분 <b>${s.ownership.toFixed(1)}%</b></span>${al?`<span><i class="ctl-al"></i>우호지분 <b>${al.toFixed(1)}%</b></span>`:''}${r?`<span><i class="ctl-rd"></i>${esc(r.name)} <b class="neg">${r.pct.toFixed(1)}%</b></span>`:''}<span>우리 측 의결권 <b>${mv.toFixed(1)}%</b></span></div>
+    <p class="muted" style="font-size:12px;margin:6px 0 0">${r?`상대 지분이 우리 측 의결권을 넘으면 임시 주총 표 대결이 열려요. 우리가 크게 앞서면 상대가 포기합니다.`:s.ipo?`상장사는 의결권이 50% 미만이면 적대적 M&A의 표적이 될 수 있어요. 지분 10% 미만이면 해임됩니다.`:`상장하면 지분이 시장에 풀려 경영권 공격을 받을 수 있어요. 지분 10% 미만이면 해임됩니다.`}</p>
+    <div class="ctl-btns">${btns}</div><div class="muted" style="font-size:11px;margin-top:4px">지분 매입 · 한 달에 한 번 · 행동을 쓰지 않아요 · ${note}</div></div>`;
+}
+
+// ===== 엔딩 =====
+function ending(type){
+  const myWealth=Math.round(s.valuation*s.ownership/100);
+  const years=((s.year-2026)*12+s.month-1);
+  const yt=`${Math.floor(years/12)}년 ${years%12}개월`;
+  const E={
+    bankrupt:['💸 부도','3개월 연속 자금난을 버티지 못하고 회사가 부도 처리되었습니다.'],
+    takeover:['⚔️ 경영권 상실','주주총회 표 대결에서 패배했습니다. 새 경영진이 회사를 접수했고, 당신은 대표 자리에서 물러납니다.'],
+    fired:['🪑 대표이사 해임','지분이 10% 아래로 떨어져 이사회에서 해임되었습니다. 회사는 남았지만 당신은 떠납니다.'],
+    sold:['🤝 엑시트 성공',`회사를 매각하고 ${won(s.exitValue||0)}을 손에 쥐었습니다. 다음 창업을 준비해 볼까요?`],
+    win:['👑 재벌 등극!',`기업가치 100조 원 돌파! ${s.name}은(는) 대한민국을 대표하는 그룹이 되었습니다.`],
+  }[type];
+  const body=`<p>${E[1]}</p><div class="kv">
+    <span class="muted">경영 기간</span><b>${yt}</b>
+    <span class="muted">최고 기업가치</span><b>${won(s.maxVal)}</b>
+    <span class="muted">최종 직원 수</span><b>${s.employees.toLocaleString()}명</b>
+    <span class="muted">내 지분 가치</span><b>${won(type==='sold'?(s.exitValue||0):myWealth)}</b></div>`;
+  if(type==='win')setTimeout(()=>confetti(200),300);
+  if(type==='bankrupt'||type==='fired'||type==='takeover')shake();
+  if(type==='win'){s.won=true;s.over=false;save();
+    modal(E[0],body,[{l:'계속 경영하기',f:()=>{}},{l:'새 회사 창업하기',f:startScreen}]);return}
+  s.over=true;s.ending=type;save();
+  modal(E[0],body,[{l:'새 회사 창업하기',f:startScreen}]);
+}
+
+// ===== 모달 =====
+function modal(title,html,btns,cls=''){
+  const root=document.getElementById('modal-root');
+  root.innerHTML=`<div class="modal-bg"><div class="modal ${cls}" role="dialog" aria-modal="true"><h2>${esc(title)}</h2><div class="body">${html}</div><div class="btns"></div></div></div>`;
+  setModalBtns(btns);
+  return root.querySelector('.modal');
+}
+function setModalBtns(btns){
+  const root=document.getElementById('modal-root'),box=root.querySelector('.btns');if(!box)return;
+  box.innerHTML='';
+  btns.forEach((b,i)=>{const el=document.createElement('button');el.className='btn'+(i===0?' primary':'');el.textContent=b.l;
+    el.onclick=()=>{root.innerHTML='';b.f()};box.appendChild(el)});
+}
+
+// ===== 연출(애니메이션) =====
+const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prevVals={};
+let busy=false,freshReport=false,chartAnim=false,lastLogSeen=-1,logSeq=0,pendingFx=[];
+const FMT={won:v=>won(v),ppl:v=>Math.round(v).toLocaleString()+'명',pct:v=>v.toFixed(1)+'%',int:v=>String(Math.round(v)),pct0:v=>Math.round(v)+'%'};
+const DFMT={won:d=>(d>0?'+':'')+won(d),ppl:d=>(d>0?'+':'')+Math.round(d).toLocaleString()+'명',pct:d=>(d>0?'+':'')+d.toFixed(1)+'%p',int:d=>(d>0?'+':'')+Math.round(d)};
+const FLOAT_KEYS=new Set(['cash','valuation','employees','tech','brand','morale','ownership']);
+const sleep=ms=>new Promise(r=>setTimeout(r,RM?0:ms));
+function tween(el,from,to,fmt,dur=750){
+  if(RM){el.textContent=fmt(to);return}
+  const t0=performance.now();
+  const step=t=>{const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=fmt(from+(to-from)*e);if(p<1)requestAnimationFrame(step)};
+  el.textContent=fmt(from);requestAnimationFrame(step);
+}
+function floatAt(x,y,text,cls=''){
+  if(RM)return;
+  const f=document.createElement('div');f.className='floater '+cls;f.textContent=text;
+  f.style.left=x+'px';f.style.top=y+'px';document.body.appendChild(f);setTimeout(()=>f.remove(),1300);
+}
+function floatOn(el,text,cls){if(!el)return;const r=el.getBoundingClientRect();floatAt(r.left+r.width/2,r.top,text,cls)}
+function toast(html,kind=''){
+  let box=document.getElementById('toasts');
+  if(!box){box=document.createElement('div');box.id='toasts';document.body.appendChild(box)}
+  const t=document.createElement('div');t.className='toast '+kind;t.innerHTML=html;box.appendChild(t);
+  setTimeout(()=>t.classList.add('out'),RM?2500:2800);setTimeout(()=>t.remove(),3200);
+}
+function confetti(n=70){
+  if(RM)return;
+  const colors=['#f43f5e','#f59e0b','#10b981','#3b82f6','#a855f7','#facc15'];
+  const box=document.createElement('div');box.className='confetti';
+  for(let i=0;i<n;i++){const p=document.createElement('i');p.style.left=rand(0,100)+'vw';p.style.background=pick(colors);
+    p.style.setProperty('--dx',rand(-140,140)+'px');p.style.setProperty('--r',rand(200,1000)+'deg');
+    p.style.animationDelay=(Math.random()*.35)+'s';p.style.animationDuration=rf(1.5,2.6)+'s';
+    if(Math.random()<.4)p.style.borderRadius='50%';box.appendChild(p)}
+  document.body.appendChild(box);setTimeout(()=>box.remove(),3400);
+}
+function shake(){if(RM)return;const a=document.getElementById('root');a.classList.remove('shake');void a.offsetWidth;a.classList.add('shake');
+  const v=document.createElement('div');v.className='vignette';document.body.appendChild(v);setTimeout(()=>v.remove(),700)}
+function celebrate(title,big){toast(title,'good');confetti(big?140:60)}
+// 렌더 후: 숫자 카운트업, 변화량 표시, 막대 애니메이션
+function animateAfterRender(){
+  document.querySelectorAll('[data-k]').forEach(el=>{
+    const k=el.dataset.k,to=+el.dataset.v,f=el.dataset.f;
+    const from=prevVals[k];prevVals[k]=to;
+    if(el.classList.contains('fill')){
+      const w=to+'%';
+      if(from===undefined||RM||from===to){el.style.width=w;return}
+      el.style.transition='none';el.style.width=from+'%';void el.offsetWidth;el.style.transition='';el.style.width=w;return;
+    }
+    if(from===undefined||Math.abs(from-to)<1e-9)return;
+    tween(el,from,to,FMT[f]);
+    const st=el.closest('.stat,.bar');
+    if(st){st.classList.remove('up','down');void st.offsetWidth;st.classList.add(to>from?'up':'down')}
+    if(FLOAT_KEYS.has(k)){const d=to-from;if(f==='int'&&Math.abs(d)<.5)return;floatOn(el,DFMT[f](d),d>0?'pos':'neg')}
+  });
+  const fx=pendingFx;pendingFx=[];fx.forEach(f=>f());
+}
+
+// ===== 저장 / 불러오기 =====
+// 클라우드(계정에 저장, 기기 간 이어하기)를 쓸 수 있으면 쓰고, 아니면 이 기기의 브라우저에 저장한다.
+const SLOTS=[{k:'auto',n:'자동 저장'},{k:'slot1',n:'슬롯 1'},{k:'slot2',n:'슬롯 2'},{k:'slot3',n:'슬롯 3'}];
+const CLOUD={db:null,uid:null,ready:false,writing:false,dirty:false,offered:false};
+async function initCloud(){
+  try{
+    if(!window.claude||!claude.use)return;
+    const [db,user]=await Promise.all([claude.use('db'),claude.use('user')]);
+    if(!db||!user)return;
+    const uid=await user.id();if(!uid)return;
+    CLOUD.db=db;CLOUD.uid=uid;CLOUD.ready=true;
+    if(s)render();
+    offerCloudContinue();
+  }catch(e){}
+}
+const slotRef=k=>CLOUD.db.collection('data/users/'+CLOUD.uid).doc(k);
+function slotBody(){
+  const st=JSON.parse(JSON.stringify(s));st.log=st.log.slice(0,60);
+  return {name:s.name,industry:s.industry,date:`${s.year}년 ${s.month}월`,valuation:s.valuation,stage:STAGES[stageIdx()].n,over:!!s.over,savedAt:Date.now(),state:JSON.stringify(st)};
+}
+async function writeSlot(k){
+  const body=slotBody();
+  if(CLOUD.ready){await slotRef(k).set(body);return}
+  localStorage.setItem('kcorp-slot-'+k,JSON.stringify(body));
+}
+async function readSlot(k){
+  if(CLOUD.ready){const d=await slotRef(k).get();return d.exists?d.data():null}
+  try{const t=localStorage.getItem('kcorp-slot-'+k);return t?JSON.parse(t):null}catch(e){return null}
+}
+async function removeSlot(k){
+  if(CLOUD.ready){await slotRef(k).delete();return}
+  try{localStorage.removeItem('kcorp-slot-'+k)}catch(e){}
+}
+// 매달 결산 후 자동 저장 (클라우드는 한 번에 하나씩만 쓴다)
+async function cloudAuto(){
+  if(!s)return;
+  if(!CLOUD.ready){try{localStorage.setItem('kcorp-slot-auto',JSON.stringify(slotBody()))}catch(e){}return}
+  if(CLOUD.writing){CLOUD.dirty=true;return}
+  CLOUD.writing=true;
+  try{await writeSlot('auto')}catch(e){}
+  CLOUD.writing=false;
+  if(CLOUD.dirty){CLOUD.dirty=false;cloudAuto()}
+}
+function applyLoaded(body){
+  const st=migrate(JSON.parse(body.state));
+  for(const k in prevVals)delete prevVals[k];
+  lastLogSeen=-1;sceneBldKey='';const cr=document.getElementById('crowd');if(cr)cr.innerHTML='';
+  document.getElementById('modal-root').innerHTML='';
+  s=st;save();render();
+  toast(`<b>📂 불러왔어요</b><br>${esc(body.name)} · ${esc(body.date)}`,'good');
+}
+// 다른 기기에서 더 진행한 게임이 있으면 이어하기를 제안
+async function offerCloudContinue(){
+  if(CLOUD.offered)return;CLOUD.offered=true;
+  let auto;try{auto=await readSlot('auto')}catch(e){return}
+  if(!auto||auto.over)return;
+  const localAt=s?.savedAt||0;
+  if(s&&auto.savedAt<=localAt+30000)return;
+  modal('☁️ 이어서 하기',`<p>계정에 저장된 게임이 있어요.</p><div class="kv"><span class="muted">회사</span><b>${esc(auto.name)}</b><span class="muted">진행</span><b>${esc(auto.date)} · ${esc(auto.stage)}</b><span class="muted">기업가치</span><b>${won(auto.valuation)}</b><span class="muted">저장 시각</span><b>${new Date(auto.savedAt).toLocaleString('ko-KR')}</b></div>${s?'<p class="muted" style="font-size:12px">지금 이 기기에서 하던 게임보다 최근에 저장됐어요.</p>':''}`,
+    [{l:'☁️ 이어서 하기',f:()=>applyLoaded(auto)},{l:s?'지금 게임 계속하기':'새로 시작하기',f:()=>{if(!s)startScreen()}}]);
+}
+function relTime(t){const m=Math.round((Date.now()-t)/60000);return m<1?'방금':m<60?`${m}분 전`:m<1440?`${Math.round(m/60)}시간 전`:new Date(t).toLocaleDateString('ko-KR')}
+async function saveMenu(){
+  const m=modal('💾 저장 / 불러오기',`<p class="muted" style="margin-top:0;font-size:13px">${CLOUD.ready?'☁️ <b>클라우드 저장</b> 사용 중이에요. 휴대폰·PC 어디서 열어도 이어서 할 수 있어요.':'💻 이 기기의 브라우저에만 저장돼요. 다른 기기에서는 보이지 않아요.'}</p><div class="slots"><p class="muted">불러오는 중…</p></div>`,[{l:'닫기',f:()=>{}}]);
+  const box=m.querySelector('.slots');
+  let rows;
+  try{rows=await Promise.all(SLOTS.map(async sl=>({...sl,d:await readSlot(sl.k)})))}
+  catch(e){box.innerHTML='<p class="neg">저장 목록을 불러오지 못했어요. 잠시 후 다시 열어 주세요.</p>';return}
+  if(!document.body.contains(box))return;
+  box.innerHTML=rows.map(r=>`<div class="slot" data-k="${r.k}">
+    <div class="slot-info"><b>${r.n}</b>${r.d?`<span>${esc(r.d.name)} · ${esc(r.d.date)} · ${won(r.d.valuation)}</span><span class="muted">${relTime(r.d.savedAt)} 저장${r.d.over?' · 종료된 게임':''}</span>`:'<span class="muted">비어 있음</span>'}</div>
+    <div class="slot-btns">${r.k!=='auto'?`<button class="btn" data-act="save">저장</button>`:''}${r.d?`<button class="btn" data-act="load">불러오기</button><button class="btn" data-act="del" aria-label="삭제">🗑</button>`:''}</div></div>`).join('');
+  box.querySelectorAll('.slot button').forEach(b=>b.onclick=async()=>{
+    const k=b.closest('.slot').dataset.k,row=rows.find(r=>r.k===k),act=b.dataset.act;
+    const needConfirm=(act==='save'&&row.d)||act==='del'||(act==='load'&&s&&!s.over);
+    if(needConfirm&&!b.dataset.armed){b.dataset.armed=1;b.textContent=act==='save'?'덮어쓸까요?':act==='del'?'삭제할까요?':'지금 게임 대신?';b.classList.add('warnbtn');return}
+    b.disabled=true;b.textContent='…';
+    try{
+      if(act==='save'){await writeSlot(k);toast(`<b>💾 ${row.n}에 저장했어요</b>`,'good');saveMenu()}
+      else if(act==='load'){applyLoaded(row.d)}
+      else{await removeSlot(k);saveMenu()}
+    }catch(e){b.textContent='실패';toast(e&&e.code==='quota_exceeded'?'저장 공간이 가득 찼어요. 다른 슬롯을 지워 주세요.':'저장하지 못했어요. 잠시 후 다시 시도해 주세요.','bad')}
+  });
+}
+
+// ===== 시작 화면 =====
+let draft=null;
+function startScreen(){
+  draft=newCompany();
+  const I=IND[draft.industry],T=TRAITS[draft.traitIdx],ST=STARTS.find(x=>x.id===draft.startId);
+  const big=draft.startId!=='startup';
+  modal('🎲 랜덤 시작',`
+    <div class="start-sc sc-${draft.startId}"><b>${ST.n}</b><span class="badge">난이도: ${ST.diff}</span><p>${ST.d}</p></div>
+    <p class="muted" style="margin:8px 0 0">운명이 정해준 회사로 재벌에 도전하세요. 목표: <b>기업가치 100조 원</b></p>
+    <div class="kv">
+      <span class="muted">회사명</span><b>${esc(draft.name)}</b>
+      <span class="muted">업종</span><b>${I.icon} ${I.name}</b>
+      <span class="muted">대표</span><b>${esc(draft.ceo)}</b>
+      <span class="muted">본사</span><b>${draft.city} · ${HQ[draft.hq].n}</b>
+      <span class="muted">대표 이력</span><b>${T.n}<br><span class="muted" style="font-weight:400">${T.d}</span></b>
+      ${big?`<span class="muted">기업가치</span><b>${won(draft.valuation)}</b>
+      <span class="muted">월 매출 / 순이익</span><b>${won(draft.revenue)} / <span class="${draft.profit>=0?'pos':'neg'}">${won(draft.profit)}</span></b>`:''}
+      <span class="muted">현금${draft.debt?' / 부채':''}</span><b>${won(draft.cash)}${draft.debt?` / <span class="neg">${won(draft.debt)}</span>`:''}</b>
+      <span class="muted">직원</span><b>${draft.employees.toLocaleString()}명</b>
+      ${big?`<span class="muted">내 지분</span><b class="${draft.ownership<25?'neg':''}">${draft.ownership.toFixed(0)}%${draft.ownership<25?' (10% 아래로 떨어지면 해임)':''}</b>
+      <span class="muted">제품</span><b>${draft.products.length}개 · 평균 ${Math.round(draft.products.reduce((a,p)=>a+p.age,0)/draft.products.length)}개월 된 제품</b>`:''}
+    </div>`,
+    [{l:'🚀 이 회사로 창업하기',f:()=>{for(const k in prevVals)delete prevVals[k];lastLogSeen=-1;const cr=document.getElementById('crowd');if(cr)cr.innerHTML='';sceneBldKey='';s=draft;s.report=[];pendingFx.push(()=>confetti(50));calcValuation();s.history=[s.valuation];
+        s.maxVal=s.valuation;s.close=closeSnap();s.pm=null;
+        if(s.startId==='startup'){
+          log(`🏢 ${s.city}의 작은 사무실에서 ${s.name}이(가) 문을 열었습니다.`);
+          log('💡 신제품 출시로 첫 매출을 만들고, 매달 행동을 고른 뒤 ‘다음 달’을 누르세요.');
+        }else if(s.startId==='venture'){
+          log(`📈 ${s.name}의 대표가 되었습니다. 히트 제품 덕에 순항 중이지만 사무실이 곧 꽉 찹니다.`);
+          log('💡 성장 속도를 유지하려면 채용·사옥 이전·후속 제품을 챙기세요.');
+        }else if(s.startId==='midcap'){
+          log(`🏢 업계 중견기업 ${s.name}을(를) 맡았습니다. 지금은 흑자지만 주력 제품이 늙어 가고 있어요.`);
+          log('⚠️ 신제품 없이 18개월이 지나면 혁신 정체로 브랜드가 깎입니다. 제품은 매달 경쟁력이 떨어져요.','warn');
+        }else{
+          log(`👔 선대 회장에게서 ${s.name}을(를) 물려받았습니다. 이미 매달 적자입니다.`,'warn');
+          log('⚠️ 거대한 인건비, 낡은 제품, 많은 빚. 구조조정·신제품·부채 상환 중 무엇부터 할지 정하세요. 지분이 10% 아래로 떨어지면 해임됩니다.','warn');
+        }
+        setTimeout(cloudAuto,0);
+        save();render()}},
+     {l:'🎲 다시 뽑기',f:startScreen}]);
+}
+
+// ===== 회사 장면 (건물 + 직원 캐릭터) =====
+let sceneInit=false,sceneBldKey='',sceneMoved=false,bubbleTimer=null;
+const SKIN=['#f8d5b0','#f1c27d','#e0ac69','#c68642'];
+const HAIR=['#2b2118','#4a3426','#1c1c1c','#7a4b2a','#d4a017'];
+const SHIRT=['#3b82f6','#ef4444','#10b981','#f59e0b','#8b5cf6','#ec4899','#14b8a6','#64748b','#f97316'];
+const hsh=i=>{const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)};
+function charCount(){const e=s.employees;return e<=12?e:Math.round(clamp(12+Math.log2(e/12)*3,12,30))}
+function building(x,w,floors,cols,o){
+  const fh=o.fh||12,h=floors*fh+8,y=160-h,ww=Math.max(5,(w-10)/cols-4);
+  let g=`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" fill="${o.color||'var(--bld)'}"/>`;
+  g+=`<rect x="${x-3}" y="${y-3}" width="${w+6}" height="4" rx="1" fill="var(--bld2)"/>`;
+  let i=0;
+  for(let f=0;f<floors;f++)for(let c=0;c<cols;c++){
+    const ours=o.ourFloor===undefined||o.ourFloor===f;
+    const lit=ours&&hsh(i+o.seed)<o.occ;
+    g+=`<rect x="${x+6+c*(ww+4)}" y="${y+6+f*fh}" width="${ww}" height="${fh-5}" rx="1" fill="${lit?'var(--winlit)':ours?'var(--win)':'var(--win2)'}"${lit&&hsh(i*3)<.25?' class="twinkle"':''}/>`;i++;
+  }
+  if(o.door)g+=`<rect x="${x+w/2-6}" y="${160-14}" width="12" height="14" rx="1" fill="var(--bld2)"/>`;
+  return {g,top:y};
+}
+function buildingSVG(){
+  const occ=clamp(s.employees/HQ[s.hq].cap,0,1),name=esc(s.name);
+  const sign=(cx,y,size=10)=>`<text x="${cx}" y="${y}" text-anchor="middle" font-size="${size}" font-weight="800" fill="var(--accent)" stroke="var(--card)" stroke-width="3" paint-order="stroke">${name}</text>`;
+  let g='',b;
+  switch(s.hq){
+    case 0: b=building(280,80,1,3,{occ,seed:1,fh:20,door:1});g+=b.g+`<path d="M276 ${b.top} h88 l-6 10 h-76z" fill="#ef4444"/>`+`<text x="320" y="${b.top-6}" text-anchor="middle" font-size="9" fill="var(--muted)">공유오피스 ${name}</text>`;break;
+    case 1: b=building(270,100,2,4,{occ,seed:2,fh:18,door:1});g+=b.g+sign(320,b.top-8);break;
+    case 2: b=building(255,130,7,5,{occ,seed:3,fh:15,door:1,ourFloor:3});g+=b.g+`<rect x="250" y="${b.top+6+3*15-2}" width="6" height="12" fill="var(--accent)"/>`+`<text x="246" y="${b.top+6+3*15+8}" text-anchor="end" font-size="9" font-weight="800" fill="var(--accent)">← 우리 회사</text>`;break;
+    case 3: b=building(255,130,9,5,{occ,seed:4,fh:13,door:1});g+=b.g+sign(320,b.top-8,11);break;
+    case 4: g+=building(400,70,5,3,{occ,seed:9,fh:13,color:'var(--bld3)'}).g;b=building(240,160,10,6,{occ,seed:5,fh:13,door:1,color:'var(--glass)'});g+=b.g+sign(320,b.top-8,12)+`<rect x="316" y="${b.top-34}" width="8" height="20" fill="var(--bld2)"/>`;break;
+    case 5: g+=building(180,60,6,3,{occ:.5,seed:11,fh:12,color:'var(--bld3)',ourFloor:-1}).g+building(420,70,7,3,{occ:.5,seed:12,fh:12,color:'var(--bld3)',ourFloor:-1}).g;
+      b=building(280,80,12,4,{occ,seed:6,fh:12,door:1,color:'var(--glass)'});g+=`<path d="M290 ${b.top} L320 ${b.top-22} L350 ${b.top}z" fill="var(--glass)"/><line x1="320" y1="${b.top-22}" x2="320" y2="${b.top-36}" stroke="var(--bld2)" stroke-width="2"/><circle cx="320" cy="${b.top-37}" r="2.5" fill="#ef4444" class="twinkle"/>`+b.g+sign(320,b.top-42,12);break;
+    default:
+      g+=building(150,90,6,5,{occ,seed:21,fh:13,color:'var(--glass)'}).g+building(400,90,6,5,{occ,seed:22,fh:13,color:'var(--glass)'}).g;
+      g+=`<ellipse cx="455" cy="${160-86}" rx="45" ry="16" fill="var(--glass)" opacity=".8"/>`;
+      b=building(280,80,12,4,{occ,seed:7,fh:12,door:1,color:'var(--glass)'});g+=`<path d="M290 ${b.top} L320 ${b.top-22} L350 ${b.top}z" fill="var(--glass)"/>`+b.g+sign(320,b.top-28,13);
+      [160,230,410,480].forEach(fx=>g+=`<line x1="${fx}" y1="160" x2="${fx}" y2="128" stroke="var(--bld2)" stroke-width="1.5"/><path d="M${fx} 128 h14 l-3 4 l3 4 h-14z" fill="${pick(SHIRT)}" class="flag"/>`);
+  }
+  // 나무
+  [70,560,610,30].slice(0,2+Math.min(2,s.hq)).forEach((tx,i)=>g+=`<rect x="${tx-2}" y="146" width="4" height="14" fill="#8b5a2b"/><circle cx="${tx}" cy="140" r="${10+i%2*3}" fill="var(--tree)"/>`);
+  if(s.employees>HQ[s.hq].cap)g+=`<g class="crowdwarn"><rect x="270" y="${Math.max(4,b.top-60)}" width="100" height="18" rx="9" fill="var(--bad)"/><text x="320" y="${Math.max(4,b.top-60)+13}" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">😵 사무실 과밀!</text></g>`;
+  return g;
+}
+function makeChar(i){
+  const ns='http://www.w3.org/2000/svg';
+  const depth=rf(2,24),sc=.95+depth/24*.35,y=160+depth;
+  let x0=rf(-120,760),x1=rf(-120,760);if(Math.abs(x1-x0)<80)x1=x0+(x1>x0?120:-120);
+  const walk=Math.random()<.8,dur=Math.abs(x1-x0)/rf(18,32);
+  const outer=document.createElementNS(ns,'g');outer.setAttribute('transform',`translate(0 ${y.toFixed(1)}) scale(${sc.toFixed(2)})`);outer.dataset.depth=depth;
+  const shirt=pick(SHIRT),hair=pick(HAIR),skin=pick(SKIN),girl=Math.random()<.5;
+  const d=walk?`--f1:${x1>x0?1:-1};--f2:${x1>x0?-1:1};--x0:${(x0/sc).toFixed(0)}px;--x1:${(x1/sc).toFixed(0)}px;animation-duration:${(dur*2).toFixed(1)}s;animation-delay:-${rf(0,dur*2).toFixed(1)}s`:`--x0:${(x0/sc).toFixed(0)}px;--x1:${(x0/sc).toFixed(0)}px`;
+  outer.innerHTML=`<g class="ch ${walk?'walk':'idle'} spawn" style="${d}"><g class="face" style="${walk?d:''}"><g class="bob">
+    <rect class="leg l" x="-3" y="-5" width="2.4" height="6" rx="1" fill="#334155"/><rect class="leg r" x="0.6" y="-5" width="2.4" height="6" rx="1" fill="#334155"/>
+    <rect x="-4" y="-13" width="8" height="9" rx="2.5" fill="${shirt}"/>
+    <rect x="3" y="-11" width="3" height="5" rx="1" fill="#78350f"/>
+    <circle cy="-17" r="4" fill="${skin}"/>
+    <path d="M-4.2 -17.5 a4.2 4.2 0 0 1 8.4 0 q-4 -2 -8.4 0z" fill="${hair}"/>${girl?`<rect x="-4.6" y="-18" width="1.8" height="6" rx=".9" fill="${hair}"/><rect x="2.8" y="-18" width="1.8" height="6" rx=".9" fill="${hair}"/>`:''}
+    <circle cx="1.6" cy="-16.6" r=".6" fill="#111"/></g></g></g>`;
+  return outer;
+}
+function sceneBubble(){
+  if(!s||document.hidden)return;
+  const chars=document.querySelectorAll('#crowd .ch');if(!chars.length)return;
+  const c=chars[Math.floor(Math.random()*chars.length)];
+  const crowded=s.employees>HQ[s.hq].cap;
+  const pool=crowded?['😵','🥵','💦','😤']:s.morale<30?['😩','💢','😴','🙄']:s.cash<0?['💸','😰','🙏']:s.morale>75?['😄','💡','🔥','👍','🎉','☕']:['☕','💻','📊','💡','🙂','📞'];
+  const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+  t.setAttribute('y','-26');t.setAttribute('text-anchor','middle');t.setAttribute('font-size','11');t.setAttribute('class','bubble');t.textContent=pick(pool);
+  c.appendChild(t);setTimeout(()=>t.remove(),2200);
+}
+function fitScene(){const sv=document.querySelector('#scene svg');if(sv)sv.setAttribute('preserveAspectRatio',innerWidth<640?'xMidYMax slice':'xMidYMax meet')}
+function updateScene(){
+  const sc=document.getElementById('scene');
+  if(!sceneInit){
+    sc.innerHTML=`<svg viewBox="0 -45 640 235" aria-hidden="true">
+      <g class="cloud c1"><ellipse cx="0" cy="30" rx="26" ry="9" fill="var(--cloud)"/><ellipse cx="16" cy="25" rx="16" ry="9" fill="var(--cloud)"/></g>
+      <g class="cloud c2"><ellipse cx="0" cy="55" rx="20" ry="7" fill="var(--cloud)"/><ellipse cx="-10" cy="51" rx="12" ry="7" fill="var(--cloud)"/></g>
+      <rect x="-2000" y="160" width="4640" height="60" fill="var(--ground)"/>
+      <rect x="-2000" y="160" width="4640" height="2" fill="var(--ground2)"/>
+      <g id="bldg"></g><g id="trucks"></g><g id="crowd"></g></svg><div class="scene-cap"></div>`;
+    sceneInit=true;fitScene();
+    if(!RM&&!bubbleTimer)bubbleTimer=setInterval(sceneBubble,1800);
+  }
+  const key=`${s.hq}|${Math.round(clamp(s.employees/HQ[s.hq].cap,0,1)*10)}|${s.employees>HQ[s.hq].cap}|${s.name}`;
+  if(key!==sceneBldKey){
+    const bg=document.getElementById('bldg');bg.innerHTML=buildingSVG();
+    // 회사가 커질수록 카메라가 줌아웃
+    const sv=sc.querySelector('svg'),y1=[30,30,10,0,-30,-45,-45][s.hq],y0=+(sv.dataset.y0??y1);
+    const setVB=y=>{sv.setAttribute('viewBox',`0 ${y.toFixed(1)} 640 ${(190-y).toFixed(1)}`);sv.dataset.y0=y};
+    if(sceneMoved&&!RM&&y0!==y1){const t0=performance.now();const st=t=>{const p=Math.min(1,(t-t0)/900),e=1-Math.pow(1-p,3);setVB(y0+(y1-y0)*e);if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)}
+    else setVB(y1);
+    if(sceneMoved&&!RM){bg.classList.remove('rise');void bg.getBBox();bg.classList.add('rise')}
+    sceneBldKey=key;sceneMoved=false;
+  }
+  // 트럭 (매출이 있으면)
+  const tr=document.getElementById('trucks');
+  const wantTruck=s.revenue>0;
+  if(wantTruck&&!tr.childElementCount&&!RM)tr.innerHTML=`<g class="truck"><rect x="0" y="-16" width="26" height="14" rx="2" fill="var(--card)" stroke="var(--line)"/><text x="13" y="-6" text-anchor="middle" font-size="7" font-weight="800" fill="var(--accent)">${esc(s.name.slice(0,2))}</text><rect x="26" y="-12" width="10" height="10" rx="2" fill="var(--accent)"/><circle cx="7" cy="-1" r="3" fill="#334155"/><circle cx="30" cy="-1" r="3" fill="#334155"/></g>`;
+  if(!wantTruck)tr.innerHTML='';
+  // 캐릭터 수 맞추기
+  const crowd=document.getElementById('crowd'),want=charCount();
+  while(crowd.childElementCount>want)crowd.removeChild(crowd.children[Math.floor(Math.random()*crowd.childElementCount)]);
+  for(let i=crowd.childElementCount;i<want;i++){
+    const n=makeChar(i),after=[...crowd.children].find(c=>+c.dataset.depth>+n.dataset.depth);
+    n.style.opacity=0;crowd.insertBefore(n,after||null);requestAnimationFrame(()=>requestAnimationFrame(()=>n.style.opacity=1));
+  }
+  const cap=HQ[s.hq].cap,over=s.employees>cap;
+  sc.querySelector('.scene-cap').innerHTML=`🏢 <b>${HQ[s.hq].n}</b> · <span class="${over?'neg':''}">직원 ${s.employees.toLocaleString()}${cap<1e9?' / '+cap.toLocaleString():''}명</span>${over?' · <span class="neg">이사가 필요해요!</span>':''}${orgEff()<.95?` · <span class="warn">조직 효율 ${Math.round(orgEff()*100)}%</span>`:''}${s.maxVal>=1e6&&s.valuation<s.maxVal*.6?` · <span class="neg">📉 전성기 대비 -${Math.round((1-s.valuation/s.maxVal)*100)}%</span>`:''}`;
+}
+window.addEventListener('resize',fitScene);
+
+// ===== 렌더링 =====
+function render(){
+  const app=document.getElementById('app');
+  if(!s){document.getElementById('nextbar').hidden=true;app.innerHTML='';document.getElementById('hdr').innerHTML='';document.getElementById('scene').style.display='none';return}
+  document.getElementById('scene').style.display='';
+  const I=ind(),st=STAGES[stageIdx()];
+  const bar=(key,k,v,max)=>{const w=clamp(v/max*100,0,100);const pw=prevVals['bar_'+key];
+    return `<div class="bar"><span class="muted">${k}</span><div class="track"><div class="fill" data-k="bar_${key}" data-v="${w}" style="width:${pw===undefined?w:pw}%"></div></div><span class="num" data-k="${key}" data-f="int" data-v="${v}">${Math.round(prevVals[key]??v)}</span></div>`};
+  const delta=(key,v,inv)=>{
+    if(!s.pm||s.pm[key]===undefined)return '';
+    const p=s.pm[key];let txt,d;
+    if(key==='ownership'){d=v-p;txt=Math.abs(d)<.05?'0%p':Math.abs(d).toFixed(1)+'%p'}
+    else if(key==='profit'){d=v-p;if(Math.abs(d)<1)return '<div class="dl">– 전월과 같음</div>';txt=won(Math.abs(d))}
+    else{if(p===0)return v===0?'<div class="dl">– 전월 대비 0%</div>':'<div class="dl">전월 대비 신규</div>';d=(v-p)/Math.abs(p)*100;txt=Math.abs(d)>=999?'999%+':Math.abs(d).toFixed(Math.abs(d)<10?1:0)+'%'}
+    if(Math.abs(d)<.05)return '<div class="dl">– 전월 대비 0%</div>';
+    const good=inv?d<0:d>0;
+    return `<div class="dl ${good?'pos':'neg'}">${d>0?'▲':'▼'} ${txt} <span class="muted">전월 대비</span></div>`;
+  };
+  const stat=(key,label,v,f,cls='',inv)=>`<div class="stat"><div class="k">${label}</div><div class="v ${cls}" data-k="${key}" data-f="${f}" data-v="${v}">${FMT[f](prevVals[key]??v)}</div>${delta(key,v,inv)}</div>`;
+  const acts=ACTIONS.map(a=>{
+    const c=a.cost(),why=a.can&&a.can();
+    const dis=s.over||s.ap<=0||!!why||s.cash<c;
+    const note=why||(s.cash<c?'자금 부족':(c?won(c):'무료'));
+    return `<button class="act" data-a="${a.id}" ${dis?'disabled':''}><span class="n">${a.icon} ${actName(a)}</span><span class="d">${a.d()}</span><span class="c ${why||s.cash<c?'neg':''}">${note}</span></button>`;
+  }).join('');
+  const ll=loanLimit();const borrowAmt=ll<2000?ll:Math.round(ll/2);
+  const prodTot=s.products.reduce((a,p)=>a+(p.rev||0),0);
+  const prodTrend=p=>{
+    if(p.rev===undefined)return '<span class="muted">다음 결산부터 집계</span>';
+    if(!p.prevRev)return '<span class="pos">신규</span>';
+    const d=(p.rev-p.prevRev)/p.prevRev*100;
+    if(Math.abs(d)<.5)return '<span class="muted">– 0%</span>';
+    return `<span class="${d>0?'pos':'neg'}">${d>0?'▲':'▼'} ${Math.abs(d).toFixed(Math.abs(d)<10?1:0)}%</span>`;
+  };
+  const prodStage=p=>p.age<=3?'🌱 출시 초기':p.rev!==undefined&&p.prevRev&&p.rev<p.prevRev*.97?'🍂 쇠퇴기':'🔥 판매 중';
+  const prods=s.products.length?[...s.products].sort((a,b)=>(b.rev??-1)-(a.rev??-1)||b.power-a.power).map(p=>{
+    const share=prodTot?(p.rev||0)/prodTot*100:0;
+    return `<div class="prod2">
+      <div class="p-top"><span class="p-name">${p.hit?'🌟 ':p.flop?'💤 ':''}<b>${esc(p.name)}</b></span><span class="p-rev">${p.rev!==undefined?won(p.rev):'—'}<small> /월</small></span></div>
+      <div class="p-sub"><span class="muted">${prodStage(p)} · ${p.age}개월 · 품질 ${p.q}</span><span class="p-right">${prodTrend(p)}<button class="btn p-del" data-pi="${s.products.indexOf(p)}" ${s.over?'disabled':''}>단종</button></span></div>
+      <div class="bar" style="grid-template-columns:1fr 40px"><div class="track"><div class="fill" style="width:${share}%"></div></div><span class="num">${Math.round(share)}%</span></div>
+    </div>`}).join('')+(prodTot?`<div class="p-total"><span class="muted">제품 매출 합계</span><b>${won(prodTot)} /월</b></div>`:''):'<p class="muted" style="margin:0">출시한 제품이 없습니다.</p>';
+  const cls=k=>k==='warn'?'warn':k==='good'?'pos':k==='rival'?'rv-log':'';
+  const sh=shares();
+  const rows=[{me:true,name:s.name,val:s.valuation,share:sh[0]},...s.rivals.map((r,i)=>({...r,i,share:sh[i+1]}))].sort((a,b)=>b.val-a.val);
+  const myRank=rows.findIndex(r=>r.me)+1;
+  const comp=s.comp||compFactor();
+  const rivalHtml=rows.map((r,idx)=>{
+    const head=`<div class="rv-top"><span class="rv-rank">${idx+1}</span><b class="rv-name">${r.me?'⭐ ':''}${esc(r.name)}</b>${r.inc?'<span class="badge">업계 터줏대감</span>':''}${!r.me&&s.intel>0?`<span class="badge">${r.style}</span>`:''}<span class="rv-val">${r.me?'':'약 '}${won(r.val)}</span></div>
+      <div class="bar" style="grid-template-columns:56px 1fr 44px"><span class="muted">점유율</span><div class="track"><div class="fill" style="width:${r.share*100}%;${r.me?'':'background:var(--muted)'}"></div></div><span class="num">${Math.round(r.share*100)}%</span></div>`;
+    if(r.me)return `<div class="rv me">${head}</div>`;
+    const cost=acqOffer(s.rivals[r.i]).price;
+    const info=s.intel>0?`<div class="rv-info">대표 ${esc(r.ceo)} · 기술력 <b>${Math.round(r.tech)}</b> (우리 ${s.tech}) · 브랜드 <b>${Math.round(r.brand)}</b> (우리 ${s.brand})<br>전략: ${STYLES[r.style].d} · 주력 ‘${esc(r.prod)}’</div>`:`<div class="rv-info muted">🔒 상세 정보는 ‘경쟁사 분석’ 후 확인할 수 있어요</div>`;
+    return `<div class="rv">${head}${info}<button class="btn rv-buy" data-i="${r.i}" ${s.over||s.ap<=0?'disabled':''}>🤝 인수 검토 · 약 ${won(cost)}</button></div>`;
+  }).join('');
+  const nb=document.getElementById('nextbar');nb.hidden=false;
+  nb.innerHTML=`<div class="nb-in"><div class="nb-info"><b>${s.year}년 ${s.month}월</b><span>현금 <b class="${s.cash<0?'neg':''}">${won(s.cash)}</b></span></div>
+    <button class="btn primary next ${s.ap===0&&!s.over?'pulse':''}" id="next" ${s.over?'disabled':''}>다음 달 ▶ <span class="ap">${Array.from({length:maxAP()},(_,i)=>`<i class="${i<maxAP()-s.ap?'used':''}"></i>`).join('')}</span></button></div>`;
+  document.getElementById('hdr').innerHTML=`
+  <header class="top">
+    <div><div class="co-name">${I.icon} ${esc(s.name)}<span class="badge">${st.n}</span>${s.ipo?'<span class="badge">상장사</span>':''}</div>
+      <div class="co-sub">${I.name} · 대표 ${esc(s.ceo)} (${TRAITS[s.traitIdx].n}) · ${s.city} · ${REACH[s.reach].n} 시장</div></div>
+    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월</div><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:4px"><button class="btn" id="savebtn" style="font-size:12px;padding:4px 10px">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn" id="reset" style="font-size:12px;padding:4px 10px">새 게임</button></div></div>
+  </header>`;
+  app.innerHTML=`
+  <div class="grid">
+    <div>
+      <div class="card statcard">
+        <div class="stats">
+          ${stat('valuation','기업가치',s.valuation,'won')}
+          ${stat('cash','현금',s.cash,'won',s.cash<0?'neg':'')}
+          ${stat('debt','부채',s.debt,'won','',true)}
+          ${stat('revenue','월 매출',s.revenue,'won')}
+          ${stat('profit','월 순이익',s.profit,'won',s.profit>=0?'pos':'neg')}
+          ${stat('employees','직원',s.employees,'ppl')}
+          ${stat('ownership','내 지분',s.ownership,'pct')}
+          ${stat('wealth','내 지분 가치',s.valuation*s.ownership/100,'won')}
+          ${stat('load','생산능력 / 수요',s.capacity?Math.round(Math.min(999,s.demand/s.capacity*100)):0,'pct0',s.demand>s.capacity*1.02?'warn':'')}
+        </div>
+        <div class="bars">${bar('tech','기술력',s.tech,Math.max(100,s.tech))}${bar('brand','브랜드',s.brand,100)}${bar('morale','직원 사기',s.morale,100)}</div>
+      </div>
+      ${ctrlCard()}
+      <div class="card">
+        <h3><span>이번 달 행동</span><span class="ap">${Array.from({length:maxAP()},(_,i)=>`<i class="${i<maxAP()-s.ap?'used':''}"></i>`).join('')}</span></h3>
+        <div class="actions">${acts}</div>
+        <div class="fin">
+          <button class="btn" id="borrow" ${s.over||borrowAmt<500?'disabled':''}>🏦 대출 ${borrowAmt>=500?won(borrowAmt):'한도 없음'}</button>
+          <button class="btn" id="repay" ${s.over||s.debt<=0||s.cash<=0?'disabled':''}>상환 ${s.debt>0?won(Math.min(Math.max(0,s.cash),s.debt)):''}</button>
+          <span class="muted" style="align-self:center;font-size:12px">대출·상환은 행동을 쓰지 않아요</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card report ${freshReport?'fresh':''}"><h3>이번 달 리포트</h3><ul>${s.report.length?s.report.map((r,i)=>`<li class="${cls(r.k)}" style="animation-delay:${i*.14}s">${r.t}</li>`).join(''):'<li class="muted">행동을 고르고 다음 달로 넘어가세요.</li>'}</ul></div>
+      <div class="card"><h3><span>⚔️ 경쟁사 분석</span><span class="muted" style="font-weight:400">업계 ${myRank}위 · 경쟁 효과 <b class="${comp>=1?'pos':'neg'}">수요 ×${comp.toFixed(2)}</b></span></h3>${rivalHtml}<p class="muted" style="margin:8px 0 0;font-size:12px">점유율은 대표 제품 품질과 브랜드로 정해지고, 경쟁사보다 강할수록 수요가 늘어납니다. 인수는 행동 1회를 씁니다.</p></div>
+      <div class="card"><h3><span>기업가치 추이</span><span class="muted" style="font-weight:400">최고 ${won(s.maxVal)}</span></h3><canvas id="chart"></canvas></div>
+      <div class="card"><h3><span>제품 (${s.products.length}/${maxProd()})</span><span class="muted" style="font-weight:400">${stageIdx()<STAGES.length-1?`${STAGES[stageIdx()+1].n}이 되면 ${maxProd()+1}개`:"최대 슬롯"}</span></h3>${prods}</div>
+      <div class="card"><h3><span>💡 IP 포트폴리오 (${s.ips.length}/4)</span><span class="muted" style="font-weight:400">월 로열티 ${won(s.ips.reduce((a,ip)=>a+royalty(ip),0))}</span></h3>${s.ips.length?s.ips.map(ip=>`<div class="prod"><span><b>${esc(ip.name)}</b> <span class="muted">${esc(ipStage(ip))}</span><br><span class="ipdots">${ladder().map((_,i)=>`<i class="${i<=ip.lv?'on':''}" title="${esc(ladder()[i])}"></i>`).join('')}</span></span><span style="text-align:right">월 ${won(royalty(ip))}${ip.lv<ladder().length-1?`<br><span class="muted" style="font-size:12px">다음: ${esc(ladder()[ip.lv+1])}</span>`:'<br><span class="pos" style="font-size:12px">최종 단계</span>'}</span></div>`).join(''):'<p class="muted" style="margin:0">‘IP 사업’으로 특허나 캐릭터 같은 IP를 만들어 보세요. 굿즈·웹툰·영화처럼 넓혀 갈수록 로열티가 커집니다.</p>'}</div>
+      <div class="card log"><h3>경영 일지</h3><ul>${s.log.map(l=>{if(l.id===undefined)l.id=++logSeq;else logSeq=Math.max(logSeq,l.id);return `<li class="${cls(l.k)} ${lastLogSeen>=0&&l.id>lastLogSeen?'new':''}"><span class="d">${l.d}</span>${l.t}</li>`}).join('')}</ul></div>
+    </div>
+  </div>`;
+  app.querySelectorAll('.act').forEach(b=>b.onclick=()=>{
+    const a=ACTIONS.find(x=>x.id===b.dataset.a),c=a.cost(),r=b.getBoundingClientRect();
+    if(busy)return;
+    if(a.id==='product')return launchSequence();
+    if(a.id==='ip')return ipMenu();
+    doAction(a.id);
+    if(c)floatAt(r.left+r.width/2,r.top+10,'-'+won(c),'neg');
+  });
+  app.querySelectorAll('.rv-buy').forEach(b=>b.onclick=()=>acqMenu(+b.dataset.i));
+  app.querySelectorAll('.ctl-buy').forEach(b=>b.onclick=()=>{if(!busy)buyShares(+b.dataset.p)});
+  app.querySelectorAll('.p-del').forEach(b=>b.onclick=()=>{
+    const p=s.products[+b.dataset.pi];if(!p||busy)return;
+    if(!b.dataset.armed){b.dataset.armed=1;b.textContent='정말 단종?';b.classList.add('warnbtn');return}
+    discontinue(p);render();
+  });
+  document.getElementById('next').onclick=nextMonthAnimated;
+  document.getElementById('borrow').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();const c0=s.cash;borrow();if(s.cash>c0)floatAt(r.left+r.width/2,r.top,'+'+won(s.cash-c0),'pos')};
+  document.getElementById('repay').onclick=repay;
+  document.getElementById('savebtn').onclick=saveMenu;
+  document.getElementById('reset').onclick=()=>modal('새 게임','<p>지금 회사를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p>',[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]);
+  updateScene();
+  animateAfterRender();
+  lastLogSeen=logSeq;freshReport=false;
+  drawChart(chartAnim);chartAnim=false;
+}
+function drawChart(anim){
+  const cv=document.getElementById('chart');if(!cv)return;
+  const dpr=window.devicePixelRatio||1,w=cv.clientWidth,h=cv.clientHeight;
+  cv.width=w*dpr;cv.height=h*dpr;const g=cv.getContext('2d');g.scale(dpr,dpr);
+  const cs=getComputedStyle(document.documentElement);
+  const d=s.history.map(v=>Math.log10(Math.max(1,v)));
+  if(d.length<2){g.fillStyle=cs.getPropertyValue('--muted');g.font='12px sans-serif';g.fillText('몇 달 지나면 그래프가 그려집니다',4,h/2);return}
+  const mn=Math.min(...d),mx=Math.max(...d,mn+.5);
+  const X=i=>4+i/(d.length-1)*(w-8),Y=v=>h-6-(v-mn)/(mx-mn)*(h-12);
+  const accent=cs.getPropertyValue('--accent').trim();
+  const frame=p=>{
+    g.clearRect(0,0,w,h);
+    const last=d.length-1,endI=last-1+p;
+    const ex=X(last-1)+(X(last)-X(last-1))*p,ey=Y(d[last-1])+(Y(d[last])-Y(d[last-1]))*p;
+    // 영역 채우기
+    const grad=g.createLinearGradient(0,0,0,h);grad.addColorStop(0,accent+'55');grad.addColorStop(1,accent+'00');
+    g.beginPath();g.moveTo(X(0),h);d.forEach((v,i)=>{if(i<=last-1)g.lineTo(X(i),Y(v))});g.lineTo(ex,ey);g.lineTo(ex,h);g.closePath();g.fillStyle=grad;g.fill();
+    g.strokeStyle=accent;g.lineWidth=2;g.lineJoin='round';g.beginPath();
+    d.forEach((v,i)=>{if(i<=last-1)i?g.lineTo(X(i),Y(v)):g.moveTo(X(i),Y(v))});g.lineTo(ex,ey);g.stroke();
+    g.fillStyle=accent;g.beginPath();g.arc(ex,ey,3.5,0,Math.PI*2);g.fill();
+  };
+  if(!anim||RM)return frame(1);
+  const t0=performance.now();const step=t=>{const p=Math.min(1,(t-t0)/700);frame(1-Math.pow(1-p,3));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step);
+}
+window.addEventListener('resize',()=>s&&drawChart());
+
+// ===== 시작 =====
+function migrate(st){
+  if(!st)return st;
+  const prev=s;s=st;
+  if(!s.rivals)genRivals(s);
+  if(s.hq===undefined){s.hq=HQ.findIndex(h=>h.cap>=s.employees);s.ips=[];s.ipRev=0}
+  if(s.t===undefined){s.t=0;s.lastLaunch=0}
+  if(s.allies===undefined){s.allies=s.flags&&s.flags.heir?15:0;s.raid=null;s.buyT=-1}
+  s=prev;return st;
+}
+s=migrate(loadSave());
+if(s&&!s.over){render()}else{s=null;startScreen()}
+initCloud();
+</script>
+</body>
+</html>
