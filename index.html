@@ -1157,7 +1157,7 @@ function shake(){if(RM)return;const a=document.getElementById('root');a.classLis
 function celebrate(title,big){toast(title,'good');confetti(big?140:60)}
 // 렌더 후: 숫자 카운트업, 변화량 표시, 막대 애니메이션
 function animateAfterRender(){
-  document.querySelectorAll('[data-k]').forEach(el=>{
+  document.querySelectorAll('[data-k][data-v]').forEach(el=>{
     const k=el.dataset.k,to=+el.dataset.v,f=el.dataset.f;
     const from=prevVals[k];prevVals[k]=to;
     if(el.classList.contains('fill')){
@@ -1666,12 +1666,12 @@ function feedback(){
   try{Object.assign(f,JSON.parse(localStorage.getItem('kcorp-fb')||'{}'))}catch(e){}
   const keep=()=>{try{localStorage.setItem('kcorp-fb',JSON.stringify(f))}catch(e){}};
   const m=modal('💬 의견 보내기',`<p class="muted" style="margin:0 0 10px;font-size:13px">버그, 아이디어, 너무 쉽거나 어려운 점… 무엇이든 좋아요. 보내 주신 의견은 다음 업데이트에 반영돼요.</p>
-    <div class="fb-lbl">종류</div><div class="fb-types">${FB_TYPES.map(([k,i,n])=>`<button type="button" data-k="${k}" class="${f.type===k?'on':''}"><b>${i}</b>${n}</button>`).join('')}</div>
+    <div class="fb-lbl">종류</div><div class="fb-types">${FB_TYPES.map(([k,i,n])=>`<button type="button" data-o="${k}" class="${f.type===k?'on':''}"><b>${i}</b>${n}</button>`).join('')}</div>
     <div class="fb-lbl">게임은 어땠나요?</div><div class="fb-stars">${[1,2,3,4,5].map(n=>`<button type="button" data-n="${n}" class="${n<=f.stars?'on':''}" aria-label="${n}점">⭐</button>`).join('')}</div>
     <div class="fb-lbl">내용</div><textarea class="fb-ta" maxlength="2000" placeholder="예) 중견기업으로 시작하면 3년 만에 부도나요. / 제품 이름을 직접 짓고 싶어요.">${esc(f.text)}</textarea>
     <label class="fb-chk"><input type="checkbox" ${f.info?'checked':''}> 지금 게임 상황(업종·단계·날짜)과 기기 정보를 함께 보내기 — 버그를 고칠 때 도움이 돼요</label>
     <p class="muted" style="font-size:11px;margin:10px 0 0">‘보내기’를 누르면 GitHub 의견 게시판이 열려요. GitHub에 로그인한 뒤 초록색 <b>Create</b> 버튼을 눌러야 접수됩니다. 쓴 내용은 미리 채워져 있어요.</p>`,[]);
-  m.querySelectorAll('.fb-types button').forEach(b=>b.onclick=()=>{f.type=b.dataset.k;m.querySelectorAll('.fb-types button').forEach(x=>x.classList.toggle('on',x===b));keep()});
+  m.querySelectorAll('.fb-types button').forEach(b=>b.onclick=()=>{f.type=b.dataset.o;m.querySelectorAll('.fb-types button').forEach(x=>x.classList.toggle('on',x===b));keep()});
   m.querySelectorAll('.fb-stars button').forEach(b=>b.onclick=()=>{f.stars=+b.dataset.n;m.querySelectorAll('.fb-stars button').forEach(x=>x.classList.toggle('on',+x.dataset.n<=f.stars));keep()});
   const ta=m.querySelector('.fb-ta');ta.oninput=()=>{f.text=ta.value;keep()};
   m.querySelector('.fb-chk input').onchange=e=>{f.info=e.target.checked;keep()};
@@ -1823,13 +1823,13 @@ document.addEventListener('pointerdown',()=>{if(SET.bgm&&!BGM.timer)bgmStart()},
 document.addEventListener('visibilitychange',()=>{if(!BGM.ctx)return;if(document.hidden)BGM.ctx.suspend?.();else if(SET.bgm&&BGM.timer)BGM.ctx.resume?.()});
 function settings(){
   const m=modal('⚙️ 설정',`
-    <div class="set-row"><div class="lbl">🎨 화면</div><div class="seg" id="set-theme">${[['auto','🌓 자동'],['light','☀️ 밝게'],['dark','🌙 어둡게']].map(([k,n])=>`<button data-k="${k}" class="${SET.theme===k?'on':''}">${n}</button>`).join('')}</div></div>
-    <div class="set-row"><div class="lbl">🎵 배경음악</div><div class="seg" id="set-bgm" style="grid-template-columns:repeat(2,1fr)"><button data-k="1" class="${SET.bgm?'on':''}">🔊 켜기</button><button data-k="0" class="${SET.bgm?'':'on'}">🔇 끄기</button></div>
+    <div class="set-row"><div class="lbl">🎨 화면</div><div class="seg" id="set-theme">${[['auto','🌓 자동'],['light','☀️ 밝게'],['dark','🌙 어둡게']].map(([k,n])=>`<button data-o="${k}" class="${SET.theme===k?'on':''}">${n}</button>`).join('')}</div></div>
+    <div class="set-row"><div class="lbl">🎵 배경음악</div><div class="seg" id="set-bgm" style="grid-template-columns:repeat(2,1fr)"><button data-o="1" class="${SET.bgm?'on':''}">🔊 켜기</button><button data-o="0" class="${SET.bgm?'':'on'}">🔇 끄기</button></div>
       <div class="vol"><span>🔈</span><input type="range" min="0" max="100" value="${Math.round(SET.vol*100)}" aria-label="음량"><span>🔊</span></div></div>
     ${s&&!document.getElementById('title')?`<div class="set-row"><div class="lbl">🏢 게임</div><button class="btn" id="set-new" style="width:100%">🎲 새 회사로 다시 시작</button></div>`:''}
     <p class="muted" style="font-size:11px;margin:0">배경음악은 회사가 적자일 때 분위기가 바뀌어요.</p>`,[{l:'닫기',f:()=>{}}]);
-  m.querySelectorAll('#set-theme button').forEach(b=>b.onclick=()=>{SET.theme=b.dataset.k;saveSet();m.querySelectorAll('#set-theme button').forEach(x=>x.classList.toggle('on',x===b));applyTheme()});
-  m.querySelectorAll('#set-bgm button').forEach(b=>b.onclick=()=>{setBgm(b.dataset.k==='1');m.querySelectorAll('#set-bgm button').forEach(x=>x.classList.toggle('on',x===b))});
+  m.querySelectorAll('#set-theme button').forEach(b=>b.onclick=()=>{SET.theme=b.dataset.o;saveSet();m.querySelectorAll('#set-theme button').forEach(x=>x.classList.toggle('on',x===b));applyTheme()});
+  m.querySelectorAll('#set-bgm button').forEach(b=>b.onclick=()=>{setBgm(b.dataset.o==='1');m.querySelectorAll('#set-bgm button').forEach(x=>x.classList.toggle('on',x===b))});
   const vr=m.querySelector('.vol input');vr.oninput=()=>{SET.vol=vr.value/100;saveSet();if(BGM.ctx&&BGM.timer)BGM.master.gain.setTargetAtTime(SET.vol*.55,BGM.ctx.currentTime,.05)};
   m.querySelector('#set-new')?.addEventListener('click',()=>modal('새 게임','<p>지금 회사를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p>',[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]));
 }
