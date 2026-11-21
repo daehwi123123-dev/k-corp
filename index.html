@@ -317,7 +317,7 @@ body{display:flex;flex-direction:column;overflow:hidden}
 .set-row>.lbl{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px;display:flex;justify-content:space-between}
 .vol{display:flex;align-items:center;gap:10px;margin-top:10px}
 .vol input{flex:1;accent-color:var(--accent)}
-.hb{font-size:12px;padding:4px 9px}
+.hb{font-size:12px;padding:4px 8px;white-space:nowrap}
 
 /* ===== 실제 통계 카드 ===== */
 .fact{margin-top:12px;background:var(--accent-soft);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.55}
@@ -341,7 +341,8 @@ const rand=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
 const rf=(a,b)=>a+Math.random()*(b-a);
 const pick=a=>a[Math.floor(Math.random()*a.length)];
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-function won(v){ // 단위: 만원
+let fmtCC=null; // 시작 화면처럼 아직 s가 없을 때 쓸 나라
+function wonKRW(v){ // 단위: 만원
   if(Math.round(v)===0)return '0원';
   const neg=v<0;v=Math.abs(v);let o;
   if(v>=1e8)o=(v/1e8).toFixed(v>=1e9?1:2)+'조';
@@ -349,6 +350,47 @@ function won(v){ // 단위: 만원
   else o=Math.round(v).toLocaleString()+'만';
   return (neg?'-':'')+o+'원';
 }
+// 화면에 돈을 보여 줄 때: 그 나라 통화(만·억·조 단위) 또는 원화 보기
+function won(v){
+  let C=null,krw=false;try{const code=fmtCC||(s&&s.cc);C=code?CC[code]:null;krw=!!SET.krw}catch(e){}
+  if(!C||C.rate===1||krw)return wonKRW(v);
+  let x=v*1e4/C.rate;const neg=x<0;x=Math.abs(x);let o;
+  if(x<1)return '0 '+C.cur;
+  if(x>=1e12)o=(x/1e12).toFixed(x>=1e13?1:2)+'조';
+  else if(x>=1e8)o=(x/1e8).toFixed(x>=1e9?0:1)+'억';
+  else if(x>=1e4)o=(x/1e4).toFixed(x>=1e5?0:1)+'만';
+  else o=Math.round(x).toLocaleString();
+  return (neg?'-':'')+o+' '+C.cur;
+}
+// ===== 국가 =====
+// 돈은 내부적으로 전부 '만원'으로 계산하고, 화면에만 그 나라 통화로 바꿔 보여 준다.
+// 환율은 2025년 연평균 근사치(1단위 = 원).
+const FSUF={it:['Labs','Systems','Tech','Networks','AI'],game:['Games','Studios','Interactive','Entertainment'],food:['Foods','Kitchen','Brands','Eats'],beauty:['Beauty','Cosmetics','& Co','Skin'],bio:['Bio','Therapeutics','Pharma','Health'],ent:['Entertainment','Media','Records','Pictures'],mfg:['Industries','Motors','Robotics','Electronics']};
+const CC={
+  KR:{sym:'₩',n:'한국',flag:'🇰🇷',cur:'원',rate:1,w:30,cb:'한국은행',exch:'코스닥',ipoTag:'코스닥 상장'},
+  US:{sym:'$',n:'미국',flag:'🇺🇸',cur:'달러',rate:1422,w:14,cb:'연준(Fed)',exch:'나스닥',ipoTag:'나스닥 상장',
+    pre:['Apex','Blue','Summit','Nova','Bright','Iron','Pioneer','Liberty','Golden','Pacific','Atlas','Vertex','Orbit','Cedar','Harbor'],
+    sur:['카터','존슨','리','가르시아','밀러','데이비스','윌슨','응우옌','브라운','파텔','앤더슨','테일러'],giv:['에밀리','마이클','사라','데이비드','제시카','대니얼','올리비아','제임스','애슐리','라이언','소피아','이선'],last:true,
+    city:['실리콘밸리','뉴욕','오스틴','시애틀','보스턴','LA','시카고','마이애미'],reach:['동네','주(州) 전체','미국 전역','북미','글로벌']},
+  JP:{sym:'¥',n:'일본',flag:'🇯🇵',cur:'엔',rate:9.5,w:12,cb:'일본은행',exch:'도쿄증권거래소 그로스',ipoTag:'도쿄증권거래소 상장',
+    pre:['Sakura','Hikari','Fuji','Aoi','Kaze','Mirai','Yamato','Sora','Tsubasa','Kumo','Hoshi','Midori'],
+    sur:['사토','스즈키','다카하시','다나카','와타나베','이토','야마모토','나카무라','고바야시','가토'],giv:['하루토','유이','소타','히나','렌','아오이','유토','사쿠라','미나토','메이'],
+    city:['도쿄 시부야','오사카','교토','후쿠오카','나고야','삿포로','요코하마','센다이'],reach:['동네','간토 전역','일본 전국','아시아','글로벌']},
+  CN:{sym:'元',n:'중국',flag:'🇨🇳',cur:'위안',rate:197,w:12,cb:'인민은행',exch:'상하이 커촹반',ipoTag:'커촹반 상장',
+    pre:['Huaxin','Tianyu','Longteng','Jinxing','Mingda','Xinghe','Haitian','Zhongke','Yunfeng','Baorui','Hengtai','Ruixin'],
+    sur:['왕','리','장','류','천','양','자오','황','저우','우'],giv:['웨이','팡','나','민','징','레이','하오','팅','쥔','옌'],
+    city:['베이징 중관촌','상하이','선전','항저우','광저우','청두','쑤저우','우한'],reach:['동네','성(省) 전체','중국 전역','아시아','글로벌']},
+  DE:{sym:'€',n:'독일',flag:'🇩🇪',cur:'유로',rate:1600,w:10,cb:'유럽중앙은행',exch:'프랑크푸르트 증권거래소',ipoTag:'프랑크푸르트 상장',
+    pre:['Rhein','Alpen','Nord','Berg','Stern','Blau','Falken','Eichen','Hansa','Linden','Elbe','Donau'],
+    sur:['뮐러','슈미트','슈나이더','피셔','베버','마이어','바그너','베커','호프만','슐츠'],giv:['루카스','한나','펠릭스','레오니','막시밀리안','소피','요나스','마리','엘리아스','에마'],last:true,
+    city:['베를린','뮌헨','함부르크','프랑크푸르트','슈투트가르트','쾰른','라이프치히','드레스덴'],reach:['동네','주(州) 전체','독일 전역','유럽','글로벌']},
+  IN:{sym:'₹',n:'인도',flag:'🇮🇳',cur:'루피',rate:16.5,w:12,cb:'인도중앙은행',exch:'인도국립증권거래소',ipoTag:'NSE 상장',
+    pre:['Surya','Vayu','Agni','Ganga','Indus','Lotus','Shakti','Navya','Prithvi','Arya','Kaveri','Veda'],
+    sur:['샤르마','파텔','굽타','레디','싱','아이어','나이르','메타','조시','카푸르'],giv:['아라브','아디트야','프리야','비벡','아난야','로한','이샤','카비야','아르준','디야'],last:true,
+    city:['벵갈루루','뭄바이','델리 NCR','하이데라바드','푸네','첸나이','콜카타','아메다바드'],reach:['동네','주(州) 전체','인도 전역','남아시아','글로벌']},
+};
+const cc=()=>CC[(s&&s.cc)||'KR'];
+const reachName=i=>{const C=cc();return C.reach?C.reach[i]:REACH[i].n};
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 // ===== 데이터 =====
@@ -395,7 +437,12 @@ const NAMEGEN={
   ent:()=>pick([()=>pick(['네온','스텔라','블루','라이징','오로라','코멧','에코','루미','플레어','하이퍼','시그널','펄스','노바','제니스'])+pick(['','비트','문','하트','즈','X','걸즈','보이즈'])+' ('+pick(['보이그룹','걸그룹','솔로 가수','밴드'])+')',()=>'〈'+pick(['그해','어느 날','우리의','마지막','비밀의','미래의','눈부신','낯선'])+' '+pick(['여름','고백','계절','편의점','회사','이웃','왕국','도시'])+'〉 '+pick(['웹드라마','예능','웹툰 IP','영화'])])(),
   mfg:()=>pick(['H','X','N','Q','V','K','Z','T'])+pick(['','','S','M','X'])+rand(1,9)+'0'+rand(0,9)+' '+pick(IND.mfg.types),
 };
-function genName(indKey,taken){const g=NAMEGEN[indKey]||(()=>pick(IND[indKey].types));let n,i=0;do{n=g().replace(/\s+/g,' ').trim()}while(i++<30&&taken&&taken.includes(n));return n}
+const NAMEGEN_F={
+  food:()=>pick(['골든','스파이시','프레시','어반','해피','로열','클래식','선샤인','팜'])+' '+pick(['버거','타코','덤플링','스낵','커피','피자','누들','도넛','그래놀라','소스','밀키트']),
+  beauty:()=>pick(['루미에르','베르','오로라','퓨어','실크','블룸','글래시','네이키드','셀레스트'])+' '+pick(['세럼','크림','선스크린','마스크','립밤','토너','파운데이션','클렌저']),
+  ent:()=>pick([()=>pick(['미드나잇','골든','네온','와일드','실버','블루','하이','로스트'])+' '+pick(['하츠','라이더스','스카이','시그널','보이스','웨이브'])+' ('+pick(['밴드','팝 그룹','솔로 가수','DJ'])+')',()=>'〈'+pick(['더 라스트','블랙','시크릿','언더','비욘드','하우스 오브'])+' '+pick(['시티','게임','로드','패밀리','오피스','킹덤'])+'〉 '+pick(['드라마 시리즈','리얼리티 쇼','영화','애니메이션'])])(),
+};
+function genName(indKey,taken,code){code=code||(s&&s.cc)||'KR';const g=(code!=='KR'&&NAMEGEN_F[indKey])||NAMEGEN[indKey]||(()=>pick(IND[indKey].types));let n,i=0;do{n=g().replace(/\s+/g,' ').trim()}while(i++<30&&taken&&taken.includes(n));return n}
 const baseName=n=>n.replace(/\s(\d+|리마스터|시즌\d+|II|III)$/,'');
 
 const PWORD=['하루','별','모아','바다','구름','반짝','토닥','한입','쑥쑥','포근','콕','쏙','온','결','새싹','파도','달빛','도토리','마루','봄날'];
@@ -429,7 +476,10 @@ function log(t,k=''){s.log.unshift({d:dateStr(),t,k});s.log.length=Math.min(s.lo
 
 function newCompany(){
   const key=pick(Object.keys(IND));const I=IND[key];
-  const c={name:pick(PRE)+pick(I.suffix),ceo:pick(SUR)+pick(GIV),industry:key,city:pick(CITY),traitIdx:rand(0,TRAITS.length-1),
+  const ccode=weightedPick(Object.entries(CC).map(([k,v])=>({id:k,w:v.w}))).id,C=CC[ccode];
+  const coName=ccode==='KR'?pick(PRE)+pick(I.suffix):`${pick(C.pre)} ${pick(FSUF[key])}`;
+  const ceo=ccode==='KR'?pick(SUR)+pick(GIV):C.last?`${pick(C.giv)} ${pick(C.sur)}`:`${pick(C.sur)} ${pick(C.giv)}`;
+  const c={name:coName,ceo,cc:ccode,industry:key,city:pick(ccode==='KR'?CITY:C.city),traitIdx:rand(0,TRAITS.length-1),
     year:2026,month:1,cash:rand(15,40)*1000,debt:0,employees:rand(3,7),tech:rand(15,30),brand:rand(3,12),morale:65,
     products:[],reach:0,ownership:100,revenue:0,profit:0,expense:0,demand:0,capacity:0,valuation:0,maxVal:0,
     ap:2,investCd:0,rounds:0,ipo:false,negMonths:0,over:false,won:false,salaryMult:1,tempMult:1,tempMonths:0,
@@ -460,7 +510,7 @@ function weightedPick(arr){let r=Math.random()*arr.reduce((a,x)=>a+x.w,0);for(co
 function mkProducts(c,I,n,qMin,qMax,ageMin,ageMax,hitFirst){
   for(let i=0;i<n;i++){
     const age=rand(ageMin,ageMax),hit=!!hitFirst&&i===0;let q=Math.round(c.tech*rf(qMin,qMax)*(hit?1.5:1));
-    c.products.push({name:genName(c.industry,c.products.map(x=>x.name)),q,power:q*q*I.k*Math.pow(1-I.decay,age),age,hit,flop:false});
+    c.products.push({name:genName(c.industry,c.products.map(x=>x.name),c.cc),q,power:q*q*I.k*Math.pow(1-I.decay,age),age,hit,flop:false});
   }
 }
 const STARTS=[
@@ -546,19 +596,19 @@ const ACTIONS=[
   {id:'welfare',icon:'☕',n:'복지 강화',d:()=>'직원 사기 상승',
     cost:()=>Math.round(s.employees*sal()*.4),can:()=>s.morale>=100?'사기 최대치':null,
     run:()=>{const g=rand(10,16);s.morale+=g;return `복지 제도 개선. 사기 +${g}`}},
-  {id:'expand',icon:'🌏',n:'시장 확장',d:()=>s.reach<4?`${REACH[s.reach+1].n} 진출 (수요 ×${REACH[s.reach+1].m})`:'이미 글로벌 기업',
+  {id:'expand',icon:'🌏',n:'시장 확장',d:()=>s.reach<4?`${reachName(s.reach+1)} 진출 (수요 ×${REACH[s.reach+1].m})`:'이미 글로벌 기업',
     cost:()=>s.reach<4?Math.round(REACH[s.reach+1].cost*(s.flags.abroad?.7:1)):0,
     can:()=>s.reach>=4?'최대 시장':s.brand<REACH[s.reach+1].brand?`브랜드 ${REACH[s.reach+1].brand} 필요`:null,
-    run:()=>{s.reach++;return `${REACH[s.reach].n} 시장에 진출했습니다! 🌏`}},
+    run:()=>{s.reach++;return `${reachName(s.reach)} 시장에 진출했습니다! 🌏`}},
   {id:'invest',icon:'💰',n:()=>s.ipo?'유상증자':'투자 유치',d:()=>`기업가치의 20% 조달 · 지분 -20%`,
     cost:()=>0,can:()=>s.investCd>0?`${s.investCd}개월 후 가능`:s.products.length===0?'제품 출시 후 가능':null,
     run:()=>{const r=Math.round(s.valuation*.2*(s.flags.serial?1.25:1));s.cash+=r;s.ownership*=.8;s.investCd=9;
       const nm=s.ipo?'유상증자':(ROUNDS[s.rounds]||'추가')+' 투자';s.rounds++;
       return `${nm} 유치 성공! ${won(r)} 조달 (내 지분 ${s.ownership.toFixed(1)}%)`}},
-  {id:'ipo',icon:'🔔',n:'IPO 상장',d:()=>'코스닥 상장 · 기업가치 25% 조달',
+  {id:'ipo',icon:'🔔',n:'IPO 상장',d:()=>`${cc().ipoTag} · 기업가치 25% 조달`,
     cost:()=>0,can:()=>s.ipo?'이미 상장':s.valuation<1e7?'기업가치 1000억 필요':null,
     run:()=>{const r=Math.round(s.valuation*.25);s.cash+=r;s.ownership*=.75;s.ipo=true;s.brand+=8;
-      return `🔔 코스닥 상장! 공모로 ${won(r)} 조달. 브랜드 +8`}},
+      return `🔔 ${cc().exch} 상장! 공모로 ${won(r)} 조달. 브랜드 +8`}},
   {id:'move',icon:'🏢',n:'사옥 이전',d:()=>s.hq<HQ.length-1?`${HQ[s.hq+1].n} (수용 ${HQ[s.hq+1].cap>=1e9?'무제한':HQ[s.hq+1].cap.toLocaleString()+'명'} · 월세 ${won(HQ[s.hq+1].rent)})`:'최고의 사옥',
     cost:()=>s.hq<HQ.length-1?HQ[s.hq+1].cost:0,can:()=>s.hq>=HQ.length-1?'최고 사옥':null,
     run:()=>{s.hq++;s.brand+=3;s.morale+=10;return `${HQ[s.hq].n}(으)로 이사했습니다! 직원 사기 +10, 브랜드 +3`}},
@@ -636,9 +686,10 @@ function doAction(id){
   s.cash-=c;s.ap--;
   const msg=a.run();clampStats();calcValuation();
   s.log.unshift({d:dateStr(),t:`${a.icon} ${msg}`+(c?` <span class="muted">(-${won(c)})</span>`:''),k:''});
-  if(id==='ipo'){pendingFx.push(()=>celebrate('<b>🔔 코스닥 상장 성공!</b><br>종이 울렸습니다',true));milestone('ipo','🔔 상장의 문턱을 넘었다')}
+  if(id==='ipo'&&(s.cc||'KR')!=='KR'){pendingFx.push(()=>celebrate(`<b>🔔 ${cc().exch} 상장 성공!</b><br>종이 울렸습니다`,true))}
+  else if(id==='ipo'){pendingFx.push(()=>celebrate(`<b>🔔 ${cc().exch} 상장 성공!</b><br>종이 울렸습니다`,true));milestone('ipo','🔔 상장의 문턱을 넘었다')}
   if(id==='invest')pendingFx.push(()=>celebrate(`<b>💰 투자 유치 성공!</b><br>${msg.split('! ')[1]||''}`));
-  if(id==='expand')pendingFx.push(()=>celebrate(`<b>🌏 ${REACH[s.reach].n} 시장 진출!</b>`,s.reach>=3));
+  if(id==='expand')pendingFx.push(()=>celebrate(`<b>🌏 ${reachName(s.reach)} 시장 진출!</b>`,s.reach>=3));
   if(id==='layoff')pendingFx.push(shake);
   if(id==='move'){sceneMoved=true;pendingFx.push(()=>celebrate(`<b>🏢 ${HQ[s.hq].n}(으)로 이사!</b>`,s.hq>=4))}
   checkEndings();save();render();
@@ -771,7 +822,7 @@ function nextMonth(instant){
   if(ns>prevStage){log(`🎉 ${STAGES[ns].n}(으)로 성장했습니다! 매달 행동 ${maxAP()}회`,'good');
     pendingFx.push(()=>celebrate(`<b>🎉 ${STAGES[ns].n} 승격!</b><br>이제 매달 행동 ${maxAP()}회`,ns>=4))}
   if(s.valuation>=1e8&&!s.flags.unicorn){s.flags.unicorn=1;log('🦄 기업가치 1조 돌파! 유니콘 기업이 되었습니다.','good');milestone('unicorn','🦄 유니콘 등극!')}
-  if(s.startId==='startup'||s.startId==='venture'){if(s.t===12)milestone('y1','🎂 창업 1주년! 아직 살아있다');if(s.t===60)milestone('y5','🏅 5년 생존!');}
+  if(s.startId==='startup'||s.startId==='venture'){const kr=(s.cc||'KR')==='KR';if(s.t===12)milestone(kr?'y1':'y1g','🎂 창업 1주년! 아직 살아있다');if(s.t===60)milestone(kr?'y5':'y5g','🏅 5년 생존!');}
   if(s.t===120)milestone('y10','🏛️ 10년 기업');
   if(s.cash<0)pendingFx.push(shake);
   else if(s.profit>0&&!s.flags.firstProfit){s.flags.firstProfit=1;pendingFx.push(()=>celebrate('<b>📈 첫 흑자 달성!</b>'))}
@@ -915,7 +966,7 @@ const EVENTS=[
     {l:'보내준다',r:()=>{s.tech-=6;s.morale-=4;return '핵심 인력 이탈. 기술력 -6, 사기 -4'}}]},
   {id:'hoesik',t:'🍻 회식 문화 논란',c:()=>s.employees>=15,w:1,fx:()=>{s.morale-=8;return '“강제 3차 회식” 폭로 글 확산. 사기 -8'}},
   {id:'rival',t:'📈 경쟁사 파산',c:()=>s.products.length>0,w:2,fx:()=>{tm(1.25,3);return '주요 경쟁사가 파산했습니다! 3개월간 매출 +25%'}},
-  {id:'rate',t:'🏦 기준금리 인상',c:()=>s.debt>0,w:2,fx:()=>{const c=Math.round(s.debt*.02);s.cash-=c;return `한국은행 기준금리 인상. 추가 이자 ${won(c)}`}},
+  {id:'rate',t:'🏦 기준금리 인상',c:()=>s.debt>0,w:2,fx:()=>{const c=Math.round(s.debt*.02);s.cash-=c;return `${cc().cb} 기준금리 인상. 추가 이자 ${won(c)}`}},
   {id:'cafe',t:'☕ 사내 카페 요청',c:()=>s.employees>=30&&!s.flags.cafe,w:1,text:()=>'직원들이 사내 카페를 만들어 달라고 요청합니다.',ch:[
     {l:()=>`오픈한다 (${won(s.employees*40)})`,r:()=>{s.flags.cafe=1;s.cash-=s.employees*40;s.morale+=10;return '사내 카페 오픈! 사기 +10'}},
     {l:'거절한다',r:()=>{s.morale-=4;return '아쉬워하는 직원들. 사기 -4'}}]},
@@ -936,6 +987,45 @@ const EVENTS=[
     {l:'“친한 동료 사이”라며 부인',r:()=>{if(Math.random()<.5)return '잘 넘어갔습니다.';s.brand-=15;return '추가 사진 공개로 거짓 해명 들통! 브랜드 -15'}}]},
   {id:'supply',t:'🚢 글로벌 공급망 차질',ind:'mfg',w:3,fx:()=>{const c=Math.round(s.revenue*.4);s.cash-=c;tm(.85,2);return `원자재 수급 차질. 추가 비용 ${won(c)}, 2개월간 매출 -15%`}},
   {id:'dutyfree',t:'🛍️ 면세점 대량 주문',ind:'beauty',c:()=>s.reach>=2,w:3,fx:()=>{tm(1.4,2);return '면세점에서 대량 주문이 들어왔습니다! 2개월간 매출 +40%'}},
+  // ── 나라별 전용 이벤트 ──
+  {id:'us_svb',cc:'US',t:'🏦 거래 은행 뱅크런',c:()=>s.cash>5000,w:1.5,text:()=>'회사 예금을 맡긴 은행에서 하루 만에 예금이 빠져나가는 뱅크런이 시작됐습니다. 우리 돈 대부분이 그 은행에 있어요.',ch:[
+    {l:()=>`당장 여러 은행으로 나눠 옮긴다 (${won(Math.round(s.cash*.01))})`,r:()=>{s.cash-=Math.round(s.cash*.01);s.brand+=1;return '발 빠르게 자금을 지켰습니다. 수수료만 조금 냈어요.'}},
+    {l:'정부가 막아 주겠지',r:()=>{if(Math.random()<.5){const c=Math.round(s.cash*.25);s.cash-=c;s.morale-=6;return `은행이 문을 닫아 자금 일부가 묶였습니다… ${won(c)} 손실, 사기 -6`}return '정부가 예금을 전액 보장해 줬습니다. 운이 좋았어요.'}}]},
+  {id:'us_layoff',cc:'US',t:'🪓 빅테크 대량 해고',c:()=>['it','game'].includes(s.industry)&&s.employees>=10,w:2,text:()=>'빅테크 기업들이 수만 명을 해고했습니다. 실력 있는 개발자들이 시장에 쏟아져 나왔어요.',ch:[
+    {l:()=>`실력자들을 데려온다 (${won(Math.round(Math.max(2,s.employees*.05)*sal()*2))})`,r:()=>{const n=Math.max(2,Math.round(s.employees*.05));s.employees+=n;s.cash-=Math.round(n*sal()*2);s.tech+=4;return `빅테크 출신 ${n}명 합류! 기술력 +4`}},
+    {l:'우리도 몸집을 줄인다',r:()=>{const n=Math.max(1,Math.round(s.employees*.08));s.employees-=n;s.morale-=10;return `${n}명을 내보냈습니다. 비용은 줄었지만 사기 -10`}}]},
+  {id:'us_h1b',cc:'US',t:'🛂 취업비자 수수료 폭탄',c:()=>['it','bio','mfg'].includes(s.industry)&&s.employees>=10,w:1.5,text:()=>'해외 인재를 데려올 때 내는 취업비자(H-1B) 수수료가 한 사람당 10만 달러로 뛰었습니다.',ch:[
+    {l:()=>`수수료를 내고 채용 (${won(Math.round(Math.max(3000,s.revenue*.2)))})`,r:()=>{s.cash-=Math.round(Math.max(3000,s.revenue*.2));s.tech+=3;return '꼭 필요한 해외 인재를 지켰습니다. 기술력 +3'}},
+    {l:()=>`해외 지사에서 일하게 한다 (${won(Math.round(Math.max(1500,s.revenue*.1)))})`,r:()=>{s.cash-=Math.round(Math.max(1500,s.revenue*.1));s.morale-=2;return '원격 협업으로 버팁니다. 소통이 조금 느려졌어요. 사기 -2'}},
+    {l:'해외 채용을 포기한다',r:()=>{s.tech-=2;return '인재 확보가 어려워졌습니다. 기술력 -2'}}]},
+  {id:'us_bf',cc:'US',t:'🛍️ 블랙프라이데이 대목',c:()=>['food','beauty','it','mfg','game'].includes(s.industry)&&s.products.length>0&&(s.month===11||s.month===12),w:5,text:()=>'1년 중 가장 큰 쇼핑 시즌, 블랙프라이데이가 다가옵니다.',ch:[
+    {l:()=>`대규모 할인 행사 (${won(Math.round(Math.max(1000,s.revenue*.15)))})`,r:()=>{s.cash-=Math.round(Math.max(1000,s.revenue*.15));tm(1.35,1);s.brand+=2;return '주문이 폭주합니다! 이번 달 매출 +35%, 브랜드 +2'}},
+    {l:'정가를 지킨다',r:()=>{s.brand+=1;return '할인 없이도 찾는 고객이 있네요. 브랜드 +1'}}]},
+  {id:'jp_shunto',cc:'JP',t:'💴 춘투 임금 협상',c:()=>s.employees>=10&&s.month>=2&&s.month<=4,w:4,text:()=>'봄철 노사 임금 협상(춘투) 시즌입니다. 노조가 5% 넘는 임금 인상을 요구해요.',ch:[
+    {l:'5% 인상 수용',r:()=>{s.salaryMult*=1.05;s.morale+=10;return '“올해도 월급이 올랐다!” 인건비 +5%, 사기 +10'}},
+    {l:'3%로 협상한다',r:()=>{s.salaryMult*=1.03;s.morale-=3;return '절충안으로 타결했습니다. 인건비 +3%, 사기 -3'}}]},
+  {id:'jp_labor',cc:'JP',t:'🧓 일손 부족',c:()=>s.employees>=10,w:2,text:()=>'고령화로 일할 사람이 모자랍니다. 일손 부족으로 문을 닫는 회사가 늘고 있다는 뉴스가 연일 나와요.',ch:[
+    {l:'외국인 특정기능 인력 채용',r:()=>{const n=Math.max(2,Math.round(s.employees*.06));s.employees+=n;s.cash-=Math.round(n*sal()*.6);return `외국인 인력 ${n}명이 합류했습니다.`}},
+    {l:()=>`자동화·로봇 도입 (${won(Math.round(Math.max(3000,s.revenue*.5)))})`,r:()=>{s.cash-=Math.round(Math.max(3000,s.revenue*.5));s.tech+=4;return '사람 손이 덜 필요해졌어요. 기술력 +4'}},
+    {l:'정년 퇴직자를 다시 고용',r:()=>{s.morale+=3;s.salaryMult*=1.01;return '베테랑들이 돌아왔습니다. 사기 +3, 인건비 +1%'}}]},
+  {id:'jp_yen',cc:'JP',t:'💹 기록적인 엔저',c:()=>s.reach>=3,w:2,fx:()=>{tm(1.25,2);return '엔화 가치가 38년 만에 최저로 떨어졌습니다! 해외에서 우리 제품이 싸졌어요. 2개월간 매출 +25%'}},
+  {id:'cn_price',cc:'CN',t:'🔻 출혈 가격 전쟁(내권)',c:()=>s.products.length>0,w:2,text:()=>'경쟁사가 가격을 30% 넘게 내렸습니다. 업계 전체가 원가 이하 경쟁에 빠져들고 있어요.',ch:[
+    {l:'우리도 가격을 내린다',r:()=>{tm(.92,3);return '점유율은 지켰지만 이익이 줄었습니다. 3개월간 매출 -8%'}},
+    {l:'품질과 브랜드로 버틴다',r:()=>{tm(.85,2);s.brand+=4;return '고객 일부가 떠났지만 “제값 하는 브랜드” 이미지가 생겼어요. 2개월간 매출 -15%, 브랜드 +4'}}]},
+  {id:'cn_rare',cc:'CN',t:'🧲 희토류 수출 통제',ind:'mfg',c:()=>s.reach>=3,w:2,fx:()=>{tm(.85,3);s.tech+=2;return '정부가 희토류·자석 수출을 통제하면서 해외 거래처 주문이 줄었습니다. 대신 국내 공급망이 탄탄해졌어요. 3개월간 매출 -15%, 기술력 +2'}},
+  {id:'cn_youth',cc:'CN',t:'🎓 청년 구직난',c:()=>s.employees>=10,w:2,text:()=>'대학 졸업생 1,000만 명 시대. 청년 다섯 명 중 한 명이 일자리를 못 구했다는 뉴스가 나옵니다.',ch:[
+    {l:()=>`신입을 대거 채용한다 (${won(Math.round(Math.max(2,s.employees*.06)*sal()))})`,r:()=>{const n=Math.max(2,Math.round(s.employees*.06));s.employees+=n;s.cash-=Math.round(n*sal());s.brand+=4;return `신입 ${n}명 채용! “청년을 키우는 회사” 브랜드 +4`}},
+    {l:'경력직만 뽑는다',r:()=>'당장은 효율적이지만, 젊은 인재들의 관심에서 멀어졌어요.'}]},
+  {id:'de_recession',cc:'DE',t:'📉 2년 연속 역성장',c:()=>s.products.length>0,w:2,fx:()=>{tm(.87,3);return '높은 에너지 가격과 수출 부진으로 경제가 2년째 뒷걸음질 칩니다. 3개월간 매출 -13%'}},
+  {id:'de_insolv',cc:'DE',t:'💼 거래처 연쇄 파산',c:()=>s.revenue>2000,w:2,text:()=>'납품하던 대형 거래처가 파산 신청을 했습니다. 받을 돈이 묶였어요.',ch:[
+    {l:()=>`채권 보험으로 일부 회수 (${won(Math.round(s.revenue*.1))})`,r:()=>{const c=Math.round(s.revenue*.1);s.cash-=c;return `보험 덕에 손실을 ${won(c)}로 막았습니다.`}},
+    {l:'법정 다툼으로 받아 낸다',r:()=>{if(Math.random()<.5){return '오랜 소송 끝에 대부분 돌려받았습니다!'}const c=Math.round(s.revenue*.6);s.cash-=c;return `결국 ${won(c)}을(를) 떼였습니다.`}}]},
+  {id:'de_skill',cc:'DE',t:'🧑‍🔧 숙련공 부족',c:()=>s.employees>=10,w:2,text:()=>'숙련 기술자 자리를 채우는 데 8개월이 걸린다고 합니다. 우리 공장에도 빈자리가 늘고 있어요.',ch:[
+    {l:'해외 숙련공을 데려온다',r:()=>{const n=Math.max(2,Math.round(s.employees*.05));s.employees+=n;s.cash-=Math.round(n*sal()*.8);return `해외 기술자 ${n}명이 합류했습니다.`}},
+    {l:()=>`직업훈련생(아우스빌둥) 양성 (${won(Math.round(s.employees*sal()*.1))})`,r:()=>{s.cash-=Math.round(s.employees*sal()*.1);s.tech+=2;s.morale+=4;return '직접 키운 인재가 회사에 남습니다. 기술력 +2, 사기 +4'}}]},
+  {id:'in_upi',cc:'IN',t:'📲 모바일 결제 폭발',c:()=>['it','food','beauty','ent','game'].includes(s.industry)&&s.products.length>0,w:2,fx:()=>{tm(1.25,2);return '노점상까지 QR 결제를 쓰는 시대! 온라인 주문이 폭발합니다. 2개월간 매출 +25%'}},
+  {id:'in_appban',cc:'IN',t:'🚫 외국 경쟁 앱 퇴출',c:()=>['it','game'].includes(s.industry)&&s.products.length>0,w:1.5,fx:()=>{tm(1.3,3);s.brand+=3;return '정부가 안보를 이유로 외국 앱 수십 개를 금지했습니다. 빈자리를 우리가 차지해요! 3개월간 매출 +30%, 브랜드 +3'}},
+  {id:'in_market',cc:'IN',t:'👥 세계 최대 소비 시장',c:()=>s.reach>=2&&s.products.length>0,w:1.5,fx:()=>{tm(1.2,3);s.brand+=2;return '중산층이 빠르게 늘면서 지방 도시까지 주문이 들어옵니다. 3개월간 매출 +20%, 브랜드 +2'}},
   // ── 2025~26 실제 이슈 기반 이벤트 ──
   {id:'venture',t:'💸 벤처투자 붐',c:()=>!s.ipo&&stageIdx()<=3&&s.products.length>0&&s.investCd<=0,w:1.5,text:()=>'벤처캐피털들이 돈을 풀고 있습니다. 우리 회사에도 투자하겠다는 제안이 쏟아져요.',ch:[
     {l:()=>`투자 받는다 (+${won(Math.round(s.valuation*.15))}, 지분 -12%)`,r:()=>{const g=Math.round(s.valuation*.15);s.cash+=g;s.ownership*=.88;s.investCd=6;return `좋은 조건으로 투자 유치! ${won(g)} 확보, 내 지분 ${s.ownership.toFixed(1)}%`}},
@@ -1016,11 +1106,15 @@ const EVENTS=[
     {l:'즉시 공개하고 보상',r:()=>{const c=Math.round(s.revenue*.6+1500);s.cash-=c;s.brand-=5;return `정직한 대응. ${won(c)} 지출, 브랜드 -5`}},
     {l:'조용히 덮는다',r:()=>{if(Math.random()<.6)return '…아무도 모르고 넘어갔습니다.';const c=Math.round(s.revenue*2+5000);s.cash-=c;s.brand-=25;return `은폐 사실 발각! 과징금 ${won(c)}, 브랜드 -25`}}]},
 ];
+// 한국 제도·문화가 들어간 이벤트는 한국 회사에서만, 그 나라 자신이 당사자인 이벤트는 그 나라에서 빼기
+const EV_ONLY={chuseok:['KR'],audit:['KR'],tax:['KR'],gov:['KR'],yellow:['KR'],pension:['KR'],kwave:['KR'],kbeauty:['KR'],kfood:['KR'],kpopanim:['KR'],ott:['KR'],workweek:['KR'],sandbox:['KR'],hoesik:['KR'],gapjil:['KR'],origin:['KR'],gacha:['KR'],delivery:['KR'],subcon:['KR'],ftc:['KR']};
+const EV_NOT={tariff:['US'],cbam:['DE'],ccommerce:['CN'],panho:['CN']};
 const wt=e=>(typeof e.w==='function'?e.w():(e.w||1))*(s.evT&&s.evT[e.id]!==undefined?1:1.5); // 아직 안 본 이벤트가 조금 더 잘 나온다
 function rollEvent(p=.5){
   if(Math.random()>p)return;
   s.evT=s.evT||{};
-  const ok=e=>e.id!==s.lastEvent&&(!e.ind||e.ind===s.industry)&&(!e.c||e.c());
+  const code=s.cc||'KR';
+  const ok=e=>e.id!==s.lastEvent&&(!e.ind||e.ind===s.industry)&&(!EV_ONLY[e.id]||EV_ONLY[e.id].includes(code))&&(!EV_NOT[e.id]||!EV_NOT[e.id].includes(code))&&(!e.cc||e.cc===code)&&(!e.c||e.c());
   // 한 번 나온 이벤트는 24개월(명절 같은 계절 이벤트는 11개월) 동안 다시 안 나온다
   const cool=e=>s.evT[e.id]===undefined||s.t-s.evT[e.id]>=(e.id==='chuseok'?11:e.cd||24);
   let pool=EVENTS.filter(e=>ok(e)&&cool(e));
@@ -1029,7 +1123,7 @@ function rollEvent(p=.5){
   for(const e of pool){r-=wt(e);if(r<=0){ev=e;break}}
   s.lastEvent=ev.id;s.evT[ev.id]=s.t||0;
   // 실제 통계 팝업은 처음 볼 때만. 다시 보려면 ⚙️ 설정 → 통계 모음
-  const newFact=FACTS[ev.id]&&!seenFacts().includes(ev.id)?FACTS[ev.id]:null;
+  const newFact=FACTS[ev.id]&&factFits(ev.id)&&!seenFacts().includes(ev.id)?FACTS[ev.id]:null;
   const snap={cash:s.cash,brand:s.brand,morale:s.morale,tech:s.tech,tm:s.tempMult,pw:s.products.reduce((a,p)=>a+p.power,0)};
   const after=(m,quiet)=>{
     clampStats();calcValuation();log(`${ev.t} — ${m}`,'event');
@@ -1054,13 +1148,13 @@ function rollEvent(p=.5){
 const STYLES={'공격형':{t:1,b:1.2,g:1.3,d:'공격적 확장, 인재 빼가기'},'기술형':{t:1.5,b:.7,g:1,d:'R&D 집중, 고품질 제품'},'안정형':{t:.8,b:.9,g:.7,d:'느리지만 꾸준한 성장'},'마케팅형':{t:.7,b:1.6,g:1.1,d:'광고·브랜드 중심'}};
 function makeRival(c,incumbent){
   const I=IND[c.industry];let name,n=0;
-  do{name=pick(PRE)+pick(I.suffix)}while(n++<50&&(name===c.name||(c.rivals||[]).some(r=>r.name===name)));
+  do{name=(c.cc&&c.cc!=='KR')?`${pick(CC[c.cc].pre)} ${pick(FSUF[c.industry])}`:pick(PRE)+pick(I.suffix)}while(n++<50&&(name===c.name||(c.rivals||[]).some(r=>r.name===name)));
   const base=Math.max(c.tech,20);
   return {name,style:incumbent?'안정형':pick(Object.keys(STYLES)),inc:!!incumbent,ceo:pick(SUR)+pick(GIV),
     tech:Math.round(incumbent?base*1.4+10:base*rf(.6,1.2)),
     brand:incumbent?rand(45,60):rand(3,20),
     val:Math.round(incumbent?rand(3,8)*1e6:Math.max(rand(2,30)*1e4,c.valuation*rf(.5,3))),
-    prod:genName(c.industry)};
+    prod:genName(c.industry,null,c.cc)};
 }
 function genRivals(c){c.rivals=[];c.rivals.push(makeRival(c,true));for(let i=0;i<3;i++)c.rivals.push(makeRival(c,false));c.intel=0}
 const rStr=r=>r.tech*1.15*(.5+r.brand/100);
@@ -1240,10 +1334,10 @@ function ending(type){
     takeover:['⚔️ 경영권 상실','주주총회 표 대결에서 패배했습니다. 새 경영진이 회사를 접수했고, 당신은 대표 자리에서 물러납니다.'],
     fired:['🪑 대표이사 해임','지분이 10% 아래로 떨어져 이사회에서 해임되었습니다. 회사는 남았지만 당신은 떠납니다.'],
     sold:['🤝 엑시트 성공',`회사를 매각하고 ${won(s.exitValue||0)}을 손에 쥐었습니다. 다음 창업을 준비해 볼까요?`],
-    win:['👑 재벌 등극!',`기업가치 100조 원 돌파! ${s.name}은(는) 대한민국을 대표하는 그룹이 되었습니다.`],
+    win:['👑 재벌 등극!',`기업가치 ${won(1e10)} 돌파! ${s.name}은(는) ${cc().n}을(를) 넘어 세계를 대표하는 그룹이 되었습니다.`],
   }[type];
   const surv=m=>m<12?100-36.1*m/12:m<=60?63.9-(27.4*(m-12)/48):36.5;
-  const ctx=type==='bankrupt'||type==='fired'||type==='takeover'?(s.startId==='startup'||s.startId==='venture'?`<p class="muted" style="font-size:13px;margin:8px 0 0">${years>=60?'5년 넘게 버텼어요. 한국 신생기업 중 5년을 넘기는 곳은 36.5%뿐이에요.':`${yt} 버텼어요. 한국 신생기업 중 이만큼 버티는 곳은 약 ${Math.round(surv(years))}%예요.`}</p>`:'')+(type==='bankrupt'?factCard(MILES.dead):''):'';
+  const ctx=type==='bankrupt'||type==='fired'||type==='takeover'?((s.startId==='startup'||s.startId==='venture')&&(s.cc||'KR')==='KR'?`<p class="muted" style="font-size:13px;margin:8px 0 0">${years>=60?'5년 넘게 버텼어요. 한국 신생기업 중 5년을 넘기는 곳은 36.5%뿐이에요.':`${yt} 버텼어요. 한국 신생기업 중 이만큼 버티는 곳은 약 ${Math.round(surv(years))}%예요.`}</p>`:'')+(type==='bankrupt'?factCard(MILES.dead):''):'';
   if(type==='bankrupt')markFact('dead');
   const body=`<p>${E[1]}</p>${ctx}<div class="kv">
     <span class="muted">경영 기간</span><b>${yt}</b>
@@ -1419,13 +1513,14 @@ async function saveMenu(){
 // ===== 시작 화면 =====
 let draft=null;
 function startScreen(){
-  draft=newCompany();
+  draft=newCompany();fmtCC=draft.cc;
   const I=IND[draft.industry],T=TRAITS[draft.traitIdx],ST=STARTS.find(x=>x.id===draft.startId);
   const big=draft.startId!=='startup';
   modal('🎲 랜덤 시작',`
     <div class="start-sc sc-${draft.startId}"><b>${ST.n}</b><span class="badge">난이도: ${ST.diff}</span><p>${ST.d}</p></div>
-    <p class="muted" style="margin:8px 0 0">운명이 정해준 회사로 재벌에 도전하세요. 목표: <b>기업가치 100조 원</b></p>
+    <p class="muted" style="margin:8px 0 0">운명이 정해준 회사로 재벌에 도전하세요. 목표: <b>기업가치 ${won(1e10)}</b>${draft.cc!=='KR'?` <span class="muted">(약 100조 원)</span>`:''}</p>
     <div class="kv">
+      <span class="muted">국가</span><b>${CC[draft.cc].flag} ${CC[draft.cc].n}</b>
       <span class="muted">회사명</span><b>${esc(draft.name)}</b>
       <span class="muted">업종</span><b>${I.icon} ${I.name}</b>
       <span class="muted">대표</span><b>${esc(draft.ceo)}</b>
@@ -1456,6 +1551,7 @@ function startScreen(){
         setTimeout(cloudAuto,0);
         save();render()}},
      {l:'🎲 다시 뽑기',f:startScreen}]);
+  fmtCC=null;
 }
 
 // ===== 회사 장면 (건물 + 직원 캐릭터) =====
@@ -1627,9 +1723,9 @@ function render(){
   renderBar();
   document.getElementById('hdr').innerHTML=`
   <header class="top">
-    <div><div class="co-name">${I.icon} ${esc(s.name)}<span class="badge">${st.n}</span>${s.ipo?'<span class="badge">상장사</span>':''}</div>
-      <div class="co-sub">${I.name} · 대표 ${esc(s.ceo)} (${TRAITS[s.traitIdx].n}) · ${s.city} · ${REACH[s.reach].n} 시장</div></div>
-    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월 ${s.week||1}주</div><div style="display:flex;gap:5px;justify-content:flex-end;margin-top:4px"><button class="btn hb" id="helpbtn" aria-label="게임 방법">❓</button><button class="btn hb" id="fbbtn" aria-label="의견 보내기">💬</button><button class="btn hb bgm-ic" id="bgmbtn" aria-label="배경음악 켜기/끄기">${SET.bgm?'🔊':'🔇'}</button><button class="btn hb" id="setbtn" aria-label="설정">⚙️</button><button class="btn hb" id="savebtn">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn hb" id="newbtn">🎲 새 게임</button></div></div>
+    <div><div class="co-name">${cc().flag} ${I.icon} ${esc(s.name)}<span class="badge">${st.n}</span>${s.ipo?'<span class="badge">상장사</span>':''}</div>
+      <div class="co-sub">${I.name} · 대표 ${esc(s.ceo)} (${TRAITS[s.traitIdx].n}) · ${s.city} · ${reachName(s.reach)} 시장</div></div>
+    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월 ${s.week||1}주</div><div style="display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap;margin-top:4px"><button class="btn hb" id="helpbtn" aria-label="게임 방법">❓</button><button class="btn hb" id="fbbtn" aria-label="의견 보내기">💬</button><button class="btn hb bgm-ic" id="bgmbtn" aria-label="배경음악 켜기/끄기">${SET.bgm?'🔊':'🔇'}</button><button class="btn hb" id="setbtn" aria-label="설정">⚙️</button>${s.cc&&s.cc!=='KR'?`<button class="btn hb" id="curbtn" aria-label="통화 바꾸기" title="통화 바꾸기">${SET.krw?'₩→'+cc().sym:cc().sym+'→₩'}</button>`:''}<button class="btn hb" id="savebtn">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn hb" id="newbtn">🎲 새 게임</button></div></div>
   </header>`;
   document.getElementById('sum').innerHTML=`<div class="card statcard sumbar" id="sumbar" role="button" tabindex="0" aria-label="회사 현황 자세히 보기"><div class="sb-row">
           ${stat('valuation','기업가치',s.valuation,'won')}
@@ -1692,6 +1788,7 @@ function render(){
   document.getElementById('fbbtn').onclick=feedback;
   document.getElementById('bgmbtn').onclick=()=>setBgm(!SET.bgm);
   document.getElementById('setbtn').onclick=settings;
+  const cb=document.getElementById('curbtn');if(cb)cb.onclick=()=>{SET.krw=!SET.krw;saveSet();toast(SET.krw?'<b>₩ 원화로 보기</b>':`<b>${cc().flag} ${cc().cur}로 보기</b>`);render()};
   document.getElementById('newbtn').onclick=()=>modal('🎲 새 게임',`<p>지금 회사(<b>${esc(s.name)}</b>)를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p><p class="muted" style="font-size:12px">지금 게임을 남겨 두려면 먼저 💾 저장에서 다른 칸에 저장하세요.</p>`,[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]);
   updateScene();
   animateAfterRender();
@@ -1749,15 +1846,15 @@ function showTitle(){
   const el=document.createElement('div');el.id='title';
   const cont=s&&!s.over?`<button class="btn primary t-cont" id="t-cont"><span>▶ 이어하기<small>${esc(s.name)} · ${s.year}년 ${s.month}월 · ${STAGES[stageIdx()].n}</small></span><span style="font-size:14px">${won(s.valuation)}</span></button>`:'';
   el.innerHTML=`<div class="t-in">${titleHero()}
-    <div class="t-kicker">한국 기업 성장 시뮬레이션</div>
+    <div class="t-kicker">세계 기업 성장 시뮬레이션</div>
     <h1 class="t-name">재벌<span>까지</span></h1>
-    <p class="t-sub">운명이 정해 준 회사 하나.<br>동네 스타트업에서 100조 그룹까지.</p>
+    <p class="t-sub">운명이 정해 준 회사 하나.<br>한국·미국·일본·중국·독일·인도의 동네 스타트업에서<br>100조 원 그룹까지.</p>
     <div class="t-goal">🏆 목표 <b>기업가치 100조 원</b></div>
     <div class="t-btns">${cont}
       <button class="btn ${cont?'':'primary'}" id="t-new">🎲 새 회사 뽑기</button>
       <button class="btn" id="t-how">📖 게임 방법</button>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn" id="t-fb">💬 의견 보내기</button><button class="btn" id="t-set">⚙️ 설정</button></div></div>
-    <div class="t-feat"><div><b>🎲</b>업종 7개 ×<br>시작 4가지</div><div><b>⚔️</b>경쟁사·M&amp;A<br>경영권 분쟁</div><div><b>🚨</b>${EVENTS.length}가지<br>돌발 이벤트</div></div>
+    <div class="t-feat"><div><b>🌍</b>6개국 × 업종 7개<br>× 시작 4가지</div><div><b>⚔️</b>경쟁사·M&amp;A<br>경영권 분쟁</div><div><b>🚨</b>${EVENTS.length}가지<br>돌발 이벤트</div></div>
     <div class="t-foot">진행 상황은 자동 저장돼요 · 🎵 화면을 누르면 배경음악이 시작돼요</div></div>`;
   document.body.appendChild(el);
   el.querySelector('#t-cont')?.addEventListener('click',()=>{hideTitle();clock.run=true;clock.acc=0;render()});
@@ -1771,7 +1868,7 @@ function showTitle(){
 function hideTitle(){const el=document.getElementById('title');if(!el)return;
   el.removeAttribute('id');if(RM)return el.remove();el.classList.add('t-out');setTimeout(()=>el.remove(),350)}
 const HOW=[
-  {t:'🎯 어떤 게임인가요?',h:()=>`<p class="lead">랜덤으로 정해지는 한국 회사의 대표가 되어 <b>기업가치 100조 원</b>을 만드는 게임이에요.</p><ul>
+  {t:'🎯 어떤 게임인가요?',h:()=>`<p class="lead">한국·미국·일본·중국·독일·인도 중 랜덤으로 정해지는 나라의 회사 대표가 되어 <b>기업가치 100조 원</b>을 만드는 게임이에요. 돈은 그 나라 통화로 보이고, 오른쪽 위 <b>₩</b> 버튼으로 원화로 바꿔 볼 수 있어요.</p><ul>
     <li><b>🎲</b><span><b>시작이 매번 달라요.</b> 업종 ${Object.keys(IND).length}개와 시작 상황 4가지가 섞여요.</span></li>
     <li><b>🌱</b><span><b>맨땅 창업</b> · <b>잘나가는 벤처</b> · <b>중견기업</b> · <b>물려받은 대기업</b> — 큰 회사로 시작해도 손 놓으면 무너져요.</span></li>
     <li><b>👔</b><span>대표의 이력에 따라 보너스가 달라요.</span></li></ul>`},
@@ -1984,6 +2081,7 @@ function settings(){
     <div class="set-row"><div class="lbl">🎨 화면</div><div class="seg" id="set-theme">${[['auto','🌓 자동'],['light','☀️ 밝게'],['dark','🌙 어둡게']].map(([k,n])=>`<button data-o="${k}" class="${SET.theme===k?'on':''}">${n}</button>`).join('')}</div></div>
     <div class="set-row"><div class="lbl">🎵 배경음악</div><div class="seg" id="set-bgm" style="grid-template-columns:repeat(2,1fr)"><button data-o="1" class="${SET.bgm?'on':''}">🔊 켜기</button><button data-o="0" class="${SET.bgm?'':'on'}">🔇 끄기</button></div>
       <div class="vol"><span>🔈</span><input type="range" min="0" max="100" value="${Math.round(SET.vol*100)}" aria-label="음량"><span>🔊</span></div></div>
+    <div class="set-row"><div class="lbl">💱 돈 표시</div><div class="seg" id="set-cur" style="grid-template-columns:repeat(2,1fr)"><button data-o="0" class="${SET.krw?'':'on'}">🌍 그 나라 통화</button><button data-o="1" class="${SET.krw?'on':''}">₩ 원화</button></div></div>
     <div class="set-row"><div class="lbl">📚 기록</div><button class="btn" id="set-facts" style="width:100%">📊 실제 통계 모음 (${seenFacts().length}/${Object.keys(FACTS).length+Object.keys(MILES).length})</button></div>
     ${s&&!document.getElementById('title')?`<div class="set-row"><div class="lbl">🏢 게임</div><button class="btn" id="set-new" style="width:100%">🎲 새 회사로 다시 시작</button></div>`:''}
     <p class="muted" style="font-size:11px;margin:0">배경음악은 회사가 적자일 때 분위기가 바뀌어요.</p>`,[{l:'닫기',f:()=>{}}]);
@@ -1991,6 +2089,7 @@ function settings(){
   m.querySelectorAll('#set-bgm button').forEach(b=>b.onclick=()=>{setBgm(b.dataset.o==='1');m.querySelectorAll('#set-bgm button').forEach(x=>x.classList.toggle('on',x===b))});
   const vr=m.querySelector('.vol input');vr.oninput=()=>{SET.vol=vr.value/100;saveSet();if(BGM.ctx&&BGM.timer)BGM.master.gain.setTargetAtTime(SET.vol*.55,BGM.ctx.currentTime,.05)};
   m.querySelector('#set-facts').onclick=factLibrary;
+  m.querySelectorAll('#set-cur button').forEach(b=>b.onclick=()=>{SET.krw=b.dataset.o==='1';saveSet();m.querySelectorAll('#set-cur button').forEach(x=>x.classList.toggle('on',x===b));if(s&&!document.getElementById('title'))render()});
   m.querySelector('#set-new')?.addEventListener('click',()=>modal('새 게임','<p>지금 회사를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p>',[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]));
 }
 
@@ -2058,17 +2157,38 @@ const FACTS={
   firesafety:{n:'공장 화재',big:'23명',t:'2024년 6월 경기 화성의 리튬 배터리 공장 화재로 23명이 숨졌어요. 대표는 2025년 9월 1심에서 중대재해처벌법 위반 등으로 징역 15년을 선고받았어요. 안전 투자를 미룬 대가는 회사 전체를 무너뜨려요.',src:'경찰·법원 발표(언론 보도, 2024~2025)'},
   sandbox:{n:'규제샌드박스',big:'1,750여 건',t:'2019년 도입된 규제샌드박스로 2025년 초까지 1,750여 건의 신사업이 임시 허가를 받았어요. 다만 법이 실제로 바뀐 건 약 21%뿐이라, 허가 기간이 끝나면 다시 막히는 기업도 많아요.',src:'국무조정실 규제샌드박스 현황(언론 보도)'},
   fakes:{n:'K-브랜드 짝퉁',big:'연 11조 원',t:'해외에서 팔리는 K-브랜드 위조상품 시장은 연 11조 원 규모로 추정돼요. 최근 5년 동안 중국에서 한국 브랜드를 먼저 등록한 것으로 의심되는 상표가 1만 건이 넘었어요.',src:'OECD 분석 기반 추정 · 지식재산처(언론 보도)'},
+  us_svb:{cc:'US',n:'뱅크런',big:'하루 420억 달러',t:'2023년 3월 실리콘밸리은행(SVB)에서 하루 만에 420억 달러(예금의 약 4분의 1) 인출 요청이 몰려 은행이 다음 날 문을 닫았어요. 예금의 88%가 보호 한도를 넘는 돈이었고, 미국 역사상 세 번째로 큰 은행 파산이었어요.',src:'캘리포니아 금융감독 당국 문서 · Bloomberg · Fortune(2023)'},
+  us_layoff:{cc:'US',n:'빅테크 해고',big:'26만 명',t:'2023년 전 세계 테크 기업에서 26만 2,735명이 해고됐어요(Layoffs.fyi 집계). 2024년에도 549개 회사에서 15만 명 넘게 일자리를 잃었어요.',src:'Layoffs.fyi · TechCrunch'},
+  us_h1b:{cc:'US',n:'H-1B 비자',big:'10만 달러',t:'2025년 9월 미국은 새 H-1B 취업비자 신청에 한 건당 10만 달러(약 1억 4천만 원)를 물리는 포고령을 냈어요. 기존 비자 연장은 빠졌고, 미국 상공회의소는 소송을 냈어요.',src:'백악관 포고령 10973(2025.9) · DLA Piper'},
+  us_bf:{cc:'US',n:'블랙프라이데이',big:'118억 달러',t:'2025년 블랙프라이데이 하루 미국 온라인 매출은 118억 달러로 역대 최대였어요. 사흘 뒤 사이버먼데이는 142억 5천만 달러로 하루 매출 신기록을 세웠어요.',src:'Adobe Analytics(2025)'},
+  jp_shunto:{cc:'JP',n:'춘투',big:'5.25%',t:'2025년 일본 춘투에서 노조연합(렌고) 소속 5,162개 기업의 평균 임금 인상률은 5.25%로, 2년 연속 5%를 넘었어요. 다만 중소기업은 4.65%에 그쳤어요.',src:'일본노동조합총연합회(렌고) 최종 집계(2025.7)'},
+  jp_labor:{cc:'JP',n:'일손 부족 도산',big:'397건',t:'2025년 일본에서 일손 부족으로 쓰러진 회사는 397곳으로, 1년 새 36% 늘어 통계 이래 최다였어요. 전체 도산도 2년 연속 1만 건을 넘었어요.',src:'도쿄상공리서치(TSR) 2025년 도산 집계'},
+  jp_yen:{cc:'JP',n:'엔저',big:'1달러 160엔',t:'2024년 6월 엔화는 1달러에 160엔을 넘어 1986년 이후 가장 약해졌어요. 일본 정부는 그해 4~5월에만 약 9조 8천억 엔을 써서 환율을 방어했어요.',src:'Bloomberg · 일본 재무성(2024)'},
+  cn_price:{cc:'CN',n:'가격 전쟁',big:'최대 34%',t:'2025년 5월 중국 최대 전기차 회사가 20여 개 모델 값을 최대 34% 내리자 경쟁사들이 줄줄이 따라 내렸어요. 2년 새 중국 평균 자동차 가격은 약 19% 떨어졌고, 정부는 “원가 이하 판매 금지”를 경고했어요.',src:'Reuters · Bloomberg · Financial Times(2025)'},
+  cn_rare:{cc:'CN',n:'희토류 통제',big:'0.1%',t:'2025년 10월 중국은 중국산 희토류가 0.1%만 들어가도 수출 허가를 받게 하는 통제를 발표했다가, 미중 정상회담 뒤 1년간 유예했어요. 그사이 희토류 자석 수출은 두 달 연속 줄었어요.',src:'S&P Global · 중국 해관총서 통계(2025)'},
+  cn_youth:{cc:'CN',n:'청년 실업',big:'21.3%',t:'2023년 6월 중국 도시 청년(16~24세) 실업률은 21.3%로 사상 최고였어요. 그해 대졸자가 1,160만 명으로 역대 최다였고, 중국 정부는 곧 청년 실업률 발표를 잠시 중단했어요.',src:'중국 국가통계국 · Caixin · NBC(2023)'},
+  de_recession:{cc:'DE',n:'독일 경기',big:'-0.3% → -0.2%',t:'독일 경제는 2023년 -0.3%, 2024년 -0.2%로 2년 연속 뒷걸음질 쳤어요. 높은 에너지 가격과 금리, 수출 시장 경쟁 심화가 원인으로 꼽혀요.',src:'독일 연방통계청(Destatis, 2025.1)'},
+  de_insolv:{cc:'DE',n:'기업 파산',big:'약 2만 4천 곳',t:'2025년 독일에서 파산한 기업은 약 2만 4천 곳으로 2014년 이후 가장 많을 것으로 집계됐어요. 2023년과 2024년에도 해마다 20% 넘게 늘었어요.',src:'Creditreform · CRIF · Destatis(2025)'},
+  de_skill:{cc:'DE',n:'숙련공 부족',big:'37만 자리',t:'2025년 독일에서 자격을 갖춘 사람을 못 구한 일자리는 약 36만 9,500개예요. 숙련 기술직은 빈자리 하나를 채우는 데 평균 242일이 걸렸어요.',src:'독일경제연구소 KOFA · 연방고용청(2026)'},
+  in_upi:{cc:'IN',n:'UPI 결제',big:'월 200억 건',t:'인도의 모바일 결제망 UPI는 2025년 8월 처음으로 한 달 200억 건을 넘었고, 12월엔 216억 건을 처리했어요. 하루 최고 7억 5천만 건이 오간 날도 있었어요.',src:'인도결제공사(NPCI) 통계(2025)'},
+  in_appban:{cc:'IN',n:'외국 앱 금지',big:'59개',t:'2020년 6월 인도는 국경 분쟁 뒤 틱톡을 포함한 중국 앱 59개를 금지했어요. 7월에 47개, 9월에 118개를 더 막았어요.',src:'인도 전자정보기술부 발표 · Al Jazeera · TechCrunch(2020)'},
+  in_market:{cc:'IN',n:'인도 인구',big:'14억 2,860만 명',t:'2023년 인도 인구는 14억 2,860만 명으로 중국을 제치고 세계 1위가 됐다고 유엔이 추산했어요.',src:'유엔 세계인구전망(UN DESA, 2023)'},
   union:{n:'노동조합',big:'13.0%',t:'2024년 말 한국의 노동조합 조직률은 13.0%, 조합원은 277만 7천 명이에요. 노동자 8명 중 1명꼴로 노조에 가입해 있어요.',src:'고용노동부 「2024년 전국 노동조합 조직현황」'},
 };
 const MILES={
   y1:{n:'창업 1년 생존',big:'63.9%',t:'한국 신생기업의 1년 생존율은 63.9%예요. 3곳 중 1곳 이상이 첫해를 넘기지 못하고 문을 닫아요. 당신의 회사는 살아남은 쪽이에요.',src:'국가데이터처 「2025년 기업생멸행정통계」'},
   y5:{n:'창업 5년 생존',big:'36.5%',t:'한국 신생기업의 5년 생존율은 36.5%예요(역대 최고). 같은 해 문을 연 회사 10곳 중 6곳 이상이 이미 사라졌어요. OECD 평균(약 45%)보다도 낮은, 험한 길이에요.',src:'국가데이터처 「2025년 기업생멸행정통계」'},
+  y1g:{n:'창업 1년 생존(미국)',big:'약 80%',t:'미국 노동통계국 조사에서 새로 문을 연 사업장 5곳 중 1곳은 1년 안에 문을 닫았어요. 당신의 회사는 첫해를 버텨 낸 쪽이에요.',src:'미국 노동통계국(BLS) Business Employment Dynamics'},
+  y5g:{n:'창업 5년 생존(미국)',big:'약 45%',t:'미국에서 2006년에 문을 연 사업장 중 5년 뒤에도 남아 있는 곳은 45% 남짓이었어요. 절반 넘게 사라지는 5년을 버텨 냈어요.',src:'미국 노동통계국(BLS) 자료(NerdWallet 2차 인용)'},
   y10:{n:'10년 생존',big:'34.7%',t:'미국에서 2013년에 문을 연 사업장 중 10년 뒤에도 영업 중인 곳은 34.7%예요. 10년을 버틴 회사는 이미 그 자체로 소수예요.',src:'미국 노동통계국(BLS) The Economics Daily, 2024'},
   unicorn:{n:'유니콘',big:'약 1%',t:'시드 투자를 받은 스타트업 중 기업가치 10억 달러(약 1조 원)를 넘는 유니콘이 되는 곳은 약 1%예요. 한국의 유니콘은 2025년 말 기준 27개뿐이고, 창업부터 평균 7년 8개월이 걸렸어요.',src:'CB Insights Venture Funnel · 중소벤처기업부 유니콘 현황(2026.2)'},
   ipo:{n:'상장',big:'77개사',t:'2025년 한국 증시에 새로 상장한 회사는 77개(코스피 7, 코스닥 70)예요. 한 해 새로 생기는 기업이 90만 개가 넘으니, 상장까지 가는 회사는 1만 곳 중 1곳도 안 되는 셈이에요.',src:'한국거래소·IR큐더스 집계(2025)'},
   mna:{n:'인수합병',big:'약 70%',t:'예전에는 "인수합병의 70%는 실패한다"는 말이 흔했지만, 지난 20년간 66만 건(56조 달러)을 분석한 최근 연구에서는 약 70%가 성공하는 것으로 나타났어요. 꾸준히 사들이며 경험을 쌓은 회사일수록 성공률이 높았어요.',src:'Harvard Business Review(2024) · Bain & Company'},
   dead:{n:'스타트업이 망하는 이유',big:'70%',t:'투자받은 스타트업 431곳의 폐업 원인을 분석했더니 70%가 "돈이 떨어져서"였어요. 그 밑에는 시장이 원하지 않는 제품(43%), 나쁜 타이밍(29%), 팔수록 손해 보는 구조(19%)가 있었어요.',src:'CB Insights 스타트업 폐업 분석(2차 인용)'},
 };
+// 한국 통계는 한국 회사에서만 보여 준다(다른 나라는 그 나라·세계 통계만)
+const FACT_GLOBAL=['ransom','deepfake','embezzle','whistle','patenttroll','recall','clinic','cbam','panho','disrupt','itoutage','cocoa'];
+const factFits=k=>{const f=FACTS[k];if(!f)return false;if(f.cc)return f.cc===((s&&s.cc)||'KR');return ((s&&s.cc)||'KR')==='KR'||FACT_GLOBAL.includes(k)};
 const factQ=[];
 function factCard(f){return `<div class="fact"><div class="fh">📊 실제 세계에서는</div><span class="big">${f.big}</span>${f.t}<span class="src">출처: ${f.src}</span></div>`}
 function seenFacts(){try{return JSON.parse(localStorage.getItem('kcorp-facts')||'[]')}catch(e){return []}}
@@ -2092,6 +2212,7 @@ function migrate(st){
   if(s.t===undefined){s.t=0;s.lastLaunch=0}
   if(s.week===undefined){s.week=1;s.weekCash=0}
   if(!s.evT)s.evT={};
+  if(!s.cc)s.cc='KR';
   if(s.allies===undefined){s.allies=s.flags&&s.flags.heir?15:0;s.raid=null;s.buyT=-1}
   s=prev;return st;
 }
