@@ -37,7 +37,7 @@ html = html.replace('</style>', `
 @media (display-mode: standalone){#scroller{padding-top:env(safe-area-inset-top,0px)}}
 </style>`);
 // 방문자 집계(GoatCounter): 코드가 정해지면 아래에 적는다. 개인정보·쿠키를 쓰지 않는 집계 서비스.
-const GOATCOUNTER = '';
+const GOATCOUNTER = 'daehwi123123';
 if (GOATCOUNTER) html = html.replace('</body>', `<script data-goatcounter="https://${GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>`);
 html = html.replace('</body>', `<script>
