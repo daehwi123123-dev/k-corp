@@ -12,7 +12,19 @@ html = html.replace(
   /<meta name="viewport"[^>]*>/,
   `<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#2563eb">
-<meta name="description" content="랜덤으로 주어진 한국 회사를 스타트업에서 재벌까지 키우는 경영 시뮬레이션">
+<meta name="description" content="한국·미국·일본·중국·독일·인도 중 랜덤으로 주어진 회사를 동네 스타트업에서 100조 원 그룹까지 키우는 무료 경영 시뮬레이션">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="재벌까지">
+<meta property="og:title" content="재벌까지 — 동네 스타트업에서 100조 원 그룹까지">
+<meta property="og:description" content="6개국 · 7개 업종 · 100가지 넘는 돌발 이벤트. 설치 없이 바로 플레이하는 무료 경영 시뮬레이션">
+<meta property="og:url" content="https://daehwi123123-dev.github.io/k-corp/">
+<meta property="og:image" content="https://daehwi123123-dev.github.io/k-corp/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="재벌까지 — 동네 스타트업에서 100조 원 그룹까지">
+<meta name="twitter:image" content="https://daehwi123123-dev.github.io/k-corp/og.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -24,6 +36,10 @@ html = html.replace(
 html = html.replace('</style>', `
 @media (display-mode: standalone){#scroller{padding-top:env(safe-area-inset-top,0px)}}
 </style>`);
+// 방문자 집계(GoatCounter): 코드가 정해지면 아래에 적는다. 개인정보·쿠키를 쓰지 않는 집계 서비스.
+const GOATCOUNTER = '';
+if (GOATCOUNTER) html = html.replace('</body>', `<script data-goatcounter="https://${GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>`);
 html = html.replace('</body>', `<script>
 if('serviceWorker' in navigator&&location.protocol!=='file:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
@@ -34,7 +50,7 @@ fs.writeFileSync(`${OUT}/index.html`, html);
 fs.writeFileSync(`${OUT}/manifest.webmanifest`, JSON.stringify({
   name: '재벌까지',
   short_name: '재벌까지',
-  description: '랜덤으로 주어진 한국 회사를 스타트업에서 재벌까지 키우는 경영 시뮬레이션',
+  description: '한국·미국·일본·중국·독일·인도 중 랜덤으로 주어진 회사를 동네 스타트업에서 100조 원 그룹까지 키우는 무료 경영 시뮬레이션',
   lang: 'ko',
   start_url: './',
   scope: './',
@@ -98,6 +114,7 @@ function png(size, pad, rounded) {
   const ihdr = Buffer.alloc(13); ihdr.writeUInt32BE(size, 0); ihdr.writeUInt32BE(size, 4); ihdr[8] = 8; ihdr[9] = 6;
   return Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), chunk('IHDR', ihdr), chunk('IDAT', zlib.deflateSync(raw)), chunk('IEND', Buffer.alloc(0))]);
 }
+if (fs.existsSync('og.png')) fs.copyFileSync('og.png', `${OUT}/og.png`);
 fs.writeFileSync(`${OUT}/icon-192.png`, png(192, 0.1, true));
 fs.writeFileSync(`${OUT}/icon-512.png`, png(512, 0.1, true));
 fs.writeFileSync(`${OUT}/icon-maskable-512.png`, png(512, 0.2, false));
