@@ -939,13 +939,15 @@ function rollEvent(p=.5){
   let r=Math.random()*pool.reduce((a,e)=>a+wt(e),0),ev=pool[0];
   for(const e of pool){r-=wt(e);if(r<=0){ev=e;break}}
   s.lastEvent=ev.id;
+  // 실제 통계 팝업은 처음 볼 때만. 다시 보려면 ⚙️ 설정 → 통계 모음
+  const newFact=FACTS[ev.id]&&!seenFacts().includes(ev.id)?FACTS[ev.id]:null;
   const snap={cash:s.cash,brand:s.brand,morale:s.morale,tech:s.tech,tm:s.tempMult,pw:s.products.reduce((a,p)=>a+p.power,0)};
   const after=(m,quiet)=>{
     clampStats();calcValuation();log(`${ev.t} — ${m}`,'event');
     const pw=s.products.reduce((a,p)=>a+p.power,0);
     const score=(s.brand-snap.brand)+(s.morale-snap.morale)+(s.tech-snap.tech)*2+(s.cash-snap.cash)/Math.max(1000,Math.abs(snap.cash)||1)*20+(s.tempMult-snap.tm)*30+(snap.pw?(pw-snap.pw)/snap.pw*30:0);
     const kind=score>0.5?'good':score<-0.5?'bad':'';
-    const fact=FACTS[ev.id];
+    const fact=newFact;
     if(fact)markFact(ev.id);
     pendingFx.push(()=>{
       if(fact&&!(s.over&&!s.won))showFact(ev.t,`<span class="verdict ${kind==='bad'?'bad':'good'}">${['kwave','gov','kbeauty','kfood','fx'].includes(ev.id)?'🎉 좋은 소식이에요':ev.id==='clinic'?(kind==='bad'?'🩹 이번엔 실패했지만 다시 도전할 수 있어요':'🎉 임상 성공!'):['biodeal','panho','workweek','aiwave'].includes(ev.id)?(kind==='bad'?'🩹 아쉬운 결과예요':'✅ 좋은 선택이었어요'):kind==='bad'?'🩹 상처는 남았지만 살아남았어요':'🛡️ 위기를 이겨냈어요'}</span><p style="margin:4px 0 0">${esc(m)}</p>${factCard(fact)}`);
@@ -956,7 +958,7 @@ function rollEvent(p=.5){
   if(ev.ch){
     modal(ev.t,`<div class="news-tag">속보</div><p>${esc(ev.text())}</p>`,ev.ch.map(c=>({l:typeof c.l==='function'?c.l():c.l,f:()=>after(c.r())})),'event');
   }else{const m=ev.fx();after(m,true);
-    if((!s.over||s.won)&&!FACTS[ev.id])modal(ev.t,`<div class="news-tag">속보</div><p>${esc(m)}</p>`,[{l:'확인',f:()=>{}}],'event')}
+    if((!s.over||s.won)&&!newFact)modal(ev.t,`<div class="news-tag">속보</div><p>${esc(m)}</p>`,[{l:'확인',f:()=>{}}],'event')}
 }
 
 // ===== 경쟁사 =====
