@@ -307,6 +307,16 @@ body{display:flex;flex-direction:column;overflow:hidden}
 .tab-in{animation:tabIn .25s ease}
 @keyframes tabIn{from{opacity:0;transform:translateY(6px)}}
 @media (prefers-reduced-motion: reduce){.tab-in{animation:none}}
+
+/* ===== 설정 ===== */
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--chip);padding:4px;border-radius:12px}
+.seg button{border:0;background:none;padding:9px 4px;border-radius:9px;font:inherit;font-size:13px;color:var(--muted);cursor:pointer}
+.seg button.on{background:var(--card);color:var(--text);font-weight:800;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.set-row{margin:0 0 16px}
+.set-row>.lbl{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px;display:flex;justify-content:space-between}
+.vol{display:flex;align-items:center;gap:10px;margin-top:10px}
+.vol input{flex:1;accent-color:var(--accent)}
+.hb{font-size:12px;padding:4px 9px}
 </style>
 </head>
 <body>
@@ -1462,7 +1472,7 @@ function render(){
   <header class="top">
     <div><div class="co-name">${I.icon} ${esc(s.name)}<span class="badge">${st.n}</span>${s.ipo?'<span class="badge">상장사</span>':''}</div>
       <div class="co-sub">${I.name} · 대표 ${esc(s.ceo)} (${TRAITS[s.traitIdx].n}) · ${s.city} · ${REACH[s.reach].n} 시장</div></div>
-    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월 ${s.week||1}주</div><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:4px"><button class="btn" id="helpbtn" style="font-size:12px;padding:4px 10px" aria-label="게임 방법">❓</button><button class="btn" id="fbbtn" style="font-size:12px;padding:4px 10px" aria-label="의견 보내기">💬</button><button class="btn" id="savebtn" style="font-size:12px;padding:4px 10px">${CLOUD.ready?'☁️':'💾'} 저장</button><button class="btn" id="reset" style="font-size:12px;padding:4px 10px">새 게임</button></div></div>
+    <div style="text-align:right"><div class="date">${s.year}년 ${s.month}월 ${s.week||1}주</div><div style="display:flex;gap:5px;justify-content:flex-end;margin-top:4px"><button class="btn hb" id="helpbtn" aria-label="게임 방법">❓</button><button class="btn hb" id="fbbtn" aria-label="의견 보내기">💬</button><button class="btn hb bgm-ic" id="bgmbtn" aria-label="배경음악 켜기/끄기">${SET.bgm?'🔊':'🔇'}</button><button class="btn hb" id="setbtn" aria-label="설정">⚙️</button><button class="btn hb" id="savebtn">${CLOUD.ready?'☁️':'💾'} 저장</button></div></div>
   </header>`;
   document.getElementById('sum').innerHTML=`<div class="card statcard sumbar" id="sumbar" role="button" tabindex="0" aria-label="회사 현황 자세히 보기"><div class="sb-row">
           ${stat('valuation','기업가치',s.valuation,'won')}
@@ -1523,7 +1533,8 @@ function render(){
   document.getElementById('savebtn').onclick=saveMenu;
   document.getElementById('helpbtn').onclick=()=>howTo();
   document.getElementById('fbbtn').onclick=feedback;
-  document.getElementById('reset').onclick=()=>modal('새 게임','<p>지금 회사를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p>',[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]);
+  document.getElementById('bgmbtn').onclick=()=>setBgm(!SET.bgm);
+  document.getElementById('setbtn').onclick=settings;
   updateScene();
   animateAfterRender();
   if(tab==='lg'||lastLogSeen<0)lastLogSeen=logSeq;freshReport=false;
@@ -1587,9 +1598,9 @@ function showTitle(){
     <div class="t-btns">${cont}
       <button class="btn ${cont?'':'primary'}" id="t-new">🎲 새 회사 뽑기</button>
       <button class="btn" id="t-how">📖 게임 방법</button>
-      <button class="btn" id="t-fb">💬 의견 보내기</button></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn" id="t-fb">💬 의견 보내기</button><button class="btn" id="t-set">⚙️ 설정</button></div></div>
     <div class="t-feat"><div><b>🎲</b>업종 7개 ×<br>시작 4가지</div><div><b>⚔️</b>경쟁사·M&amp;A<br>경영권 분쟁</div><div><b>🚨</b>64가지<br>돌발 이벤트</div></div>
-    <div class="t-foot">진행 상황은 자동 저장돼요</div></div>`;
+    <div class="t-foot">진행 상황은 자동 저장돼요 · 🎵 화면을 누르면 배경음악이 시작돼요</div></div>`;
   document.body.appendChild(el);
   el.querySelector('#t-cont')?.addEventListener('click',()=>{hideTitle();clock.run=true;clock.acc=0;render()});
   el.querySelector('#t-new').onclick=()=>{
@@ -1597,6 +1608,7 @@ function showTitle(){
     seenHelp()?go():howTo(go)};
   el.querySelector('#t-how').onclick=()=>howTo();
   el.querySelector('#t-fb').onclick=feedback;
+  el.querySelector('#t-set').onclick=settings;
 }
 function hideTitle(){const el=document.getElementById('title');if(!el)return;
   el.removeAttribute('id');if(RM)return el.remove();el.classList.add('t-out');setTimeout(()=>el.remove(),350)}
@@ -1631,7 +1643,7 @@ const HOW=[
     <li><b>②</b><span><b>생산능력 / 수요</b>가 100%를 넘으면 채용, 사무실이 꽉 차면 사옥 이전.</span></li>
     <li><b>③</b><span>현금이 바닥나기 전에 대출·투자. 하지만 지분은 아껴 쓰세요.</span></li>
     <li><b>④</b><span>숫자 아래 <b>▲▼ 전월 대비</b>로 회사가 좋아지는지 확인하세요.</span></li>
-    <li><b>⑤</b><span>오른쪽 위 <b>❓</b>로 이 설명을 다시 보고, <b>💬</b>로 의견을 보낼 수 있어요.</span></li></ul>`},
+    <li><b>⑤</b><span>오른쪽 위 <b>❓</b> 설명 · <b>💬</b> 의견 · <b>🔊</b> 음악 끄기 · <b>⚙️</b> 화면 밝기·새 게임.</span></li></ul>`},
 ];
 function howTo(done){
   let i=0;
@@ -1728,6 +1740,98 @@ function statPopup(){
   <p class="muted" style="font-size:11px;margin:8px 0 0">팝업이 열려 있는 동안 시간이 멈춰요.</p>`,[{l:'닫기',f:()=>{}}],'wide');
   m.querySelectorAll('.bar .fill').forEach(el=>el.style.width=el.dataset.v+'%');
   drawChart(true);
+}
+
+// ===== 설정: 화면 테마 · 배경음악 =====
+const SET={theme:'auto',bgm:true,vol:.5};
+try{Object.assign(SET,JSON.parse(localStorage.getItem('kcorp-set')||'{}'))}catch(e){}
+function saveSet(){try{localStorage.setItem('kcorp-set',JSON.stringify(SET))}catch(e){}}
+function applyTheme(){
+  const r=document.documentElement;
+  if(SET.theme==='auto')r.removeAttribute('data-theme');else r.setAttribute('data-theme',SET.theme);
+  const dark=SET.theme==='dark'||SET.theme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark?'#0f1115':'#2563eb');
+  if(s&&!document.getElementById('title'))render();
+}
+applyTheme();
+matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>SET.theme==='auto'&&applyTheme());
+
+// 배경음악: 파일 없이 Web Audio로 직접 연주하는 잔잔한 루프. 적자일 땐 단조로 바뀐다.
+const BGM={ctx:null,master:null,timer:0,next:0,step:0,bar:0,noise:null};
+const midi=n=>440*Math.pow(2,(n-69)/12);
+const PROG={
+  up:[{b:36,c:[52,55,59,64]},{b:33,c:[52,55,57,60]},{b:29,c:[52,57,60,64]},{b:31,c:[50,55,59,62]}],
+  down:[{b:33,c:[52,57,60,64]},{b:29,c:[53,57,60,65]},{b:26,c:[53,57,62,65]},{b:28,c:[52,56,59,64]}],
+};
+function bgmInit(){
+  if(BGM.ctx)return true;
+  const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;
+  try{BGM.ctx=new AC()}catch(e){return false}
+  const c=BGM.ctx,comp=c.createDynamicsCompressor(),lp=c.createBiquadFilter();
+  lp.type='lowpass';lp.frequency.value=5200;
+  BGM.master=c.createGain();BGM.master.gain.value=0;
+  BGM.master.connect(lp);lp.connect(comp);comp.connect(c.destination);
+  const len=c.sampleRate*.2,buf=c.createBuffer(1,len,c.sampleRate),d=buf.getChannelData(0);
+  for(let i=0;i<len;i++)d[i]=Math.random()*2-1;BGM.noise=buf;
+  return true;
+}
+function tone(type,f,t0,dur,vol,att=.01,cut){
+  const c=BGM.ctx,o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.value=f;
+  let out=o;if(cut){const fl=c.createBiquadFilter();fl.type='lowpass';fl.frequency.value=cut;o.connect(fl);out=fl}
+  out.connect(g);g.connect(BGM.master);
+  g.gain.setValueAtTime(0,t0);g.gain.linearRampToValueAtTime(vol,t0+att);g.gain.exponentialRampToValueAtTime(.0001,t0+dur);
+  o.start(t0);o.stop(t0+dur+.05);
+}
+function bgmStep(t0){
+  const c=BGM.ctx,st=BGM.step%16,mood=s&&(s.profit<0||s.cash<0)?'down':'up';
+  const ch=PROG[mood][BGM.bar%4],sp=60/84/4;
+  if(st===0){ // 패드 화음
+    ch.c.forEach((n,i)=>{tone('triangle',midi(n)*(i%2?1.003:.997),t0,sp*16*1.1,.028,.5,1400)});
+    tone('sine',midi(ch.b),t0,sp*7,.16,.02);
+  }
+  if(st===8)tone('sine',midi(ch.b+(BGM.bar%2?7:0)),t0,sp*6,.13,.02);
+  if(st===14&&BGM.bar%2)tone('sine',midi(ch.b+12),t0,sp*2,.08,.01);
+  // 아르페지오: 마디마다 조금씩 다른 패턴
+  const pat=[[0,3,6,10,12],[0,4,6,8,11,14],[2,6,10,13],[0,3,7,10,12,15]][BGM.bar%4];
+  if(pat.includes(st)){const n=ch.c[(st+BGM.bar)%4]+12+(st>=12?12:0);tone('triangle',midi(n),t0,.35,.035,.005,2600)}
+  if(st%4===2){ // 살짝 하이햇
+    const n=c.createBufferSource(),hp=c.createBiquadFilter(),g=c.createGain();n.buffer=BGM.noise;hp.type='highpass';hp.frequency.value=7000;
+    n.connect(hp);hp.connect(g);g.connect(BGM.master);g.gain.setValueAtTime(.025,t0);g.gain.exponentialRampToValueAtTime(.0001,t0+.05);n.start(t0);n.stop(t0+.06);
+  }
+  if(st===0||st===8){const o=c.createOscillator(),g=c.createGain();o.frequency.setValueAtTime(110,t0);o.frequency.exponentialRampToValueAtTime(45,t0+.12);
+    o.connect(g);g.connect(BGM.master);g.gain.setValueAtTime(.22,t0);g.gain.exponentialRampToValueAtTime(.0001,t0+.18);o.start(t0);o.stop(t0+.2)}
+  BGM.step++;if(BGM.step%16===0)BGM.bar++;
+}
+function bgmSchedule(){
+  const c=BGM.ctx,sp=60/84/4;
+  while(BGM.next<c.currentTime+.25){bgmStep(BGM.next);BGM.next+=sp}
+}
+function bgmStart(){
+  if(!SET.bgm||!bgmInit())return;
+  const c=BGM.ctx;c.resume?.();
+  if(!BGM.timer){BGM.next=c.currentTime+.08;BGM.timer=setInterval(bgmSchedule,60)}
+  BGM.master.gain.cancelScheduledValues(c.currentTime);
+  BGM.master.gain.setTargetAtTime(SET.vol*.55,c.currentTime,.4);
+}
+function bgmStop(){
+  if(!BGM.ctx||!BGM.timer)return;
+  const c=BGM.ctx;BGM.master.gain.setTargetAtTime(0,c.currentTime,.15);
+  const tm=BGM.timer;BGM.timer=0;setTimeout(()=>{clearInterval(tm);if(!BGM.timer)c.suspend?.()},600);
+}
+function setBgm(on){SET.bgm=on;saveSet();on?bgmStart():bgmStop();document.querySelectorAll('.bgm-ic').forEach(b=>b.textContent=on?'🔊':'🔇')}
+document.addEventListener('pointerdown',()=>{if(SET.bgm&&!BGM.timer)bgmStart()},{capture:true});
+document.addEventListener('visibilitychange',()=>{if(!BGM.ctx)return;if(document.hidden)BGM.ctx.suspend?.();else if(SET.bgm&&BGM.timer)BGM.ctx.resume?.()});
+function settings(){
+  const m=modal('⚙️ 설정',`
+    <div class="set-row"><div class="lbl">🎨 화면</div><div class="seg" id="set-theme">${[['auto','🌓 자동'],['light','☀️ 밝게'],['dark','🌙 어둡게']].map(([k,n])=>`<button data-k="${k}" class="${SET.theme===k?'on':''}">${n}</button>`).join('')}</div></div>
+    <div class="set-row"><div class="lbl">🎵 배경음악</div><div class="seg" id="set-bgm" style="grid-template-columns:repeat(2,1fr)"><button data-k="1" class="${SET.bgm?'on':''}">🔊 켜기</button><button data-k="0" class="${SET.bgm?'':'on'}">🔇 끄기</button></div>
+      <div class="vol"><span>🔈</span><input type="range" min="0" max="100" value="${Math.round(SET.vol*100)}" aria-label="음량"><span>🔊</span></div></div>
+    ${s&&!document.getElementById('title')?`<div class="set-row"><div class="lbl">🏢 게임</div><button class="btn" id="set-new" style="width:100%">🎲 새 회사로 다시 시작</button></div>`:''}
+    <p class="muted" style="font-size:11px;margin:0">배경음악은 회사가 적자일 때 분위기가 바뀌어요.</p>`,[{l:'닫기',f:()=>{}}]);
+  m.querySelectorAll('#set-theme button').forEach(b=>b.onclick=()=>{SET.theme=b.dataset.k;saveSet();m.querySelectorAll('#set-theme button').forEach(x=>x.classList.toggle('on',x===b));applyTheme()});
+  m.querySelectorAll('#set-bgm button').forEach(b=>b.onclick=()=>{setBgm(b.dataset.k==='1');m.querySelectorAll('#set-bgm button').forEach(x=>x.classList.toggle('on',x===b))});
+  const vr=m.querySelector('.vol input');vr.oninput=()=>{SET.vol=vr.value/100;saveSet();if(BGM.ctx&&BGM.timer)BGM.master.gain.setTargetAtTime(SET.vol*.55,BGM.ctx.currentTime,.05)};
+  m.querySelector('#set-new')?.addEventListener('click',()=>modal('새 게임','<p>지금 회사를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p>',[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]));
 }
 
 // ===== 시작 =====
