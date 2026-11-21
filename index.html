@@ -317,6 +317,17 @@ body{display:flex;flex-direction:column;overflow:hidden}
 .vol{display:flex;align-items:center;gap:10px;margin-top:10px}
 .vol input{flex:1;accent-color:var(--accent)}
 .hb{font-size:12px;padding:4px 9px}
+
+/* ===== 실제 통계 카드 ===== */
+.fact{margin-top:12px;background:var(--accent-soft);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.55}
+.fact .fh{font-weight:800;color:var(--accent);margin-bottom:4px;font-size:12px;letter-spacing:.02em}
+.fact .big{font-size:22px;font-weight:900;color:var(--accent);display:block;margin:2px 0}
+.fact .src{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+.fact-list{list-style:none;padding:0;margin:0}.fact-list li{padding:10px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.fact-list li.lock{color:var(--muted)}
+.verdict{display:inline-block;font-size:12px;font-weight:800;padding:3px 10px;border-radius:99px;margin-bottom:6px}
+.verdict.good{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good)}
+.verdict.bad{background:color-mix(in srgb,var(--bad) 15%,transparent);color:var(--bad)}
 </style>
 </head>
 <body>
@@ -706,7 +717,9 @@ function nextMonth(instant){
   const ns=stageIdx();
   if(ns>prevStage){log(`🎉 ${STAGES[ns].n}(으)로 성장했습니다! 매달 행동 ${maxAP()}회`,'good');
     pendingFx.push(()=>celebrate(`<b>🎉 ${STAGES[ns].n} 승격!</b><br>이제 매달 행동 ${maxAP()}회`,ns>=4))}
-  if(s.valuation>=1e8&&!s.flags.unicorn){s.flags.unicorn=1;log('🦄 기업가치 1조 돌파! 유니콘 기업이 되었습니다.','good')}
+  if(s.valuation>=1e8&&!s.flags.unicorn){s.flags.unicorn=1;log('🦄 기업가치 1조 돌파! 유니콘 기업이 되었습니다.','good');milestone('unicorn','🦄 유니콘 등극!')}
+  if(s.startId==='startup'||s.startId==='venture'){if(s.t===12)milestone('y1','🎂 창업 1주년! 아직 살아있다');if(s.t===60)milestone('y5','🏅 5년 생존!');}
+  if(s.t===120)milestone('y10','🏛️ 10년 기업');
   if(s.cash<0)pendingFx.push(shake);
   else if(s.profit>0&&!s.flags.firstProfit){s.flags.firstProfit=1;pendingFx.push(()=>celebrate('<b>📈 첫 흑자 달성!</b>'))}
   s.history.push(s.valuation);if(s.history.length>240)s.history.shift();
@@ -888,13 +901,18 @@ function rollEvent(p=.5){
     const pw=s.products.reduce((a,p)=>a+p.power,0);
     const score=(s.brand-snap.brand)+(s.morale-snap.morale)+(s.tech-snap.tech)*2+(s.cash-snap.cash)/Math.max(1000,Math.abs(snap.cash)||1)*20+(s.tempMult-snap.tm)*30+(snap.pw?(pw-snap.pw)/snap.pw*30:0);
     const kind=score>0.5?'good':score<-0.5?'bad':'';
-    pendingFx.push(()=>{if(!quiet)toast(`<b>${esc(ev.t)}</b><br>${esc(m)}`,kind);if(kind==='bad')shake();if(kind==='good')confetti(30)});
+    const fact=FACTS[ev.id];
+    if(fact)markFact(ev.id);
+    pendingFx.push(()=>{
+      if(fact&&!(s.over&&!s.won))showFact(ev.t,`<span class="verdict ${kind==='bad'?'bad':'good'}">${kind==='bad'?'🩹 상처는 남았지만 살아남았어요':'🛡️ 위기를 이겨냈어요'}</span><p style="margin:4px 0 0">${esc(m)}</p>${factCard(fact)}`);
+      else if(!quiet)toast(`<b>${esc(ev.t)}</b><br>${esc(m)}`,kind);
+      if(kind==='bad')shake();if(kind==='good')confetti(30)});
     checkEndings();save();render();
   };
   if(ev.ch){
     modal(ev.t,`<div class="news-tag">속보</div><p>${esc(ev.text())}</p>`,ev.ch.map(c=>({l:typeof c.l==='function'?c.l():c.l,f:()=>after(c.r())})),'event');
   }else{const m=ev.fx();after(m,true);
-    if(!s.over||s.won)modal(ev.t,`<div class="news-tag">속보</div><p>${esc(m)}</p>`,[{l:'확인',f:()=>{}}],'event')}
+    if((!s.over||s.won)&&!FACTS[ev.id])modal(ev.t,`<div class="news-tag">속보</div><p>${esc(m)}</p>`,[{l:'확인',f:()=>{}}],'event')}
 }
 
 // ===== 경쟁사 =====
@@ -1088,7 +1106,10 @@ function ending(type){
     sold:['🤝 엑시트 성공',`회사를 매각하고 ${won(s.exitValue||0)}을 손에 쥐었습니다. 다음 창업을 준비해 볼까요?`],
     win:['👑 재벌 등극!',`기업가치 100조 원 돌파! ${s.name}은(는) 대한민국을 대표하는 그룹이 되었습니다.`],
   }[type];
-  const body=`<p>${E[1]}</p><div class="kv">
+  const surv=m=>m<12?100-36.1*m/12:m<=60?63.9-(27.4*(m-12)/48):36.5;
+  const ctx=type==='bankrupt'||type==='fired'||type==='takeover'?(s.startId==='startup'||s.startId==='venture'?`<p class="muted" style="font-size:13px;margin:8px 0 0">${years>=60?'5년 넘게 버텼어요. 한국 신생기업 중 5년을 넘기는 곳은 36.5%뿐이에요.':`${yt} 버텼어요. 한국 신생기업 중 이만큼 버티는 곳은 약 ${Math.round(surv(years))}%예요.`}</p>`:'')+(type==='bankrupt'?factCard(MILES.dead):''):'';
+  if(type==='bankrupt')markFact('dead');
+  const body=`<p>${E[1]}</p>${ctx}<div class="kv">
     <span class="muted">경영 기간</span><b>${yt}</b>
     <span class="muted">최고 기업가치</span><b>${won(s.maxVal)}</b>
     <span class="muted">최종 직원 수</span><b>${s.employees.toLocaleString()}명</b>
@@ -1112,7 +1133,7 @@ function setModalBtns(btns){
   const root=document.getElementById('modal-root'),box=root.querySelector('.btns');if(!box)return;
   box.innerHTML='';
   btns.forEach((b,i)=>{const el=document.createElement('button');el.className='btn'+(i===0?' primary':'');el.textContent=b.l;
-    el.onclick=()=>{root.innerHTML='';b.f()};box.appendChild(el)});
+    el.onclick=()=>{root.innerHTML='';b.f();if(!root.firstChild&&factQ.length)factQ.shift()()};box.appendChild(el)});
 }
 
 // ===== 연출(애니메이션) =====
@@ -1826,13 +1847,51 @@ function settings(){
     <div class="set-row"><div class="lbl">🎨 화면</div><div class="seg" id="set-theme">${[['auto','🌓 자동'],['light','☀️ 밝게'],['dark','🌙 어둡게']].map(([k,n])=>`<button data-o="${k}" class="${SET.theme===k?'on':''}">${n}</button>`).join('')}</div></div>
     <div class="set-row"><div class="lbl">🎵 배경음악</div><div class="seg" id="set-bgm" style="grid-template-columns:repeat(2,1fr)"><button data-o="1" class="${SET.bgm?'on':''}">🔊 켜기</button><button data-o="0" class="${SET.bgm?'':'on'}">🔇 끄기</button></div>
       <div class="vol"><span>🔈</span><input type="range" min="0" max="100" value="${Math.round(SET.vol*100)}" aria-label="음량"><span>🔊</span></div></div>
+    <div class="set-row"><div class="lbl">📚 기록</div><button class="btn" id="set-facts" style="width:100%">📊 실제 통계 모음 (${seenFacts().length}/${Object.keys(FACTS).length+Object.keys(MILES).length})</button></div>
     ${s&&!document.getElementById('title')?`<div class="set-row"><div class="lbl">🏢 게임</div><button class="btn" id="set-new" style="width:100%">🎲 새 회사로 다시 시작</button></div>`:''}
     <p class="muted" style="font-size:11px;margin:0">배경음악은 회사가 적자일 때 분위기가 바뀌어요.</p>`,[{l:'닫기',f:()=>{}}]);
   m.querySelectorAll('#set-theme button').forEach(b=>b.onclick=()=>{SET.theme=b.dataset.o;saveSet();m.querySelectorAll('#set-theme button').forEach(x=>x.classList.toggle('on',x===b));applyTheme()});
   m.querySelectorAll('#set-bgm button').forEach(b=>b.onclick=()=>{setBgm(b.dataset.o==='1');m.querySelectorAll('#set-bgm button').forEach(x=>x.classList.toggle('on',x===b))});
   const vr=m.querySelector('.vol input');vr.oninput=()=>{SET.vol=vr.value/100;saveSet();if(BGM.ctx&&BGM.timer)BGM.master.gain.setTargetAtTime(SET.vol*.55,BGM.ctx.currentTime,.05)};
+  m.querySelector('#set-facts').onclick=factLibrary;
   m.querySelector('#set-new')?.addEventListener('click',()=>modal('새 게임','<p>지금 회사를 버리고 새로 창업할까요? 진행 상황은 사라집니다.</p>',[{l:'새로 창업하기',f:()=>{clearSave();startScreen()}},{l:'취소',f:()=>{}}]));
 }
+
+// ===== 실제 세계 통계: 위기를 넘기면 보여 준다 =====
+const FACTS={
+  ransom:{n:'랜섬웨어',big:'+50%',t:'2025년 전 세계 랜섬웨어 피해 신고는 1년 새 50% 늘었지만, 해커에게 간 돈은 약 8억 2천만 달러로 오히려 8% 줄었어요. 몸값을 내지 않고 버티는 기업이 늘었다는 뜻이에요. 기업 3,400곳 조사에서는 49%가 결국 몸값을 냈고, 백업으로 복구한 곳은 54%였어요.',src:'Chainalysis 2026 Crypto Crime Report · Sophos State of Ransomware 2025'},
+  deepfake:{n:'딥페이크 사기',big:'340억 원',t:'2024년 홍콩에서 글로벌 설계회사 직원이 임원들로 위장한 딥페이크 화상회의에 속아 약 2,500만 달러(약 340억 원)를 송금했어요. 2025년 미국 FBI에는 AI를 이용한 사기 신고가 2만 2천 건 넘게 접수됐고, 피해액은 8억 9천만 달러를 넘었어요.',src:'Fortune(2024) · FBI Internet Crime Report 2025'},
+  spy:{n:'산업 스파이',big:'107건 · 약 23조 원',t:'국정원이 적발한 산업기술 해외 유출은 2021~2025년 107건(2025년 19건)이에요. 2020~2024년 기술 유출 피해액은 약 23조 원으로 추산돼요. 들킨 사건만 센 숫자라 실제는 훨씬 많을 거예요.',src:'산업통상부 「산업기술 해외유출 현황」 · 국정원 추산(언론 보도)'},
+  buysecret:{n:'기밀 거래',big:'179건 검거',t:'2025년 경찰은 기술 유출 범죄 179건, 378명을 검거했어요. 1년 전보다 45.5% 늘었고, 해외로 빼돌린 사건의 절반 이상(54.5%)은 중국으로 향했어요.',src:'경찰청 2025 기술유출 범죄 단속 결과(보안뉴스)'},
+  steal:{n:'기술 탈취',big:'평균 25억 원',t:'중소기업 기술 침해는 1년에 약 474건, 한 건당 평균 피해액은 25억 3천만 원이에요(2025 실태조사). 피해 기업의 27.8%는 아무 대응도 못 했고, 기술탈취 소송 승소율은 32.9%에 그쳐요.',src:'중소벤처기업부 「기술보호 실태조사」(언론 보도)'},
+  leak:{n:'개인정보 유출',big:'447건',t:'2025년 국내 개인정보 유출 신고는 447건으로 1년 새 45.6% 늘었어요. 원인의 62%가 해킹이었고, 과징금만 1,677억 원이 부과됐어요. 2026년 9월부터는 매출의 최대 10%까지 과징금을 물릴 수 있어요.',src:'개인정보보호위원회·KISA 「2025 개인정보 유출 신고 동향」'},
+  embezzle:{n:'횡령',big:'매출의 5%',t:'기업은 해마다 매출의 약 5%를 직원·임원의 부정행위로 잃는 것으로 추정돼요. 부정 사건은 들키기까지 평균 12개월이 걸리고, 가장 많이 발견되는 경로는 내부 제보(약 43%)예요.',src:'ACFE 「Occupational Fraud 2024: A Report to the Nations」'},
+  whistle:{n:'내부고발',big:'43%',t:'기업 내부 부정의 약 43%는 감사가 아니라 제보로 드러나요. 제보의 절반은 직원에게서, 약 3분의 1은 거래처와 고객에게서 와요. 제보 창구가 있는 회사가 피해를 더 빨리 막아요.',src:'ACFE 「Occupational Fraud 2024: A Report to the Nations」'},
+  accident:{n:'중대재해',big:'872명',t:'2025년 한국에서 일하다 사고로 숨진 노동자는 872명이에요(유족급여 승인 기준). 1년 전보다 45명 늘었고, 41.4%가 건설업에서 나왔어요.',src:'고용노동부 「2025년 유족급여 승인 기준 사고사망 현황」'},
+  patenttroll:{n:'특허괴물',big:'55.4%',t:'2025년 미국 법원에 제기된 특허 소송의 55.4%를 제품은 만들지 않고 특허로 소송만 하는 회사(NPE, 특허괴물)가 냈어요. 첨단기술 분야에서는 그 비율이 90%를 넘어요.',src:'Unified Patents 「Patent Dispute Report: 2025 in Review」'},
+  food:{n:'식중독',big:'9,780명',t:'2025년 한국의 식중독은 319건, 환자 9,780명이었어요. 1년 새 환자가 28% 늘었고, 사고의 60%가 음식점에서 났어요. 원인균 1위는 살모넬라, 가장 위험한 달은 9월이에요.',src:'식품의약품안전처 「2025년 식중독 발생 현황」'},
+  union:{n:'노동조합',big:'13.0%',t:'2024년 말 한국의 노동조합 조직률은 13.0%, 조합원은 277만 7천 명이에요. 노동자 8명 중 1명꼴로 노조에 가입해 있어요.',src:'고용노동부 「2024년 전국 노동조합 조직현황」'},
+};
+const MILES={
+  y1:{n:'창업 1년 생존',big:'63.9%',t:'한국 신생기업의 1년 생존율은 63.9%예요. 3곳 중 1곳 이상이 첫해를 넘기지 못하고 문을 닫아요. 당신의 회사는 살아남은 쪽이에요.',src:'국가데이터처 「2025년 기업생멸행정통계」'},
+  y5:{n:'창업 5년 생존',big:'36.5%',t:'한국 신생기업의 5년 생존율은 36.5%예요(역대 최고). 같은 해 문을 연 회사 10곳 중 6곳 이상이 이미 사라졌어요. OECD 평균(약 45%)보다도 낮은, 험한 길이에요.',src:'국가데이터처 「2025년 기업생멸행정통계」'},
+  y10:{n:'10년 생존',big:'34.7%',t:'미국에서 2013년에 문을 연 사업장 중 10년 뒤에도 영업 중인 곳은 34.7%예요. 10년을 버틴 회사는 이미 그 자체로 소수예요.',src:'미국 노동통계국(BLS) The Economics Daily, 2024'},
+  unicorn:{n:'유니콘',big:'약 1%',t:'시드 투자를 받은 스타트업 중 기업가치 10억 달러(약 1조 원)를 넘는 유니콘이 되는 곳은 약 1%예요. 100곳 중 1곳만 오는 자리에 올라섰어요.',src:'CB Insights Venture Funnel · AngelList(2018)'},
+  dead:{n:'스타트업이 망하는 이유',big:'70%',t:'투자받은 스타트업 431곳의 폐업 원인을 분석했더니 70%가 "돈이 떨어져서"였어요. 그 밑에는 시장이 원하지 않는 제품(43%), 나쁜 타이밍(29%), 팔수록 손해 보는 구조(19%)가 있었어요.',src:'CB Insights 스타트업 폐업 분석(2차 인용)'},
+};
+const factQ=[];
+function factCard(f){return `<div class="fact"><div class="fh">📊 실제 세계에서는</div><span class="big">${f.big}</span>${f.t}<span class="src">출처: ${f.src}</span></div>`}
+function seenFacts(){try{return JSON.parse(localStorage.getItem('kcorp-facts')||'[]')}catch(e){return []}}
+function markFact(k){const a=seenFacts();if(!a.includes(k)){a.push(k);try{localStorage.setItem('kcorp-facts',JSON.stringify(a))}catch(e){}}}
+function showFact(title,html){
+  const go=()=>modal(title,html,[{l:'계속하기',f:()=>{}}],'event');
+  if(document.getElementById('modal-root').firstChild)factQ.push(go);else go();
+}
+function factLibrary(){
+  const seen=seenFacts(),all=[...Object.entries(MILES),...Object.entries(FACTS)];
+  modal('📚 실제 통계 모음',`<p class="muted" style="margin:0 0 6px;font-size:13px">위기를 넘기거나 기록을 세우면 하나씩 열려요. (${all.filter(([k])=>seen.includes(k)).length}/${all.length})</p><ul class="fact-list">${all.map(([k,f])=>seen.includes(k)?`<li><b>${f.n}</b> · <b style="color:var(--accent)">${f.big}</b><br>${f.t}<br><span class="muted" style="font-size:11px">출처: ${f.src}</span></li>`:`<li class="lock">🔒 ${f.n}</li>`).join('')}</ul>`,[{l:'닫기',f:()=>{}}]);
+}
+function milestone(k,title){markFact(k);const f=MILES[k];pendingFx.push(()=>showFact(title,`<p style="margin:0">${f.t.split('. ')[0]}.</p>${factCard(f)}`))}
 
 // ===== 시작 =====
 function migrate(st){
