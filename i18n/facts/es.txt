@@ -1,0 +1,306 @@
+0|Ransomware
+1|En 2025 las denuncias de ransomware en el mundo subieron un 50 % en un año, pero el dinero que llegó a los hackers, unos 820 millones de dólares, bajó un 8 %. Cada vez más empresas aguantan sin pagar. En una encuesta a 3.400 empresas, el 49 % acabó pagando y el 54 % se recuperó con copias de seguridad.
+2|Estafa con deepfake
+3|34.000 M ₩
+4|En 2024, en Hong Kong, un empleado de una firma de diseño global cayó en una videollamada deepfake con falsos directivos y transfirió unos 25 millones de dólares (unos 34.000 M ₩). En 2025 el FBI de EE. UU. recibió más de 22.000 denuncias de fraude con IA, con pérdidas de más de 890 millones de dólares.
+5|Espionaje industrial
+6|107 casos · unos 23 billones de ₩
+7|El servicio de inteligencia de Corea detectó 107 casos de fuga de tecnología industrial al extranjero en 2021–2025 (19 en 2025). Las pérdidas por fugas en 2020–2024 se estiman en unos 23 billones de ₩. Y son solo los casos descubiertos.
+8|Ministerio de Comercio e Industria de Corea, «Fugas de tecnología industrial al extranjero» · estimación del NIS (prensa)
+9|Venta de secretos
+10|179 casos detenidos
+11|En 2025 la policía coreana resolvió 179 delitos de fuga tecnológica con 378 detenidos, un 45,5 % más que el año anterior. Más de la mitad (54,5 %) de los casos de contrabando al extranjero iban a China.
+12|Agencia Nacional de Policía de Corea, resultados 2025 contra fugas tecnológicas (Boan News)
+13|Robo de tecnología
+14|2.500 M ₩ de media
+15|Las pymes coreanas sufren unas 474 infracciones tecnológicas al año, con un daño medio de 2.530 M ₩ por caso (encuesta 2025). El 27,8 % de las víctimas no pudo hacer nada, y solo se gana el 32,9 % de los pleitos por robo de tecnología.
+16|Ministerio de Pymes y Startups de Corea, «Encuesta de protección tecnológica» (prensa)
+17|Filtración de datos
+18|447 casos
+19|En 2025 Corea registró 447 filtraciones de datos personales, un 45,6 % más en un año. El 62 % se debió a hackeos y solo en multas se impusieron 167.700 M ₩. Desde septiembre de 2026 las multas pueden llegar al 10 % de los ingresos.
+20|Comisión de Protección de Información Personal de Corea · KISA, «Tendencias de filtraciones 2025»
+21|Desfalco
+22|5 % de los ingresos
+23|Se estima que las empresas pierden cada año un 5 % de sus ingresos por fraudes de empleados y directivos. Un fraude tarda de media 12 meses en descubrirse, y la vía más común es una denuncia interna (un 43 %).
+24|Denuncia interna
+25|Cerca del 43 % del fraude interno sale a la luz por denuncias, no por auditorías. La mitad vienen de empleados y un tercio de proveedores y clientes. Las empresas con canal de denuncias frenan antes las pérdidas.
+26|Accidentes graves
+27|872 personas
+28|En 2025 murieron 872 trabajadores en accidentes laborales en Corea (según pensiones de supervivencia aprobadas), 45 más que el año anterior. El 41,4 % en la construcción.
+29|Ministerio de Empleo y Trabajo de Corea, «Muertes por accidente 2025»
+30|Troles de patentes
+31|En 2025, el 55,4 % de las demandas de patentes en tribunales de EE. UU. las presentaron empresas que no fabrican nada y solo litigan con patentes (NPE o troles de patentes). En alta tecnología la cifra supera el 90 %.
+32|Intoxicación alimentaria
+33|9.780 personas
+34|En 2025 Corea tuvo 319 brotes de intoxicación alimentaria con 9.780 afectados, un 28 % más que el año anterior. El 60 % ocurrió en restaurantes. La bacteria número uno fue la salmonela y el mes más peligroso, septiembre.
+35|Ministerio de Seguridad de Alimentos y Medicamentos de Corea, «Intoxicaciones 2025»
+36|Inspecciones fiscales
+37|4.861 inspecciones
+38|En 2024 la agencia tributaria coreana inspeccionó 4.861 empresas y liquidó 4,18 billones de ₩. Las inspecciones subieron un 22 % desde 2020, y las de empresas con más de 100.000 M ₩ de ingresos, un 67 %.
+39|Agencia Nacional Tributaria de Corea, datos de la auditoría parlamentaria (prensa)
+40|Acoso laboral
+41|3 de cada 10
+42|En una encuesta a 1.000 trabajadores, el 30,5 % dijo haber sufrido acoso laboral recientemente. De ellos, el 57,7 % aguantó o hizo como que no pasaba nada, y el 19,3 % acabó dejando la empresa.
+43|Workplace Gapjil 119, encuesta a trabajadores (2.º trimestre 2026)
+44|Cultura laboral
+45|4 de cada 10 trabajadores (42,1 %) han sufrido o visto a un jefe gritar a un subordinado. Siete años después de la ley contra el acoso, la mitad de las víctimas sigue aguantando sin denunciar.
+46|Workplace Gapjil 119, encuesta (enero 2025)
+47|Salario mínimo
+48|10.320 ₩
+49|El salario mínimo de Corea en 2026 es de 10.320 ₩ la hora, un 2,9 % más. Con 40 horas semanales son 2.156.880 ₩ al mes. Fue la primera vez en 17 años que trabajadores, empresas y miembros públicos lo acordaron por consenso.
+50|Comisión del Salario Mínimo de Corea, decisión 2026 (julio 2025)
+51|Tipo de interés
+52|El Banco de Corea mantuvo el tipo en el 2,50 % todo 2025 y en 2026 lo subió dos veces hasta el 3,00 %. Subir solo 0,25 puntos añade 25 M ₩ al año en intereses por cada 10.000 M ₩ de deuda.
+53|Decisiones de política monetaria del Banco de Corea (2025–2026)
+54|Desastres naturales
+55|1,08 billones de ₩
+56|Los daños por las lluvias torrenciales de julio de 2025 sumaron 1,0848 billones de ₩, los mayores en 19 años, desde 2006. Solo en 2024 los desastres causaron 121 muertos y 910.700 M ₩ en daños materiales.
+57|Ministerio del Interior y Seguridad de Corea (Newsis) · Anuario de desastres
+58|Multas de competencia
+59|194 casos
+60|En 2025 la Comisión de Comercio Justo de Corea impuso unos 340.200 M ₩ en multas en 194 casos, un 56,5 % más casos que el año anterior, con 1.750 M ₩ de media. La mayor parte fueron cárteles.
+61|Comisión de Comercio Justo de Corea, «Anuario estadístico 2025» (prensa)
+62|Retiradas
+63|28 millones de vehículos
+64|En 2025 se retiraron más de 28 millones de vehículos en EE. UU. Un fabricante hizo casi 150 llamadas a revisión en un año, récord histórico. Las empresas que retiran rápido acaban conservando la confianza.
+65|Basado en datos de la NHTSA de EE. UU. (Recall Masters, etc.)
+66|Cajas de botín
+67|2.181 infracciones
+68|En los 18 meses siguientes a que Corea obligara en marzo de 2024 a publicar las probabilidades de las cajas de botín, se pidió a 338 empresas de videojuegos corregir 2.181 infracciones. El 47,4 % eran de empresas chinas.
+69|Comité de Clasificación de Juegos de Corea (enviado al parlamento, prensa)
+70|Ensayos clínicos
+71|La probabilidad de que un fármaco candidato pase de la fase 1 a la aprobación final es del 7,9 %. Lleva 10,5 años de media y el mayor obstáculo es la fase 2 (30,7 % de éxito). Solo uno de cada 13 candidatos llega a ser medicamento.
+72|Gran desastre informático
+73|709 sistemas · 95 días
+74|En septiembre de 2025, un incendio en el centro de datos del gobierno coreano (NIRS) tumbó 709 sistemas públicos. La recuperación total tardó 95 días. Demostró por qué importan la redundancia y las copias de seguridad.
+75|Ministerio del Interior y Seguridad de Corea (30/12/2025)
+76|Ventas en corto
+77|17 meses
+78|Corea prohibió por completo las ventas en corto en noviembre de 2023 y las volvió a permitir el 31 de marzo de 2025: tras 17 meses para las grandes empresas y unos 5 años para el resto. Las multas por ventas en corto al descubierto subieron hasta 6 veces la ganancia ilícita.
+79|Comisión de Servicios Financieros de Corea, nota de prensa (marzo 2025)
+80|Exportación de chips
+81|173.400 M $
+82|Las exportaciones de semiconductores de Corea alcanzaron el récord de 173.400 millones de dólares en 2025, un 22,2 % más. Los chips son casi una cuarta parte de todas las exportaciones (709.700 M $), así que un solo control puede hacer temblar al país.
+83|Ministerio de Comercio e Industria de Corea, «Comercio exterior 2025»
+84|Exportaciones
+85|709.700 M $
+86|Las exportaciones de Corea llegaron a 709.700 millones de dólares en 2025, superando por primera vez los 700.000 millones, con un superávit de 78.000 millones. Un récord de empresas que abrieron mercados pese a regulaciones y aranceles.
+87|Contenidos coreanos
+88|14.000 M $
+89|Las exportaciones de contenidos de Corea marcaron un récord de 14.075 millones de dólares en 2024. En los 11 sectores estudiados se exportó más de lo que se importó, con un superávit de 13.100 millones.
+90|Ministerio de Cultura, Deporte y Turismo de Corea, «Encuesta de la industria de contenidos 2025 (datos 2024)»
+91|Caos logístico
+92|1,6 billones de ₩
+93|A los siete días de la huelga de camioneros de 2022 en Corea, los retrasos en cemento, acero, automoción y refino se estimaron en 1,6 billones de ₩. Si para la logística, paran las fábricas.
+94|Estimación del gobierno coreano (diciembre 2022, prensa)
+95|Represalia diplomática
+96|Cuando China bloqueó los viajes en grupo a Corea en 2017 como represalia por el despliegue del THAAD, los turistas chinos cayeron un 48,3 % ese año. Solo de enero a septiembre, las pérdidas del turismo se estimaron en unos 7,45 billones de ₩.
+97|Organización de Turismo de Corea · Oficina Presupuestaria de la Asamblea Nacional (2017)
+98|Robo tecnológico a subcontratas
+99|1 de 80
+100|En cinco años desde 2022, el Ministerio de Pymes de Corea recibió 80 investigaciones administrativas por infracción tecnológica contra pymes, y solo 1 acabó en recomendación de corrección. Así de difícil es probar el daño.
+101|Ministerio de Pymes y Startups de Corea (MTN, 2026)
+102|Ayudas públicas al emprendimiento
+103|Unos 3,3 billones de ₩
+104|En 2025, los gobiernos central y locales de Corea tenían 429 programas de apoyo a startups con un presupuesto de unos 3,294 billones de ₩. Hubo más programas, pero el presupuesto central bajó respecto al año anterior.
+105|Análisis de la convocatoria unificada de apoyo a startups 2025 (recuento privado, fuente secundaria)
+106|Aranceles de EE. UU.
+107|En 2025 EE. UU. anunció un arancel recíproco del 25 % a las importaciones coreanas y, tras negociar, lo bajó al 15 %. A cambio, Corea prometió invertir 350.000 millones de dólares en EE. UU. Los coches, antes sin arancel, pagan ahora un 15 %.
+108|Acuerdo arancelario Corea–EE. UU. (julio 2025, oficina presidencial y prensa)
+109|IA generativa
+110|En 2025, el 44,5 % de los coreanos dijo haber usado IA generativa, muy por encima del 33,3 % del año anterior, y el 7,9 % paga una suscripción. Los empleados se acostumbran a la IA antes que sus empresas.
+111|Ministerio de Ciencia y TIC de Corea, «Encuesta de uso de internet 2025»
+112|Electricidad industrial
+113|La tarifa eléctrica industrial de Corea pasó de unos 102 ₩/kWh en el primer semestre de 2021 a unos 179 ₩ en el primer semestre de 2025: un 75 % más. En octubre de 2024 la tarifa para grandes empresas subió de golpe un 10,2 %.
+114|KEPCO · Ministerio de Comercio e Industria de Corea (prensa)
+115|Ola de calor
+116|El verano de 2025 fue el más caluroso en Corea desde que hay registros (1973), con una media de 25,7 °C. Seúl tuvo un récord de 46 noches tropicales y 29 de los 4.460 afectados por el calor murieron.
+117|Administración Meteorológica de Corea, «Análisis climático 2025» · vigilancia de la KDCA
+118|Trabajadores extranjeros
+119|130.000 personas
+120|El cupo de trabajadores extranjeros no cualificados (visado E-9) de Corea en 2025 fue de 130.000, un 21 % menos que los 165.000 de 2024, y en 2026 bajó a 80.000.
+121|Ministerio de Empleo y Trabajo de Corea, Comité de Mano de Obra Extranjera (diciembre 2024)
+122|Sociedad superenvejecida
+123|En diciembre de 2024, más del 20 % de la población coreana tenía 65 años o más: una sociedad superenvejecida. Alemania tardó 37 años y Francia 39 en pasar de envejecida a superenvejecida. Corea, solo 7.
+124|Ministerio del Interior y Seguridad de Corea, padrón (24/12/2024)
+125|«Ley del sobre amarillo»
+126|Tras 20 años
+127|La reforma de los artículos 2 y 3 de la Ley Sindical («ley del sobre amarillo»), reclamada por los sindicatos durante más de 20 años, se aprobó en agosto de 2025 y entró en vigor en marzo de 2026. Los trabajadores subcontratados ya pueden negociar directamente con la empresa principal que los controla de hecho.
+128|Pleno de la Asamblea Nacional de Corea (24/8/2025) · Ministerio de Empleo y Trabajo
+129|Arancel de carbono
+130|6 grupos de productos
+131|Desde 2026 la UE aplica su Mecanismo de Ajuste en Frontera por Carbono (CBAM) a seis grupos: acero, aluminio, cemento, fertilizantes, hidrógeno y electricidad. Los certificados se pagan desde 2027, y la carga para la siderurgia coreana se estima en casi 300.000 M ₩ al año.
+132|Comisión Europea · Instituto de Economía Energética de Corea · estimaciones del sector (prensa)
+133|Reforma de las pensiones
+134|En marzo de 2025 Corea reformó la pensión pública por primera vez en 18 años. La cotización sube del 9 % al 13 %, medio punto al año desde 2026, y la tasa de reemplazo será del 43 %. La empresa paga la mitad de la cotización del trabajador.
+135|Reforma de la Ley de Pensiones (Asamblea Nacional, 20/3/2025)
+136|Comisiones de delivery
+137|En noviembre de 2024, el consejo de plataformas de reparto de Corea acordó bajar la comisión del 9,8 % a un 2,0–7,8 % según las ventas. Pero los gastos de envío para los locales subieron hasta 500 ₩ por pedido, y muchos dicen que la carga no bajó.
+138|Acuerdo del consejo de plataformas de reparto (noviembre 2024)
+139|K-beauty
+140|11.400 M $
+141|Las exportaciones de cosméticos de Corea alcanzaron el récord de 11.400 millones de dólares en 2025, segundo exportador mundial tras Francia. EE. UU. superó a China como mayor mercado. Es más de 10 veces lo de 2012 (1.100 M $).
+142|Ministerio de Seguridad de Alimentos y Medicamentos de Corea, exportación de cosméticos 2025
+143|Ramen coreano
+144|1.500 M $
+145|Las exportaciones de ramen de Corea marcaron un récord de 1.521,4 millones de dólares en 2025, un 21,9 % más en un año. El total de K-food también batió su récord con 13.620 millones.
+146|Ministerio de Agricultura, Alimentación y Asuntos Rurales de Corea, exportaciones K-Food+ 2025
+147|Licencias biotecnológicas
+148|Unos 20 billones de ₩
+149|Las licencias tecnológicas de las farmacéuticas y biotecnológicas coreanas alcanzaron el récord de 14.500 millones de dólares (unos 20 billones de ₩) en 2025, 2,6 veces más que el año anterior. El mayor acuerdo rondó los 4,1 billones de ₩.
+150|Asociación Coreana de Farmacéuticas y Biofarmacéuticas (prensa)
+151|Licencias de juegos en China
+152|95 licencias
+153|De los 1.771 juegos que China aprobó en 2025, solo 95 (un 5 %) eran extranjeros. En 2022 cayeron a 44 y se recuperan, pero el sector dice que una licencia no garantiza un éxito.
+154|Administración Nacional de Prensa y Publicaciones de China (NPPA) · Agencia de Contenidos Creativos de Corea
+155|Semana de 4,5 días
+156|347 centros
+157|En 2026, 347 centros de trabajo se unieron al piloto del gobierno coreano de semana de 4,5 días. Se reducen horas sin bajar el sueldo, con ayudas de hasta 800.000 ₩ por trabajador. El 67,9 % de los participantes son pymes de menos de 50 empleados.
+158|Ministerio de Empleo y Trabajo de Corea, «Proyecto Conciliación +4,5» (2026)
+159|Tipo de cambio
+160|1.422 ₩
+161|En 2025 el dólar costó de media unos 1.422 ₩, un récord, incluso más que en la crisis financiera de 1998 (1.395 ₩). Buena noticia para los exportadores, pero mucho más caro para quienes importan materias primas.
+162|Mercado de divisas de Seúl (Herald Economy, Newsis)
+163|Greenwashing
+164|En los últimos tres años Corea detectó 4.940 casos de greenwashing (publicidad ecológica falsa), pero el 99,8 % acabó con orientaciones administrativas no vinculantes. Los casos se dispararon de 110 en 2020 a 2.528 en 2024.
+165|Ministerio de Medio Ambiente de Corea · KEITI (prensa)
+166|Etiquetado de origen
+167|142 negocios
+168|En 40 días de la temporada de kimchi de 2025, el servicio agrícola de Corea inspeccionó 47.831 negocios y pilló a 142 que mentían sobre el origen del kimchi y los condimentos. 101 casos de etiquetado falso pasaron a la vía penal.
+169|Servicio Nacional de Calidad de Productos Agrícolas de Corea (diciembre 2025)
+170|Revisión contable
+171|De las 458 empresas cuyas cuentas revisó el Servicio de Supervisión Financiera de Corea en 2022–2024, 214 (un 47 %) fueron sancionadas. Lo más habitual: inflar ingresos o registrar tarde las pérdidas.
+172|Servicio de Supervisión Financiera de Corea, nota de prensa (mayo 2025)
+173|Vida de las empresas
+174|33 años → 14 años
+175|El tiempo medio que una empresa permanece en el S&P 500 bajó de 33 años en 1965 a 20 en 1990, y se preveía que llegara a 14 en 2026. Ante la innovación disruptiva, hasta las grandes empresas duran poco.
+176|Capital riesgo
+177|13,6 billones de ₩
+178|La inversión de capital riesgo en Corea llegó a 13,6 billones de ₩ en 2025, la segunda mayor de la historia, con un récord de 8.542 operaciones. A final de año Corea tenía 27 unicornios.
+179|Ministerio de Pymes y Startups de Corea, «Capital riesgo 2025» (febrero 2026)
+180|Caída informática global
+181|8,5 millones de equipos
+182|En julio de 2024, una actualización defectuosa de un software de seguridad bloqueó unos 8,5 millones de PCs con Windows en todo el mundo. Solo las empresas del Fortune 500 perdieron unos 5.400 millones de dólares, y unos 15.000 millones en todo el mundo. Una aerolínea perdió 500 millones ella sola.
+183|Estimaciones de Microsoft · Parametrix (2024)
+184|Streaming global
+185|2.500 M $
+186|En 2023 Netflix anunció que invertiría 2.500 millones de dólares (unos 3,3 billones de ₩) en contenido coreano en cuatro años, el doble de lo invertido desde su llegada a Corea en 2016. Más del 60 % de sus suscriptores ve contenido coreano.
+187|Anuncio de Netflix (abril 2023) · Axios · TechCrunch
+188|K-pop animado
+189|236 millones de visualizaciones
+190|En 2025 la película animada «Las guerreras k-pop» se convirtió en la película más vista de la historia de Netflix (236 millones de visualizaciones). Su canción «Golden» llegó al n.º 1 del Billboard Hot 100, la primera de K-pop con voces femeninas.
+191|Compras transfronterizas
+192|8,5 billones de ₩
+193|Las compras directas de los coreanos en el extranjero superaron el récord de 8,5 billones de ₩ en 2025. De China fueron 5,5 billones (un 65 %), y el 79,4 % de los despachos aduaneros procedían de China.
+194|Oficina Nacional de Datos de Corea, comercio online · Servicio de Aduanas de Corea (2026)
+195|Materias primas
+196|12.565 $ por tonelada
+197|Los futuros del cacao tocaron el récord de 12.565 dólares por tonelada en diciembre de 2024. Los chocolateros subieron precios uno tras otro, y el precio medio de una tableta en EE. UU. subió un 41 % en cuatro años.
+198|Futuros de cacao ICE · Fortune · NielsenIQ (2025)
+199|Estafa telefónica
+200|1,2578 billones de ₩
+201|Las pérdidas por estafas telefónicas en Corea llegaron a 1,2578 billones de ₩ en 2025, superando por primera vez el billón. Cada víctima perdió de media 53,84 M ₩, y en el 78,6 % de los casos los estafadores se hicieron pasar por organismos o empresas.
+202|Agencia Nacional de Policía de Corea (análisis de un despacho parlamentario, 2026)
+203|Baja parental
+204|En 2025 los padres fueron un récord del 36,4 % (unos 67.000) de quienes tomaron baja parental en Corea. Los hombres de baja parental aumentaron más de un 60 % en un año.
+205|Ministerio de Empleo y Trabajo de Corea, estadística de bajas parentales (2026)
+206|Incendio en fábrica
+207|23 personas
+208|En junio de 2024, un incendio en una fábrica de baterías de litio en Hwaseong (Corea) mató a 23 personas. En septiembre de 2025 el director fue condenado en primera instancia a 15 años de cárcel, entre otras cosas por violar la ley de accidentes graves. Aplazar la inversión en seguridad puede hundir toda la empresa.
+209|Policía y tribunales (prensa, 2024–2025)
+210|Sandbox regulatorio
+211|Unos 1.750 casos
+212|Desde que Corea introdujo el sandbox regulatorio en 2019, unos 1.750 nuevos negocios obtuvieron permisos temporales hasta principios de 2025. Pero solo un 21 % llevó a cambios reales de la ley, así que muchas empresas vuelven a quedar bloqueadas al vencer el permiso.
+213|Oficina de Coordinación de Políticas de Corea, estado del sandbox (prensa)
+214|Falsificaciones de marcas coreanas
+215|11 billones de ₩ al año
+216|El mercado de falsificaciones de marcas coreanas vendidas en el extranjero se estima en 11 billones de ₩ al año. En los últimos cinco años, más de 10.000 marcas en China se sospecha que se registraron antes que las coreanas.
+217|Estimación basada en un análisis de la OCDE · Oficina de Propiedad Intelectual de Corea (prensa)
+218|Pánico bancario
+219|42.000 M $ en un día
+220|En marzo de 2023, Silicon Valley Bank (SVB) recibió en un solo día solicitudes de retirada por 42.000 millones de dólares (una cuarta parte de los depósitos) y cerró al día siguiente. El 88 % de los depósitos superaba el límite asegurado: la tercera mayor quiebra bancaria de la historia de EE. UU.
+221|Documentos del regulador financiero de California · Bloomberg · Fortune (2023)
+222|Despidos en Big Tech
+223|260.000 personas
+224|En 2023 se despidió a 262.735 personas en empresas tecnológicas de todo el mundo (Layoffs.fyi). En 2024, más de 150.000 perdieron su empleo en 549 empresas.
+225|Visado H-1B
+226|100.000 $
+227|En septiembre de 2025 EE. UU. impuso por proclamación una tasa de 100.000 dólares (unos 140 M ₩) por cada nueva solicitud de visado H-1B. Las renovaciones quedaron exentas y la Cámara de Comercio de EE. UU. presentó una demanda.
+228|Proclamación 10973 de la Casa Blanca (septiembre 2025) · DLA Piper
+229|Black Friday
+230|11.800 M $
+231|Las ventas online en EE. UU. el Black Friday de 2025 batieron récord con 11.800 millones de dólares. Tres días después, el Cyber Monday marcó un récord diario de 14.250 millones.
+232|Shunto
+233|En la negociación salarial de primavera de 2025 en Japón, la subida media en las 5.162 empresas de la confederación sindical Rengo fue del 5,25 %, por encima del 5 % por segundo año. Las pymes solo lograron un 4,65 %.
+234|Confederación Japonesa de Sindicatos (Rengo), recuento final (julio 2025)
+235|Quiebras por falta de personal
+236|397 casos
+237|En 2025 quebraron en Japón 397 empresas por falta de personal, un 36 % más en un año y el máximo registrado. Las quiebras totales superaron las 10.000 por segundo año seguido.
+238|Tokyo Shoko Research (TSR), quiebras 2025
+239|Yen débil
+240|160 ¥ por dólar
+241|En junio de 2024 el yen pasó de 160 por dólar, su nivel más débil desde 1986. El gobierno japonés gastó unos 9,8 billones de yenes solo en abril y mayo para defender la moneda.
+242|Bloomberg · Ministerio de Finanzas de Japón (2024)
+243|Guerra de precios
+244|Hasta un 34 %
+245|En mayo de 2025 el mayor fabricante chino de coches eléctricos rebajó unos 20 modelos hasta un 34 % y los rivales le siguieron uno tras otro. En dos años el precio medio del coche en China cayó un 19 %, y el gobierno advirtió contra «vender por debajo del coste».
+246|Control de tierras raras
+247|En octubre de 2025 China anunció que hasta los productos con un 0,1 % de tierras raras chinas necesitarían licencia de exportación, y tras una cumbre EE. UU.–China lo aplazó un año. Mientras, la exportación de imanes de tierras raras cayó dos meses seguidos.
+248|S&P Global · Administración General de Aduanas de China (2025)
+249|Paro juvenil
+250|En junio de 2023 el paro juvenil urbano en China (16–24 años) marcó un récord del 21,3 %. Ese año se graduaron 11,6 millones de universitarios, un récord, y el gobierno pronto dejó de publicar temporalmente la tasa.
+251|Oficina Nacional de Estadística de China · Caixin · NBC (2023)
+252|Economía alemana
+253|La economía alemana se contrajo dos años seguidos: -0,3 % en 2023 y -0,2 % en 2024. Se señalan como causas la energía y los tipos altos y una competencia más dura en los mercados de exportación.
+254|Oficina Federal de Estadística de Alemania (Destatis, enero 2025)
+255|Insolvencias empresariales
+256|Unas 24.000
+257|En 2025 unas 24.000 empresas se declararon insolventes en Alemania, probablemente la cifra más alta desde 2014. En 2023 y 2024 también habían subido más de un 20 % cada año.
+258|Escasez de técnicos
+259|370.000 puestos
+260|En 2025 unos 369.500 puestos en Alemania no encontraron candidatos cualificados. Cubrir un puesto técnico cualificado llevó de media 242 días.
+261|Instituto de la Economía Alemana, KOFA · Agencia Federal de Empleo (2026)
+262|Pagos UPI
+263|20.000 millones al mes
+264|La red de pagos móviles de la India, UPI, superó por primera vez los 20.000 millones de transacciones mensuales en agosto de 2025 y procesó 21.600 millones en diciembre. En su día récord pasaron 750 millones de transacciones.
+265|Corporación Nacional de Pagos de la India (NPCI), estadísticas (2025)
+266|Veto a apps extranjeras
+267|59 apps
+268|En junio de 2020, tras un choque fronterizo, la India prohibió 59 apps chinas, entre ellas TikTok. En julio bloqueó 47 más y en septiembre otras 118.
+269|Ministerio de Electrónica y TI de la India · Al Jazeera · TechCrunch (2020)
+270|Población de la India
+271|1.428,6 millones
+272|La ONU estimó que en 2023 la población de la India llegó a 1.428,6 millones y superó a China como la mayor del mundo.
+273|Perspectivas de la Población Mundial de la ONU (UN DESA, 2023)
+274|Sindicatos
+275|A finales de 2024 la afiliación sindical en Corea era del 13,0 %, con 2,777 millones de afiliados. Más o menos 1 de cada 8 trabajadores está en un sindicato.
+276|Ministerio de Empleo y Trabajo de Corea, «Afiliación sindical 2024»
+277|Supervivencia a 1 año
+278|La supervivencia a un año de las nuevas empresas coreanas es del 63,9 %. Más de 1 de cada 3 cierra antes de cumplir su primer año. Tu empresa es de las que sobrevivieron.
+279|Oficina Nacional de Datos de Corea, «Demografía empresarial 2025»
+280|Supervivencia a 5 años
+281|La supervivencia a cinco años de las nuevas empresas coreanas es del 36,5 % (máximo histórico). Más de 6 de cada 10 empresas fundadas el mismo año ya desaparecieron. Un camino más duro que la media de la OCDE (un 45 %).
+282|Supervivencia a 1 año (EE. UU.)
+283|Un 80 %
+284|Según la Oficina de Estadísticas Laborales de EE. UU., 1 de cada 5 nuevos establecimientos cerró en su primer año. Tu empresa superó ese primer año.
+285|Oficina de Estadísticas Laborales de EE. UU. (BLS), Business Employment Dynamics
+286|Supervivencia a 5 años (EE. UU.)
+287|Un 45 %
+288|De los establecimientos abiertos en EE. UU. en 2006, solo algo más del 45 % seguía en pie cinco años después. Aguantaste los cinco años en los que desaparece más de la mitad.
+289|Oficina de Estadísticas Laborales de EE. UU. (BLS) (vía NerdWallet)
+290|Supervivencia a 10 años
+291|De los establecimientos abiertos en EE. UU. en 2013, el 34,7 % seguía operando diez años después. Una empresa que dura diez años ya es minoría.
+292|Oficina de Estadísticas Laborales de EE. UU. (BLS), The Economics Daily, 2024
+293|Un 1 %
+294|Alrededor del 1 % de las startups con inversión semilla se convierte en unicornio de más de 1.000 millones de dólares. Corea solo tenía 27 unicornios a finales de 2025, y tardaron de media 7 años y 8 meses desde su fundación.
+295|CB Insights Venture Funnel · Ministerio de Pymes y Startups de Corea, unicornios (febrero 2026)
+296|Salidas a bolsa
+297|77 empresas
+298|En 2025 debutaron en la bolsa coreana 77 empresas (7 en KOSPI, 70 en KOSDAQ). Con más de 900.000 empresas nuevas al año, ni 1 de cada 10.000 llega a cotizar.
+299|Bolsa de Corea · IR Qudos (2025)
+300|Fusiones y adquisiciones
+301|Un 70 %
+302|Antes se decía a menudo que «el 70 % de las adquisiciones fracasa», pero un estudio reciente de 660.000 operaciones (56 billones de dólares) en 20 años halló que un 70 % tiene éxito. Las empresas que compran con constancia y acumulan experiencia aciertan más.
+303|Por qué fracasan las startups
+304|Un análisis de 431 startups financiadas que cerraron halló que el 70 % lo hizo porque «se quedó sin dinero». Debajo estaban productos que el mercado no quería (43 %), mal momento (29 %) y modelos que pierden más cuanto más venden (19 %).
+305|CB Insights, análisis de cierres de startups (fuente secundaria)

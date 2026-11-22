@@ -1,0 +1,306 @@
+0|Ransomware
+1|Năm 2025, số vụ ransomware được báo cáo trên thế giới tăng 50% trong một năm, nhưng tiền chảy về tay hacker chỉ khoảng 820 triệu đô la, còn giảm 8%. Nghĩa là ngày càng nhiều doanh nghiệp không trả tiền chuộc. Trong khảo sát 3.400 doanh nghiệp, 49% cuối cùng vẫn trả, còn 54% khôi phục bằng bản sao lưu.
+2|Lừa đảo deepfake
+3|₩34 tỷ
+4|Năm 2024 tại Hồng Kông, một nhân viên của công ty thiết kế toàn cầu bị lừa bởi cuộc họp video deepfake giả các lãnh đạo, đã chuyển khoảng 25 triệu đô la (khoảng ₩34 tỷ). Năm 2025, FBI Mỹ nhận hơn 22.000 báo cáo lừa đảo dùng AI, thiệt hại vượt 890 triệu đô la.
+5|Gián điệp công nghiệp
+6|107 vụ · khoảng ₩23 nghìn tỷ
+7|Cơ quan tình báo Hàn Quốc phát hiện 107 vụ công nghệ công nghiệp bị rò rỉ ra nước ngoài trong giai đoạn 2021–2025 (19 vụ năm 2025). Thiệt hại do rò rỉ công nghệ 2020–2024 ước khoảng ₩23 nghìn tỷ. Đó mới chỉ là các vụ bị phát hiện.
+8|Bộ Thương mại và Công nghiệp Hàn Quốc «Tình hình rò rỉ công nghệ công nghiệp ra nước ngoài» · ước tính của NIS (báo chí)
+9|Mua bán bí mật
+10|Bắt 179 vụ
+11|Năm 2025, cảnh sát Hàn Quốc bắt 179 vụ tội phạm rò rỉ công nghệ với 378 người, tăng 45,5% so với năm trước. Hơn một nửa (54,5%) số vụ tuồn ra nước ngoài là sang Trung Quốc.
+12|Cơ quan Cảnh sát Quốc gia Hàn Quốc, kết quả trấn áp rò rỉ công nghệ 2025 (Boan News)
+13|Đánh cắp công nghệ
+14|Trung bình ₩2,5 tỷ
+15|Doanh nghiệp nhỏ và vừa Hàn Quốc gặp khoảng 474 vụ xâm phạm công nghệ mỗi năm, thiệt hại trung bình ₩2,53 tỷ mỗi vụ (khảo sát 2025). 27,8% doanh nghiệp bị hại không thể làm gì, và tỉ lệ thắng kiện đánh cắp công nghệ chỉ 32,9%.
+16|Bộ Doanh nghiệp vừa và nhỏ và Khởi nghiệp Hàn Quốc «Khảo sát bảo vệ công nghệ» (báo chí)
+17|Rò rỉ dữ liệu cá nhân
+18|447 vụ
+19|Năm 2025, Hàn Quốc ghi nhận 447 vụ rò rỉ dữ liệu cá nhân, tăng 45,6% trong một năm. 62% do hack, riêng tiền phạt đã lên ₩167,7 tỷ. Từ tháng 9/2026, mức phạt có thể tới 10% doanh thu.
+20|Ủy ban Bảo vệ Thông tin Cá nhân Hàn Quốc · KISA «Xu hướng báo cáo rò rỉ dữ liệu 2025»
+21|Biển thủ
+22|5% doanh thu
+23|Ước tính mỗi năm doanh nghiệp mất khoảng 5% doanh thu vì gian lận của nhân viên và lãnh đạo. Gian lận trung bình mất 12 tháng mới bị lộ, và cách phát hiện phổ biến nhất là tố giác nội bộ (khoảng 43%).
+24|Tố giác nội bộ
+25|Khoảng 43% gian lận trong doanh nghiệp bị lộ nhờ tố giác chứ không phải kiểm toán. Một nửa tố giác đến từ nhân viên, khoảng một phần ba từ đối tác và khách hàng. Công ty có kênh tố giác ngăn thiệt hại nhanh hơn.
+26|Tai nạn nghiêm trọng
+27|872 người
+28|Năm 2025, 872 người lao động Hàn Quốc thiệt mạng do tai nạn lao động (theo trợ cấp tử tuất được duyệt), tăng 45 người so với năm trước. 41,4% thuộc ngành xây dựng.
+29|Bộ Việc làm và Lao động Hàn Quốc «Tử vong do tai nạn 2025 (theo trợ cấp tử tuất)»
+30|Patent troll
+31|Năm 2025, 55,4% vụ kiện bằng sáng chế tại tòa án Mỹ là do các công ty không sản xuất gì, chỉ đi kiện bằng bằng sáng chế (NPE, patent troll) khởi kiện. Ở lĩnh vực công nghệ cao, tỉ lệ này vượt 90%.
+32|Ngộ độc thực phẩm
+33|9.780 người
+34|Năm 2025, Hàn Quốc có 319 vụ ngộ độc thực phẩm với 9.780 bệnh nhân, số bệnh nhân tăng 28% trong một năm. 60% xảy ra ở nhà hàng. Thủ phạm số một là vi khuẩn salmonella, tháng nguy hiểm nhất là tháng 9.
+35|Bộ An toàn Thực phẩm và Dược phẩm Hàn Quốc «Tình hình ngộ độc thực phẩm 2025»
+36|Thanh tra thuế
+37|4.861 cuộc
+38|Năm 2024, Tổng cục Thuế Hàn Quốc thanh tra 4.861 doanh nghiệp, truy thu ₩4.176,6 tỷ. Số cuộc thanh tra tăng 22% so với 2020, riêng với công ty doanh thu trên ₩100 tỷ tăng 67%.
+39|Tài liệu chất vấn quốc hội của Tổng cục Thuế Hàn Quốc (báo chí)
+40|Bắt nạt nơi làm việc
+41|3/10 người
+42|Trong khảo sát 1.000 người đi làm, 30,5% cho biết gần đây bị bắt nạt nơi làm việc. Trong đó 57,7% chịu đựng hoặc lờ đi, và 19,3% cuối cùng nghỉ việc.
+43|Khảo sát người đi làm của Workplace Gapjil 119 (quý 2/2026)
+44|Văn hóa công sở
+45|Cứ 10 người đi làm thì 4 người (42,1%) từng bị hoặc chứng kiến cấp trên quát tháo cấp dưới. Bảy năm sau khi có luật cấm bắt nạt, một nửa nạn nhân vẫn im lặng chịu đựng.
+46|Khảo sát của Workplace Gapjil 119 (tháng 1/2025)
+47|Lương tối thiểu
+48|₩10.320
+49|Lương tối thiểu năm 2026 của Hàn Quốc là ₩10.320/giờ, tăng 2,9%. Với 40 giờ/tuần là ₩2.156.880/tháng. Đây là lần đầu sau 17 năm ba bên người lao động, chủ doanh nghiệp và đại diện công thống nhất được.
+50|Ủy ban Lương tối thiểu Hàn Quốc, quyết định năm 2026 (tháng 7/2025)
+51|Lãi suất cơ bản
+52|Ngân hàng Trung ương Hàn Quốc giữ lãi suất 2,50% suốt năm 2025, rồi tăng hai lần trong năm 2026 lên 3,00%. Chỉ cần tăng 0,25 điểm, khoản nợ ₩10 tỷ sẽ tốn thêm ₩25 triệu tiền lãi mỗi năm.
+53|Quyết định của Hội đồng Chính sách Tiền tệ Ngân hàng Trung ương Hàn Quốc (2025–2026)
+54|Thiên tai
+55|₩1.084,8 tỷ
+56|Thiệt hại do mưa lớn tháng 7/2025 là ₩1.084,8 tỷ, lớn nhất trong 19 năm kể từ 2006. Riêng năm 2024, thiên tai làm 121 người chết và thiệt hại tài sản ₩910,7 tỷ.
+57|Bộ Nội vụ và An toàn Hàn Quốc (Newsis) · Niên giám thiên tai
+58|Phạt cạnh tranh
+59|194 vụ
+60|Năm 2025, Ủy ban Thương mại Công bằng Hàn Quốc phạt khoảng ₩340,2 tỷ trong 194 vụ, số vụ tăng 56,5% so với năm trước, trung bình ₩1,75 tỷ mỗi vụ. Chiếm nhiều nhất là thông đồng.
+61|Ủy ban Thương mại Công bằng Hàn Quốc «Niên giám thống kê 2025» (báo chí)
+62|Thu hồi
+63|28 triệu xe
+64|Năm 2025, hơn 28 triệu xe bị thu hồi tại Mỹ. Một hãng xe thu hồi gần 150 lần trong một năm, lập kỷ lục mọi thời đại. Công ty thu hồi nhanh cuối cùng sẽ giữ được niềm tin.
+65|Tổng hợp từ dữ liệu NHTSA Mỹ (Recall Masters, v.v.)
+66|Vật phẩm may rủi
+67|2.181 vi phạm
+68|Trong 18 tháng sau khi Hàn Quốc bắt buộc công khai tỉ lệ vật phẩm may rủi từ tháng 3/2024, 338 công ty game bị yêu cầu sửa 2.181 vi phạm. 47,4% vi phạm thuộc về công ty game Trung Quốc.
+69|Ủy ban Quản lý Trò chơi Hàn Quốc (nộp quốc hội, báo chí)
+70|Thử nghiệm lâm sàng
+71|Xác suất một ứng viên thuốc đi từ pha 1 đến khi được cấp phép là 7,9%. Trung bình mất 10,5 năm, và cửa ải lớn nhất là pha 2 (tỉ lệ qua 30,7%). Cứ 13 ứng viên chỉ khoảng 1 thành thuốc.
+72|Sự cố IT lớn
+73|709 hệ thống · 95 ngày
+74|Tháng 9/2025, vụ cháy trung tâm dữ liệu của chính phủ Hàn Quốc (NIRS) làm 709 hệ thống công ngừng hoạt động. Mất 95 ngày mới khôi phục hết. Sự việc cho thấy vì sao dự phòng và sao lưu quan trọng.
+75|Công bố của Bộ Nội vụ và An toàn Hàn Quốc (30/12/2025)
+76|Bán khống
+77|17 tháng
+78|Hàn Quốc cấm bán khống hoàn toàn từ tháng 11/2023 và cho phép lại từ 31/3/2025: sau 17 tháng với cổ phiếu lớn và khoảng 5 năm với các mã còn lại. Phạt bán khống không có cổ phiếu tăng lên tới 6 lần lợi nhuận bất chính.
+79|Thông cáo của Ủy ban Dịch vụ Tài chính Hàn Quốc (tháng 3/2025)
+80|Xuất khẩu chip
+81|173,4 tỷ đô la
+82|Năm 2025, xuất khẩu bán dẫn của Hàn Quốc đạt kỷ lục 173,4 tỷ đô la, tăng 22,2%. Chip chiếm khoảng một phần tư tổng xuất khẩu (709,7 tỷ đô la), nên chỉ một lệnh kiểm soát xuất khẩu cũng đủ gây chao đảo.
+83|Bộ Thương mại và Công nghiệp Hàn Quốc «Xu hướng xuất nhập khẩu năm 2025»
+84|Xuất khẩu
+85|709,7 tỷ đô la
+86|Năm 2025, xuất khẩu của Hàn Quốc đạt 709,7 tỷ đô la, lần đầu vượt 700 tỷ, thặng dư thương mại 78 tỷ đô la. Kỷ lục do các công ty mở rộng thị trường bất chấp quy định và thuế quan tạo nên.
+87|Nội dung Hàn Quốc
+88|14 tỷ đô la
+89|Năm 2024, xuất khẩu nội dung của Hàn Quốc đạt kỷ lục 14,075 tỷ đô la. Cả 11 lĩnh vực được khảo sát đều xuất nhiều hơn nhập, thặng dư thương mại 13,1 tỷ đô la.
+90|Bộ Văn hóa, Thể thao và Du lịch Hàn Quốc «Khảo sát ngành nội dung 2025 (số liệu 2024)»
+91|Khủng hoảng vận chuyển
+92|₩1.600 tỷ
+93|Bảy ngày sau khi tài xế xe tải Hàn Quốc đình công năm 2022, thiệt hại xuất hàng ở 4 ngành xi măng, thép, ô tô, lọc dầu ước khoảng ₩1.600 tỷ. Vận chuyển ngừng thì nhà máy cũng ngừng.
+94|Ước tính của chính phủ Hàn Quốc (tháng 12/2022, báo chí)
+95|Trả đũa ngoại giao
+96|Năm 2017, khi Trung Quốc chặn tour đoàn sang Hàn Quốc để trả đũa việc triển khai THAAD, lượng khách Trung Quốc năm đó giảm 48,3%. Riêng tháng 1–9, doanh thu liên quan du lịch sụt khoảng ₩7.450 tỷ.
+97|Thống kê Tổng cục Du lịch Hàn Quốc · ước tính của Văn phòng Ngân sách Quốc hội (2017)
+98|Xâm phạm công nghệ nhà thầu phụ
+99|1 trên 80
+100|Trong 5 năm từ 2022, Bộ Doanh nghiệp vừa và nhỏ Hàn Quốc nhận 80 vụ điều tra hành chính về xâm phạm công nghệ của doanh nghiệp nhỏ, nhưng chỉ 1 vụ đi đến khuyến nghị khắc phục. Chứng minh thiệt hại khó đến vậy.
+101|Tài liệu Bộ Doanh nghiệp vừa và nhỏ và Khởi nghiệp Hàn Quốc (MTN, 2026)
+102|Hỗ trợ khởi nghiệp của nhà nước
+103|Khoảng ₩3.300 tỷ
+104|Năm 2025, các bộ ngành trung ương và địa phương Hàn Quốc có 429 chương trình hỗ trợ khởi nghiệp, ngân sách khoảng ₩3.294 tỷ. Số chương trình tăng nhưng ngân sách trung ương lại giảm so với năm trước.
+105|Phân tích thông báo hợp nhất hỗ trợ khởi nghiệp 2025 (tổng hợp tư nhân, nguồn thứ cấp)
+106|Thuế quan Mỹ
+107|Năm 2025, Mỹ tuyên bố áp thuế đối ứng 25% lên hàng Hàn Quốc, rồi hạ xuống 15% sau đàm phán. Đổi lại, Hàn Quốc cam kết đầu tư 350 tỷ đô la vào Mỹ. Ô tô vốn miễn thuế nay cũng chịu thuế 15%.
+108|Kết quả đàm phán thuế quan Hàn–Mỹ (tháng 7/2025, Văn phòng Tổng thống và báo chí)
+109|AI tạo sinh
+110|Năm 2025, 44,5% người Hàn cho biết đã dùng AI tạo sinh, tăng mạnh so với 33,3% năm trước, và 7,9% trả phí đăng ký. Nhân viên đang quen với AI sớm hơn công ty.
+111|Bộ Khoa học và ICT Hàn Quốc «Khảo sát sử dụng Internet 2025»
+112|Giá điện công nghiệp
+113|Giá điện công nghiệp Hàn Quốc tăng 75%, từ khoảng ₩102/kWh nửa đầu 2021 lên khoảng ₩179 nửa đầu 2025. Tháng 10/2024, giá điện cho doanh nghiệp lớn tăng một lần tới 10,2%.
+114|Tài liệu KEPCO · Bộ Thương mại và Công nghiệp Hàn Quốc (báo chí)
+115|Nắng nóng
+116|Mùa hè 2025, nhiệt độ trung bình cả nước Hàn Quốc là 25,7℃, nóng nhất kể từ khi đo năm 1973. Seoul có kỷ lục 46 đêm nhiệt đới, và 29 trong số 4.460 người bị bệnh do nắng nóng đã tử vong.
+117|Cơ quan Khí tượng Hàn Quốc «Phân tích khí hậu năm 2025» · giám sát bệnh do nắng nóng của KDCA
+118|Lao động nước ngoài
+119|130.000 người
+120|Hạn ngạch lao động nước ngoài phổ thông (E-9) của Hàn Quốc năm 2025 là 130.000 người, giảm 21% so với 165.000 năm 2024, và năm 2026 còn giảm xuống 80.000.
+121|Ủy ban Chính sách Nhân lực Nước ngoài, Bộ Việc làm và Lao động Hàn Quốc (tháng 12/2024)
+122|Xã hội siêu già
+123|Tháng 12/2024, người từ 65 tuổi trở lên ở Hàn Quốc vượt 20% dân số, chính thức thành xã hội siêu già. Từ xã hội già đến siêu già, Đức mất 37 năm, Pháp 39 năm, còn Hàn Quốc chỉ 7 năm.
+124|Thống kê dân số đăng ký cư trú, Bộ Nội vụ và An toàn Hàn Quốc (24/12/2024)
+125|"Luật phong bì vàng"
+126|Sau 20 năm
+127|Sửa đổi Điều 2 và 3 Luật Công đoàn ("Luật phong bì vàng") mà giới lao động đòi hơn 20 năm đã được Quốc hội thông qua tháng 8/2025 và có hiệu lực tháng 3/2026. Lao động của nhà thầu phụ giờ có thể đàm phán trực tiếp với bên giao thầu thực sự chi phối họ.
+128|Phiên họp toàn thể Quốc hội Hàn Quốc (24/8/2025) · Bộ Việc làm và Lao động
+129|Thuế carbon biên giới
+130|6 nhóm hàng
+131|Từ năm 2026, EU áp Cơ chế Điều chỉnh Carbon Biên giới (CBAM) cho 6 nhóm hàng: thép, nhôm, xi măng, phân bón, hydro và điện. Chi phí chứng chỉ thực tế bắt đầu từ 2027, gánh nặng cho ngành thép Hàn Quốc ước gần ₩300 tỷ mỗi năm.
+132|Ủy ban châu Âu · Viện Kinh tế Năng lượng Hàn Quốc · ước tính ngành (báo chí)
+133|Cải cách lương hưu
+134|Tháng 3/2025, Hàn Quốc cải cách lương hưu quốc gia lần đầu sau 18 năm. Tỉ lệ đóng tăng từ 9% lên 13%, mỗi năm thêm 0,5 điểm từ 2026, và tỉ lệ thay thế thu nhập là 43%. Công ty đóng một nửa phần của người lao động.
+135|Sửa đổi Luật Lương hưu Quốc gia (Quốc hội, 20/3/2025)
+136|Phí app giao đồ ăn
+137|Tháng 11/2024, hội đồng các nền tảng giao đồ ăn Hàn Quốc thống nhất hạ phí trung gian 9,8% xuống 2,0–7,8% tùy doanh thu. Nhưng phí giao hàng của chủ quán lại tăng tới ₩500 mỗi đơn, nhiều người nói gánh nặng chẳng giảm.
+138|Thỏa thuận hội đồng cùng phát triển nền tảng giao hàng (tháng 11/2024)
+139|K-beauty
+140|11,4 tỷ đô la
+141|Năm 2025, xuất khẩu mỹ phẩm Hàn Quốc đạt kỷ lục 11,4 tỷ đô la, thành nước xuất khẩu mỹ phẩm thứ 2 thế giới sau Pháp. Mỹ vượt Trung Quốc thành thị trường lớn nhất. Gấp hơn 10 lần năm 2012 (1,1 tỷ đô la).
+142|Bộ An toàn Thực phẩm và Dược phẩm Hàn Quốc, thành tích xuất khẩu mỹ phẩm 2025
+143|Mì Hàn Quốc
+144|1,5 tỷ đô la
+145|Năm 2025, xuất khẩu mì ăn liền Hàn Quốc đạt kỷ lục 1,5214 tỷ đô la, tăng 21,9% trong một năm. Tổng xuất khẩu K-food cũng lập kỷ lục 13,62 tỷ đô la.
+146|Bộ Nông nghiệp, Thực phẩm và Nông thôn Hàn Quốc, thành tích xuất khẩu K-Food+ 2025
+147|Chuyển giao công nghệ sinh học
+148|Khoảng ₩20 nghìn tỷ
+149|Năm 2025, giá trị chuyển giao công nghệ của các công ty dược và sinh học Hàn Quốc đạt kỷ lục 14,5 tỷ đô la (khoảng ₩20 nghìn tỷ), gấp 2,6 lần năm trước. Hợp đồng lớn nhất trị giá khoảng ₩4.100 tỷ.
+150|Hiệp hội Dược phẩm Sinh học Hàn Quốc (báo chí)
+151|Giấy phép game Trung Quốc
+152|95 giấy phép
+153|Trong 1.771 game Trung Quốc cấp phép năm 2025, chỉ 95 (khoảng 5%) là game nước ngoài. Năm 2022 từng giảm còn 44 và đang hồi phục, nhưng giới trong ngành nói có giấy phép chưa chắc đã thành công.
+154|Thông báo của Tổng cục Báo chí Xuất bản Trung Quốc (NPPA) · Cơ quan Nội dung Sáng tạo Hàn Quốc
+155|Tuần làm 4,5 ngày
+156|347 nơi
+157|Năm 2026, 347 cơ sở tham gia chương trình thí điểm tuần làm 4,5 ngày của chính phủ Hàn Quốc. Điều kiện là giảm giờ làm mà giữ nguyên lương, hỗ trợ tối đa ₩800.000 mỗi người lao động. 67,9% doanh nghiệp tham gia có dưới 50 người.
+158|Bộ Việc làm và Lao động Hàn Quốc «Dự án Cân bằng công việc–cuộc sống +4,5» (2026)
+159|Tỷ giá
+160|₩1.422
+161|Năm 2025, tỷ giá won/đô la trung bình khoảng ₩1.422, cao kỷ lục, hơn cả thời khủng hoảng tài chính 1998 (₩1.395). Tin vui cho doanh nghiệp xuất khẩu, nhưng công ty nhập nguyên liệu tốn kém hơn nhiều.
+162|Thống kê thị trường ngoại hối Seoul (Herald Economy, Newsis)
+163|Tẩy xanh
+164|Ba năm gần đây Hàn Quốc phát hiện 4.940 vụ tẩy xanh (quảng cáo xanh giả), nhưng 99,8% kết thúc bằng hướng dẫn hành chính không có tính bắt buộc. Số vụ tăng vọt từ 110 năm 2020 lên 2.528 năm 2024.
+165|Bộ Môi trường Hàn Quốc · KEITI (báo chí)
+166|Ghi xuất xứ
+167|142 cơ sở
+168|Trong 40 ngày mùa muối kim chi năm 2025, cơ quan quản lý chất lượng nông sản Hàn Quốc kiểm tra 47.831 cơ sở, phát hiện 142 nơi khai gian xuất xứ kim chi và gia vị. 101 vụ ghi sai bị khởi tố hình sự.
+169|Cơ quan Quản lý Chất lượng Nông sản Quốc gia Hàn Quốc (tháng 12/2025)
+170|Thẩm tra kế toán
+171|Trong 458 công ty được Cơ quan Giám sát Tài chính Hàn Quốc thẩm tra báo cáo tài chính giai đoạn 2022–2024, 214 công ty (khoảng 47%) bị xử phạt. Lỗi phổ biến nhất là thổi phồng doanh thu hoặc ghi nhận lỗ muộn.
+172|Thông cáo của Cơ quan Giám sát Tài chính Hàn Quốc (tháng 5/2025)
+173|Tuổi thọ doanh nghiệp
+174|33 năm → 14 năm
+175|Thời gian trung bình một công ty trụ lại trong chỉ số S&P 500 của Mỹ giảm từ 33 năm (1965) xuống 20 năm (1990), và được dự báo còn 14 năm vào 2026. Trước đổi mới đột phá, tập đoàn lớn cũng khó trụ lâu.
+176|Đầu tư mạo hiểm
+177|₩13.600 tỷ
+178|Năm 2025, đầu tư mạo hiểm tại Hàn Quốc đạt ₩13.600 tỷ, cao thứ hai lịch sử, số thương vụ (8.542) cao kỷ lục. Cuối năm đó Hàn Quốc có 27 kỳ lân.
+179|Bộ Doanh nghiệp vừa và nhỏ và Khởi nghiệp Hàn Quốc «Xu hướng đầu tư mạo hiểm 2025» (tháng 2/2026)
+180|Sự cố IT toàn cầu
+181|8,5 triệu máy
+182|Tháng 7/2024, bản cập nhật lỗi của một phần mềm bảo mật làm khoảng 8,5 triệu máy tính Windows trên thế giới ngừng hoạt động. Riêng các công ty Fortune 500 thiệt hại ước 5,4 tỷ đô la, toàn cầu khoảng 15 tỷ. Một hãng hàng không mất tới 500 triệu đô la.
+183|Ước tính của Microsoft · Parametrix (2024)
+184|OTT toàn cầu
+185|2,5 tỷ đô la
+186|Năm 2023, Netflix công bố đầu tư 2,5 tỷ đô la (khoảng ₩3.300 tỷ) vào nội dung Hàn Quốc trong 4 năm, gấp đôi tổng đầu tư kể từ khi vào Hàn Quốc năm 2016. Hơn 60% thành viên Netflix xem nội dung Hàn.
+187|Công bố của Netflix (tháng 4/2023) · Axios · TechCrunch
+188|Hoạt hình K-pop
+189|236 triệu lượt xem
+190|Năm 2025, phim hoạt hình «KPop Demon Hunters» thành bộ phim được xem nhiều nhất lịch sử Netflix (236 triệu lượt). Ca khúc «Golden» đứng đầu Billboard Hot 100, lần đầu tiên với một bài K-pop do giọng nữ hát.
+191|Mua sắm xuyên biên giới
+192|₩8.500 tỷ
+193|Năm 2025, người Hàn mua hàng trực tiếp từ nước ngoài vượt kỷ lục ₩8.500 tỷ. Trong đó từ Trung Quốc là ₩5.500 tỷ (khoảng 65%), tính theo số tờ khai hải quan thì 79,4% đến từ Trung Quốc.
+194|Xu hướng mua sắm trực tuyến của Cơ quan Dữ liệu Quốc gia Hàn Quốc · Tổng cục Hải quan Hàn Quốc (2026)
+195|Giá nguyên liệu
+196|12.565 đô la/tấn
+197|Giá ca cao kỳ hạn lập đỉnh lịch sử 12.565 đô la/tấn vào tháng 12/2024. Các hãng sô-cô-la lần lượt tăng giá, giá trung bình một thanh sô-cô-la ở Mỹ tăng 41% trong 4 năm.
+198|Ca cao kỳ hạn ICE · Fortune · NielsenIQ (2025)
+199|Lừa đảo qua điện thoại
+200|₩1.257,8 tỷ
+201|Năm 2025, thiệt hại do lừa đảo qua điện thoại ở Hàn Quốc là ₩1.257,8 tỷ, lần đầu vượt ₩1.000 tỷ. Mỗi nạn nhân mất trung bình ₩53,84 triệu, và 78,6% vụ là mạo danh cơ quan hoặc doanh nghiệp.
+202|Tài liệu Cơ quan Cảnh sát Quốc gia Hàn Quốc (văn phòng nghị sĩ phân tích, 2026)
+203|Nghỉ chăm con
+204|Năm 2025, tỉ lệ các ông bố trong số người nghỉ chăm con ở Hàn Quốc đạt kỷ lục 36,4% (khoảng 67.000 người). Số nam giới nghỉ chăm con tăng hơn 60% trong một năm.
+205|Thống kê nghỉ chăm con, Bộ Việc làm và Lao động Hàn Quốc (2026)
+206|Cháy nhà máy
+207|23 người
+208|Tháng 6/2024, vụ cháy nhà máy pin lithium ở Hwaseong (Hàn Quốc) làm 23 người chết. Tháng 9/2025, giám đốc bị tuyên 15 năm tù ở phiên sơ thẩm, trong đó có tội vi phạm luật xử phạt tai nạn nghiêm trọng. Cái giá của việc trì hoãn đầu tư an toàn có thể đánh sập cả công ty.
+209|Công bố của cảnh sát và tòa án (báo chí, 2024–2025)
+210|Cơ chế thử nghiệm (sandbox)
+211|Khoảng 1.750 vụ
+212|Từ khi Hàn Quốc áp dụng cơ chế sandbox năm 2019, đến đầu 2025 khoảng 1.750 mảng kinh doanh mới được cấp phép tạm thời. Nhưng chỉ khoảng 21% dẫn đến thay đổi luật thật sự, nên nhiều doanh nghiệp lại bị chặn khi hết hạn.
+213|Văn phòng Điều phối Chính sách Chính phủ Hàn Quốc, tình hình sandbox (báo chí)
+214|Hàng giả thương hiệu Hàn
+215|₩11 nghìn tỷ mỗi năm
+216|Thị trường hàng giả thương hiệu Hàn bán ở nước ngoài ước khoảng ₩11 nghìn tỷ mỗi năm. Trong 5 năm gần đây, hơn 10.000 nhãn hiệu ở Trung Quốc bị nghi đã được đăng ký trước thương hiệu Hàn.
+217|Ước tính dựa trên phân tích của OECD · Cơ quan Sở hữu Trí tuệ Hàn Quốc (báo chí)
+218|Rút tiền ồ ạt
+219|42 tỷ đô la trong một ngày
+220|Tháng 3/2023, ngân hàng Silicon Valley Bank (SVB) nhận yêu cầu rút 42 tỷ đô la (khoảng một phần tư tiền gửi) chỉ trong một ngày và đóng cửa ngay hôm sau. 88% tiền gửi vượt hạn mức bảo hiểm — vụ phá sản ngân hàng lớn thứ ba lịch sử Mỹ.
+221|Tài liệu cơ quan quản lý tài chính California · Bloomberg · Fortune (2023)
+222|Big Tech sa thải
+223|260.000 người
+224|Năm 2023, các công ty công nghệ trên thế giới sa thải 262.735 người (Layoffs.fyi). Năm 2024, thêm hơn 150.000 người ở 549 công ty mất việc.
+225|Visa H-1B
+226|100.000 đô la
+227|Tháng 9/2025, Mỹ ban hành tuyên bố thu 100.000 đô la (khoảng ₩140 triệu) cho mỗi đơn xin visa lao động H-1B mới. Gia hạn visa hiện có được miễn, và Phòng Thương mại Mỹ đã khởi kiện.
+228|Tuyên bố 10973 của Nhà Trắng (tháng 9/2025) · DLA Piper
+229|Black Friday
+230|11,8 tỷ đô la
+231|Doanh thu online ở Mỹ ngày Black Friday 2025 đạt kỷ lục 11,8 tỷ đô la. Ba ngày sau, Cyber Monday lập kỷ lục doanh thu một ngày 14,25 tỷ đô la.
+232|Shunto
+233|Trong đợt đàm phán lương mùa xuân 2025 ở Nhật, mức tăng lương trung bình tại 5.162 doanh nghiệp thuộc liên đoàn Rengo là 5,25%, năm thứ hai liên tiếp vượt 5%. Nhưng doanh nghiệp nhỏ chỉ 4,65%.
+234|Tổng Liên đoàn Công đoàn Nhật Bản (Rengo), tổng hợp cuối (tháng 7/2025)
+235|Phá sản vì thiếu người
+236|397 vụ
+237|Năm 2025, 397 công ty Nhật phá sản vì thiếu nhân lực, tăng 36% trong một năm và nhiều nhất từ trước tới nay. Tổng số vụ phá sản cũng vượt 10.000 năm thứ hai liên tiếp.
+238|Tokyo Shoko Research (TSR), thống kê phá sản 2025
+239|Yên yếu
+240|160 yên/đô la
+241|Tháng 6/2024, đồng yên vượt mốc 160 yên/đô la, yếu nhất kể từ 1986. Chính phủ Nhật đã chi khoảng 9.800 tỷ yên chỉ trong tháng 4–5 năm đó để can thiệp tỷ giá.
+242|Bloomberg · Bộ Tài chính Nhật Bản (2024)
+243|Chiến tranh giá
+244|Tới 34%
+245|Tháng 5/2025, hãng xe điện lớn nhất Trung Quốc giảm giá khoảng 20 mẫu xe tới 34%, các đối thủ lần lượt làm theo. Trong 2 năm, giá ô tô trung bình ở Trung Quốc giảm khoảng 19%, chính phủ cảnh báo "cấm bán dưới giá vốn".
+246|Kiểm soát đất hiếm
+247|Tháng 10/2025, Trung Quốc công bố quy định chỉ cần chứa 0,1% đất hiếm Trung Quốc là phải xin giấy phép xuất khẩu, rồi hoãn một năm sau thượng đỉnh Mỹ–Trung. Trong khi đó, xuất khẩu nam châm đất hiếm giảm hai tháng liền.
+248|S&P Global · Tổng cục Hải quan Trung Quốc (2025)
+249|Thất nghiệp thanh niên
+250|Tháng 6/2023, tỉ lệ thất nghiệp thanh niên thành thị (16–24 tuổi) ở Trung Quốc đạt kỷ lục 21,3%. Năm đó có kỷ lục 11,6 triệu sinh viên tốt nghiệp, và chính phủ sớm tạm ngừng công bố tỉ lệ thất nghiệp thanh niên.
+251|Cục Thống kê Quốc gia Trung Quốc · Caixin · NBC (2023)
+252|Kinh tế Đức
+253|Kinh tế Đức co lại hai năm liền: -0,3% năm 2023 và -0,2% năm 2024. Nguyên nhân được chỉ ra là giá năng lượng và lãi suất cao, cùng cạnh tranh gay gắt hơn trên thị trường xuất khẩu.
+254|Cục Thống kê Liên bang Đức (Destatis, tháng 1/2025)
+255|Doanh nghiệp phá sản
+256|Khoảng 24.000
+257|Năm 2025, khoảng 24.000 doanh nghiệp ở Đức phá sản, có thể nhiều nhất kể từ 2014. Năm 2023 và 2024 cũng đều tăng hơn 20% mỗi năm.
+258|Thiếu thợ lành nghề
+259|370.000 vị trí
+260|Năm 2025, khoảng 369.500 việc làm ở Đức không tìm được người đủ trình độ. Vị trí kỹ thuật lành nghề mất trung bình 242 ngày mới tuyển được.
+261|Viện Kinh tế Đức KOFA · Cơ quan Việc làm Liên bang (2026)
+262|Thanh toán UPI
+263|20 tỷ giao dịch/tháng
+264|Mạng thanh toán di động UPI của Ấn Độ lần đầu vượt 20 tỷ giao dịch một tháng vào tháng 8/2025, và xử lý 21,6 tỷ trong tháng 12. Có ngày cao điểm tới 750 triệu giao dịch.
+265|Thống kê của Tập đoàn Thanh toán Quốc gia Ấn Độ (NPCI) (2025)
+266|Cấm ứng dụng nước ngoài
+267|59 ứng dụng
+268|Tháng 6/2020, sau xung đột biên giới, Ấn Độ cấm 59 ứng dụng Trung Quốc, trong đó có TikTok. Tháng 7 chặn thêm 47, tháng 9 thêm 118.
+269|Bộ Điện tử và CNTT Ấn Độ · Al Jazeera · TechCrunch (2020)
+270|Dân số Ấn Độ
+271|1,4286 tỷ người
+272|Liên Hợp Quốc ước tính năm 2023 dân số Ấn Độ đạt 1,4286 tỷ, vượt Trung Quốc thành đông dân nhất thế giới.
+273|Triển vọng Dân số Thế giới của LHQ (UN DESA, 2023)
+274|Công đoàn
+275|Cuối năm 2024, tỉ lệ tham gia công đoàn ở Hàn Quốc là 13,0%, với 2,777 triệu đoàn viên. Cứ khoảng 8 người lao động thì 1 người vào công đoàn.
+276|Bộ Việc làm và Lao động Hàn Quốc «Tình hình tổ chức công đoàn toàn quốc 2024»
+277|Sống sót 1 năm
+278|Tỉ lệ doanh nghiệp mới ở Hàn Quốc sống sót sau 1 năm là 63,9%. Hơn 1/3 đóng cửa trước khi hết năm đầu tiên. Công ty của bạn thuộc phía sống sót.
+279|Cơ quan Dữ liệu Quốc gia Hàn Quốc «Thống kê hành chính doanh nghiệp thành lập và giải thể 2025»
+280|Sống sót 5 năm
+281|Tỉ lệ doanh nghiệp mới ở Hàn Quốc sống sót sau 5 năm là 36,5% (cao nhất từ trước tới nay). Hơn 6/10 công ty mở cùng năm đã biến mất. Con đường còn gian nan hơn mức trung bình OECD (khoảng 45%).
+282|Sống sót 1 năm (Mỹ)
+283|Khoảng 80%
+284|Theo Cục Thống kê Lao động Mỹ, cứ 5 cơ sở kinh doanh mới thì 1 cơ sở đóng cửa trong vòng một năm. Công ty của bạn đã vượt qua năm đầu tiên.
+285|Cục Thống kê Lao động Mỹ (BLS) Business Employment Dynamics
+286|Sống sót 5 năm (Mỹ)
+287|Khoảng 45%
+288|Trong các cơ sở mở ở Mỹ năm 2006, chỉ hơn 45% còn tồn tại sau 5 năm. Bạn đã trụ qua 5 năm mà hơn một nửa biến mất.
+289|Cục Thống kê Lao động Mỹ (BLS) (qua NerdWallet)
+290|Sống sót 10 năm
+291|Trong các cơ sở mở ở Mỹ năm 2013, 34,7% vẫn còn hoạt động sau 10 năm. Công ty trụ được 10 năm tự nó đã là thiểu số.
+292|Cục Thống kê Lao động Mỹ (BLS) The Economics Daily, 2024
+293|Khoảng 1%
+294|Trong các startup được đầu tư hạt giống, chỉ khoảng 1% trở thành kỳ lân trị giá trên 1 tỷ đô la. Đến cuối 2025, Hàn Quốc chỉ có 27 kỳ lân, trung bình mất 7 năm 8 tháng từ khi thành lập.
+295|CB Insights Venture Funnel · tình hình kỳ lân của Bộ Doanh nghiệp vừa và nhỏ và Khởi nghiệp Hàn Quốc (tháng 2/2026)
+296|Niêm yết
+297|77 công ty
+298|Năm 2025, 77 công ty niêm yết mới trên sàn chứng khoán Hàn Quốc (KOSPI 7, KOSDAQ 70). Mỗi năm có hơn 900.000 doanh nghiệp mới, nên chưa tới 1/10.000 công ty đi đến niêm yết.
+299|Sở Giao dịch Hàn Quốc · IR Qudos (2025)
+300|Mua bán sáp nhập
+301|Khoảng 70%
+302|Trước đây người ta hay nói "70% thương vụ M&A thất bại", nhưng nghiên cứu gần đây phân tích 660.000 thương vụ (56 nghìn tỷ đô la) trong 20 năm cho thấy khoảng 70% thành công. Công ty mua đều đặn và tích lũy kinh nghiệm có tỉ lệ thành công cao hơn.
+303|Vì sao startup thất bại
+304|Phân tích 431 startup có vốn đầu tư đã đóng cửa cho thấy 70% đóng vì "hết tiền". Bên dưới là sản phẩm thị trường không cần (43%), sai thời điểm (29%), và mô hình càng bán càng lỗ (19%).
+305|Phân tích startup đóng cửa của CB Insights (nguồn thứ cấp)
