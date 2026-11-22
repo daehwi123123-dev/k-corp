@@ -1,0 +1,478 @@
+0|📺 YouTuber review
+1|Một YouTuber 3 triệu người theo dõi khen nức nở sản phẩm của ta! Thương hiệu +8
+2|🏛️ Được nhận trợ cấp nhà nước
+3|Được chọn vào chương trình hỗ trợ startup của nhà nước! Hỗ trợ {0}
+4|🏃 Nhân tài chủ chốt rời đi
+5|Một lập trình viên cấp CTO đã nhảy sang đối thủ. Công nghệ -{0}, tinh thần -5
+6|🔥 Bê bối lạm quyền
+7|Bài tố cáo một lãnh đạo chèn ép nhân viên trên diễn đàn ẩn danh lan truyền và lên báo.
+8|Xin lỗi công khai + biện pháp ngăn tái diễn
+9|Xin lỗi nhanh nên dập được. Chi {0}, thương hiệu -4
+10|Không phản hồi
+11|Làn sóng tẩy chay lan rộng… Thương hiệu -15, tinh thần -6
+12|✊ Thành lập công đoàn
+13|Nhân viên lập công đoàn và đòi tăng lương.
+14|Đồng ý tăng lương 10%
+15|Đạt thỏa thuận. Chi phí nhân sự +10%, tinh thần +20
+16|Từ chối yêu cầu
+17|Đình công! Tinh thần -20, doanh thu -20% trong 2 tháng
+18|💱 Tỷ giá biến động mạnh
+19|Đồng nội tệ yếu giúp xuất khẩu bùng nổ! Doanh thu +20% trong 3 tháng
+20|🔍 Thanh tra thuế
+21|Đợt thanh tra thuế định kỳ truy thu {0}
+22|🌕 Thưởng lễ
+23|Dịp lễ lớn sắp đến. Nhân viên đang mong được thưởng.
+24|Phát thưởng ({0})
+25|Thưởng hậu hĩnh! Tinh thần +15
+26|Tặng hộp quà cá ngừ đóng hộp thay thế
+27|…Cá ngừ đóng hộp? Tinh thần -10
+28|🌏 Làn sóng Hàn
+29|Thương hiệu Hàn đang gây sốt ở nước ngoài! Doanh thu +50% trong 2 tháng, thương hiệu +5
+30|💥 Sự cố lớn
+31|Sập máy chủ / cháy nhà máy. Chi phí khắc phục {0}, sức cạnh tranh sản phẩm -15%, thương hiệu -3
+32|🏛️ Bị triệu tập làm chứng
+33|Bạn bị triệu tập làm nhân chứng tại phiên chất vấn của quốc hội.
+34|Có mặt nghiêm túc
+35|Hỏi đáp toát mồ hôi… Thương hiệu -3
+36|Viện cớ công tác nước ngoài để vắng mặt
+37|Bị chỉ trích dồn dập là "né tránh trách nhiệm". Thương hiệu -12
+38|🦈 Tập đoàn lớn đánh cắp ý tưởng
+39|Một tập đoàn lớn tung ra sản phẩm giống hệt "{0}" của ta.
+40|Kiện ({0}{1})
+41| · Tỉ lệ thắng {0}% nhờ IP đang có
+42|Thắng kiện! Bồi thường {0}, thương hiệu +8
+43|Thua kiện… sức cạnh tranh sản phẩm -40%
+44|Đành bỏ qua
+45|Ta bị cướp mất thị trường. Sức cạnh tranh sản phẩm chủ lực -40%
+46|🏴‍☠️ Phát hiện IP bị dùng trái phép
+47|Một công ty nước ngoài đang dùng "{0} {1}" của ta khi chưa được phép.
+48|Kiện quốc tế ({0})
+49|Thắng kiện! Bồi thường {0}
+50|Thua kiện… chỉ tốn tiền án phí.
+51|Ký hợp đồng cấp phép chính thức
+52|Đã ký hợp đồng cấp phép! Tiền bản quyền "{0}" +15%
+53|🤩 Đề nghị hợp tác IP từ thương hiệu lớn
+54|Phiên bản hợp tác "{0}" bán hết sạch! Tiền bản quyền +30%, thương hiệu +4
+55|🕵️ Bắt được gián điệp công nghiệp
+56|Đội an ninh bắt được một nghiên cứu viên chủ chốt định chép tài liệu thiết kế vào USB để chuyển cho đối thủ nước ngoài.
+57|Tố cáo hình sự + kiện ({0})
+58|Chặn được ngay trước khi rò rỉ! Phối hợp với cơ quan điều tra để bảo vệ công nghệ. Thương hiệu +2
+59|Một phần đã bị chuyển đi rồi… Công nghệ -8
+60|Lặng lẽ sa thải và ỉm đi
+61|Có vẻ một phần tài liệu đã bị rò rỉ. Công nghệ -6, tinh thần -3
+62|📂 Lời mời mua bí mật đối thủ
+63|Một nhân viên của {0} tìm đến, đề nghị bán bản thiết kế sản phẩm mới.
+64|Từ chối và báo cho đối thủ
+65|Báo đăng câu chuyện đẹp về "kinh doanh chính trực" của ta. Thương hiệu +5
+66|Lén mua ({0})
+67|Đã có bản thiết kế trong tay… Công nghệ +12
+68|Bị phát hiện sau điều tra! Bồi thường vì xâm phạm bí mật kinh doanh {0}, thương hiệu -25
+69|💀 Tấn công ransomware
+70|Toàn bộ máy chủ công ty bị mã hóa. Hacker đòi tiền chuộc bằng Bitcoin.
+71|Trả tiền chuộc ({0})
+72|Nhận được khóa giải mã, công việc trở lại bình thường.
+73|Chúng lấy tiền mà không đưa khóa… Doanh thu -20% trong 2 tháng
+74|Từ chối và khôi phục từ bản sao lưu
+75|"Không thỏa hiệp với hacker." Doanh thu -25% trong 2 tháng, thương hiệu +2
+76|🎭 Lừa chuyển tiền bằng deepfake
+77|Đội tài chính bị lừa bởi cuộc họp video deepfake giả mặt và giọng CEO, đã chuyển {0}.
+78|💰 Lãnh đạo biển thủ
+79|Phát hiện lãnh đạo phụ trách tài chính đã rút ruột {0} của công ty trong nhiều năm. Thương hiệu -5
+80|📢 Người tố giác xuất hiện
+81|Một nhân viên nói sẽ báo cáo các sai phạm của công ty cho cơ quan quản lý.
+82|Tiếp nhận và khắc phục ({0})
+83|Ta đã chủ động sửa sai. Thương hiệu +4, tinh thần +4
+84|Bịt miệng
+85|Tạm yên, nhưng không khí lạnh tanh. Tinh thần -5
+86|Đoạn ghi âm lên sóng truyền hình! Thương hiệu -20, tinh thần -10
+87|🧲 Cả đội bị săn mất
+88|{0} đề nghị trả lương gấp đôi cho toàn bộ đội phát triển chủ chốt của ta.
+89|Giữ chân bằng quyền chọn cổ phiếu (cổ phần -2 điểm)
+90|Giữ được đội. Cổ phần -2 điểm, tinh thần +10
+91|Để họ đi
+92|Cả đội đã sang {0}. Công nghệ -10, công nghệ đối thủ +10
+93|🚑 Tai nạn lao động nghiêm trọng
+94|Một công nhân bị thương nặng tại nhà máy. Vụ việc thuộc diện luật xử phạt tai nạn nghiêm trọng.
+95|Dừng toàn bộ + đầu tư an toàn ({0})
+96|Thay toàn bộ thiết bị an toàn. Doanh thu -15% trong 2 tháng, tinh thần +5
+97|Xử lý ở mức tối thiểu
+98|Tạm qua, nhưng công nhân vẫn bất an. Tinh thần -6
+99|CEO bị truy tố! Phạt {0}, thương hiệu -18, tinh thần -10
+100|🧾 Bê bối chèn ép nhà thầu phụ
+101|Cáo buộc ép giá nhà cung cấp và lấy cắp công nghệ của họ nổ ra tại phiên chất vấn. Thương hiệu -8
+102|🧌 Kiện từ "patent troll"
+103|Một công ty nước ngoài không có sản phẩm, chỉ có bằng sáng chế, đã kiện đòi khoản tiền khổng lồ tại tòa án Mỹ.
+104|Hòa giải ({0})
+105|Trả tiền hòa giải cho xong chuyện.
+106|Chiến đến cùng (án phí {0})
+107|Bằng sáng chế bị tuyên vô hiệu, thắng tuyệt đối! Thương hiệu +3
+108|Thua kiện… bồi thường {0}
+109|🌱 Bê bối "tẩy xanh"
+110|Quảng cáo "thân thiện môi trường" bị phát hiện là phóng đại, các tổ chức môi trường đồng loạt chỉ trích. Thương hiệu -7
+111|📉 Bị hạ hạng tín nhiệm
+112|Nợ quá nhiều khiến hạng tín nhiệm bị hạ. Lãi thêm {0}, thương hiệu -3
+113|📈 Lương tối thiểu tăng mạnh
+114|Lương tối thiểu năm sau tăng mạnh. Chi phí nhân sự +3%
+115|🚫 Hạn chế xuất khẩu
+116|Tranh chấp thương mại khiến các nước lớn hạn chế xuất khẩu. Doanh thu -20% trong 3 tháng
+117|🏳️ Trả đũa ngoại giao
+118|Căng thẳng ngoại giao vạ lây: tẩy chay và đình chỉ kinh doanh ở nước sở tại. Doanh thu -25% trong 3 tháng
+119|🌪️ Thiệt hại do bão
+120|Siêu bão làm ngập cơ sở kinh doanh. Chi phí khắc phục {0}
+121|🚚 Khủng hoảng vận chuyển
+122|Đình công vận tải khiến hàng không xuất được. Doanh thu -15% trong 2 tháng
+123|🏷️ Vi phạm ghi xuất xứ
+124|Bị phát hiện ghi hàng nhập khẩu là hàng nội. Phạt {0}, thương hiệu -12
+125|⚗️ Phát hiện chất độc hại
+126|Báo chí đưa tin "{0}" chứa chất độc hại vượt ngưỡng cho phép.
+127|Thu hồi toàn bộ ngay
+128|Thu hồi nhanh nên giữ được niềm tin. Sức cạnh tranh "{0}" -50%, thương hiệu +2
+129|Phản bác "vô hại với người dùng"
+130|Kiểm tra bổ sung xác nhận không có vấn đề.
+131|Cơ quan quản lý ra lệnh ngừng bán! Thương hiệu -18, sức cạnh tranh sản phẩm -60%
+132|💊 Lộ chuyện chi hoa hồng trái phép
+133|Lộ chuyện ta chi hoa hồng trái phép cho bệnh viện. Phạt {0}, thương hiệu -8
+134|📱 Nghệ sĩ bị tố bắt nạt học đường
+135|Một bài đăng trên mạng tố nghệ sĩ của ta từng bắt nạt bạn học.
+136|Tạm dừng hoạt động và xác minh
+137|Cách xử lý thận trọng được khen ngợi. Sức cạnh tranh "{0}" -30%, thương hiệu +2
+138|"Vô căn cứ, sẽ có biện pháp pháp lý"
+139|Lời tố cáo hóa ra là sai sự thật! Thương hiệu +3
+140|Lại có thêm bằng chứng… Thương hiệu -15, sức cạnh tranh sản phẩm -50%
+141|🎮 Luật quản lý game được thông qua
+142|Luật hạn chế vật phẩm may rủi và trần nạp tiền được thông qua. Doanh thu -15% trong 3 tháng
+143|🔌 Kiểm soát xuất khẩu công nghệ cao
+144|Kiểm soát xuất khẩu của một cường quốc chặn đầu ra, nhưng thúc đẩy nghiên cứu nội địa hóa. Doanh thu -20% trong 3 tháng, công nghệ +3
+145|📜 Luật quản lý nền tảng
+146|Luật quản lý nền tảng lớn có hiệu lực. Giảm phí khiến doanh thu -15% trong 3 tháng, chi phí tuân thủ {0}
+147|🧾 Nghi vấn gian lận kế toán
+148|Công ty kiểm toán chỉ ra vấn đề trong cách ghi nhận một phần doanh thu. Báo chí đã đánh hơi thấy.
+149|Tự nguyện đính chính ({0})
+150|Đối mặt bằng thông báo đính chính. Chi phí {0}, thương hiệu -6
+151|Ỉm đi
+152|…Lần này qua êm.
+153|Viện kiểm sát khám xét! Phạt {0}, thương hiệu -20, doanh thu -30% trong 4 tháng
+154|⚖️ Phạt cạnh tranh
+155|Bị phạt {0} vì lạm dụng vị thế thống lĩnh thị trường, thương hiệu -3
+156|👊 Tranh giành quyền kiểm soát
+157|Công bố cho thấy một quỹ chủ động đang lặng lẽ gom cổ phiếu của ta. Phiếu bầu phía ta là {0}%.
+158|Mua cổ phần ngay để đối phó ({0}, cổ phần +3 điểm)
+159|Thiếu tiền nên mua thất bại… cổ phần còn -1 điểm
+160|Phòng thủ trước! Chi {0}, cổ phần +3 điểm
+161|Chờ xem
+162|{0} đã nắm {1}% cổ phần. Hãy xem thẻ Quyền kiểm soát.
+163|🌊 Đổi mới đột phá xuất hiện
+164|{0} với công nghệ mới đã lật ngược thị trường. Sức cạnh tranh sản phẩm hiện có -35%! Hãy đáp trả bằng sản phẩm mới.
+165|🔧 Thu hồi quy mô lớn
+166|Phát hiện lỗi, thu hồi toàn bộ. Chi phí {0}, thương hiệu -8
+167|🌐 Cơ hội đầu tư lớn ở nước ngoài
+168|Cơ hội mua lại một công ty ở nước ngoài. Thành công thì trúng lớn, thất bại thì lỗ nặng.
+169|Mạnh dạn đầu tư ({0})
+170|Chiếm lĩnh thị trường nước sở tại! Doanh thu +40% trong 5 tháng
+171|Bản địa hóa thất bại… mất vốn đầu tư và doanh thu -15% trong 3 tháng
+172|Thận trọng bỏ qua
+173|Ta đã để cơ hội trôi qua.
+174|🐌 Bệnh doanh nghiệp lớn
+175|Bảy con dấu phê duyệt, báo cáo để báo cáo… nhân viên kiệt sức. Tinh thần -8
+176|🩳 Tấn công bán khống
+177|Nhóm bán khống tung ra báo cáo bất lợi. Thương hiệu -5, doanh thu -15% trong 2 tháng
+178|🤝 Đề nghị mua lại
+179|Một tập đoàn lớn đề nghị mua công ty với giá {0}. Phần của bạn là {1}.
+180|Bán và exit (kết thúc game)
+181|Bạn đã bán công ty.
+182|Từ chối. Ta còn có thể lớn hơn
+183|Tuyên bố tự lực phát triển! Tinh thần +5
+184|🎉 Viral trên mạng xã hội
+185|"{0}" thành meme trên mạng xã hội! Sức cạnh tranh +40%
+186|📉 Suy thoái kinh tế
+187|Sức mua giảm sút. Doanh thu -20% trong 3 tháng
+188|🏆 Doanh nghiệp đổi mới của năm
+189|Được chọn là doanh nghiệp đổi mới của năm! Thương hiệu +6, tinh thần +5
+190|💼 Headhunter tấn công
+191|Đối thủ đề nghị trả lương gấp 1,5 lần cho nhân sự chủ chốt của ta.
+192|Tăng lương 5% cho toàn bộ nhân viên
+193|Chặn được chảy máu nhân tài. Chi phí nhân sự +5%, tinh thần +6
+194|Nhân sự chủ chốt ra đi. Công nghệ -6, tinh thần -4
+195|🍻 Bê bối văn hóa nhậu
+196|Bài tố "bắt buộc đi nhậu tăng ba" lan truyền. Tinh thần -8
+197|📈 Đối thủ phá sản
+198|Một đối thủ lớn đã phá sản! Doanh thu +25% trong 3 tháng
+199|🏦 Tăng lãi suất
+200|{0} tăng lãi suất cơ bản. Lãi thêm {1}
+201|☕ Đề nghị mở quán cà phê nội bộ
+202|Nhân viên đề nghị mở quán cà phê trong công ty.
+203|Mở ({0})
+204|Quán cà phê nội bộ khai trương! Tinh thần +10
+205|Từ chối
+206|Nhân viên tiếc nuối. Tinh thần -4
+207|👔 Con chủ tịch vào công ty
+208|Con của chủ tịch sắp vào làm ở công ty.
+209|Cho làm lãnh đạo luôn
+210|Bê bối "dù" con ông cháu cha. Tinh thần -15, thương hiệu -5
+211|Cho bắt đầu từ nhân viên mới
+212|Được khen "quản trị đúng mực". Tinh thần +5, thương hiệu +3
+213|📺 Đề nghị PPL trong phim truyền hình
+214|Hãng sản xuất một bộ phim ăn khách đề nghị đặt sản phẩm (PPL).
+215|Nhận lời ({0})
+216|Nhân vật chính dùng sản phẩm của ta! Thương hiệu +10
+217|Từ chối
+218|Ta đã lịch sự từ chối.
+219|🎰 Bê bối tỉ lệ vật phẩm
+220|Người chơi tố ta gian lận tỉ lệ rơi đồ và tổ chức biểu tình bằng xe tải.
+221|Công khai tỉ lệ + đền bù
+222|Lấy lại niềm tin! Chi {0}, thương hiệu +3
+223|Cố chịu
+224|Người chơi bỏ đi… Thương hiệu -12, doanh thu -15% trong 3 tháng
+225|🤢 Nghi ngộ độc thực phẩm
+226|Báo chí đưa tin nghi ngộ độc thực phẩm. Thương hiệu -10, doanh thu -20% trong 2 tháng
+227|🧪 Công bố kết quả thử nghiệm lâm sàng
+228|"{0}" thử nghiệm lâm sàng thành công! Sức cạnh tranh ×2, thương hiệu +10 🚀
+229|"{0}" thử nghiệm lâm sàng thất bại… sức cạnh tranh -60%
+230|💕 Tin đồn hẹn hò của nghệ sĩ
+231|Một tờ báo lá cải đưa tin nghệ sĩ của ta đang hẹn hò.
+232|Thoải mái thừa nhận
+233|Fan cũng chúc mừng. Thương hiệu -3
+234|Phủ nhận: "Chỉ là đồng nghiệp thân thiết"
+235|Qua êm.
+236|Ảnh mới tung ra, lời nói dối bị lật tẩy! Thương hiệu -15
+237|🚢 Chuỗi cung ứng toàn cầu gián đoạn
+238|Nguồn cung nguyên liệu bị gián đoạn. Chi phí thêm {0}, doanh thu -15% trong 2 tháng
+239|🛍️ Đơn hàng lớn từ cửa hàng miễn thuế
+240|Cửa hàng miễn thuế đặt một đơn hàng lớn! Doanh thu +40% trong 2 tháng
+241|🏦 Ngân hàng giao dịch bị rút tiền ồ ạt
+242|Ngân hàng giữ tiền gửi của công ty bị rút tiền ồ ạt, tiền chảy ra chỉ trong một ngày. Phần lớn tiền của ta đang ở đó.
+243|Chia ngay sang nhiều ngân hàng ({0})
+244|Nhanh tay giữ được tiền. Chỉ mất chút phí.
+245|Chính phủ sẽ ra tay thôi
+246|Ngân hàng đóng cửa, một phần tiền bị phong tỏa… lỗ {0}, tinh thần -6
+247|Chính phủ bảo đảm toàn bộ tiền gửi. Ta gặp may.
+248|🪓 Big Tech sa thải hàng loạt
+249|Các công ty Big Tech sa thải hàng chục nghìn người. Lập trình viên giỏi tràn ra thị trường.
+250|Chiêu mộ người giỏi ({0})
+251|{0} người từ Big Tech gia nhập! Công nghệ +4
+252|Ta cũng tinh gọn
+253|Đã cho {0} người nghỉ. Chi phí giảm nhưng tinh thần -10
+254|🛂 Cú sốc phí visa lao động
+255|Phí visa lao động (H-1B) khi tuyển nhân tài nước ngoài tăng vọt lên 100.000 đô la mỗi người.
+256|Trả phí và tuyển ({0})
+257|Giữ được nhân tài nước ngoài thật sự cần thiết. Công nghệ +3
+258|Cho làm việc ở chi nhánh nước ngoài ({0})
+259|Cầm cự bằng làm việc từ xa. Trao đổi hơi chậm hơn. Tinh thần -2
+260|Bỏ tuyển dụng nước ngoài
+261|Tìm nhân tài khó hơn. Công nghệ -2
+262|🛍️ Mùa Black Friday
+263|Black Friday, mùa mua sắm lớn nhất năm, sắp đến.
+264|Giảm giá lớn ({0})
+265|Đơn hàng dồn dập! Doanh thu tháng này +35%, thương hiệu +2
+266|Giữ nguyên giá
+267|Không giảm giá vẫn có khách mua. Thương hiệu +1
+268|💴 Đàm phán lương mùa xuân
+269|Đến mùa đàm phán lương mùa xuân (shunto). Công đoàn đòi tăng lương hơn 5%.
+270|Chấp nhận 5%
+271|"Năm nay lại được tăng lương!" Chi phí nhân sự +5%, tinh thần +10
+272|Đàm phán xuống 3%
+273|Đạt thỏa hiệp. Chi phí nhân sự +3%, tinh thần -3
+274|🧓 Thiếu lao động
+275|Già hóa dân số khiến thiếu người làm. Ngày nào cũng có tin công ty đóng cửa vì thiếu nhân lực.
+276|Tuyển lao động nước ngoài có kỹ năng
+277|{0} lao động nước ngoài đã gia nhập.
+278|Tự động hóa và robot ({0})
+279|Cần ít người hơn. Công nghệ +4
+280|Tuyển lại người đã nghỉ hưu
+281|Các cựu binh đã trở lại. Tinh thần +3, chi phí nhân sự +1%
+282|💹 Yên yếu kỷ lục
+283|Đồng yên xuống thấp nhất 38 năm! Sản phẩm của ta rẻ hơn ở nước ngoài. Doanh thu +25% trong 2 tháng
+284|🔻 Cuộc chiến giá cắt cổ (nội quyển)
+285|Đối thủ giảm giá hơn 30%. Cả ngành đang lao vào cạnh tranh dưới giá vốn.
+286|Ta cũng giảm giá
+287|Giữ được thị phần nhưng lợi nhuận giảm. Doanh thu -8% trong 3 tháng
+288|Trụ vững bằng chất lượng và thương hiệu
+289|Mất một số khách nhưng có hình ảnh "đáng đồng tiền". Doanh thu -15% trong 2 tháng, thương hiệu +4
+290|🧲 Kiểm soát xuất khẩu đất hiếm
+291|Chính phủ kiểm soát xuất khẩu đất hiếm và nam châm khiến đơn nước ngoài giảm, nhưng chuỗi cung ứng trong nước vững hơn. Doanh thu -15% trong 3 tháng, công nghệ +2
+292|🎓 Thanh niên khó tìm việc
+293|Thời 10 triệu sinh viên tốt nghiệp mỗi năm. Tin tức nói cứ năm thanh niên thì một người không tìm được việc.
+294|Tuyển ồ ạt sinh viên mới ra trường ({0})
+295|Tuyển {0} sinh viên mới! "Công ty nâng đỡ người trẻ" thương hiệu +4
+296|Chỉ tuyển người có kinh nghiệm
+297|Trước mắt hiệu quả, nhưng người trẻ không còn để ý đến ta.
+298|📉 Hai năm liền tăng trưởng âm
+299|Giá năng lượng cao và xuất khẩu yếu khiến kinh tế co lại năm thứ hai. Doanh thu -13% trong 3 tháng
+300|💼 Khách hàng phá sản dây chuyền
+301|Một khách hàng lớn nộp đơn phá sản. Tiền họ nợ ta bị kẹt.
+302|Thu hồi một phần qua bảo hiểm tín dụng ({0})
+303|Nhờ bảo hiểm, khoản lỗ chỉ còn {0}.
+304|Kiện ra tòa để đòi
+305|Sau vụ kiện dài, ta đòi lại được phần lớn!
+306|Cuối cùng mất trắng {0}.
+307|🧑‍🔧 Thiếu thợ lành nghề
+308|Nghe nói phải mất 8 tháng mới tuyển được một thợ lành nghề. Nhà máy của ta cũng ngày càng nhiều chỗ trống.
+309|Mời thợ lành nghề từ nước ngoài
+310|{0} kỹ thuật viên nước ngoài đã gia nhập.
+311|Đào tạo học nghề (Ausbildung) ({0})
+312|Người do ta tự đào tạo ở lại công ty. Công nghệ +2, tinh thần +4
+313|📲 Thanh toán di động bùng nổ
+314|Đến hàng rong cũng thanh toán QR! Đơn online bùng nổ. Doanh thu +25% trong 2 tháng
+315|🚫 Ứng dụng đối thủ nước ngoài bị cấm
+316|Chính phủ cấm hàng chục ứng dụng nước ngoài vì lý do an ninh. Ta lấp chỗ trống! Doanh thu +30% trong 3 tháng, thương hiệu +3
+317|👥 Thị trường tiêu dùng lớn nhất thế giới
+318|Tầng lớp trung lưu tăng nhanh, đơn hàng về từ cả các thành phố nhỏ. Doanh thu +20% trong 3 tháng, thương hiệu +2
+319|💸 Bùng nổ đầu tư mạo hiểm
+320|Các quỹ đầu tư mạo hiểm đang rót tiền. Lời mời đầu tư vào ta cũng tới tấp.
+321|Nhận đầu tư (+{0}, cổ phần -12%)
+322|Gọi vốn với điều kiện tốt! Có {0}, cổ phần của bạn {1}%
+323|Giữ cổ phần
+324|Ta giữ cổ phần thay vì nhận tiền. Phải tự kiếm vốn thôi.
+325|🖥️ Sự cố IT toàn cầu
+326|Bản cập nhật lỗi của một phần mềm bảo mật dùng khắp thế giới làm máy chủ và PC lần lượt sập.
+327|Chuyển ngay sang hệ thống dự phòng ({0})
+328|Khôi phục dịch vụ trong vài giờ. "Đúng là công ty đáng tin" thương hiệu +2
+329|Chờ đến khi khắc phục xong
+330|Dịch vụ ngừng hơn một ngày. Doanh thu tháng này -20%, thương hiệu -3
+331|📺 Đề nghị độc quyền từ OTT toàn cầu
+332|Một nền tảng OTT toàn cầu muốn phát độc quyền "{0}" trên toàn thế giới và chi trả toàn bộ chi phí sản xuất.
+333|Ký độc quyền (+{0})
+334|Phát hành ở 190 quốc gia! Có kinh phí sản xuất {0}, thương hiệu +5 (nhưng phải chia doanh thu IP)
+335|Tự phát hành
+336|Tự phát hành thắng lớn! Doanh thu +30% trong 2 tháng
+337|Chìm nghỉm trong im lặng. Tiếc sức mạnh của nền tảng lớn.
+338|🎶 Cơn sốt hoạt hình K-pop
+339|K-pop trong một phim hoạt hình nước ngoài càn quét thế giới, nghệ sĩ của ta cũng nổi theo! Doanh thu +35% trong 2 tháng, thương hiệu +5
+340|🛒 Hàng xuyên biên giới siêu rẻ đổ bộ
+341|Ứng dụng mua sắm nước ngoài bắt đầu bán hàng tương tự sản phẩm của ta với giá chỉ một phần ba.
+342|Giảm giá để cạnh tranh
+343|Giữ được thị phần nhưng biên lợi nhuận giảm. Doanh thu -7% trong 2 tháng
+344|Marketing niềm tin về chất lượng và an toàn ({0})
+345|Dư luận "của rẻ là của ôi" giúp sản phẩm của ta được đánh giá lại. Thương hiệu +4
+346|Mặc kệ
+347|Khách hàng dần bỏ đi. Doanh thu -15% trong 3 tháng
+348|🍫 Giá nguyên liệu tăng vọt
+349|Giá nguyên liệu như ca cao, cà phê, bột mì lên mức cao nhất lịch sử.
+350|Tăng giá sản phẩm
+351|"Lại tăng nữa à?" Người tiêu dùng phản ứng lạnh nhạt. Thương hiệu -3, doanh thu -5% trong 2 tháng
+352|Lén giảm định lượng
+353|Báo chí phanh phui chuyện "thu nhỏ bao bì"! Thương hiệu -10
+354|Chưa ai phát hiện… ít nhất là bây giờ.
+355|Chịu giảm biên lợi nhuận
+356|Giữ nguyên giá. Lỗ {0}, "giá có tâm" thương hiệu +2
+357|📱 Tin nhắn lừa đảo mạo danh công ty
+358|Tin nhắn "giao hàng/hoàn tiền" giả danh công ty ta khiến khách hàng liên tục bị lừa.
+359|Cảnh báo khách hàng + hỗ trợ nạn nhân ({0})
+360|Phản ứng nhanh khiến khách hàng càng tin tưởng. Thương hiệu +2
+361|Không phải lỗi của ta
+362|Chỉ trích dồn dập "công ty phủi tay". Thương hiệu -6
+363|👶 Làn sóng xin nghỉ chăm con
+364|Năm nay rất nhiều nhân viên làm bố mẹ cùng lúc xin nghỉ chăm con.
+365|Khuyến khích + tuyển người thay thế ({0})
+366|Lan truyền tiếng "công ty tốt cho người nuôi con"! Tinh thần +9, thương hiệu +2
+367|Gây áp lực
+368|Bài tố cáo xuất hiện trên diễn đàn ẩn danh. Tinh thần -8, thương hiệu -6
+369|Nhân viên thất vọng. Tinh thần -8
+370|🧯 Kiểm tra an toàn nhà máy
+371|Đợt kiểm tra PCCC chỉ ra cách bảo quản pin và hóa chất là nguy hiểm. Lối thoát hiểm cũng không đủ.
+372|Đầu tư an toàn toàn diện ({0})
+373|Thay thiết bị và diễn tập sơ tán. Nhân viên yên tâm. Tinh thần +4
+374|Để quý sau
+375|Cuối cùng nhà máy đã cháy… chi phí khắc phục {0}, thương hiệu -12, tinh thần -12
+376|Lần này may mắn thoát. Nhưng rủi ro vẫn còn đó.
+377|🧪 Được duyệt cơ chế thử nghiệm (sandbox)
+378|Mảng kinh doanh mới bị luật chặn đã được cấp phép thí điểm đặc biệt! Doanh thu +20% trong 3 tháng, công nghệ +2
+379|🏴‍☠️ Hàng giả và bị chiếm nhãn hiệu ở nước ngoài
+380|Ở nước ngoài có người bán hàng giả "{0}", và một thương lái địa phương đã đăng ký trước nhãn hiệu của ta.
+381|Đăng ký nhãn hiệu tại chỗ + kiện ({0})
+382|Lấy lại nhãn hiệu và dẹp hàng giả. Thương hiệu +2
+383|Vụ kiện kéo dài. Đến giờ chỉ tốn tiền.
+384|Khiếu nại về chất lượng hàng giả đổ về phía ta. Doanh thu -10% trong 3 tháng, thương hiệu -3
+385|🇺🇸 Quả bom thuế quan Mỹ
+386|Mỹ tuyên bố áp thuế cao lên hàng nhập khẩu. Với tỉ trọng doanh thu ở Mỹ lớn, ta bị đánh trúng.
+387|Đầu tư sản xuất tại Mỹ ({0})
+388|Nhà máy tại chỗ giúp né thuế. Báo chí Mỹ cũng có thiện cảm. Thương hiệu +3
+389|Đa dạng hóa xuất khẩu sang nước khác
+390|Đang mở thị trường châu Âu và Trung Đông. Chi phí {0}, doanh thu -8% trong 2 tháng
+391|Tăng giá để cầm cự
+392|Người tiêu dùng Mỹ quay lưng vì tăng giá. Doanh thu -18% trong 3 tháng, thương hiệu -2
+393|🤖 Cú sốc AI tạo sinh
+394|Đối thủ bắt đầu tự động hóa công việc bằng AI tạo sinh. Nhân viên lo mất việc.
+395|Áp dụng AI toàn diện ({0})
+396|Công việc nhanh hơn rõ rệt nhưng nhân viên bất an. Công nghệ +6, tinh thần -6
+397|Đào tạo AI cho nhân viên trước ({0})
+398|Hình thành tinh thần "AI là đồng nghiệp". Công nghệ +3, tinh thần +4
+399|Khoảng cách với đối thủ ngày càng lớn. Công nghệ -3
+400|⚡ Giá điện công nghiệp tăng
+401|Giá điện công nghiệp lại tăng. Chi phí vận hành nhà máy và máy chủ tăng mạnh.
+402|Điện mặt trời và tự phát điện ({0})
+403|Có hệ thống mới, tiền điện giảm và hình ảnh xanh hơn. Thương hiệu +3
+404|Chịu giá điện
+405|Riêng tiền điện quý này đã tốn thêm {0}.
+406|🥵 Nắng nóng kỷ lục
+407|Đêm nóng kéo dài hơn một tháng. Nhân viên hiện trường kiệt sức vì nóng.
+408|Tăng làm mát và giờ nghỉ ({0})
+409|"Công ty mình biết quan tâm con người" tinh thần +6
+410|Làm việc như thường
+411|Có người bị say nắng tại hiện trường. Tinh thần -8, thương hiệu -6
+412|Năng suất tụt mạnh. Tinh thần -8
+413|👷 Khó tuyển người
+414|Nhà máy và cửa hàng không có người làm. Đăng tin tuyển dụng cũng không ai ứng tuyển.
+415|Tuyển lao động nước ngoài
+416|{0} lao động nước ngoài đã gia nhập. Chi phí đào tạo và chỗ ở {1}
+417|Đầu tư tự động hóa ({0})
+418|Nhà máy thông minh giảm bớt nhân công. Công nghệ +4
+419|Tăng lương để tuyển
+420|Người ứng tuyển lại tăng. Chi phí nhân sự +3%, tinh thần +3
+421|🧓 Bước vào xã hội siêu già
+422|Người cao tuổi thành nhóm khách hàng chủ lực mới. Thị trường bạc mở rộng! Doanh thu +15% trong 3 tháng, thương hiệu +2
+423|Nhiều nhân viên kỳ cựu nghỉ hưu cùng lúc, kinh nghiệm cũng ra đi. Công nghệ -2, tinh thần -3
+424|✊ "Luật phong bì vàng" có hiệu lực
+425|Công đoàn của nhà thầu phụ đòi đàm phán trực tiếp với ta, bên giao thầu.
+426|Ngồi vào bàn đàm phán ({0})
+427|Ký thỏa thuận cùng có lợi. Báo chí gọi ta là "bên giao thầu tử tế". Tinh thần +4, thương hiệu +3
+428|Từ chối vì không phải người sử dụng lao động
+429|Công đoàn nhà thầu phụ đình công, sản xuất ngừng trệ. Thương hiệu -6, doanh thu -12% trong 2 tháng
+430|Dư luận lạnh nhạt. Thương hiệu -6
+431|🌍 Thuế carbon biên giới của EU
+432|EU bắt đầu thu phí hàng nhập khẩu phát thải nhiều carbon. Đối tác châu Âu đòi dữ liệu phát thải của ta.
+433|Đầu tư giảm phát thải ({0})
+434|Quy trình ít carbon giúp giữ đối tác châu Âu. Thương hiệu +4, công nghệ +2
+435|Tự gánh chi phí
+436|Chi phí carbon ăn vào lợi nhuận châu Âu. Doanh thu -10% trong 4 tháng
+437|📋 Tăng mức đóng lương hưu
+438|Tỉ lệ đóng quỹ hưu trí quốc gia tăng, phần công ty chịu cũng tăng. Chi phí nhân sự +0,5%
+439|🛵 Mâu thuẫn phí app giao đồ ăn
+440|Phí app giao đồ ăn và phí ship tăng, chủ quán than càng bán càng chẳng còn lời.
+441|App đặt hàng riêng + giảm giá tự lấy ({0})
+442|Khách quen chuyển sang app của ta. Thương hiệu +3
+443|Tăng giá thực đơn
+444|Nổ ra tranh cãi "giá giao hàng riêng". Thương hiệu -4
+445|Chịu phí
+446|Phí tốn thêm {0}.
+447|💄 Xuất khẩu K-beauty lập kỷ lục
+448|Sản phẩm K-beauty liên tục cháy hàng ở các cửa hàng nước ngoài! Doanh thu +30% trong 2 tháng, thương hiệu +4
+449|🍜 Cơn sốt xuất khẩu mì Hàn
+450|Thử thách mì cay đang hot trên mạng xã hội nước ngoài! Doanh thu +30% trong 2 tháng, thương hiệu +4
+451|💉 Đề nghị chuyển giao công nghệ từ hãng dược lớn
+452|Một hãng dược toàn cầu muốn mua công nghệ của "{0}". Riêng tiền đặt cọc đã lên tới hàng chục triệu đô.
+453|Ký chuyển giao công nghệ (đặt cọc {0})
+454|Chốt thương vụ chuyển giao lớn! Đặt cọc {0}, thương hiệu +5 (chuyển một phần quyền sản phẩm)
+455|Tự phát triển đến cùng
+456|Tự phát triển và vượt qua thử nghiệm lâm sàng! Sức cạnh tranh sản phẩm chủ lực +40%, công nghệ +3
+457|Gánh nặng chi phí phát triển vẫn tiếp tục. Công nghệ +3
+458|🀄 Được cấp giấy phép game Trung Quốc
+459|"{0}" đã được cấp phép phát hành tại Trung Quốc. Một nhà phát hành địa phương muốn bắt tay.
+460|Ra mắt tại Trung Quốc ({0})
+461|Bùng nổ tại Trung Quốc! Doanh thu +40% trong 3 tháng, thương hiệu +4
+462|Bị đối thủ nội địa lấn át và chìm nghỉm…
+463|Hoãn ra mắt
+464|Tránh được rủi ro pháp lý nhưng cũng lỡ cơ hội.
+465|🗓️ Đòi tuần làm 4,5 ngày
+466|Nhân viên đòi áp dụng tuần làm 4,5 ngày, chiều thứ Sáu được về. Nghe nói còn có trợ cấp nhà nước.
+467|Áp dụng thí điểm
+468|Nhân viên hài lòng tột độ! Tinh thần +14, trợ cấp nhà nước {0} (doanh thu -4% trong 2 tháng)
+469|Vẫn còn sớm
+470|"Bao giờ công ty mình mới…" Tinh thần -6
+471|🔓 Rò rỉ dữ liệu cá nhân
+472|Phát hiện dấu hiệu dữ liệu cá nhân của khách hàng bị rò rỉ do hack.
+473|Công bố ngay và đền bù
+474|Ứng xử trung thực. Chi {0}, thương hiệu -5
+475|Lặng lẽ che giấu
+476|…Không ai biết, mọi chuyện qua đi.
+477|Bị phát hiện che giấu! Phạt {0}, thương hiệu -25

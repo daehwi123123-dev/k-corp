@@ -1,0 +1,478 @@
+0|📺 YouTuber-Review
+1|Ein YouTuber mit 3 Millionen Abonnenten schwärmt von unserem Produkt! Marke +8
+2|🏛️ Staatliche Förderung
+3|Für ein staatliches Start-up-Förderprogramm ausgewählt! {0} Förderung
+4|🏃 Schlüsselkraft geht
+5|Ein Entwickler auf CTO-Niveau ist zur Konkurrenz gewechselt. Technik -{0}, Moral -5
+6|🔥 Machtmissbrauch-Skandal
+7|Ein anonymer Post über die Schikanen einer Führungskraft ging viral und landete in den Nachrichten.
+8|Öffentliche Entschuldigung + Gegenmaßnahmen
+9|Eine schnelle Entschuldigung dämmte es ein. {0} ausgegeben, Marke -4
+10|Nicht reagieren
+11|Ein Boykott breitet sich aus… Marke -15, Moral -6
+12|✊ Gewerkschaft gegründet
+13|Die Belegschaft hat eine Gewerkschaft gegründet und fordert mehr Lohn.
+14|10 % Lohnerhöhung zustimmen
+15|Einigung erzielt. Personalkosten +10 %, Moral +20
+16|Forderungen ablehnen
+17|Streik! Moral -20, 2 Monate Umsatz -20 %
+18|💱 Währungsschock
+19|Eine schwache Heimatwährung beflügelt den Export! 3 Monate Umsatz +20 %
+20|🔍 Steuerprüfung
+21|Eine Routine-Steuerprüfung ergab Nachzahlungen von {0}
+22|🌕 Feiertagsbonus
+23|Ein großer Feiertag naht. Die Belegschaft hofft auf einen Bonus.
+24|Bonus zahlen ({0})
+25|Großzügiger Bonus! Moral +15
+26|Stattdessen Thunfischdosen-Geschenksets
+27|…Thunfischdosen? Moral -10
+28|🌏 K-Welle
+29|Koreanische Marken sind im Ausland der Hit! 2 Monate Umsatz +50 %, Marke +5
+30|💥 Großer Unfall
+31|Serverausfall / Fabrikbrand. Wiederherstellung {0}, Produkt-Wettbewerbsfähigkeit -15 %, Marke -3
+32|🏛️ Als Zeuge geladen
+33|Sie wurden als Zeuge vor einen Parlamentsausschuss geladen.
+34|Gewissenhaft erscheinen
+35|Eine schweißtreibende Befragung… Marke -3
+36|Mit Verweis auf eine Auslandsreise fernbleiben
+37|Eine Welle der Kritik wegen „Drückebergerei“. Marke -12
+38|🦈 Großkonzern klaut unsere Idee
+39|Ein Großkonzern hat eine Kopie unseres „{0}“ herausgebracht.
+40|Klagen ({0}{1})
+41| · {0} % Siegchance dank unserer IP
+42|Gewonnen! Schadenersatz {0}, Marke +8
+43|Verloren… Produkt-Wettbewerbsfähigkeit -40 %
+44|Hinnehmen
+45|Sie haben uns den Markt weggenommen. Wettbewerbsfähigkeit des Hauptprodukts -40 %
+46|🏴‍☠️ IP-Verletzung entdeckt
+47|Eine ausländische Firma nutzt unser „{0} {1}“ ohne Erlaubnis.
+48|Internationale Klage ({0})
+49|Gewonnen! Schadenersatz {0}
+50|Verloren… nur Prozesskosten verbrannt.
+51|Einen ordentlichen Lizenzvertrag schließen
+52|Lizenzvertrag unterzeichnet! „{0}“ Lizenzgebühren +15 %
+53|🤩 IP-Kollab-Angebot einer großen Marke
+54|Die „{0}“-Kollab-Edition ist ausverkauft! Lizenzgebühren +30 %, Marke +4
+55|🕵️ Industriespion erwischt
+56|Die Sicherheit erwischte einen Schlüsselforscher, der Konstruktionsdaten per USB-Stick an einen ausländischen Konkurrenten geben wollte.
+57|Anzeige + Klage ({0})
+58|Kurz vor dem Abfluss gestoppt! Mit den Ermittlern haben wir unsere Technik geschützt. Marke +2
+59|Ein Teil war schon weg… Technik -8
+60|Still entlassen und vertuschen
+61|Einige Daten scheinen schon abgeflossen zu sein. Technik -6, Moral -3
+62|📂 Angebot: Geheimnisse der Konkurrenz
+63|Ein Mitarbeiter von {0} bietet uns die Baupläne ihres neuen Produkts an.
+64|Ablehnen und die Konkurrenz warnen
+65|Eine positive Story über unsere „saubere Unternehmensführung“ erschien. Marke +5
+66|Heimlich kaufen ({0})
+67|Wir haben die Baupläne… Technik +12
+68|Nach Ermittlungen aufgeflogen! Schadenersatz wegen Geheimnisverrats {0}, Marke -25
+69|💀 Ransomware-Angriff
+70|Alle Firmenserver sind verschlüsselt. Hacker verlangen Lösegeld in Bitcoin.
+71|Lösegeld zahlen ({0})
+72|Wir haben den Schlüssel bekommen, der Betrieb läuft wieder.
+73|Sie nahmen das Geld und schickten keinen Schlüssel… 2 Monate Umsatz -20 %
+74|Ablehnen und aus Backups wiederherstellen
+75|„Keine Deals mit Hackern.“ 2 Monate Umsatz -25 %, Marke +2
+76|🎭 Deepfake-Überweisungsbetrug
+77|Die Finanzabteilung fiel auf einen Deepfake-Videocall mit Gesicht und Stimme des CEO herein und überwies {0}.
+78|💰 Veruntreuung durch Manager
+79|Der Finanzvorstand hat über Jahre {0} veruntreut. Marke -5
+80|📢 Whistleblower
+81|Ein Mitarbeiter will illegale Praktiken der Firma der Aufsicht melden.
+82|Annehmen und abstellen ({0})
+83|Wir haben es selbst korrigiert. Marke +4, Moral +4
+84|Mundtot machen
+85|Vorerst ruhig, aber die Stimmung ist eisig. Moral -5
+86|Die Aufnahme lief im Fernsehen! Marke -20, Moral -10
+87|🧲 Ganzes Team abgeworben
+88|{0} bietet unserem gesamten Kern-Entwicklerteam das doppelte Gehalt.
+89|Mit Aktienoptionen halten (Anteil -2 Pkt.)
+90|Team gehalten. Anteil -2 Pkt., Moral +10
+91|Gehen lassen
+92|Das Team ist zu {0} gegangen. Technik -10, Technik der Konkurrenz +10
+93|🚑 Schwerer Arbeitsunfall
+94|In der Fabrik wurde ein Arbeiter schwer verletzt. Der Fall fällt unter das Gesetz über schwere Arbeitsunfälle.
+95|Komplett stoppen + in Sicherheit investieren ({0})
+96|Alle Sicherheitsanlagen erneuert. 2 Monate Umsatz -15 %, Moral +5
+97|Nur das Nötigste tun
+98|Erst mal überstanden, aber in der Halle ist man beunruhigt. Moral -6
+99|Der CEO wurde angeklagt! Strafe {0}, Marke -18, Moral -10
+100|🧾 Zulieferer-Skandal
+101|Vorwürfe von Preisdrückerei und Technikklau bei Zulieferern platzten in einer Anhörung. Marke -8
+102|🧌 Patenttroll-Klage
+103|Eine ausländische Firma ohne Produkte, nur mit Patenten, hat vor einem US-Gericht auf eine riesige Summe geklagt.
+104|Vergleich ({0})
+105|Wir haben uns verglichen und es beendet.
+106|Bis zum Ende kämpfen (Prozesskosten {0})
+107|Patent für nichtig erklärt – voller Sieg! Marke +3
+108|Verloren… Schadenersatz {0}
+109|🌱 Greenwashing-Skandal
+110|Unsere „umweltfreundliche“ Werbung erwies sich als übertrieben, Umweltgruppen laufen Sturm. Marke -7
+111|📉 Herabstufung der Bonität
+112|Zu viele Schulden: Unser Rating wurde gesenkt. Zusatzzinsen {0}, Marke -3
+113|📈 Starke Mindestlohnerhöhung
+114|Der Mindestlohn steigt nächstes Jahr deutlich. Personalkosten +3 %
+115|🚫 Exportbeschränkungen
+116|Wegen eines Handelsstreits beschränken wichtige Länder unsere Exporte. 3 Monate Umsatz -20 %
+117|🏳️ Diplomatische Vergeltung
+118|Ein diplomatischer Streit schwappt über: Boykotte und Geschäftsschließungen vor Ort. 3 Monate Umsatz -25 %
+119|🌪️ Taifunschaden
+120|Ein Supertaifun hat unsere Standorte überflutet. Wiederherstellung {0}
+121|🚚 Logistikchaos
+122|Ein Frachtstreik stoppt die Auslieferung. 2 Monate Umsatz -15 %
+123|🏷️ Falsche Herkunftsangabe
+124|Wir haben Importware als heimisch deklariert und wurden erwischt. Bußgeld {0}, Marke -12
+125|⚗️ Schadstoff gefunden
+126|Berichten zufolge enthält „{0}“ Schadstoffe über dem Grenzwert.
+127|Sofort alles zurückrufen
+128|Der schnelle Rückruf rettete das Vertrauen. „{0}“ Wettbewerbsfähigkeit -50 %, Marke +2
+129|Kontern: „Für Menschen unbedenklich“
+130|Weitere Tests bestätigten: kein Problem.
+131|Die Behörde verhängt einen Verkaufsstopp! Marke -18, Produkt-Wettbewerbsfähigkeit -60 %
+132|💊 Illegale Kickbacks aufgedeckt
+133|Es kam heraus, dass wir Krankenhäusern illegale Provisionen gezahlt haben. Bußgeld {0}, Marke -8
+134|📱 Mobbing-Vorwürfe gegen Künstler
+135|Ein Online-Post wirft einem unserer Künstler Mobbing in der Schulzeit vor.
+136|Aktivitäten pausieren und prüfen
+137|Die besonnene Reaktion wurde gelobt. „{0}“ Wettbewerbsfähigkeit -30 %, Marke +2
+138|„Haltlos – wir gehen rechtlich vor“
+139|Die Vorwürfe waren falsch! Marke +3
+140|Neue Beweise tauchten auf… Marke -15, Produkt-Wettbewerbsfähigkeit -50 %
+141|🎮 Spielregulierung beschlossen
+142|Ein Gesetz gegen Lootboxen und für Ausgabenlimits wurde beschlossen. 3 Monate Umsatz -15 %
+143|🔌 Exportkontrollen für Hightech
+144|Exportkontrollen einer Großmacht blockieren den Absatz, beschleunigen aber eigene Entwicklung. 3 Monate Umsatz -20 %, Technik +3
+145|📜 Plattformgesetz
+146|Ein Gesetz gegen große Plattformen tritt in Kraft. Niedrigere Gebühren: 3 Monate Umsatz -15 %, Umsetzungskosten {0}
+147|🧾 Verdacht auf Bilanzfälschung
+148|Die Wirtschaftsprüfer bemängeln die Verbuchung einiger Umsätze. Die Presse wittert eine Story.
+149|Freiwillig korrigieren ({0})
+150|Mit einer Korrekturmeldung nach vorne. Kosten {0}, Marke -6
+151|Vertuschen
+152|…Diesmal ging es still vorbei.
+153|Razzia der Staatsanwaltschaft! Bußgeld {0}, Marke -20, 4 Monate Umsatz -30 %
+154|⚖️ Kartellstrafe
+155|Strafe von {0} wegen Missbrauchs der Marktmacht, Marke -3
+156|👊 Kampf um die Kontrolle
+157|Eine Meldung zeigt: Ein aktivistischer Fonds kauft still unsere Aktien. Unser Stimmrecht liegt bei {0} %.
+158|Sofort Aktien zukaufen ({0}, Anteil +3 Pkt.)
+159|Zu wenig Geld, Zukauf gescheitert… Anteil sogar -1 Pkt.
+160|Präventiv verteidigt! {0} ausgegeben, Anteil +3 Pkt.
+161|Abwarten
+162|{0} hält jetzt {1} %. Sieh dir die Kontroll-Karte an.
+163|🌊 Disruptive Innovation
+164|{0} hat mit neuer Technik den Markt auf den Kopf gestellt. Wettbewerbsfähigkeit bestehender Produkte -35 %! Kontere mit neuen Produkten.
+165|🔧 Großer Rückruf
+166|Ein Defekt wurde gefunden, alles zurückgerufen. Kosten {0}, Marke -8
+167|🌐 Große Auslandsinvestition
+168|Die Chance, eine Firma im Ausland zu kaufen. Klappt es, ein Volltreffer – sonst ein großer Verlust.
+169|Mutig investieren ({0})
+170|Den lokalen Markt erobert! 5 Monate Umsatz +40 %
+171|Lokalisierung gescheitert… Investition verloren, 3 Monate Umsatz -15 %
+172|Vorsichtig verzichten
+173|Wir haben die Chance verstreichen lassen.
+174|🐌 Großkonzern-Syndrom
+175|Sieben Freigabestempel, Berichte über Berichte… die Belegschaft ist erschöpft. Moral -8
+176|🩳 Leerverkäufer-Angriff
+177|Leerverkäufer veröffentlichten einen vernichtenden Bericht. Marke -5, 2 Monate Umsatz -15 %
+178|🤝 Übernahmeangebot
+179|Ein großer Konzern will die Firma für {0} kaufen. Ihr Anteil wären {1}.
+180|Verkaufen und aussteigen (Spielende)
+181|Sie haben die Firma verkauft.
+182|Ablehnen. Wir können größer werden
+183|Wir bleiben unabhängig! Moral +5
+184|🎉 Viraler Hit in sozialen Medien
+185|„{0}“ wurde zum Meme in den sozialen Medien! Wettbewerbsfähigkeit +40 %
+186|📉 Rezession
+187|Die Kauflaune sinkt. 3 Monate Umsatz -20 %
+188|🏆 Innovator des Jahres
+189|Zum innovativsten Unternehmen des Jahres gewählt! Marke +6, Moral +5
+190|💼 Headhunter-Angriff
+191|Die Konkurrenz bietet unseren Schlüsselleuten das 1,5-fache Gehalt.
+192|Allen 5 % mehr Gehalt
+193|Abwanderung gestoppt. Personalkosten +5 %, Moral +6
+194|Schlüsselleute sind weg. Technik -6, Moral -4
+195|🍻 Skandal um Trinkkultur
+196|Ein Post über „Pflicht-Kneipentouren nach Feierabend“ verbreitet sich. Moral -8
+197|📈 Konkurrent pleite
+198|Ein großer Konkurrent ist insolvent! 3 Monate Umsatz +25 %
+199|🏦 Zinserhöhung
+200|{0} hat den Leitzins erhöht. Zusatzzinsen {1}
+201|☕ Wunsch nach Firmencafé
+202|Die Belegschaft wünscht sich ein Café im Haus.
+203|Eröffnen ({0})
+204|Das Firmencafé ist eröffnet! Moral +10
+205|Ablehnen
+206|Enttäuschte Belegschaft. Moral -4
+207|👔 Das Kind des Vorsitzenden kommt
+208|Das Kind des Vorsitzenden tritt in die Firma ein.
+209|Sofort in den Vorstand setzen
+210|Vorwurf der Vetternwirtschaft. Moral -15, Marke -5
+211|Als Berufseinsteiger anfangen lassen
+212|Lob für „faire Führung“. Moral +5, Marke +3
+213|📺 Produktplatzierung in einer Serie
+214|Die Produktionsfirma einer Erfolgsserie bietet Produktplatzierung an.
+215|Annehmen ({0})
+216|Die Hauptfigur nutzt unser Produkt! Marke +10
+217|Ablehnen
+218|Wir haben höflich abgelehnt.
+219|🎰 Lootbox-Skandal
+220|Spieler werfen uns manipulierte Drop-Raten vor und protestieren mit LKWs.
+221|Wahrscheinlichkeiten offenlegen + entschädigen
+222|Vertrauen zurück! {0} ausgegeben, Marke +3
+223|Aussitzen
+224|Spieler wandern ab… Marke -12, 3 Monate Umsatz -15 %
+225|🤢 Verdacht auf Lebensmittelvergiftung
+226|Ein Verdachtsfall auf Lebensmittelvergiftung kam in die Medien. Marke -10, 2 Monate Umsatz -20 %
+227|🧪 Ergebnisse der klinischen Studie
+228|„{0}“ hat die klinische Studie bestanden! Wettbewerbsfähigkeit ×2, Marke +10 🚀
+229|„{0}“ ist in der klinischen Studie gescheitert… Wettbewerbsfähigkeit -60 %
+230|💕 Liebesgerücht um Künstler
+231|Ein Klatschblatt berichtet, einer unserer Künstler sei verliebt.
+232|Locker bestätigen
+233|Sogar die Fans gratulieren. Marke -3
+234|Dementieren: „Nur gute Kollegen“
+235|Gut überstanden.
+236|Neue Fotos entlarven die Lüge! Marke -15
+237|🚢 Globale Lieferkettenprobleme
+238|Die Rohstoffversorgung stockt. Zusatzkosten {0}, 2 Monate Umsatz -15 %
+239|🛍️ Großauftrag aus dem Duty-free
+240|Ein riesiger Auftrag von Duty-free-Shops! 2 Monate Umsatz +40 %
+241|🏦 Bankrun bei unserer Hausbank
+242|Bei der Bank mit unseren Einlagen hat ein Bankrun begonnen – an einem Tag fließt das Geld ab. Fast unser ganzes Geld liegt dort.
+243|Sofort auf mehrere Banken verteilen ({0})
+244|Schnell reagiert und das Geld gerettet. Nur ein paar Gebühren gezahlt.
+245|Der Staat wird schon eingreifen
+246|Die Bank hat geschlossen, ein Teil des Geldes ist eingefroren… Verlust {0}, Moral -6
+247|Der Staat hat alle Einlagen garantiert. Glück gehabt.
+248|🪓 Massenentlassungen bei Big Tech
+249|Big-Tech-Firmen haben Zehntausende entlassen. Gute Entwickler drängen auf den Markt.
+250|Die Besten holen ({0})
+251|{0} Ex-Big-Tech-Leute sind an Bord! Technik +4
+252|Auch abspecken
+253|Wir haben {0} Leute entlassen. Kosten gesunken, aber Moral -10
+254|🛂 Schock bei Arbeitsvisa-Gebühren
+255|Die Gebühr für Arbeitsvisa (H-1B) ausländischer Fachkräfte ist auf 100.000 Dollar pro Person gestiegen.
+256|Gebühr zahlen und einstellen ({0})
+257|Die wirklich nötigen Fachkräfte gehalten. Technik +3
+258|Im Auslandsbüro arbeiten lassen ({0})
+259|Wir halten mit Remote-Arbeit durch. Die Abstimmung ist etwas langsamer. Moral -2
+260|Auf Auslandsrekrutierung verzichten
+261|Talente zu finden wird schwerer. Technik -2
+262|🛍️ Black-Friday-Ansturm
+263|Black Friday, die größte Shopping-Saison des Jahres, steht vor der Tür.
+264|Große Rabattaktion ({0})
+265|Die Bestellungen explodieren! Umsatz diesen Monat +35 %, Marke +2
+266|Bei vollen Preisen bleiben
+267|Manche kaufen auch ohne Rabatt. Marke +1
+268|💴 Frühjahrs-Lohnoffensive
+269|Es ist Zeit für die Frühjahrs-Tarifverhandlungen (Shuntō). Die Gewerkschaft will über 5 % mehr.
+270|5 % akzeptieren
+271|„Auch dieses Jahr mehr Gehalt!“ Personalkosten +5 %, Moral +10
+272|Auf 3 % verhandeln
+273|Kompromiss gefunden. Personalkosten +3 %, Moral -3
+274|🧓 Arbeitskräftemangel
+275|Die alternde Gesellschaft hat zu wenig Arbeitskräfte. Täglich Meldungen über Firmen, die mangels Personal schließen.
+276|Ausländische Fachkräfte einstellen
+277|{0} ausländische Kräfte sind dazugekommen.
+278|Automatisierung und Roboter ({0})
+279|Wir brauchen weniger Hände. Technik +4
+280|Ruheständler wieder einstellen
+281|Die Veteranen sind zurück. Moral +3, Personalkosten +1 %
+282|💹 Rekordschwacher Yen
+283|Der Yen fällt auf ein 38-Jahres-Tief! Unsere Produkte sind im Ausland billiger. 2 Monate Umsatz +25 %
+284|🔻 Ruinöser Preiskampf (Involution)
+285|Die Konkurrenz senkt die Preise um über 30 %. Die ganze Branche rutscht in einen Wettbewerb unter Kosten.
+286|Auch die Preise senken
+287|Marktanteil gehalten, aber weniger Gewinn. 3 Monate Umsatz -8 %
+288|Mit Qualität und Marke durchhalten
+289|Einige Kunden sind weg, aber wir gelten als „preiswert im besten Sinne“. 2 Monate Umsatz -15 %, Marke +4
+290|🧲 Exportkontrollen für Seltene Erden
+291|Exportkontrollen für Seltene Erden und Magnete senken die Auslandsaufträge, stärken aber die heimische Lieferkette. 3 Monate Umsatz -15 %, Technik +2
+292|🎓 Jugendarbeitslosigkeit
+293|10 Millionen Absolventen pro Jahr. Laut Nachrichten findet jeder fünfte junge Mensch keinen Job.
+294|Viele Absolventen einstellen ({0})
+295|{0} Absolventen eingestellt! „Die Firma, die junge Talente fördert“ Marke +4
+296|Nur Erfahrene einstellen
+297|Kurzfristig effizient, aber junge Talente haben uns nicht mehr auf dem Schirm.
+298|📉 Zweites Jahr Schrumpfung
+299|Hohe Energiepreise und schwacher Export: Die Wirtschaft schrumpft das zweite Jahr. 3 Monate Umsatz -13 %
+300|💼 Kunden in Insolvenz
+301|Ein großer Abnehmer hat Insolvenz angemeldet. Unsere Forderungen hängen fest.
+302|Teil über Kreditversicherung retten ({0})
+303|Dank Versicherung blieb der Verlust bei {0}.
+304|Vor Gericht einfordern
+305|Nach langem Prozess haben wir das meiste zurück!
+306|Am Ende haben wir {0} verloren.
+307|🧑‍🔧 Fachkräftemangel
+308|Eine Facharbeiterstelle zu besetzen dauert angeblich 8 Monate. Auch in unserer Fabrik häufen sich offene Stellen.
+309|Fachkräfte aus dem Ausland holen
+310|{0} ausländische Fachkräfte sind dazugekommen.
+311|Azubis ausbilden (Ausbildung) ({0})
+312|Selbst ausgebildete Leute bleiben bei uns. Technik +2, Moral +4
+313|📲 Boom beim mobilen Bezahlen
+314|Sogar Straßenstände nehmen QR-Zahlungen! Online-Bestellungen explodieren. 2 Monate Umsatz +25 %
+315|🚫 Ausländische Konkurrenz-Apps verboten
+316|Die Regierung hat Dutzende ausländische Apps aus Sicherheitsgründen verboten. Wir übernehmen ihren Platz! 3 Monate Umsatz +30 %, Marke +3
+317|👥 Größter Konsummarkt der Welt
+318|Die Mittelschicht wächst rasant, Bestellungen kommen auch aus kleineren Städten. 3 Monate Umsatz +20 %, Marke +2
+319|💸 Risikokapital-Boom
+320|Risikokapitalgeber schütten Geld aus. Auch bei uns häufen sich Angebote.
+321|Investment annehmen (+{0}, Anteil -12 %)
+322|Zu guten Konditionen finanziert! {0} gesichert, Ihr Anteil {1} %
+323|Anteil behalten
+324|Statt Geld haben wir unseren Anteil behalten. Das Kapital müssen wir selbst verdienen.
+325|🖥️ Globaler IT-Ausfall
+326|Ein fehlerhaftes Update einer weltweit genutzten Sicherheitssoftware legte Server und PCs reihenweise lahm.
+327|Sofort auf Backup-Systeme umschalten ({0})
+328|In wenigen Stunden wieder online. „Eine Firma, auf die man sich verlassen kann“ Marke +2
+329|Warten, bis es behoben ist
+330|Über einen Tag Ausfall. Umsatz diesen Monat -20 %, Marke -3
+331|📺 Exklusivangebot eines Streamingdienstes
+332|Ein globaler Streamingdienst will „{0}“ weltweit exklusiv veröffentlichen und alle Produktionskosten übernehmen.
+333|Exklusivvertrag (+{0})
+334|In 190 Ländern veröffentlicht! Produktionsgeld {0}, Marke +5 (dafür wird der IP-Erlös geteilt)
+335|Selbst vertreiben
+336|Der Eigenvertrieb ist ein Riesenerfolg! 2 Monate Umsatz +30 %
+337|Es ging still unter. Die Reichweite einer großen Plattform hat gefehlt.
+338|🎶 K-Pop-Animationsfieber
+339|K-Pop in einem ausländischen Animationsfilm erobert die Welt – unsere Künstler surfen mit! 2 Monate Umsatz +35 %, Marke +5
+340|🛒 Billig-Offensive aus dem Ausland
+341|Ausländische Shopping-Apps verkaufen Nachahmungen unserer Produkte zu einem Drittel des Preises.
+342|Mit Preissenkung kontern
+343|Anteil gehalten, aber Margen geschrumpft. 2 Monate Umsatz -7 %
+344|Marketing für Qualität und Sicherheit ({0})
+345|„Wer billig kauft, kauft zweimal“ – unsere Produkte wurden neu entdeckt. Marke +4
+346|Ignorieren
+347|Kunden wandern langsam ab. 3 Monate Umsatz -15 %
+348|🍫 Rohstoffpreise explodieren
+349|Rohstoffe wie Kakao, Kaffee und Mehl sind so teuer wie nie.
+350|Preise erhöhen
+351|„Schon wieder?“ Die Kundschaft ist verstimmt. Marke -3, 2 Monate Umsatz -5 %
+352|Heimlich die Menge verringern
+353|Ein Enthüllungsbericht über „Shrinkflation“! Marke -10
+354|Keiner hat’s gemerkt… noch nicht.
+355|Die Marge opfern
+356|Preise gehalten. Verlust {0}, „fairer Preis“ Marke +2
+357|📱 Smishing in unserem Namen
+358|Gefälschte „Paket/Erstattungs“-SMS in unserem Namen bringen Kunden reihenweise um ihr Geld.
+359|Kunden warnen + Opfer unterstützen ({0})
+360|Die schnelle Reaktion brachte uns sogar Vertrauen. Marke +2
+361|Nicht unsere Schuld
+362|Kritik hagelt: „Der Firma ist es egal.“ Marke -6
+363|👶 Ansturm auf Elternzeit
+364|Dieses Jahr beantragen viele Mütter und Väter gleichzeitig Elternzeit.
+365|Aktiv fördern + Vertretung einstellen ({0})
+366|Es spricht sich herum: „familienfreundliche Firma“! Moral +9, Marke +2
+367|Druck machen
+368|Ein anonymer Enthüllungspost erschien online. Moral -8, Marke -6
+369|Die Belegschaft ist enttäuscht. Moral -8
+370|🧯 Sicherheitsprüfung in der Fabrik
+371|Die Brandschau bemängelt die Lagerung von Batterien und Chemikalien als gefährlich. Auch Fluchtwege fehlen.
+372|Umfassend in Sicherheit investieren ({0})
+373|Anlagen erneuert und Evakuierung geübt. Die Belegschaft fühlt sich sicher. Moral +4
+374|Machen wir nächstes Quartal
+375|Am Ende brannte die Fabrik… Wiederherstellung {0}, Marke -12, Moral -12
+376|Diesmal ging es gut. Aber das Risiko bleibt.
+377|🧪 Reallabor genehmigt
+378|Ein gesetzlich blockiertes Geschäft bekam eine Sondergenehmigung zur Erprobung! 3 Monate Umsatz +20 %, Technik +2
+379|🏴‍☠️ Fälschungen und Markenpiraterie im Ausland
+380|Im Ausland werden „{0}“-Fälschungen verkauft, und ein lokaler Händler hat unsere Marke zuerst angemeldet.
+381|Marke vor Ort anmelden + klagen ({0})
+382|Marke zurückgeholt und Fälschungen vertrieben. Marke +2
+383|Der Prozess zieht sich. Bisher nur Kosten.
+384|Beschwerden über die Qualität der Fälschungen landen bei uns. 3 Monate Umsatz -10 %, Marke -3
+385|🇺🇸 US-Zollhammer
+386|Die USA kündigen hohe Zölle auf Importe an. Bei unserem großen US-Umsatzanteil ein Volltreffer.
+387|In US-Produktion investieren ({0})
+388|Mit einem Werk vor Ort die Zölle umgangen. Auch die US-Presse ist angetan. Marke +3
+389|Exporte auf andere Länder verteilen
+390|Wir erschließen Europa und den Nahen Osten. Erschließungskosten {0}, 2 Monate Umsatz -8 %
+391|Preise erhöhen und durchhalten
+392|US-Kunden wenden sich wegen der Preiserhöhung ab. 3 Monate Umsatz -18 %, Marke -2
+393|🤖 Schock durch generative KI
+394|Die Konkurrenz automatisiert Arbeit mit generativer KI. Die Belegschaft fürchtet um ihre Jobs.
+395|Voll auf KI setzen ({0})
+396|Die Arbeit geht spürbar schneller, aber die Leute sind verunsichert. Technik +6, Moral -6
+397|Erst KI-Schulungen ({0})
+398|Es entstand die Haltung „KI ist ein Kollege“. Technik +3, Moral +4
+399|Der Abstand zur Konkurrenz wächst. Technik -3
+400|⚡ Höhere Industriestrompreise
+401|Industriestrom ist wieder teurer geworden. Fabriken und Server zu betreiben kostet deutlich mehr.
+402|Solar und Eigenstrom ({0})
+403|Die neue Anlage senkt die Stromkosten und bringt ein grünes Image. Marke +3
+404|Einfach zahlen
+405|Allein der Strom kostete dieses Quartal {0} mehr.
+406|🥵 Rekordhitze
+407|Tropennächte seit über einem Monat. Die Leute vor Ort sind von der Hitze erschöpft.
+408|Mehr Kühlung und Pausen ({0})
+409|„Unsere Firma kümmert sich um ihre Leute.“ Moral +6
+410|Normal weiterarbeiten
+411|Vor Ort gab es Hitzschläge. Moral -8, Marke -6
+412|Die Produktivität ist eingebrochen. Moral -8
+413|👷 Personalnot
+414|Für Fabrik und Läden findet sich niemand. Auf Stellenanzeigen kommen keine Bewerbungen.
+415|Ausländische Arbeitskräfte einstellen
+416|{0} ausländische Arbeitskräfte sind da. Schulung und Unterkunft {1}
+417|In Automatisierung investieren ({0})
+418|Die smarte Fabrik braucht weniger Hände. Technik +4
+419|Mit höheren Löhnen werben
+420|Die Bewerbungen nehmen wieder zu. Personalkosten +3 %, Moral +3
+421|🧓 Superalternde Gesellschaft
+422|Senioren sind die neue Hauptkundschaft. Der Silbermarkt wächst! 3 Monate Umsatz +15 %, Marke +2
+423|Viele Veteranen gehen in Rente, das Know-how geht mit. Technik -2, Moral -3
+424|✊ „Gelber-Umschlag-Gesetz“ in Kraft
+425|Die Gewerkschaft eines Subunternehmers verlangt direkte Verhandlungen mit uns als Auftraggeber.
+426|An den Verhandlungstisch ({0})
+427|Wir haben eine Partnerschaftsvereinbarung geschlossen. Schlagzeile: „fairer Auftraggeber“. Moral +4, Marke +3
+428|Ablehnen: Wir sind nicht der Arbeitgeber
+429|Die Gewerkschaft des Subunternehmers streikt, die Produktion steht. Marke -6, 2 Monate Umsatz -12 %
+430|Die öffentliche Meinung ist eisig. Marke -6
+431|🌍 EU-CO₂-Grenzausgleich
+432|Die EU verlangt nun Abgaben auf CO₂-intensive Importe. Europäische Kunden wollen unsere Emissionsdaten.
+433|In CO₂-Reduktion investieren ({0})
+434|Mit CO₂-armen Prozessen die EU-Kunden gehalten. Marke +4, Technik +2
+435|Die Kosten tragen
+436|Die CO₂-Kosten fressen den Europa-Gewinn. 4 Monate Umsatz -10 %
+437|📋 Höhere Rentenbeiträge
+438|Der Rentenbeitragssatz steigt, der Arbeitgeberanteil auch. Personalkosten +0,5 %
+439|🛵 Streit um Liefer-App-Gebühren
+440|Höhere Gebühren und Liefergebühren der Apps: Wirte klagen, je mehr sie verkaufen, desto weniger bleibt übrig.
+441|Eigene Bestell-App + Abholrabatt ({0})
+442|Stammkunden sind auf unsere App umgestiegen. Marke +3
+443|Menüpreise erhöhen
+444|Streit über „eigene Lieferpreise“ ist entbrannt. Marke -4
+445|Die Gebühren schlucken
+446|Die Gebühren kosteten {0} mehr.
+447|💄 K-Beauty-Exportrekord
+448|K-Beauty-Produkte sind im Ausland ständig ausverkauft! 2 Monate Umsatz +30 %, Marke +4
+449|🍜 K-Ramen-Exportfieber
+450|Eine Scharfe-Nudeln-Challenge geht im Ausland viral! 2 Monate Umsatz +30 %, Marke +4
+451|💉 Lizenzangebot von Big Pharma
+452|Ein globaler Pharmakonzern will die Technologie hinter „{0}“ kaufen. Allein die Vorabzahlung geht in die zweistelligen Millionen.
+453|Lizenzvertrag (Vorabzahlung {0})
+454|Großer Lizenzdeal! Vorabzahlung {0}, Marke +5 (Teilrechte am Produkt übertragen)
+455|Bis zum Ende selbst entwickeln
+456|Die Eigenentwicklung hat die klinische Studie bestanden! Hauptprodukt-Wettbewerbsfähigkeit +40 %, Technik +3
+457|Die Entwicklungskosten drücken weiter. Technik +3
+458|🀄 Spiellizenz für China
+459|„{0}“ hat eine Betriebslizenz für China erhalten. Ein lokaler Publisher reicht die Hand.
+460|In China starten ({0})
+461|Riesenhit in China! 3 Monate Umsatz +40 %, Marke +4
+462|Von lokalen Konkurrenten verdrängt und still untergegangen…
+463|Den Start verschieben
+464|Regulierungsrisiko vermieden, aber auch die Chance verpasst.
+465|🗓️ Forderung nach 4,5-Tage-Woche
+466|Die Belegschaft will freitags früher Schluss, eine 4,5-Tage-Woche. Es gibt sogar staatliche Förderung.
+467|Testweise einführen
+468|Zufriedenheit durch die Decke! Moral +14, staatliche Förderung {0} (2 Monate Umsatz -4 %)
+469|Noch zu früh
+470|„Wann sind wir endlich dran…“ Moral -6
+471|🔓 Datenleck
+472|Es gibt Hinweise, dass Kundendaten bei einem Hack abgeflossen sind.
+473|Sofort offenlegen und entschädigen
+474|Ehrliche Reaktion. {0} ausgegeben, Marke -5
+475|Still vertuschen
+476|…Keiner hat es gemerkt.
+477|Vertuschung aufgeflogen! Bußgeld {0}, Marke -25

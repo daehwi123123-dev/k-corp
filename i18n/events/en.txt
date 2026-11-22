@@ -1,0 +1,478 @@
+0|📺 YouTuber Review
+1|A YouTuber with 3 million subscribers raved about our product! Brand +8
+2|🏛️ Government Grant
+3|Selected for a government startup support program! {0} granted
+4|🏃 Key Talent Leaves
+5|A CTO-level developer left for a rival. Tech -{0}, morale -5
+6|🔥 Abuse-of-Power Scandal
+7|An anonymous post exposing an executive's abuse of staff went viral and hit the news.
+8|Public apology + prevention measures
+9|A quick apology contained it. Spent {0}, brand -4
+10|Ignore it
+11|A boycott is spreading… Brand -15, morale -6
+12|✊ Union Formed
+13|Employees formed a union and are demanding a raise.
+14|Agree to a 10% raise
+15|Deal reached. Payroll +10%, morale +20
+16|Refuse their demands
+17|They went on strike! Morale -20, revenue -20% for 2 months
+18|💱 Currency Plunge
+19|A weak home currency boosted exports! Revenue +20% for 3 months
+20|🔍 Tax Audit
+21|A routine tax audit found back taxes of {0}
+22|🌕 Holiday Bonus
+23|A big holiday is coming. Employees are hoping for a bonus.
+24|Pay bonuses ({0})
+25|Generous bonuses! Morale +15
+26|Give canned-tuna gift sets instead
+27|…Canned tuna? Morale -10
+28|🌏 K-Wave
+29|A Korean-brand craze abroad! Revenue +50% for 2 months, brand +5
+30|💥 Major Accident
+31|A server outage / factory fire. Recovery costs {0}, product competitiveness -15%, brand -3
+32|🏛️ Called to Testify
+33|You've been summoned as a witness at a parliamentary audit.
+34|Attend in good faith
+35|A sweaty Q&A session… Brand -3
+36|Skip it, citing a business trip abroad
+37|A flood of criticism for "dodging accountability." Brand -12
+38|🦈 Big Corp Steals Our Idea
+39|A big corporation launched a copy of our "{0}."
+40|Sue ({0}{1})
+41| · {0}% win chance thanks to our IP
+42|We won! Damages of {0}, brand +8
+43|We lost… product competitiveness -40%
+44|Let it go
+45|They took our market. Flagship competitiveness -40%
+46|🏴‍☠️ IP Infringement Caught
+47|A foreign company is using our "{0} {1}" without permission.
+48|International lawsuit ({0})
+49|We won! Damages of {0}
+50|We lost… just wasted legal fees.
+51|Sign a proper license deal
+52|License signed! "{0}" royalties +15%
+53|🤩 Big-Brand IP Collab Offer
+54|The "{0}" collab edition sold out! Royalties +30%, brand +4
+55|🕵️ Industrial Spy Caught
+56|Security caught a key researcher trying to pass design files on a USB stick to a foreign rival.
+57|Press charges + sue ({0})
+58|Stopped just before the leak! Investigators helped us protect our tech. Brand +2
+59|Part of it had already leaked… Tech -8
+60|Quietly fire them and hush it up
+61|Some files appear to have leaked already. Tech -6, morale -3
+62|📂 Offer to Buy Rival Secrets
+63|An employee of {0} approached us offering their new product blueprints.
+64|Refuse and warn the rival
+65|A feel-good story about our "ethical management" ran in the news. Brand +5
+66|Buy them secretly ({0})
+67|We got the blueprints… Tech +12
+68|Caught after an investigation! Trade-secret damages of {0}, brand -25
+69|💀 Ransomware Attack
+70|All company servers are encrypted. Hackers demand a ransom in Bitcoin.
+71|Pay the ransom ({0})
+72|We got the decryption key and operations are back to normal.
+73|They took the money and never sent the key… Revenue -20% for 2 months
+74|Refuse and restore from backups
+75|"No deals with hackers." Revenue -25% for 2 months, brand +2
+76|🎭 Deepfake Wire Fraud
+77|The finance team was fooled by a deepfake video call mimicking the CEO's face and voice and wired {0}.
+78|💰 Executive Embezzlement
+79|The finance executive was found to have siphoned off {0} over several years. Brand -5
+80|📢 Whistleblower
+81|An employee says they'll report the company's illegal practices to regulators.
+82|Accept it and fix things ({0})
+83|We fixed it before anyone forced us. Brand +4, morale +4
+84|Silence them
+85|It's quiet for now, but the mood is icy. Morale -5
+86|The recording aired on TV! Brand -20, morale -10
+87|🧲 Whole Team Poached
+88|{0} offered our entire core dev team double their salaries.
+89|Keep them with stock options (stake -2 pts)
+90|We kept the team. Stake -2 pts, morale +10
+91|Let them go
+92|The team left for {0}. Tech -10, rival tech +10
+93|🚑 Serious Workplace Accident
+94|A worker was badly injured at the factory. It falls under the serious-accident punishment law.
+95|Halt all work + invest in safety ({0})
+96|All safety equipment replaced. Revenue -15% for 2 months, morale +5
+97|Do the bare minimum
+98|We got through it, but the floor is uneasy. Morale -6
+99|The CEO was indicted! Fine of {0}, brand -18, morale -10
+100|🧾 Subcontractor Abuse Scandal
+101|Allegations of squeezing supplier prices and stealing their tech blew up in a public hearing. Brand -8
+102|🧌 Patent Troll Lawsuit
+103|A foreign company with no products, only patents, filed a huge lawsuit in a US court.
+104|Settle ({0})
+105|We paid a settlement and ended it.
+106|Fight to the end (legal fees {0})
+107|The patent was ruled invalid. Total victory! Brand +3
+108|We lost… damages of {0}
+109|🌱 Greenwashing Scandal
+110|Our "eco-friendly" ads were exposed as exaggerated, drawing fire from environmental groups. Brand -7
+111|📉 Credit Downgrade
+112|Excessive debt got our credit rating downgraded. Extra interest {0}, brand -3
+113|📈 Big Minimum Wage Hike
+114|Next year's minimum wage went up sharply. Payroll +3%
+115|🚫 Export Restrictions
+116|A trade dispute led major countries to restrict our exports. Revenue -20% for 3 months
+117|🏳️ Diplomatic Retaliation
+118|A diplomatic spat spilled over: boycotts and business suspensions abroad. Revenue -25% for 3 months
+119|🌪️ Typhoon Damage
+120|A super typhoon flooded our sites. Recovery costs {0}
+121|🚚 Logistics Chaos
+122|A freight strike halted shipments. Revenue -15% for 2 months
+123|🏷️ Origin Labeling Violation
+124|We were caught labeling imports as domestic. Penalty {0}, brand -12
+125|⚗️ Harmful Substance Found
+126|Reports say "{0}" contains a harmful substance above safe limits.
+127|Recall everything immediately
+128|A swift recall kept trust intact. "{0}" competitiveness -50%, brand +2
+129|Insist it's "harmless to humans"
+130|Further testing found no problem.
+131|Regulators ordered a sales halt! Brand -18, product competitiveness -60%
+132|💊 Illegal Kickbacks Exposed
+133|It came out that we paid illegal kickbacks to hospitals. Penalty {0}, brand -8
+134|📱 Artist Bullying Allegations
+135|An online post accused one of our artists of bullying classmates in school.
+136|Pause activities and investigate
+137|The careful response was praised. "{0}" competitiveness -30%, brand +2
+138|"Groundless. We'll take legal action."
+139|The accusation turned out to be false! Brand +3
+140|More evidence surfaced… Brand -15, product competitiveness -50%
+141|🎮 Game Regulation Passed
+142|A law restricting loot boxes and spending caps passed. Revenue -15% for 3 months
+143|🔌 High-Tech Export Controls
+144|A major power's export controls blocked sales, but sped up our in-house R&D. Revenue -20% for 3 months, tech +3
+145|📜 Platform Regulation Act
+146|A law regulating big platforms took effect. Lower fees cut revenue -15% for 3 months; compliance costs {0}
+147|🧾 Accounting Fraud Suspicion
+148|The auditors flagged problems with how some revenue was booked. The press smells a story.
+149|Voluntarily restate ({0})
+150|We faced it head-on with a restatement. Cost {0}, brand -6
+151|Cover it up
+152|…It passed quietly this time.
+153|Prosecutors raided us! Penalty {0}, brand -20, revenue -30% for 4 months
+154|⚖️ Antitrust Fine
+155|Fined {0} for abusing market dominance, brand -3
+156|👊 Control Fight
+157|A filing shows an activist fund quietly buying up our shares. Our voting power is {0}%.
+158|Buy shares right away ({0}, stake +3 pts)
+159|Not enough cash, the purchase failed… stake actually -1 pt
+160|Pre-emptive defense! Spent {0}, stake +3 pts
+161|Wait and see
+162|{0} now holds {1}%. Check the Control card.
+163|🌊 Disruptive Innovation
+164|{0}, armed with new tech, turned the market upside down. Existing products' competitiveness -35%! Respond with new products.
+165|🔧 Massive Recall
+166|A defect was found and everything was recalled. Cost {0}, brand -8
+167|🌐 Big Overseas Investment
+168|A chance to acquire a company abroad. Huge payoff if it works, a big loss if not.
+169|Go for it ({0})
+170|We dominated the local market! Revenue +40% for 5 months
+171|Localization failed… investment lost and revenue -15% for 3 months
+172|Carefully pass
+173|We let the opportunity slip by.
+174|🐌 Big-Company Syndrome
+175|Seven approval stamps, reports about reports… employees are worn out. Morale -8
+176|🩳 Short-Seller Attack
+177|Short sellers published a damning report. Brand -5, revenue -15% for 2 months
+178|🤝 Acquisition Offer
+179|A big conglomerate offered to buy the company for {0}. Your share would be {1}.
+180|Sell and exit (ends the game)
+181|You sold the company.
+182|Refuse. We can grow bigger
+183|We declared independence! Morale +5
+184|🎉 Viral Hit on Social Media
+185|"{0}" became a meme on social media! Competitiveness +40%
+186|📉 Recession
+187|Consumer sentiment is down. Revenue -20% for 3 months
+188|🏆 Innovator of the Year
+189|Named Innovative Company of the Year! Brand +6, morale +5
+190|💼 Headhunter Raid
+191|A rival offered our key people 1.5× their salaries.
+192|Give everyone a 5% raise
+193|Talent drain stopped. Payroll +5%, morale +6
+194|Key people left. Tech -6, morale -4
+195|🍻 After-Work Drinking Culture Scandal
+196|A post exposing "mandatory third-round team dinners" spread online. Morale -8
+197|📈 Rival Goes Bankrupt
+198|A major rival went bankrupt! Revenue +25% for 3 months
+199|🏦 Rate Hike
+200|{0} raised its base rate. Extra interest {1}
+201|☕ Office Café Request
+202|Employees are asking for an in-house café.
+203|Open one ({0})
+204|The office café is open! Morale +10
+205|Refuse
+206|Disappointed employees. Morale -4
+207|👔 The Chairman's Child Joins
+208|The chairman's child is joining the company.
+209|Make them an executive right away
+210|"Nepotism hire" backlash. Morale -15, brand -5
+211|Start them as a new hire
+212|Praised for "fair management." Morale +5, brand +3
+213|📺 TV Drama Product Placement
+214|A hit drama's producer offered a product placement deal.
+215|Accept ({0})
+216|The lead character uses our product! Brand +10
+217|Decline
+218|We politely declined the offer.
+219|🎰 Loot Box Scandal
+220|Players accuse us of rigging drop rates and stage a truck protest.
+221|Publish the odds + compensate players
+222|Trust restored! Spent {0}, brand +3
+223|Hold out
+224|Players are leaving… Brand -12, revenue -15% for 3 months
+225|🤢 Food Poisoning Report
+226|A suspected food-poisoning case made the news. Brand -10, revenue -20% for 2 months
+227|🧪 Clinical Trial Results
+228|"{0}" passed its clinical trial! Competitiveness ×2, brand +10 🚀
+229|"{0}" failed its clinical trial… competitiveness -60%
+230|💕 Artist Dating Rumor
+231|A tabloid reported that one of our artists is dating someone.
+232|Coolly confirm it
+233|Even the fans are congratulating them. Brand -3
+234|Deny it: "We're just close colleagues"
+235|It blew over.
+236|More photos exposed the lie! Brand -15
+237|🚢 Global Supply Chain Disruption
+238|Raw material supplies are disrupted. Extra costs {0}, revenue -15% for 2 months
+239|🛍️ Huge Duty-Free Order
+240|A huge order came in from duty-free shops! Revenue +40% for 2 months
+241|🏦 Bank Run at Our Bank
+242|A bank run has started at the bank holding our deposits, with money flooding out in a single day. Most of our cash is there.
+243|Spread it across several banks now ({0})
+244|Quick thinking saved our funds. We just paid a few fees.
+245|The government will step in
+246|The bank closed and some funds are frozen… lost {0}, morale -6
+247|The government guaranteed all deposits. We got lucky.
+248|🪓 Big Tech Mass Layoffs
+249|Big Tech companies laid off tens of thousands. Skilled developers are flooding the market.
+250|Hire the best of them ({0})
+251|{0} ex-Big Tech engineers joined! Tech +4
+252|Slim down too
+253|We let {0} people go. Costs fell, but morale -10
+254|🛂 Work Visa Fee Shock
+255|The fee for bringing in foreign talent on a work visa (H-1B) jumped to $100,000 per person.
+256|Pay the fee and hire ({0})
+257|We kept the foreign talent we really need. Tech +3
+258|Have them work from an overseas office ({0})
+259|We're getting by with remote collaboration. Communication slowed a bit. Morale -2
+260|Give up hiring abroad
+261|Recruiting talent got harder. Tech -2
+262|🛍️ Black Friday Rush
+263|Black Friday, the biggest shopping season of the year, is coming.
+264|Run a huge sale ({0})
+265|Orders are pouring in! Revenue +35% this month, brand +2
+266|Keep full prices
+267|Some customers buy even without discounts. Brand +1
+268|💴 Spring Wage Offensive
+269|It's the spring wage negotiation season (shunto). The union is demanding a raise of over 5%.
+270|Accept 5%
+271|"Another raise this year!" Payroll +5%, morale +10
+272|Negotiate down to 3%
+273|Settled on a compromise. Payroll +3%, morale -3
+274|🧓 Labor Shortage
+275|An aging society means not enough workers. The news is full of companies closing for lack of staff.
+276|Hire foreign specified-skill workers
+277|{0} foreign workers joined.
+278|Bring in automation and robots ({0})
+279|We need fewer hands now. Tech +4
+280|Rehire retirees
+281|The veterans are back. Morale +3, payroll +1%
+282|💹 Record-Weak Yen
+283|The yen hit a 38-year low! Our products got cheaper abroad. Revenue +25% for 2 months
+284|🔻 Cutthroat Price War (Involution)
+285|Rivals cut prices by over 30%. The whole industry is sliding into below-cost competition.
+286|Cut our prices too
+287|We kept our share, but profits fell. Revenue -8% for 3 months
+288|Hold out on quality and brand
+289|Some customers left, but we're now "worth the price." Revenue -15% for 2 months, brand +4
+290|🧲 Rare-Earth Export Controls
+291|Government controls on rare-earth and magnet exports cut foreign orders, but strengthened the domestic supply chain. Revenue -15% for 3 months, tech +2
+292|🎓 Youth Unemployment
+293|10 million new graduates a year. The news says one in five young people can't find a job.
+294|Hire lots of new grads ({0})
+295|{0} new grads hired! "The company that grows young talent" brand +4
+296|Hire only experienced people
+297|Efficient for now, but we fell off young talent's radar.
+298|📉 Second Year of Contraction
+299|High energy prices and weak exports shrank the economy for a second year. Revenue -13% for 3 months
+300|💼 Customer Bankruptcies
+301|A major customer filed for bankruptcy. Money they owe us is stuck.
+302|Recover part via credit insurance ({0})
+303|Insurance limited the loss to {0}.
+304|Fight for it in court
+305|After a long lawsuit we got most of it back!
+306|In the end we lost {0}.
+307|🧑‍🔧 Skilled Worker Shortage
+308|It reportedly takes 8 months to fill a skilled technician's job. Vacancies are piling up at our factory too.
+309|Bring in skilled workers from abroad
+310|{0} foreign technicians joined.
+311|Train apprentices (Ausbildung) ({0})
+312|Talent we trained ourselves stays with us. Tech +2, morale +4
+313|📲 Mobile Payment Boom
+314|Even street vendors take QR payments now! Online orders are exploding. Revenue +25% for 2 months
+315|🚫 Foreign Rival Apps Banned
+316|The government banned dozens of foreign apps for security reasons. We get their spot! Revenue +30% for 3 months, brand +3
+317|👥 World's Biggest Consumer Market
+318|A fast-growing middle class means orders from smaller cities too. Revenue +20% for 3 months, brand +2
+319|💸 Venture Investment Boom
+320|Venture capitalists are pouring money out. Investment offers are flooding in for us too.
+321|Take the investment (+{0}, stake -12%)
+322|Raised money on good terms! Secured {0}, your stake {1}%
+323|Keep our stake
+324|We kept our stake instead of taking money. We'll have to earn it ourselves.
+325|🖥️ Global IT Outage
+326|A faulty update to widely used security software knocked servers and PCs offline worldwide.
+327|Switch to backup systems now ({0})
+328|Service restored within hours. "A company you can trust" brand +2
+329|Wait until it's fixed
+330|Service was down for over a day. Revenue -20% this month, brand -3
+331|📺 Global Streaming Exclusive Offer
+332|A global streaming service wants to release "{0}" worldwide as an exclusive. They'll cover the full production cost.
+333|Sign the exclusive (+{0})
+334|Released in 190 countries! Production funding {0}, brand +5 (but IP revenue is shared)
+335|Distribute it ourselves
+336|Self-distribution was a smash! Revenue +30% for 2 months
+337|It quietly sank. We missed a big platform's reach.
+338|🎶 K-Pop Animation Craze
+339|K-pop in a foreign animated film swept the world, and our artists are riding the wave! Revenue +35% for 2 months, brand +5
+340|🛒 Ultra-Cheap Cross-Border Shopping
+341|Overseas shopping apps started selling knockoffs of our products at a third of the price.
+342|Cut prices to compete
+343|We kept our share, but margins shrank. Revenue -7% for 2 months
+344|Market our quality and safety ({0})
+345|"You get what you pay for" sentiment gave our products a second look. Brand +4
+346|Ignore it
+347|Customers are slowly drifting away. Revenue -15% for 3 months
+348|🍫 Commodity Prices Soar
+349|Prices for raw materials like cocoa, coffee and flour hit record highs.
+350|Raise our prices
+351|"Again?" Consumers aren't happy. Brand -3, revenue -5% for 2 months
+352|Quietly shrink the portions
+353|An exposé on our "shrinkflation" came out! Brand -10
+354|Nobody noticed… yet.
+355|Absorb the margin hit
+356|We held our prices. Loss {0}, "fair price" brand +2
+357|📱 Smishing in Our Name
+358|Fake "delivery/refund" texts using our company name are scamming customers left and right.
+359|Warn customers + support victims ({0})
+360|Our quick response actually earned customers' trust. Brand +2
+361|It's not our fault
+362|Criticism pours in that "the company doesn't care." Brand -6
+363|👶 Parental Leave Rush
+364|This year a wave of moms and dads on staff all applied for parental leave at once.
+365|Encourage it + hire temp cover ({0})
+366|Word spreads that we're "a great place to raise kids"! Morale +9, brand +2
+367|Make them feel guilty
+368|An exposé was posted anonymously online. Morale -8, brand -6
+369|Employees are disappointed. Morale -8
+370|🧯 Factory Safety Inspection
+371|A fire inspection flagged our battery and chemical storage as dangerous. Not enough escape routes either.
+372|Full safety investment ({0})
+373|We upgraded equipment and ran evacuation drills. Employees feel safer. Morale +4
+374|Let's do it next quarter
+375|The factory caught fire… recovery costs {0}, brand -12, morale -12
+376|We got lucky this time. But the risk is still there.
+377|🧪 Regulatory Sandbox Approval
+378|A new business blocked by law got a special trial permit! Revenue +20% for 3 months, tech +2
+379|🏴‍☠️ Knockoffs and Trademark Squatting Abroad
+380|Fake "{0}" is being sold abroad, and a local dealer registered our trademark first.
+381|Register locally + sue ({0})
+382|We got our trademark back and drove out the fakes. Brand +2
+383|The lawsuit is dragging on. Just costs so far.
+384|Complaints about the fakes' quality are landing on us. Revenue -10% for 3 months, brand -3
+385|🇺🇸 US Tariff Bomb
+386|The US announced steep tariffs on imports. With a big share of our sales in the US, it's a direct hit.
+387|Invest in US production ({0})
+388|A local plant dodged the tariffs. The US press likes us too. Brand +3
+389|Diversify exports to other countries
+390|Opening up European and Middle Eastern markets. Expansion costs {0}, revenue -8% for 2 months
+391|Raise prices and hold out
+392|US consumers turned away over the price hike. Revenue -18% for 3 months, brand -2
+393|🤖 Generative AI Shock
+394|Rivals are automating work with generative AI. Employees are worried about their jobs.
+395|Go all-in on AI ({0})
+396|Work got noticeably faster, but employees are anxious. Tech +6, morale -6
+397|Train employees on AI first ({0})
+398|A "the AI is our coworker" mindset took hold. Tech +3, morale +4
+399|The gap with rivals is widening. Tech -3
+400|⚡ Industrial Power Price Hike
+401|Industrial electricity rates went up again. Running factories and servers got much pricier.
+402|Solar and on-site generation ({0})
+403|The new setup eased power bills and earned a green image. Brand +3
+404|Just pay it
+405|Electricity alone cost an extra {0} this quarter.
+406|🥵 Record Heat Wave
+407|Tropical nights have lasted over a month. Field staff are worn out by the heat.
+408|More cooling and breaks ({0})
+409|"Our company takes care of people." Morale +6
+410|Work as usual
+411|Workers on site got heat illness. Morale -8, brand -6
+412|Productivity dropped sharply. Morale -8
+413|👷 Hiring Crunch
+414|No one to staff the factory or stores. Job ads get no applicants.
+415|Hire foreign workers
+416|{0} foreign workers joined. Training and housing costs {1}
+417|Invest in automation ({0})
+418|A smart factory reduced the need for hands. Tech +4
+419|Raise wages to recruit
+420|Applicants are coming back. Payroll +3%, morale +3
+421|🧓 Super-Aged Society
+422|Seniors became a key new customer group. The silver market is growing! Revenue +15% for 3 months, brand +2
+423|A wave of veteran retirements is draining know-how. Tech -2, morale -3
+424|✊ Yellow Envelope Act Takes Effect
+425|A subcontractor's union is demanding to bargain directly with us, the main contractor.
+426|Come to the table ({0})
+427|We signed a win-win agreement. Headlines call us "a good main contractor." Morale +4, brand +3
+428|Refuse, saying we're not their employer
+429|The subcontractor union went on strike and production stopped. Brand -6, revenue -12% for 2 months
+430|Public opinion turned cold. Brand -6
+431|🌍 EU Carbon Border Tax
+432|The EU started charging for carbon-heavy imports. European customers want our emissions data.
+433|Invest in carbon reduction ({0})
+434|Low-carbon processes kept our European customers. Brand +4, tech +2
+435|Eat the cost
+436|Carbon costs ate into European profits. Revenue -10% for 4 months
+437|📋 Pension Contribution Hike
+438|The national pension contribution rate rose, increasing the employer's share. Payroll +0.5%
+439|🛵 Delivery App Fee Dispute
+440|Higher delivery-app fees and delivery charges have store owners complaining that the more they sell, the less they make.
+441|Own ordering app + pickup discounts ({0})
+442|Regulars moved to our own app. Brand +3
+443|Raise menu prices
+444|A "separate delivery prices" controversy erupted. Brand -4
+445|Absorb the fees
+446|Fees cost an extra {0}.
+447|💄 K-Beauty Export Record
+448|K-beauty products keep selling out in stores abroad! Revenue +30% for 2 months, brand +4
+449|🍜 K-Ramen Export Craze
+450|A spicy ramen challenge is trending on social media abroad! Revenue +30% for 2 months, brand +4
+451|💉 Big Pharma Licensing Offer
+452|A global drugmaker offered to buy the technology behind "{0}". The upfront payment alone is in the tens of millions.
+453|Sign the licensing deal (upfront {0})
+454|A big licensing deal! Upfront {0}, brand +5 (some rights to the product transferred)
+455|Develop it ourselves to the end
+456|Our own development passed clinical trials! Flagship competitiveness +40%, tech +3
+457|Development costs keep piling up. Tech +3
+458|🀄 China Game License Granted
+459|"{0}" received a Chinese publishing license. A local publisher wants to partner.
+460|Launch in China ({0})
+461|A smash hit in China! Revenue +40% for 3 months, brand +4
+462|It was buried by local competitors…
+463|Delay the launch
+464|We avoided regulatory risk, but missed the chance too.
+465|🗓️ 4.5-Day Week Demand
+466|Employees want Friday afternoons off, a 4.5-day week. There's even a government subsidy for it.
+467|Pilot it
+468|Employee satisfaction is through the roof! Morale +14, government subsidy {0} (revenue -4% for 2 months)
+469|It's too early
+470|"When will it be our turn…" Morale -6
+471|🔓 Data Breach
+472|Signs show that customer personal data leaked in a hack.
+473|Disclose immediately and compensate
+474|An honest response. Spent {0}, brand -5
+475|Quietly cover it up
+476|…Nobody found out.
+477|The cover-up was exposed! Penalty {0}, brand -25
