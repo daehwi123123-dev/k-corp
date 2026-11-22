@@ -120,3 +120,37 @@ fs.writeFileSync(`${OUT}/icon-512.png`, png(512, 0.1, true));
 fs.writeFileSync(`${OUT}/icon-maskable-512.png`, png(512, 0.2, false));
 fs.writeFileSync(`${OUT}/apple-touch-icon.png`, png(180, 0.12, false));
 console.log('web/ 생성 완료 (버전 ' + VERSION + ')');
+
+// ---- 게임 사이트용 묶음 (itch.io · 웹게임 모음 사이트) ----
+// release/itch.zip   : 방문자 집계(GoatCounter) 포함
+// release/portal.zip : 외부 스크립트 없음 (CrazyGames·Poki 같은 곳은 외부 스크립트를 싫어함)
+{
+  const base = fs.readFileSync('index.html', 'utf8').replace(
+    /<meta name="viewport"[^>]*>/,
+    `<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Road to Chaebol: grow a random startup from Korea, the US, Japan, China, Germany or India into a ₩100 trillion empire. Free business sim in 8 languages.">`
+  );
+  const crcT = Array.from({ length: 256 }, (_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; return c >>> 0; });
+  const crc32 = b => { let c = 0xffffffff; for (const v of b) c = crcT[(c ^ v) & 255] ^ (c >>> 8); return (c ^ 0xffffffff) >>> 0; };
+  const zip = files => { // [{name, data}] → Buffer (deflate)
+    const parts = [], cen = []; let off = 0;
+    for (const f of files) {
+      const name = Buffer.from(f.name), data = Buffer.from(f.data), comp = zlib.deflateRawSync(data), c = crc32(data);
+      const h = Buffer.alloc(30); h.writeUInt32LE(0x04034b50, 0); h.writeUInt16LE(20, 4); h.writeUInt16LE(0x0800, 6); h.writeUInt16LE(8, 8);
+      h.writeUInt32LE(c, 14); h.writeUInt32LE(comp.length, 18); h.writeUInt32LE(data.length, 22); h.writeUInt16LE(name.length, 26);
+      parts.push(h, name, comp);
+      const e = Buffer.alloc(46); e.writeUInt32LE(0x02014b50, 0); e.writeUInt16LE(20, 4); e.writeUInt16LE(20, 6); e.writeUInt16LE(0x0800, 8); e.writeUInt16LE(8, 10);
+      e.writeUInt32LE(c, 16); e.writeUInt32LE(comp.length, 20); e.writeUInt32LE(data.length, 24); e.writeUInt16LE(name.length, 28); e.writeUInt32LE(off, 42);
+      cen.push(e, name); off += 30 + name.length + comp.length;
+    }
+    const cd = Buffer.concat(cen), end = Buffer.alloc(22);
+    end.writeUInt32LE(0x06054b50, 0); end.writeUInt16LE(files.length, 8); end.writeUInt16LE(files.length, 10); end.writeUInt32LE(cd.length, 12); end.writeUInt32LE(off, 16);
+    return Buffer.concat([...parts, cd, end]);
+  };
+  fs.mkdirSync('release', { recursive: true });
+  const itch = GOATCOUNTER ? base.replace('</body>', `<script data-goatcounter="https://${GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>`) : base;
+  fs.writeFileSync('release/itch.zip', zip([{ name: 'index.html', data: itch }]));
+  fs.writeFileSync('release/portal.zip', zip([{ name: 'index.html', data: base }]));
+  console.log('release/itch.zip · release/portal.zip 생성 완료');
+}

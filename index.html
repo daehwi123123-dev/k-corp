@@ -2003,7 +2003,7 @@ function feedback(){
       if((f.nick||'').trim())q.append(E.nick,f.nick.trim());
       const url=`${FEEDBACK.form}?${q.toString()}`;
       const w=window.open(url,'_blank','noopener');
-      if(!w)location.href=url;
+      if(!w){if(window.top===window)location.href=url;else{modal('💬 Google Form',`<p style="font-size:16px;margin:0"><a href="${esc(url)}" target="_blank" rel="noopener">📮 Google Form ↗</a></p>`,[{l:L`닫기`,f:()=>{}}]);return}}
       f.text='';f.stars=0;keep();
       toast(L`<b>📮 구글 폼을 열었어요</b><br>내용이 채워져 있어요. <b>제출</b>만 눌러 주세요`,'good');
     }},{l:L`닫기`,f:()=>{}}]);
