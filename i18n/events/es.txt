@@ -476,3 +476,49 @@
 475|Taparlo en silencio
 476|…Nadie se enteró.
 477|¡Se descubrió el encubrimiento! Multa {0}, marca -25
+478|🦹 Vuelven los mismos hackers
+479|El grupo de hackers que cobró nuestro rescate ha vuelto a bloquear los servidores. Parece que corrió la voz: «la empresa que paga una vez, paga dos».
+480|Pagar otra vez ({0})
+481|Todo funciona de nuevo, pero la prensa nos llama «el cliente favorito de los hackers». Marca -3
+482|Esta vez, restaurar copias de seguridad
+483|Aprendimos la lección y restauramos desde las copias. Ingresos -15 % durante 1 mes, tecnología +2, marca +2
+484|🕵️ El precio de la fuga que tapamos
+485|{0} lanzó un producto idéntico a nuestro «{1}». Usa los archivos que se filtraron en el caso de espionaje que tapamos hace un año.
+486|Demandar ahora, aunque sea tarde ({0})
+487|¡Tarde, pero ganamos! Indemnización de {0}
+488|Las pruebas eran demasiado viejas y perdimos… competitividad del producto estrella -30 %
+489|Aceptarlo y adelantarse con productos nuevos
+490|Ahora nos repartimos el mercado. Producto estrella -30 %, pero un equipo de I+D con ganas de revancha da tecnología +3
+491|😶 El silencio de los que se quedaron
+492|Tres meses después de los despidos, las salas de reuniones están en silencio. La plantilla que queda actualiza el currículum, convencida de que es la siguiente.
+493|Entrevistas con todos + bonus de permanencia ({0})
+494|La promesa de que «no habrá más recortes» calmó el ambiente. Moral +12
+495|Que hagan su trabajo y punto
+496|Los desarrolladores clave se fueron uno tras otro. Tecnología -6, moral -8
+497|Entre los que se quedaron empieza a hablarse de un sindicato. Moral -10
+498|🤝 Choque cultural tras la compra
+499|La plantilla de la empresa comprada dice que «han llegado los invasores». Chocan en todo, desde las reuniones hasta los salarios.
+500|Crear un equipo de integración ({0})
+501|Las dos empresas ya son un solo equipo. Moral +5
+502|Que se adapten a nuestra forma de trabajar
+503|{0} personas de la empresa comprada se fueron. Tecnología -4, moral -6
+504|⚖️ Demanda colectiva por las cajas de botín
+505|La polémica de las cajas de botín que decidimos aguantar acabó en demanda colectiva. Miles de jugadores firmaron como demandantes.
+506|Llegamos a un acuerdo y pedimos disculpas públicas. Marca +4
+507|Pelear en los tribunales hasta el final
+508|¡El tribunal dictó que no hubo trampa! Marca +5
+509|Perdimos… indemnización de {0}, marca -15
+510|🦈 Llama un prestamista usurero
+511|Con los bancos más estrictos, llama un número desconocido: «¿Necesita dinero ya? Sin papeleo, hoy mismo».
+512|Aceptar (+{0}, a devolver {1})
+513|Apagamos el fuego por ahora, pero la deuda creció {0}.
+514|«Ese dinero es veneno». La plantilla confía en la decisión. Moral +2
+515|💸 Se acerca el día de pago
+516|El saldo no cubre las nóminas de este mes ({0}). El responsable financiero espera tu decisión.
+517|Poner dinero propio (+{0}, participación +1 pp)
+518|Saber que el CEO hipotecó su casa para pagar unió al equipo. Moral +5, participación +1 pp
+519|Los directivos renuncian a su sueldo
+520|Los directivos se apretaron el cinturón primero. Moral +3
+521|Retrasar las nóminas
+522|El aviso de retraso hizo que se fuera alguien clave. Moral -15, tecnología -4
+523|El aviso de retraso tiene la oficina revuelta. Moral -15

@@ -476,3 +476,49 @@
 475|Lặng lẽ che giấu
 476|…Không ai biết, mọi chuyện qua đi.
 477|Bị phát hiện che giấu! Phạt {0}, thương hiệu -25
+478|🦹 Nhóm hacker cũ quay lại
+479|Nhóm hacker từng nhận tiền chuộc của ta lại khóa máy chủ lần nữa. Có vẻ tin đồn "công ty đã trả một lần sẽ trả lần nữa" đã lan ra.
+480|Trả tiếp ({0})
+481|Công việc trở lại, nhưng báo chí gọi ta là "khách quen của hacker". Thương hiệu -3
+482|Lần này khôi phục từ bản sao lưu
+483|Rút kinh nghiệm lần trước, ta khôi phục từ bản sao lưu. Doanh thu -15% trong 1 tháng, công nghệ +2, thương hiệu +2
+484|🕵️ Cái giá của vụ rò rỉ bị ỉm đi
+485|{0} tung ra sản phẩm giống hệt "{1}" của ta. Đó chính là tài liệu rò rỉ từ vụ gián điệp ta lặng lẽ ỉm đi một năm trước.
+486|Giờ mới kiện cũng được ({0})
+487|Muộn nhưng thắng! Bồi thường {0}
+488|Chứng cứ quá cũ nên thua… sức cạnh tranh sản phẩm chủ lực -30%
+489|Chấp nhận và vượt lên bằng sản phẩm mới
+490|Giờ phải chia thị trường. Sản phẩm chủ lực -30%, nhưng đội nghiên cứu quyết tâm phục thù giúp công nghệ +3
+491|😶 Sự im lặng của những người ở lại
+492|Ba tháng sau đợt cắt giảm, phòng họp im ắng. Những người ở lại đang sửa CV vì nghĩ "người tiếp theo là mình".
+493|Gặp riêng từng người + thưởng giữ chân ({0})
+494|Lời hứa "cắt giảm đến đây là hết" làm không khí dịu lại. Tinh thần +12
+495|Cứ làm tốt việc là được
+496|Các lập trình viên chủ chốt lần lượt ra đi. Công nghệ -6, tinh thần -8
+497|Những người ở lại bắt đầu bàn chuyện lập công đoàn. Tinh thần -10
+498|🤝 Xung đột văn hóa sau sáp nhập
+499|Nhân viên công ty bị mua phản đối "quân chiếm đóng đã đến". Từ cách họp đến cơ chế lương, chuyện gì cũng va chạm.
+500|Lập nhóm tích hợp ({0})
+501|Hai công ty đã thành một đội. Tinh thần +5
+502|Bắt họ theo cách làm của ta
+503|{0} người từ công ty bị mua đã nghỉ. Công nghệ -4, tinh thần -6
+504|⚖️ Vụ kiện tập thể về tỉ lệ vật phẩm
+505|Vụ lùm xùm tỉ lệ vật phẩm mà ta chọn cố chịu cuối cùng thành kiện tập thể. Hàng nghìn người chơi đứng tên nguyên đơn.
+506|Ta hòa giải và gửi lời xin lỗi chính thức. Thương hiệu +4
+507|Kiện đến cùng
+508|Tòa tuyên không có gian lận! Thương hiệu +5
+509|Thua kiện… bồi thường {0}, thương hiệu -15
+510|🦈 Cho vay nặng lãi gọi đến
+511|Ngân hàng siết lại, một số lạ gọi đến: "Cần tiền gấp hả? Không cần giấy tờ, có ngay hôm nay."
+512|Nhận (+{0}, phải trả {1})
+513|Tạm dập được lửa, nhưng nợ tăng thêm {0}.
+514|"Tiền đó là thuốc độc." Nhân viên tin vào quyết định của bạn. Tinh thần +2
+515|💸 Sắp đến ngày trả lương
+516|Số dư tài khoản không đủ trả lương tháng này ({0}). Trưởng phòng tài chính đang chờ quyết định.
+517|Bỏ tiền túi (+{0}, cổ phần +1 điểm)
+518|Nghe tin CEO thế chấp nhà để trả lương, cả đội đoàn kết lại. Tinh thần +5, cổ phần +1 điểm
+519|Lãnh đạo trả lại lương
+520|Các lãnh đạo thắt lưng buộc bụng trước. Tinh thần +3
+521|Hoãn trả lương
+522|Thông báo chậm lương khiến một nhân sự chủ chốt ra đi. Tinh thần -15, công nghệ -4
+523|Thông báo chậm lương khiến văn phòng xôn xao. Tinh thần -15

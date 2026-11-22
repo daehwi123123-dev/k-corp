@@ -675,3 +675,24 @@
 679|Ich habe {0} nach {1} verkauft und Kasse gemacht! 🤝
 680|Ich führe {0} seit {1}. Aktueller Wert: {2}!
 681|{0}⏎„Bis zum Chaebol“ – eine Wirtschaftssimulation, in der du eine Zufallsfirma bis zum Chaebol bringst. Wie schnell schaffst du es? 🏢
+682|{0} geht an die {1}: Wert am ersten Tag {2}
+683|{0} steigt auf zum Status {1}
+684|{0} wird zum Unicorn, Wert {1}
+685|[Jahresrückblick] {0}: das Jahr {1}
+686|Unternehmenswert {0} → {1} ({2}) · Belegschaft {3}→{4} · Branchenrang {5}
+687|📰 {0} im Jahr {1}: Unternehmenswert {2} ({3}), Branchenrang {4}
+688|<b>📰 Der Jahresrückblick ist da</b><br>Zu lesen im Chaebol-Kurier im Tab „Tagebuch“
+689|{0} übernimmt Konkurrent {1}
+690|Kaufpreis {0} · {1} Beschäftigte kommen dazu
+691|[Extrablatt] {0} knackt {1} Unternehmenswert: ein neuer Chaebol ist geboren
+692|{0} verkauft: Gründer steigt aus
+693|{0} ist endgültig insolvent
+694|Chef von {0} vom Aufsichtsrat abgesetzt
+695|{0} verliert die Kontrolle nach Aktionärsabstimmung
+696|Konkurrenz-News
+697|Kommentar
+698|[Kommentar]
+699|📣 Rückblick teilen
+700|📰 Chaebol-Kurier
+701|Ausgabe {1}/{0}
+702|Noch keine Artikel. Hier erscheinen Ereignisse, Konkurrenz-News und große Momente.

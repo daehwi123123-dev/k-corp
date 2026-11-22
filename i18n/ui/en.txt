@@ -675,3 +675,24 @@
 679|I sold {0} after {1} and cashed out! 🤝
 680|I've been running {0} for {1}. It's worth {2} right now!
 681|{0}⏎“Road to Chaebol” — a tycoon sim where you take a random company all the way to chaebol. How fast can you do it? 🏢
+682|{0} lists on {1}: day-one value {2}
+683|{0} rises to {1}
+684|{0} becomes a unicorn, valued at {1}
+685|[Year in Review] {0}'s {1}
+686|Company value {0} → {1} ({2}) · Staff {3}→{4} · Industry rank #{5}
+687|📰 {0}'s {1} in review: company value {2} ({3}), industry rank #{4}
+688|<b>📰 The year-end review is out</b><br>Read it in The Chaebol Times on the Log tab
+689|{0} acquires rival {1}
+690|Price {0} · {1} employees join
+691|[Extra] {0} tops {1} in value: a new chaebol is born
+692|{0} sold: founder cashes out
+693|{0} finally goes bankrupt
+694|{0} CEO ousted by the board
+695|{0} loses control after shareholder vote
+696|Rival news
+697|Editorial
+698|[Editorial]
+699|📣 Share the review
+700|📰 The Chaebol Times
+701|{1}/{0} edition
+702|No articles yet. Event outcomes, rival news and big moments will appear here.

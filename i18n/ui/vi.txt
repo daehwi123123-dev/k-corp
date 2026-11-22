@@ -675,3 +675,24 @@
 679|Bán {0} sau {1} và exit có lãi! 🤝
 680|Tôi đã điều hành {0} được {1}. Giờ giá trị {2}!
 681|{0}⏎«Đường đến Chaebol»: game mô phỏng đưa một công ty ngẫu nhiên lên chaebol. Bạn mất bao lâu? 🏢
+682|{0} niêm yết trên {1}: giá trị ngày đầu {2}
+683|{0} vươn lên thành {1}
+684|{0} trở thành kỳ lân, giá trị {1}
+685|[Tổng kết năm] {0} năm {1}
+686|Giá trị {0} → {1} ({2}) · Nhân sự {3}→{4} · Hạng {5} trong ngành
+687|📰 Tổng kết năm {1} của {0}: giá trị {2} ({3}), hạng {4} trong ngành
+688|<b>📰 Bài tổng kết năm đã ra</b><br>Đọc trên Nhật báo Chaebol ở tab Nhật ký
+689|{0} mua lại đối thủ {1}
+690|Giá {0} · {1} nhân viên gia nhập
+691|[Số đặc biệt] {0} vượt mốc {1}: một chaebol ra đời
+692|{0} đã được bán: nhà sáng lập exit thành công
+693|{0} cuối cùng đã phá sản
+694|CEO của {0} bị hội đồng quản trị bãi nhiệm
+695|{0} mất quyền kiểm soát sau cuộc bỏ phiếu cổ đông
+696|Tin đối thủ
+697|Xã luận
+698|[Xã luận]
+699|📣 Chia sẻ tổng kết
+700|📰 Nhật báo Chaebol
+701|Số {1}/{0}
+702|Chưa có bài nào. Kết quả sự kiện, tin đối thủ và những khoảnh khắc lớn sẽ xuất hiện ở đây.

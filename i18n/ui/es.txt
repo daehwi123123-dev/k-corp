@@ -675,3 +675,24 @@
 679|¡Vendí {0} tras {1} y salí ganando! 🤝
 680|Llevo {1} al frente de {0}. ¡Ahora vale {2}!
 681|{0}⏎«Rumbo al Chaebol»: un simulador donde llevas una empresa aleatoria hasta el chaebol. ¿Qué tan rápido lo logras? 🏢
+682|{0} sale a {1}: vale {2} el primer día
+683|{0} pasa a ser {1}
+684|{0} se convierte en unicornio: vale {1}
+685|[Balance del año] {0} en {1}
+686|Valor {0} → {1} ({2}) · Plantilla {3}→{4} · Puesto en el sector: {5}
+687|📰 Balance de {0} en {1}: valor {2} ({3}), puesto {4} en el sector
+688|<b>📰 Ya salió el balance del año</b><br>Léelo en El Diario del Chaebol, en la pestaña Diario
+689|{0} compra a su rival {1}
+690|Precio {0} · se suman {1} empleados
+691|[Edición especial] {0} supera {1} de valor: nace un chaebol
+692|{0}, vendida: su fundador sale ganando
+693|{0} quiebra definitivamente
+694|El consejo destituye al CEO de {0}
+695|{0} pierde el control tras la votación de accionistas
+696|Noticias de rivales
+697|Editorial
+698|[Editorial]
+699|📣 Compartir balance
+700|📰 El Diario del Chaebol
+701|Edición {1}/{0}
+702|Aún no hay artículos. Aquí aparecerán los resultados de los eventos, noticias de rivales y grandes momentos.

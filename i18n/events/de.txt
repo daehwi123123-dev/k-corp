@@ -476,3 +476,49 @@
 475|Still vertuschen
 476|…Keiner hat es gemerkt.
 477|Vertuschung aufgeflogen! Bußgeld {0}, Marke -25
+478|🦹 Dieselben Hacker sind zurück
+479|Die Hackergruppe, die unser Lösegeld kassiert hat, hat die Server erneut verschlüsselt. Offenbar hat sich herumgesprochen: „Wer einmal zahlt, zahlt wieder.“
+480|Wieder zahlen ({0})
+481|Der Betrieb läuft, aber die Presse nennt uns „Stammkunde der Hacker“. Marke -3
+482|Diesmal aus Backups wiederherstellen
+483|Aus Fehlern gelernt und aus Backups wiederhergestellt. 1 Monat Umsatz -15 %, Technik +2, Marke +2
+484|🕵️ Der Preis des vertuschten Lecks
+485|{0} hat ein Produkt herausgebracht, das unserem „{1}“ gleicht. Es basiert auf den Daten aus dem Spionagefall, den wir vor einem Jahr vertuscht haben.
+486|Jetzt noch klagen ({0})
+487|Spät, aber gewonnen! Schadenersatz {0}
+488|Die Beweise waren zu alt, verloren… Wettbewerbsfähigkeit des Hauptprodukts -30 %
+489|Hinnehmen und mit neuen Produkten davonziehen
+490|Wir teilen uns jetzt den Markt. Hauptprodukt -30 %, aber das angestachelte Forschungsteam bringt Technik +3
+491|😶 Das Schweigen der Gebliebenen
+492|Drei Monate nach dem Stellenabbau ist es in den Besprechungsräumen still. Die Gebliebenen aktualisieren ihre Lebensläufe – sie glauben, sie sind die Nächsten.
+493|Gespräche mit allen + Halteprämie ({0})
+494|Das Versprechen „Der Abbau ist vorbei“ hat die Stimmung entspannt. Moral +12
+495|Einfach gute Arbeit machen
+496|Wichtige Entwickler gingen einer nach dem anderen. Technik -6, Moral -8
+497|Unter den Gebliebenen wird über eine Gewerkschaft geredet. Moral -10
+498|🤝 Kulturkampf nach der Übernahme
+499|Die Belegschaft der übernommenen Firma spricht von „Besatzern“. Von Meetingkultur bis Gehaltsstruktur kracht es überall.
+500|Integrations-Taskforce bilden ({0})
+501|Aus zwei Firmen wurde ein Team. Moral +5
+502|Sie sollen sich anpassen
+503|{0} Leute der übernommenen Firma haben gekündigt. Technik -4, Moral -6
+504|⚖️ Sammelklage wegen Lootboxen
+505|Der Lootbox-Skandal, den wir aussitzen wollten, ist zur Sammelklage geworden. Tausende Spieler haben sich als Kläger eingetragen.
+506|Wir haben uns verglichen und offiziell entschuldigt. Marke +4
+507|Bis zum Ende vor Gericht kämpfen
+508|Das Gericht sieht keine Manipulation! Marke +5
+509|Verloren… Schadenersatz {0}, Marke -15
+510|🦈 Ein Kredithai ruft an
+511|Seit die Banken strenger sind, ruft eine unbekannte Nummer an: „Brauchen Sie schnell Geld? Ohne Papierkram, noch heute.“
+512|Annehmen (+{0}, zurückzahlen {1})
+513|Das Feuer ist vorerst gelöscht, aber die Schulden stiegen um {0}.
+514|„Dieses Geld ist Gift.“ Die Belegschaft vertraut der Entscheidung. Moral +2
+515|💸 Zahltag naht
+516|Das Konto deckt die Gehälter dieses Monats ({0}) nicht. Die Finanzchefin wartet auf eine Entscheidung.
+517|Privatvermögen einschießen (+{0}, Anteil +1 Pkt.)
+518|Dass die Chefin ihr Haus beliehen hat, schweißt das Team zusammen. Moral +5, Anteil +1 Pkt.
+519|Vorstand verzichtet auf Gehalt
+520|Der Vorstand hat den Gürtel zuerst enger geschnallt. Moral +3
+521|Gehälter später zahlen
+522|Die Ankündigung hat eine Schlüsselkraft vertrieben. Moral -15, Technik -4
+523|Die Ankündigung sorgt für Unruhe im Büro. Moral -15

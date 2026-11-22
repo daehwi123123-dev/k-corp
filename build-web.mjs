@@ -38,7 +38,7 @@ html = html.replace('</style>', `
 </style>`);
 // 방문자 집계(GoatCounter): 코드가 정해지면 아래에 적는다. 개인정보·쿠키를 쓰지 않는 집계 서비스.
 const GOATCOUNTER = 'daehwi123123';
-if (GOATCOUNTER) html = html.replace('</body>', `<script data-goatcounter="https://${GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+if (GOATCOUNTER) html = html.replace('</body>', `<script data-goatcounter="https://${GOATCOUNTER}.goatcounter.com/count" data-goatcounter-settings='{"allow_frame":true}' async src="https://gc.zgo.at/count.js"></script>
 </body>`);
 html = html.replace('</body>', `<script>
 if('serviceWorker' in navigator&&location.protocol!=='file:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
@@ -148,7 +148,7 @@ console.log('web/ 생성 완료 (버전 ' + VERSION + ')');
     return Buffer.concat([...parts, cd, end]);
   };
   fs.mkdirSync('release', { recursive: true });
-  const itch = GOATCOUNTER ? base.replace('</body>', `<script data-goatcounter="https://${GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  const itch = GOATCOUNTER ? base.replace('</body>', `<script data-goatcounter="https://${GOATCOUNTER}.goatcounter.com/count" data-goatcounter-settings='{"allow_frame":true}' async src="https://gc.zgo.at/count.js"></script>
 </body>`) : base;
   fs.writeFileSync('release/itch.zip', zip([{ name: 'index.html', data: itch }]));
   fs.writeFileSync('release/portal.zip', zip([{ name: 'index.html', data: base }]));

@@ -476,3 +476,49 @@
 475|Quietly cover it up
 476|…Nobody found out.
 477|The cover-up was exposed! Penalty {0}, brand -25
+478|🦹 The Same Hackers Are Back
+479|The hacker group that took our ransom has locked the servers again. Word must have spread that "a company that pays once will pay twice."
+480|Pay again ({0})
+481|Operations are back, but the press calls us "the hackers' favorite customer." Brand -3
+482|Restore from backups this time
+483|We learned our lesson and restored from backups. Revenue -15% for 1 month, tech +2, brand +2
+484|🕵️ The Leak We Covered Up
+485|{0} launched a product identical to our "{1}". It's built on the files that leaked in the spy case we hushed up a year ago.
+486|Sue now, late as it is ({0})
+487|Late, but we won! Damages of {0}
+488|The evidence was too old and we lost… flagship competitiveness -30%
+489|Accept it and outrun them with new products
+490|We now share the market. Flagship competitiveness -30%, but a fired-up R&D team gives tech +3
+491|😶 The Silence of Those Who Stayed
+492|Three months after the layoffs, meeting rooms are quiet. The remaining staff are polishing their résumés, sure they're next.
+493|One-on-ones for all + retention bonus ({0})
+494|The promise that "the cuts are over" eased the mood. Morale +12
+495|Just do your jobs
+496|Key developers left one after another. Tech -6, morale -8
+497|Talk of forming a union has started among those who stayed. Morale -10
+498|🤝 Culture Clash After the Merger
+499|Staff at the company we bought say "the occupiers have arrived." Everything clashes, from meeting styles to pay scales.
+500|Set up an integration task force ({0})
+501|The two companies became one team. Morale +5
+502|Tell them to do it our way
+503|{0} people from the acquired company quit. Tech -4, morale -6
+504|⚖️ Loot Box Class Action
+505|The loot box scandal we chose to ride out has become a class action. Thousands of players signed on as plaintiffs.
+506|We settled and issued a formal apology. Brand +4
+507|Fight it in court to the end
+508|The court ruled there was no rigging! Brand +5
+509|We lost… damages of {0}, brand -15
+510|🦈 A Loan Shark Calls
+511|With banks tightening up, an unknown number calls: "Need cash fast? No paperwork, money today."
+512|Take it (+{0}, repay {1})
+513|The fire is out for now, but debt grew by {0}.
+514|"That money is poison." Staff trust the CEO's call. Morale +2
+515|💸 Payday Is Coming
+516|The bank balance won't cover this month's payroll ({0}). The finance lead is waiting for your call.
+517|Put in your own money (+{0}, stake +1 pt)
+518|Word that the CEO mortgaged their home to cover payroll rallied the team. Morale +5, stake +1 pt
+519|Executives give back their salaries
+520|The executives tightened their belts first. Morale +3
+521|Delay payday
+522|The pay delay notice drove a key person out. Morale -15, tech -4
+523|The pay delay notice has the office buzzing. Morale -15
